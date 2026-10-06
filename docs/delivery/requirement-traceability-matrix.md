@@ -101,15 +101,15 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-047 | 说明 AI 在哪个步骤介入 | AI 只在输入后生成待确认结构，不执行创建或发送 | `EL-TASK-02/03`、`DOC-AI-RULES` | `docs/product/05-ai-and-accessibility.md`、`src/adapters/understanding.ts` | `TC-AI-004` AI 边界 | AI 规则文档与页面图（缺失） | FAIL |
-| RTM-048 | 说明 AI 使用什么信息 | 只用当前输入和明确字段，不读历史、位置、健康或通讯录 | `EL-TASK-03A/03B`、`DOC-AI-RULES` | 同上 | `TC-AI-005` 输入白名单 | AI 依据说明图（缺失） | FAIL |
-| RTM-049 | AI 输出与依据可理解 | 分字段复述来自当前输入；不显示虚假权威或编造依据 | `EL-TASK-03A/03B` | `src/features/task/ConfirmUnderstandingPage.tsx` | `TC-AI-006` 依据复述 | 确认页图（缺失） | FAIL |
-| RTM-050 | 用户可以纠正 AI | 每个必要字段独立修改，修改后重新复述最终结果 | `EL-TASK-04/05` | `src/features/task/*` | `TC-MAIN-004/005` | 修改前后图（缺失） | FAIL |
-| RTM-051 | AI 失败或结果不可信时有办法继续 | 明确失败、保留输入、手动填写；任何结果都需老人确认 | `EL-EX-01/02` | `src/features/task/*` | `TC-AI-001/002/003` | 失败恢复图（缺失） | FAIL |
+| RTM-047 | 说明 AI 在哪个步骤介入 | AI 只在输入后生成待确认结构，不执行创建或发送 | `EL-TASK-02/03A/03B`、`DOC-AI-RULES` | `docs/product/ai-rules.md`、`src/adapters/understanding.ts` | `TC-AI-004` AI 边界 | AI 规则已冻结；页面图缺失 | PARTIAL |
+| RTM-048 | 说明 AI 使用什么信息 | 只用当前输入和明确字段，不读历史、位置、健康或通讯录 | `EL-TASK-03A/03B`、`DOC-AI-RULES` | `docs/product/ai-rules.md` | `TC-AI-005` 输入白名单 | 输入白名单已冻结；页面图缺失 | PARTIAL |
+| RTM-049 | AI 输出与依据可理解 | 分字段复述来自当前输入；不显示虚假权威或编造依据 | `EL-TASK-03A/03B` | `docs/product/ai-rules.md`、`src/features/task/ConfirmUnderstandingPage.tsx` | `TC-AI-006` 依据复述 | 呈现契约已冻结；确认页图缺失 | PARTIAL |
+| RTM-050 | 用户可以纠正 AI | 每个必要字段独立修改，修改后重新复述最终结果 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/features/task/*` | `TC-MAIN-004/005` | 纠错规则已冻结；修改前后图缺失 | PARTIAL |
+| RTM-051 | AI 失败或结果不可信时有办法继续 | 明确失败、保留输入、手动填写；任何结果都需老人确认 | `EL-EX-01/02A/02B` | `docs/product/ai-rules.md`、`src/features/task/*` | `TC-AI-001/002/003` | 降级规则已冻结；失败恢复图缺失 | PARTIAL |
 | RTM-052 | 历史记忆仅在必要时设计 | 本版不读取或保留 AI 历史记忆；完整历史中心排除 | `DOC-CHARTER-EXCLUDED`、无历史入口 | `docs/product/01-product-charter.md` | `TC-SCOPE-002` 无历史读取/入口 | 当前产品章程；运行证据缺失 | PARTIAL |
-| RTM-053 | 字体、对比度、按钮和步骤适老 | 默认正文约 20 px、触控至少 48 px、对比达 WCAG AA、一屏一主操作 | 所有老人端页面 | `docs/product/05-ai-and-accessibility.md`、`src/styles/tokens.css` | `TC-A11Y-001/002/003` | 视觉审计与截图（缺失） | FAIL |
-| RTM-054 | 措辞和反馈适老 | 成人、直接、尊重；反馈包含发生了什么、当前状态和下一步 | 所有结果/错误状态 | `docs/product/05-ai-and-accessibility.md` | `TC-CONTENT-001` 文案审计 | 文案表与页面图（缺失） | FAIL |
-| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `src/features/task/*` | `TC-MAIN-004` | 错误、编辑、修正图（缺失） | FAIL |
+| RTM-053 | 字体、对比度、按钮和步骤适老 | 默认正文约 20 px、主按钮至少 56 px、对比达 AA 基线、一屏一主操作 | 所有老人端页面 | `docs/product/accessibility-guidelines.md`、`src/styles/tokens.css` | `TC-A11Y-001/002/003` | 适老规范已冻结；视觉审计与截图缺失 | PARTIAL |
+| RTM-054 | 措辞和反馈适老 | 成人、直接、尊重；反馈包含发生了什么、当前状态和下一步 | 所有结果/错误状态 | `docs/product/content-guidelines.md` | `TC-CONTENT-001` 文案审计 | 文案词典已冻结；页面图缺失 | PARTIAL |
+| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/features/task/*` | `TC-MAIN-004` | 纠错规则已冻结；错误、编辑、修正图缺失 | PARTIAL |
 | RTM-056 | 支持可调适老能力 | 默认界面已适老；P1 可提供标准/大字与高对比切换 | `EL-SET-01`（P1） | `src/features/settings/*` | `TC-A11Y-004` 显示切换 | P1 设置图（缺失） | FAIL |
 
 ## 8. 页面、状态与连通性
@@ -132,7 +132,7 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-068 | 至少一个核心功能写清目标、输入、输出、页面、状态、规则和异常 | 核心功能定义为“可纠错事务 + 单次家庭请求”；现有章程已有范围，详细规则待 Prompt 03/05 | `DOC-CORE-FEATURE` | `docs/product/03-business-rules.md`、`05-ai-and-accessibility.md` | `TC-DOC-007` 核心功能字段审计 | 正式规则文档（缺失） | FAIL |
+| RTM-068 | 至少一个核心功能写清目标、输入、输出、页面、状态、规则和异常 | 核心功能为“可纠错事务 + 单次家庭请求”；目标、输入输出、页面、双状态机、权限和异常均已冻结 | `DOC-CORE-FEATURE`、`EL-TASK-*`、`EL-SHARE-*`、`FM-REQ-*` | `docs/product/01-product-charter.md`、`task-state-machine.md`、`collaboration-state-machine.md`、`permissions.md`、`ai-rules.md`、`page-state-matrix.md` | `TC-DOC-007` 核心功能字段审计 | 当前六份正式产品规则文档 | PASS |
 | RTM-069 | 定义 1 个核心成功指标 | 无指导完成并获得明确协作结果的有效任务占比 | `DOC-METRICS` | `docs/product/17-product-spec.md#指标`；来源 `docs/03-reach-and-validation.md` | `TC-METRIC-001` 口径审计 | 现有指标定义 | PASS |
 | RTM-070 | 定义 2—3 个过程指标及对象、口径和周期 | 最终采用纠错成功率、共享知情率、状态误判率；不得写成实测 | `DOC-METRICS` | `docs/product/17-product-spec.md#指标` | `TC-METRIC-002` 分子分母周期检查 | 正式指标字典（缺失） | FAIL |
 | RTM-071 | 说明如何发现误导建议和操作失败 | 记录字段误导、状态误判、失败恢复、严重事件和用户复述 | `DOC-VALIDATION` | `docs/product/17-product-spec.md#验证` | `TC-VALID-001` 风险记录模板审计 | 正式验证方案（缺失） | FAIL |
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 文档型要求已有当前证据 | 11 |
-| PARTIAL | 体验证据或无历史范围已有部分证据 | 3 |
-| FAIL | 实际页面、操作、实现、运行测试或交付证据尚不存在 | 76 |
+| PASS | 文档型要求已有当前证据 | 12 |
+| PARTIAL | 已有规则或体验证据，但视觉/运行证据不完整 | 11 |
+| FAIL | 实际页面、操作、实现、运行测试或交付证据尚不存在 | 67 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。

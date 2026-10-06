@@ -35,6 +35,9 @@
 | P-04A | [页面与状态总表](docs/product/page-state-matrix.md) | 老人、关系、家属和 Demo 全部页面状态及测试映射 |
 | P-04B | [信息架构](docs/product/information-architecture.md) | 双角色结构、对象所有权、路由与导航边界 |
 | P-04C | [正式用户流程](docs/product/user-flows.md) | 主流程、修改/撤回/取消及失败/未回应/拒绝流程 |
+| P-05A | [AI 理解规则](docs/product/ai-rules.md) | 输入/输出白名单、确认、纠错、失败与手动降级 |
+| P-05B | [适老交互规范](docs/product/accessibility-guidelines.md) | viewport、字号、触控、反馈、缩放与验收基线 |
+| P-05C | [产品文案规范](docs/product/content-guidelines.md) | 成人化语言、固定术语、结果模板与禁用表达 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |

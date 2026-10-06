@@ -11,9 +11,9 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 04 / 页面与状态总表、信息架构和完整 Flow
+CURRENT_PHASE=Prompt 05 / AI 规则和适老交互规范冻结
 CURRENT_BRANCH=research
-CURRENT_COMMIT=32b44dd72947840c9bf3950fd4219c321bb1c88d
+CURRENT_COMMIT=81ccaee5af5b97ea4bebed3e96858a543e9be97a
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
 UI_VERSION=not-created
@@ -34,6 +34,9 @@ PAGE_MATRIX_STATUS=PASS
 INFORMATION_ARCHITECTURE_STATUS=PASS
 USER_FLOW_STATUS=PASS
 VISUAL_REQUIREMENT_MAPPING_STATUS=PASS
+AI_RULES_STATUS=PASS
+ACCESSIBILITY_GUIDELINES_STATUS=PASS
+CONTENT_GUIDELINES_STATUS=PASS
 WEB_STATUS=FAIL
 DOCKER_STATUS=FAIL
 MAIN_FLOW_STATUS=PARTIAL
@@ -48,9 +51,10 @@ PROMPT_01_GATE_STATUS=PASS
 PROMPT_02_GATE_STATUS=PASS
 PROMPT_03_GATE_STATUS=PASS
 PROMPT_04_GATE_STATUS=PASS
+PROMPT_05_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 04 的输入基线（完整 SHA 以 Git 历史为准）。Prompt 04 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
+`CURRENT_COMMIT` 是 Prompt 05 的输入基线。Prompt 05 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
 
 ## 2. 仓库真实状态
 
@@ -59,9 +63,9 @@ PROMPT_04_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `32b44dd72947840c9bf3950fd4219c321bb1c88d` | PASS | Prompt 04 输入基线 |
-| 远端跟踪 | `origin/research` 为 `32b44dd72947840c9bf3950fd4219c321bb1c88d` | PASS | Prompt 04 开始时本地与远端一致 |
-| 工作区变更 | Prompt 04 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
+| `research` | `81ccaee5af5b97ea4bebed3e96858a543e9be97a` | PASS | Prompt 05 输入基线 |
+| 远端跟踪 | `origin/research` 为 `81ccaee5af5b97ea4bebed3e96858a543e9be97a` | PASS | Prompt 05 开始时本地与远端一致 |
+| 工作区变更 | Prompt 05 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
 | 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
 | 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
 
@@ -120,7 +124,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | Prompt 02 | 建立题目验收追踪矩阵 | PASS |
 | Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PASS |
 | Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | PASS |
-| Prompt 05 | 冻结 AI 规则和适老交互规范 | PARTIAL |
+| Prompt 05 | 冻结 AI 规则和适老交互规范 | PASS |
 | Prompt 06 | 完成高保真设计并进行设计审计 | FAIL |
 | Prompt 07 | 建立 Web 工程和基础状态模型 | FAIL |
 | Prompt 08 | 实现完整主流程 | FAIL |
@@ -212,4 +216,20 @@ Prompt 03 已完成；其状态机和权限规则已作为 Prompt 04 页面矩�
 | 失败/未回应/拒绝流程 C 完整 | PASS | `user-flows.md` C |
 | RTM 所有 P0 视觉要求映射到页面编号 | PASS | `page-state-matrix.md` 第 6 节 |
 
-Prompt 04 可以结束。下一阶段进入 Prompt 05，冻结 AI 规则和适老交互规范。页面矩阵已完成，但实际高保真画面仍为 `FAIL`。
+Prompt 04 已完成；页面矩阵、信息架构和 A/B/C 流程已作为 Prompt 05 规则冻结的页面基线。实际高保真画面仍为 `FAIL`。
+
+## 12. Prompt 05 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| AI 只整理当前输入和允许字段 | PASS | `docs/product/ai-rules.md` 第 1—3 节 |
+| AI 禁止动作完整冻结 | PASS | `ai-rules.md` 第 8 节 |
+| 原始表达、系统理解和待确认字段同时可见 | PASS | `ai-rules.md` 第 4 节 |
+| 必要信息缺失不猜测 | PASS | `ai-rules.md` 第 6 节 |
+| AI 失败保留输入并可手动继续 | PASS | `ai-rules.md` 第 7 节 |
+| 不使用虚构模型置信度 | PASS | `ai-rules.md` 第 3 节 |
+| 390×844、字号、触控和交互规则可量化 | PASS | `accessibility-guidelines.md` |
+| 成年化、尊重式文案和固定术语已冻结 | PASS | `content-guidelines.md` |
+| AI 失败、纠错和降级均映射页面 ID | PASS | `ai-rules.md` 第 9 节 |
+
+Prompt 05 可以结束。下一阶段进入 Prompt 06，完成高保真设计并做设计审计；当前尚无高保真画面，因此 `WEB_STATUS` 和静态视觉证据仍为 `FAIL`。
