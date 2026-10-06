@@ -11,9 +11,9 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 06 / 高保真设计审计完成，待提交
+CURRENT_PHASE=Prompt 07 / Web 基础状态模型与保存主路径完成，待提交
 CURRENT_BRANCH=research
-CURRENT_COMMIT=0a128d692bf860ac3b5fba4337eae4b58cd4bc7a
+CURRENT_COMMIT=6334b4debaa4c1637e0e6e5a74e4563e06efaaaf
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
 UI_VERSION=repository-hifi-1.0.0
@@ -41,7 +41,7 @@ DESIGN_SOURCE_STATUS=PASS
 HIFI_SCREEN_STATUS=PASS
 DESIGN_AUDIT_STATUS=PASS
 SPEC_FREEZE=TRUE
-WEB_STATUS=FAIL
+WEB_STATUS=PARTIAL
 DOCKER_STATUS=FAIL
 MAIN_FLOW_STATUS=PARTIAL
 EXCEPTION_FLOW_STATUS=PARTIAL
@@ -57,9 +57,10 @@ PROMPT_03_GATE_STATUS=PASS
 PROMPT_04_GATE_STATUS=PASS
 PROMPT_05_GATE_STATUS=PASS
 PROMPT_06_GATE_STATUS=PASS
+PROMPT_07_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 06 的输入基线。Prompt 06 已通过 Gate，当前高保真工作将在本阶段完成 commit 后更新 Git 历史。
+`CURRENT_COMMIT` 是 Prompt 07 的输入基线，即 Prompt 06 本地完成提交。Prompt 07 通过 Gate 后将创建下一提交。
 
 ## 2. 仓库真实状态
 
@@ -68,11 +69,11 @@ PROMPT_06_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `0a128d692bf860ac3b5fba4337eae4b58cd4bc7a` | PASS | Prompt 06 输入基线 |
-| 远端跟踪 | `origin/research` 为 `0a128d692bf860ac3b5fba4337eae4b58cd4bc7a` | PASS | Prompt 06 开始时本地与远端一致 |
-| 工作区变更 | Prompt 06 高保真设计文件和审计结果待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
+| `research` | `6334b4debaa4c1637e0e6e5a74e4563e06efaaaf` | PASS | Prompt 06 本地完成提交 |
+| 远端跟踪 | `origin/research` 暂停留在 `0a128d692bf860ac3b5fba4337eae4b58cd4bc7a` | PARTIAL | GitHub HTTPS 两次连接重置，待网络恢复重推 |
+| 工作区变更 | Prompt 07 Web 基础工程和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
 | 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
-| 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
+| 代码与构建文件 | 原生 Web 工程已建立；Docker 尚未建立 | PARTIAL | `package.json`、`index.html`、`src/`、`server.mjs`、`tests/` |
 
 ## 3. 已读取的现有成果
 
@@ -131,7 +132,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | PASS |
 | Prompt 05 | 冻结 AI 规则和适老交互规范 | PASS |
 | Prompt 06 | 完成高保真设计并进行设计审计 | PASS |
-| Prompt 07 | 建立 Web 工程和基础状态模型 | FAIL |
+| Prompt 07 | 建立 Web 工程和基础状态模型 | PASS |
 | Prompt 08 | 实现完整主流程 | FAIL |
 | Prompt 09 | 实现全部异常和修改分支 | FAIL |
 | Prompt 10 | 完成 Demo Controller 与可复现场景 | FAIL |
@@ -253,3 +254,18 @@ Prompt 05 已结束。Prompt 06 已生成完整高保真画面，但尚有一个
 | `SPEC_FREEZE = TRUE` | PASS | 仓库内规范设计源已冻结 |
 
 Prompt 06 已通过。Figma 文件保留为补充参考；规范设计源切换为仓库内 HTML/CSS 画廊，已通过 65 屏自动布局审计和五类视觉抽查，因此外部平台额度不再阻碍 Prompt 07。
+
+## 14. Prompt 07 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 简单、稳定、无第三方运行依赖 | PASS | 原生 HTML/CSS/ES Modules 和 Node 静态服务器 |
+| 六个必要顶层状态对象 | PASS | `src/state/initial-state.js`、模型测试 |
+| 老人端与家属端共享同一状态 | PASS | 单一 Store；角色切换测试保持同一 `task` 引用 |
+| LocalStorage 刷新持久化 | PASS | 浏览器走查刷新后仍显示已保存结果 |
+| App Shell 与导航 | PASS | 四项底部导航全部有实际页面 |
+| 老人端、家属端、Relationship、Demo 基础结构 | PASS | `src/views.js` |
+| 老人首页到任务保存结果 | PASS | 浏览器自动走查 10 步；`prompt07-main-flow.png` |
+| 无真实后端、数据库、AI、账号或密钥 | PASS | 静态源码与秘密扫描 |
+
+Prompt 07 已通过，可提交并进入 Prompt 08 完整主流程。

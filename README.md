@@ -8,6 +8,17 @@
 
 本阶段不做医疗诊断、应急救援、定位监控、完整陪聊、支付、智能家居或真实消息服务。
 
+## 本地运行
+
+当前 Web 基础原型无第三方运行依赖：
+
+```powershell
+npm test
+npm start
+```
+
+浏览器访问 `http://localhost:4173`。当前 Prompt 07 范围支持从老人首页进入事务输入并走到保存结果，刷新后状态保留；完整协作和异常流程将在后续阶段补齐。
+
 ## 文档索引
 
 | 编号 | 文档 | 作用 |
@@ -41,6 +52,7 @@
 | D-06A | [仓库内高保真设计源](artifacts/design/local-prototype/README.md) | 65 个高保真画面、逐屏访问、可编辑 HTML/CSS 和自动布局审计 |
 | D-06F | [Figma 补充设计源](artifacts/design/figma-source.md) | 早期设计系统、节点索引和 Figma 快照限制 |
 | D-06B | [Design Audit](docs/validation/design-audit.md) | 页面完整性、业务一致性、视觉抽查与 P0 缺口 |
+| E-07 | [Web 基础架构](docs/engineering/web-foundation.md) | 原生前端选择、统一状态模型、LocalStorage 和浏览器走查 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |

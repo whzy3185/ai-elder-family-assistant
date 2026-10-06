@@ -150,7 +150,7 @@
 |---|---|---|---|---|---|---|---|
 | RTM-079 | 产品说明覆盖用户、依据、范围、流程、AI、指标和验证 | 最终合并为一份与 Release 一致的正式说明 | `DOC-PRODUCT-SPEC` | `docs/product/17-product-spec.md` | `TC-DOC-008` 章节覆盖 | 正式产品说明（缺失） | FAIL |
 | RTM-080 | 完整原型图按页面与状态编号整理 | 每个必要页面和关键状态可独立查看 | `DOC-STATIC-INDEX` | `artifacts/static/index.md`、`artifacts/static/*.png`、PDF | `TC-STATIC-001` 页面矩阵一一对应 | PNG/PDF（缺失） | FAIL |
-| RTM-081 | 可操作 Web 原型和可编辑源码 | 全部 P0 连续可操作，使用本地确定性状态和虚构数据 | 全部 `EL-*`、`FM-*`、`DM-*` | `src/*` | `TC-E2E-*`、`TC-UNIT-*` | 运行截图与源码（缺失） | FAIL |
+| RTM-081 | 可操作 Web 原型和可编辑源码 | 全部 P0 连续可操作，使用本地确定性状态和虚构数据 | 全部 `EL-*`、`FM-*`、`DM-*` | `src/*` | `TC-E2E-*`、`TC-UNIT-*` | 基础源码和首页到保存走查已完成；完整 P0 待 Prompt 08—10 | PARTIAL |
 | RTM-082 | 设计工具存在时提供源文件或访问方式 | 规范源使用仓库内 HTML/CSS；Figma 文件作为补充参考 | `DOC-DESIGN-SOURCE` | `artifacts/design/local-prototype/`、`artifacts/design/figma-source.md` | `TC-DELIVERY-001` 源文件可访问 | 可编辑设计源、生成脚本、Figma URL 和审计证据 | PASS |
 | RTM-083 | 提供 Dockerfile | 多阶段构建或等效静态镜像，无秘密和外部服务 | `DOC-DOCKER` | `Dockerfile` | `TC-DOCKER-001` 镜像构建 | Dockerfile（缺失） | FAIL |
 | RTM-084 | 提供 Docker Compose 配置 | 单命令启动前端，端口和健康检查明确 | `DOC-DOCKER` | `compose.yaml` | `TC-DOCKER-002` Compose 启动 | Compose 文件（缺失） | FAIL |
@@ -166,8 +166,8 @@
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
 | PASS | 当前要求已有足够仓库证据 | 13 |
-| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 19 |
-| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 58 |
+| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 20 |
+| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 57 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
