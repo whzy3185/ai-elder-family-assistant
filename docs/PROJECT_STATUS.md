@@ -11,9 +11,9 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 02 / 建立题目验收追踪矩阵
+CURRENT_PHASE=Prompt 03 / 业务规则、双状态机与权限矩阵
 CURRENT_BRANCH=research
-CURRENT_COMMIT=6183979161c700a6692fdada0dd13292439b4e8d
+CURRENT_COMMIT=bcfd1c2fbcfa7c5a73c8d8374661087b431b816f
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
 UI_VERSION=not-created
@@ -25,6 +25,10 @@ PRODUCT_CHARTER_STATUS=PASS
 SCOPE_FREEZE_STATUS=PASS
 DEMO_DATA_STATUS=PASS
 PERMISSION_PRINCIPLES_STATUS=PASS
+TASK_STATE_MACHINE_STATUS=PASS
+COLLABORATION_STATE_MACHINE_STATUS=PASS
+FIELD_PERMISSION_MATRIX_STATUS=PASS
+PAPER_CONSISTENCY_REVIEW_STATUS=PASS
 REQUIREMENT_MATRIX_STATUS=PASS
 PAGE_MATRIX_STATUS=FAIL
 WEB_STATUS=FAIL
@@ -39,9 +43,10 @@ SUBMISSION_STATUS=FAIL
 PROMPT_00_GATE_STATUS=PASS
 PROMPT_01_GATE_STATUS=PASS
 PROMPT_02_GATE_STATUS=PASS
+PROMPT_03_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 02 的输入基线。Prompt 02 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
+`CURRENT_COMMIT` 是 Prompt 03 的输入基线。Prompt 03 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
 
 ## 2. 仓库真实状态
 
@@ -50,10 +55,10 @@ PROMPT_02_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `6183979161c700a6692fdada0dd13292439b4e8d` | PASS | Prompt 02 输入基线 |
-| 远端跟踪 | `origin/research` 为 `6183979161c700a6692fdada0dd13292439b4e8d` | PASS | Prompt 02 开始时本地与远端一致 |
-| 工作区变更 | Prompt 02 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
-| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有六个提交保持连续 |
+| `research` | `bcfd1c2fbcfa7c5a73c8d8374661087b431b816f` | PASS | Prompt 03 输入基线 |
+| 远端跟踪 | `origin/research` 为 `bcfd1c2fbcfa7c5a73c8d8374661087b431b816f` | PASS | Prompt 03 开始时本地与远端一致 |
+| 工作区变更 | Prompt 03 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
+| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有七个提交保持连续 |
 | 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
 
 ## 3. 已读取的现有成果
@@ -109,7 +114,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 |---|---|---|
 | Prompt 01 | 冻结唯一事务、用户、范围与产品边界 | PASS |
 | Prompt 02 | 建立题目验收追踪矩阵 | PASS |
-| Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PARTIAL |
+| Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PASS |
 | Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | FAIL |
 | Prompt 05 | 冻结 AI 规则和适老交互规范 | PARTIAL |
 | Prompt 06 | 完成高保真设计并进行设计审计 | FAIL |
@@ -175,4 +180,17 @@ Prompt 01 已完成：唯一事务、用户、家属条件、P0/P1、Explicitly 
 | 缺少实际画面或操作的要求标为 FAIL | PASS | Matrix 当前状态列 |
 | P0 没有“后面再说”空项 | PASS | 全部 P0 均有完整追踪字段 |
 
-Prompt 02 可以结束。下一阶段进入 Prompt 03，冻结业务规则、双状态机和权限矩阵。页面、Web、Docker 和最终验收仍保持 `FAIL`。
+Prompt 02 已完成：90 项原题要求均已有规则、状态、实现位置、测试 ID 和证据位置。
+
+## 10. Prompt 03 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 事务状态机独立且完整 | PASS | `docs/product/task-state-machine.md` |
+| 家庭协作状态机独立且完整 | PASS | `docs/product/collaboration-state-machine.md` |
+| 保存提醒与发送请求分离 | PASS | 两套状态机不变量 |
+| 发送后修改统一失效旧请求 | PASS | 协作状态机第 4 节 |
+| 字段级权限矩阵完整 | PASS | `docs/product/permissions.md` |
+| 七项状态一致性纸面审查 | PASS | 协作状态机第 6 节 |
+
+Prompt 03 可以结束。下一阶段进入 Prompt 04，建立正式页面与状态总表、信息架构和完整 Flow。运行态验证仍未开始，因此主流程和异常流程保持 `PARTIAL`。

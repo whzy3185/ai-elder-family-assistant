@@ -29,6 +29,9 @@
 | 14 | [产品阶段限制草案](docs/14-stage-guardrails-draft.md) | 各阶段范围、数据、AI、安全、成本和退出门槛 |
 | 15 | [能力边界与主观决策审计](docs/15-ability-boundaries-and-decision-audit.md) | 无代码条件下的交付边界、已知信息和完整决策积压 |
 | P-01 | [正式产品章程](docs/product/01-product-charter.md) | 冻结用户、唯一事务、P0/P1、排除范围、权限和演示时钟 |
+| P-03A | [事务状态机](docs/product/task-state-machine.md) | 事务、解析过程、提醒、版本和完成/取消规则 |
+| P-03B | [家庭协作状态机](docs/product/collaboration-state-machine.md) | 请求发送、回应、未回应、撤回、改期和失效规则 |
+| P-03C | [字段级权限矩阵](docs/product/permissions.md) | 双方可见字段、动作权限、确认点和拒绝规则 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |
