@@ -11,9 +11,9 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 03 / 业务规则、双状态机与权限矩阵
+CURRENT_PHASE=Prompt 04 / 页面与状态总表、信息架构和完整 Flow
 CURRENT_BRANCH=research
-CURRENT_COMMIT=bcfd1c2fbcfa7c5a73c8d8374661087b431b816f
+CURRENT_COMMIT=32b44dd72947840c9bf3950fd4219c321bb1c88d
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
 UI_VERSION=not-created
@@ -30,7 +30,10 @@ COLLABORATION_STATE_MACHINE_STATUS=PASS
 FIELD_PERMISSION_MATRIX_STATUS=PASS
 PAPER_CONSISTENCY_REVIEW_STATUS=PASS
 REQUIREMENT_MATRIX_STATUS=PASS
-PAGE_MATRIX_STATUS=FAIL
+PAGE_MATRIX_STATUS=PASS
+INFORMATION_ARCHITECTURE_STATUS=PASS
+USER_FLOW_STATUS=PASS
+VISUAL_REQUIREMENT_MAPPING_STATUS=PASS
 WEB_STATUS=FAIL
 DOCKER_STATUS=FAIL
 MAIN_FLOW_STATUS=PARTIAL
@@ -44,9 +47,10 @@ PROMPT_00_GATE_STATUS=PASS
 PROMPT_01_GATE_STATUS=PASS
 PROMPT_02_GATE_STATUS=PASS
 PROMPT_03_GATE_STATUS=PASS
+PROMPT_04_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 03 的输入基线。Prompt 03 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
+`CURRENT_COMMIT` 是 Prompt 04 的输入基线（完整 SHA 以 Git 历史为准）。Prompt 04 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
 
 ## 2. 仓库真实状态
 
@@ -55,10 +59,10 @@ PROMPT_03_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `bcfd1c2fbcfa7c5a73c8d8374661087b431b816f` | PASS | Prompt 03 输入基线 |
-| 远端跟踪 | `origin/research` 为 `bcfd1c2fbcfa7c5a73c8d8374661087b431b816f` | PASS | Prompt 03 开始时本地与远端一致 |
-| 工作区变更 | Prompt 03 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
-| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有七个提交保持连续 |
+| `research` | `32b44dd72947840c9bf3950fd4219c321bb1c88d` | PASS | Prompt 04 输入基线 |
+| 远端跟踪 | `origin/research` 为 `32b44dd72947840c9bf3950fd4219c321bb1c88d` | PASS | Prompt 04 开始时本地与远端一致 |
+| 工作区变更 | Prompt 04 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
+| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
 | 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
 
 ## 3. 已读取的现有成果
@@ -92,9 +96,9 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 `docs/delivery/requirement-traceability-matrix.md` 已将 90 项要求映射到产品规则、页面/状态、实现位置、测试 ID、静态证据和当前状态。矩阵完整不等于实际产品验收通过。
 
-### PAGE_MATRIX_STATUS=FAIL
+### PAGE_MATRIX_STATUS=PASS
 
-只有页面族列表，没有包含页面编号、角色、进入方式、主要操作、去向、关键状态和原型位置的正式页面与状态总表。
+正式页面与状态总表已覆盖老人端、关系、家属端和 Demo Controller，且每项均包含编号、角色、进入条件、状态、内容、操作、去向和测试映射。高保真画面尚未产生，不影响本字段对“清单完整性”的判定。
 
 ### MAIN_FLOW_STATUS=PARTIAL
 
@@ -102,11 +106,11 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 ### EXCEPTION_FLOW_STATUS=PARTIAL
 
-异常分支已被列出并有部分规则，但没有完整页面映射、状态迁移表和运行态验证。
+异常分支已有完整页面映射和状态迁移规则，但尚无可运行 Web 与运行态验证。
 
 ### DOCUMENT_STATUS=PARTIAL
 
-研究文档和正式产品章程已存在；需求追踪矩阵、页面矩阵、业务规则定稿、产品说明、Demo Guide、走查记录和最终验收报告仍缺失。
+研究文档、正式产品章程、需求追踪矩阵、页面矩阵和业务规则定稿已存在；产品说明、Demo Guide、走查记录和最终验收报告仍缺失。
 
 ## 6. 后续阶段清单
 
@@ -115,7 +119,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | Prompt 01 | 冻结唯一事务、用户、范围与产品边界 | PASS |
 | Prompt 02 | 建立题目验收追踪矩阵 | PASS |
 | Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PASS |
-| Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | FAIL |
+| Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | PASS |
 | Prompt 05 | 冻结 AI 规则和适老交互规范 | PARTIAL |
 | Prompt 06 | 完成高保真设计并进行设计审计 | FAIL |
 | Prompt 07 | 建立 Web 工程和基础状态模型 | FAIL |
@@ -193,4 +197,19 @@ Prompt 02 已完成：90 项原题要求均已有规则、状态、实现位置�
 | 字段级权限矩阵完整 | PASS | `docs/product/permissions.md` |
 | 七项状态一致性纸面审查 | PASS | 协作状态机第 6 节 |
 
-Prompt 03 可以结束。下一阶段进入 Prompt 04，建立正式页面与状态总表、信息架构和完整 Flow。运行态验证仍未开始，因此主流程和异常流程保持 `PARTIAL`。
+Prompt 03 已完成；其状态机和权限规则已作为 Prompt 04 页面矩阵与流程设计的输入。运行态验证仍未开始，因此主流程和异常流程保持 `PARTIAL`。
+
+## 11. Prompt 04 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 老人端必要页面和状态完整 | PASS | `page-state-matrix.md` 第 2 节 |
+| 关系建立、拒绝和权限说明完整 | PASS | `page-state-matrix.md` 第 3 节 |
+| 家属端请求与终止状态完整 | PASS | `page-state-matrix.md` 第 4 节 |
+| Demo 角色、场景、时钟和 Reset 完整 | PASS | `page-state-matrix.md` 第 5 节 |
+| 主流程 A 完整 | PASS | `user-flows.md` A |
+| 修改/撤回/取消流程 B 完整 | PASS | `user-flows.md` B |
+| 失败/未回应/拒绝流程 C 完整 | PASS | `user-flows.md` C |
+| RTM 所有 P0 视觉要求映射到页面编号 | PASS | `page-state-matrix.md` 第 6 节 |
+
+Prompt 04 可以结束。下一阶段进入 Prompt 05，冻结 AI 规则和适老交互规范。页面矩阵已完成，但实际高保真画面仍为 `FAIL`。

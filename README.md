@@ -32,6 +32,9 @@
 | P-03A | [事务状态机](docs/product/task-state-machine.md) | 事务、解析过程、提醒、版本和完成/取消规则 |
 | P-03B | [家庭协作状态机](docs/product/collaboration-state-machine.md) | 请求发送、回应、未回应、撤回、改期和失效规则 |
 | P-03C | [字段级权限矩阵](docs/product/permissions.md) | 双方可见字段、动作权限、确认点和拒绝规则 |
+| P-04A | [页面与状态总表](docs/product/page-state-matrix.md) | 老人、关系、家属和 Demo 全部页面状态及测试映射 |
+| P-04B | [信息架构](docs/product/information-architecture.md) | 双角色结构、对象所有权、路由与导航边界 |
+| P-04C | [正式用户流程](docs/product/user-flows.md) | 主流程、修改/撤回/取消及失败/未回应/拒绝流程 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |

@@ -64,9 +64,9 @@
 |---|---|---|---|---|---|---|---|
 | RTM-018 | 老人表达一件日常事务 | 支持固定模拟语音和手动文字；使用冻结原句 | `EL-TASK-01`、`TASK-DRAFT` | `src/features/task/TaskInputPage.tsx` | `TC-MAIN-001` 输入事务 | `artifacts/static/EL-TASK-01.png`（缺失） | FAIL |
 | RTM-019 | 展示 AI 处理状态 | 处理中不得提前显示成功；模拟等待短于 2 秒且可复现 | `EL-TASK-02`、`TASK-UNDERSTANDING` | `src/features/task/UnderstandingPage.tsx` | `TC-MAIN-002` 处理中状态 | `EL-TASK-02.png`（缺失） | FAIL |
-| RTM-020 | 老人确认系统理解 | 分字段显示事项、日期、时间、地点、提醒和协作意图 | `EL-TASK-03`、`TASK-NEEDS_CONFIRMATION` | `src/features/task/ConfirmUnderstandingPage.tsx` | `TC-MAIN-003` 字段复述 | `EL-TASK-03.png`（缺失） | FAIL |
-| RTM-021 | 展示并修改一处识别错误 | 固定把 9:00 识别为 8:00，老人单字段改回 9:00 | `EL-TASK-03/04` | `src/features/task/EditTimeSheet.tsx` | `TC-MAIN-004` 8:00→9:00 | 修改前后静态图（缺失） | FAIL |
-| RTM-022 | 提醒时间随事务时间同步 | 错误时 7:30，修正后 8:30；自然语言再次复述 | `EL-TASK-03/05` | `src/domain/reminder.ts` | `TC-MAIN-005` 时间联动 | 修正后确认图（缺失） | FAIL |
+| RTM-020 | 老人确认系统理解 | 分字段显示事项、日期、时间、地点、提醒和协作意图 | `EL-TASK-03A/03B`、`TASK-NEEDS_CONFIRMATION` | `src/features/task/ConfirmUnderstandingPage.tsx` | `TC-MAIN-003` 字段复述 | `EL-TASK-03A/03B.png`（缺失） | FAIL |
+| RTM-021 | 展示并修改一处识别错误 | 固定把 9:00 识别为 8:00，老人单字段改回 9:00 | `EL-TASK-03B/04` | `src/features/task/EditTimeSheet.tsx` | `TC-MAIN-004` 8:00→9:00 | 修改前后静态图（缺失） | FAIL |
+| RTM-022 | 提醒时间随事务时间同步 | 错误时 7:30，修正后 8:30；自然语言再次复述 | `EL-TASK-03B/05` | `src/domain/reminder.ts` | `TC-MAIN-005` 时间联动 | 修正后确认图（缺失） | FAIL |
 | RTM-023 | 老人确认并保存个人事务 | 未确认不创建；确认后 `TASK-CONFIRMED` | `EL-TASK-05/06` | `src/domain/taskMachine.ts` | `TC-MAIN-006` 保存事务 | 保存成功与详情图（缺失） | FAIL |
 | RTM-024 | 保存个人提醒 | 提醒属于张阿姨，不因家属拒绝、未回应或撤回请求而删除 | `EL-TASK-06`、`REMINDER-SCHEDULED` | `src/domain/reminder.ts` | `TC-REM-001` 保存提醒 | 事务详情提醒区（缺失） | FAIL |
 | RTM-025 | 决定是否请求家属 | 保存事务后单独选择“请小梅陪同”或“只提醒我” | `EL-SHARE-01` | `src/features/collaboration/ShareChoicePage.tsx` | `TC-MAIN-007` 两分支 | 选择页静态图（缺失） | FAIL |
@@ -102,21 +102,21 @@
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
 | RTM-047 | 说明 AI 在哪个步骤介入 | AI 只在输入后生成待确认结构，不执行创建或发送 | `EL-TASK-02/03`、`DOC-AI-RULES` | `docs/product/05-ai-and-accessibility.md`、`src/adapters/understanding.ts` | `TC-AI-004` AI 边界 | AI 规则文档与页面图（缺失） | FAIL |
-| RTM-048 | 说明 AI 使用什么信息 | 只用当前输入和明确字段，不读历史、位置、健康或通讯录 | `EL-TASK-03`、`DOC-AI-RULES` | 同上 | `TC-AI-005` 输入白名单 | AI 依据说明图（缺失） | FAIL |
-| RTM-049 | AI 输出与依据可理解 | 分字段复述来自当前输入；不显示虚假权威或编造依据 | `EL-TASK-03` | `src/features/task/ConfirmUnderstandingPage.tsx` | `TC-AI-006` 依据复述 | 确认页图（缺失） | FAIL |
+| RTM-048 | 说明 AI 使用什么信息 | 只用当前输入和明确字段，不读历史、位置、健康或通讯录 | `EL-TASK-03A/03B`、`DOC-AI-RULES` | 同上 | `TC-AI-005` 输入白名单 | AI 依据说明图（缺失） | FAIL |
+| RTM-049 | AI 输出与依据可理解 | 分字段复述来自当前输入；不显示虚假权威或编造依据 | `EL-TASK-03A/03B` | `src/features/task/ConfirmUnderstandingPage.tsx` | `TC-AI-006` 依据复述 | 确认页图（缺失） | FAIL |
 | RTM-050 | 用户可以纠正 AI | 每个必要字段独立修改，修改后重新复述最终结果 | `EL-TASK-04/05` | `src/features/task/*` | `TC-MAIN-004/005` | 修改前后图（缺失） | FAIL |
 | RTM-051 | AI 失败或结果不可信时有办法继续 | 明确失败、保留输入、手动填写；任何结果都需老人确认 | `EL-EX-01/02` | `src/features/task/*` | `TC-AI-001/002/003` | 失败恢复图（缺失） | FAIL |
 | RTM-052 | 历史记忆仅在必要时设计 | 本版不读取或保留 AI 历史记忆；完整历史中心排除 | `DOC-CHARTER-EXCLUDED`、无历史入口 | `docs/product/01-product-charter.md` | `TC-SCOPE-002` 无历史读取/入口 | 当前产品章程；运行证据缺失 | PARTIAL |
 | RTM-053 | 字体、对比度、按钮和步骤适老 | 默认正文约 20 px、触控至少 48 px、对比达 WCAG AA、一屏一主操作 | 所有老人端页面 | `docs/product/05-ai-and-accessibility.md`、`src/styles/tokens.css` | `TC-A11Y-001/002/003` | 视觉审计与截图（缺失） | FAIL |
 | RTM-054 | 措辞和反馈适老 | 成人、直接、尊重；反馈包含发生了什么、当前状态和下一步 | 所有结果/错误状态 | `docs/product/05-ai-and-accessibility.md` | `TC-CONTENT-001` 文案审计 | 文案表与页面图（缺失） | FAIL |
-| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03/04/05` | `src/features/task/*` | `TC-MAIN-004` | 错误、编辑、修正图（缺失） | FAIL |
+| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `src/features/task/*` | `TC-MAIN-004` | 错误、编辑、修正图（缺失） | FAIL |
 | RTM-056 | 支持可调适老能力 | 默认界面已适老；P1 可提供标准/大字与高对比切换 | `EL-SET-01`（P1） | `src/features/settings/*` | `TC-A11Y-004` 显示切换 | P1 设置图（缺失） | FAIL |
 
 ## 8. 页面、状态与连通性
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-057 | 先列页面与状态清单 | 每项含编号、名称、角色、入口、操作、去向和原型位置 | `DOC-PAGE-MATRIX` | `docs/product/04-page-state-matrix.md` | `TC-DOC-006` 字段完整性 | 页面矩阵（缺失） | FAIL |
+| RTM-057 | 先列页面与状态清单 | 每项含编号、名称、角色、入口、操作、去向和原型位置 | `DOC-PAGE-MATRIX` | `docs/product/page-state-matrix.md` | `TC-DOC-006` 字段完整性 | 当前页面与状态总表 | PASS |
 | RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/pages/*` | `TC-PAGE-001` 页面覆盖 | 全部静态导出（缺失） | FAIL |
 | RTM-059 | 导航中不出现空按钮或未完成入口 | 只有 P0 和已完成 P1 可进入；Excluded 不显示 | 全局导航 | `src/app/routes.tsx` | `TC-NAV-002` 可点击元素遍历 | 导航截图与测试（缺失） | FAIL |
 | RTM-060 | 覆盖首次/空状态和正常有数据状态 | 关系首次、家属空列表、已建立关系和有请求均可进入 | `EL-REL-01`、`FM-REQ-00/01` | `src/features/*` | `TC-STATE-001` 首次/空/有数据 | 对应状态图（缺失） | FAIL |
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 文档型要求已有当前证据 | 10 |
+| PASS | 文档型要求已有当前证据 | 11 |
 | PARTIAL | 体验证据或无历史范围已有部分证据 | 3 |
-| FAIL | 实际页面、操作、实现、运行测试或交付证据尚不存在 | 77 |
+| FAIL | 实际页面、操作、实现、运行测试或交付证据尚不存在 | 76 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
