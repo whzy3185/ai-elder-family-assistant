@@ -11,10 +11,11 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 01 / 冻结唯一核心事务、用户、范围和产品边界
+CURRENT_PHASE=Prompt 02 / 建立题目验收追踪矩阵
 CURRENT_BRANCH=research
-CURRENT_COMMIT=7fd54e607bf82ff1e96e2841e8427e3e40328d37
+CURRENT_COMMIT=6183979161c700a6692fdada0dd13292439b4e8d
 SPEC_VERSION=product-charter-1.0.0
+REQUIREMENT_MATRIX_VERSION=1.0.0
 UI_VERSION=not-created
 CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
@@ -24,7 +25,7 @@ PRODUCT_CHARTER_STATUS=PASS
 SCOPE_FREEZE_STATUS=PASS
 DEMO_DATA_STATUS=PASS
 PERMISSION_PRINCIPLES_STATUS=PASS
-REQUIREMENT_MATRIX_STATUS=PARTIAL
+REQUIREMENT_MATRIX_STATUS=PASS
 PAGE_MATRIX_STATUS=FAIL
 WEB_STATUS=FAIL
 DOCKER_STATUS=FAIL
@@ -37,9 +38,10 @@ FINAL_ACCEPTANCE_STATUS=FAIL
 SUBMISSION_STATUS=FAIL
 PROMPT_00_GATE_STATUS=PASS
 PROMPT_01_GATE_STATUS=PASS
+PROMPT_02_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 01 的输入基线。Prompt 01 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
+`CURRENT_COMMIT` 是 Prompt 02 的输入基线。Prompt 02 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
 
 ## 2. 仓库真实状态
 
@@ -48,10 +50,10 @@ PROMPT_01_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `7fd54e607bf82ff1e96e2841e8427e3e40328d37` | PASS | Prompt 01 输入基线 |
-| 远端跟踪 | `origin/research` 为 `7fd54e607bf82ff1e96e2841e8427e3e40328d37` | PASS | Prompt 01 开始时本地与远端一致 |
-| 工作区变更 | Prompt 01 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
-| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有五个提交保持连续 |
+| `research` | `6183979161c700a6692fdada0dd13292439b4e8d` | PASS | Prompt 02 输入基线 |
+| 远端跟踪 | `origin/research` 为 `6183979161c700a6692fdada0dd13292439b4e8d` | PASS | Prompt 02 开始时本地与远端一致 |
+| 工作区变更 | Prompt 02 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
+| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有六个提交保持连续 |
 | 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
 
 ## 3. 已读取的现有成果
@@ -81,9 +83,9 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 ## 5. 状态判定说明
 
-### REQUIREMENT_MATRIX_STATUS=PARTIAL
+### REQUIREMENT_MATRIX_STATUS=PASS
 
-`docs/13-requirements-framework-draft.md` 已有初步验收追踪，但尚未形成 Prompt 02 要求的正式逐条矩阵、唯一需求 ID、页面 ID、测试 ID 与证据位置。
+`docs/delivery/requirement-traceability-matrix.md` 已将 90 项要求映射到产品规则、页面/状态、实现位置、测试 ID、静态证据和当前状态。矩阵完整不等于实际产品验收通过。
 
 ### PAGE_MATRIX_STATUS=FAIL
 
@@ -106,7 +108,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | 阶段 | 目标 | 当前状态 |
 |---|---|---|
 | Prompt 01 | 冻结唯一事务、用户、范围与产品边界 | PASS |
-| Prompt 02 | 建立题目验收追踪矩阵 | PARTIAL |
+| Prompt 02 | 建立题目验收追踪矩阵 | PASS |
 | Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PARTIAL |
 | Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | FAIL |
 | Prompt 05 | 冻结 AI 规则和适老交互规范 | PARTIAL |
@@ -144,7 +146,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | 已建立后续阶段清单 | PASS | 本文件第 6 节 |
 | 工作区和 Git 状态清楚 | PASS | 本文件第 2 节 |
 
-Prompt 01 可以结束。唯一事务、用户、家属条件、P0/P1、Explicitly Excluded、固定演示数据和权限原则已在 `docs/product/01-product-charter.md` 冻结。下一阶段进入 Prompt 02，建立正式题目验收追踪矩阵。研究体验证据仍为 `PARTIAL`，但不阻塞 Prompt 02。
+Prompt 00 已完成：仓库状态、已有成果、缺口和后续阶段均已建立基线。
 
 ## 8. Prompt 01 Gate
 
@@ -157,3 +159,20 @@ Prompt 01 可以结束。唯一事务、用户、家属条件、P0/P1、Explicit
 | Excluded 冻结 | PASS | 产品章程第 11 节 |
 | 固定演示数据冻结 | PASS | 产品章程第 13 节 |
 | 权限原则冻结 | PASS | 产品章程第 12 节 |
+
+Prompt 01 已完成：唯一事务、用户、家属条件、P0/P1、Explicitly Excluded、固定演示数据和权限原则已冻结。
+
+## 9. Prompt 02 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 原题要求逐条拆解 | PASS | `RTM-001`—`RTM-090` |
+| 产品规则无空项 | PASS | Requirement Matrix 产品规则列 |
+| 页面/状态无空项 | PASS | Requirement Matrix 页面/状态列 |
+| 实现位置无空项 | PASS | 当前或冻结目标路径 |
+| 测试用例无空项 | PASS | `TC-*` 测试 ID |
+| 静态证据无空项 | PASS | 当前证据或冻结目标位置 |
+| 缺少实际画面或操作的要求标为 FAIL | PASS | Matrix 当前状态列 |
+| P0 没有“后面再说”空项 | PASS | 全部 P0 均有完整追踪字段 |
+
+Prompt 02 可以结束。下一阶段进入 Prompt 03，冻结业务规则、双状态机和权限矩阵。页面、Web、Docker 和最终验收仍保持 `FAIL`。
