@@ -11,15 +11,19 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 00 / 总控接管、仓库审计与交付状态建立
+CURRENT_PHASE=Prompt 01 / 冻结唯一核心事务、用户、范围和产品边界
 CURRENT_BRANCH=research
-CURRENT_COMMIT=3ba4583660aab0a6effe7bb31ccc17a609778fba
-SPEC_VERSION=research-baseline-0.1.0
+CURRENT_COMMIT=7fd54e607bf82ff1e96e2841e8427e3e40328d37
+SPEC_VERSION=product-charter-1.0.0
 UI_VERSION=not-created
-CORE_SCENARIO=张阿姨明天上午9:00去社区服务中心办理公交卡年审，提前30分钟提醒，并询问女儿小梅能否陪同
+CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
 REPOSITORY_AUDIT_STATUS=PASS
 RESEARCH_READ_STATUS=PASS
+PRODUCT_CHARTER_STATUS=PASS
+SCOPE_FREEZE_STATUS=PASS
+DEMO_DATA_STATUS=PASS
+PERMISSION_PRINCIPLES_STATUS=PASS
 REQUIREMENT_MATRIX_STATUS=PARTIAL
 PAGE_MATRIX_STATUS=FAIL
 WEB_STATUS=FAIL
@@ -32,9 +36,10 @@ RESEARCH_EVIDENCE_STATUS=PARTIAL
 FINAL_ACCEPTANCE_STATUS=FAIL
 SUBMISSION_STATUS=FAIL
 PROMPT_00_GATE_STATUS=PASS
+PROMPT_01_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 00 审计的输入基线。Prompt 00 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
+`CURRENT_COMMIT` 是 Prompt 01 的输入基线。Prompt 01 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
 
 ## 2. 仓库真实状态
 
@@ -43,10 +48,10 @@ PROMPT_00_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `3ba4583660aab0a6effe7bb31ccc17a609778fba` | PASS | 当前 HEAD |
-| 远端跟踪 | `origin/research` 为 `5301b02d15e50b3ef0578f410073b3e4ea459256` | PARTIAL | 本地领先 1 个提交；GitHub 443 连接失败导致尚未推送 |
-| 工作区变更 | Prompt 00 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
-| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有四个提交保持连续 |
+| `research` | `7fd54e607bf82ff1e96e2841e8427e3e40328d37` | PASS | Prompt 01 输入基线 |
+| 远端跟踪 | `origin/research` 为 `7fd54e607bf82ff1e96e2841e8427e3e40328d37` | PASS | Prompt 01 开始时本地与远端一致 |
+| 工作区变更 | Prompt 01 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
+| 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有五个提交保持连续 |
 | 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
 
 ## 3. 已读取的现有成果
@@ -60,13 +65,15 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | 风险、安全与开发准则 | `04`、`05`、`06` | 范围、安全、适老、API 与 GUI 暴露原则已建立 | PASS |
 | 实现、成本与延续性 | `07`、`08`、`09`、`10` | 推荐方案、成本模型、Roadmap 和执行计划已建立 | PASS |
 | 决策与需求基线 | `12`、`13`、`14`、`15` | 核心场景已冻结；部分业务规则和页面决策仍未冻结 | PARTIAL |
-| 正式交付文档 | 产品说明、页面矩阵、Demo Guide、走查和验收报告 | 尚未建立 | FAIL |
+| 正式产品章程 | `docs/product/01-product-charter.md` | 用户、范围、权限和固定数据已冻结 | PASS |
+| 其余正式交付文档 | 产品说明、页面矩阵、Demo Guide、走查和验收报告 | 尚未建立 | FAIL |
 
 ## 4. 当前产品基线
 
 - 老人：72 岁张阿姨，独居或日间独处，具备自主决策能力，会微信语音、扫码和基础手机操作；
 - 家属：同城女儿小梅，工作繁忙，可以查看请求但不能保证陪同；
 - 固定输入：“明天上午九点去社区服务中心办公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。”；
+- 固定时钟：2026-10-06 20:00（Asia/Shanghai）；事务为 2026-10-07 09:00，提醒为 08:30；
 - 固定识别错误：9:00 被识别为 8:00，提醒时间先为 7:30，纠正后变为 8:30；
 - 权限原则：关系授权与单次事务共享分离；家属不能直接修改、删除或完成老人事务；
 - 状态原则：个人事务与家庭协作请求分别建模；
@@ -92,13 +99,13 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 ### DOCUMENT_STATUS=PARTIAL
 
-研究文档较完整；正式产品章程、需求追踪矩阵、页面矩阵、业务规则定稿、产品说明、Demo Guide、走查记录和最终验收报告仍缺失。
+研究文档和正式产品章程已存在；需求追踪矩阵、页面矩阵、业务规则定稿、产品说明、Demo Guide、走查记录和最终验收报告仍缺失。
 
 ## 6. 后续阶段清单
 
 | 阶段 | 目标 | 当前状态 |
 |---|---|---|
-| Prompt 01 | 冻结唯一事务、用户、范围与产品边界 | PARTIAL |
+| Prompt 01 | 冻结唯一事务、用户、范围与产品边界 | PASS |
 | Prompt 02 | 建立题目验收追踪矩阵 | PARTIAL |
 | Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PARTIAL |
 | Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | FAIL |
@@ -137,4 +144,16 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | 已建立后续阶段清单 | PASS | 本文件第 6 节 |
 | 工作区和 Git 状态清楚 | PASS | 本文件第 2 节 |
 
-Prompt 00 可以结束。进入 Prompt 01 前仍需保留三个已知问题：远端推送受网络阻碍、研究体验证据仍为 `PARTIAL`、此前“全程不做代码”的旧约束需要在后续阶段与任务链的 Web/Docker 要求统一解释。
+Prompt 01 可以结束。唯一事务、用户、家属条件、P0/P1、Explicitly Excluded、固定演示数据和权限原则已在 `docs/product/01-product-charter.md` 冻结。下一阶段进入 Prompt 02，建立正式题目验收追踪矩阵。研究体验证据仍为 `PARTIAL`，但不阻塞 Prompt 02。
+
+## 8. Prompt 01 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 唯一核心事务冻结 | PASS | 产品章程第 4 节 |
+| 用户冻结 | PASS | 产品章程第 2.1 节 |
+| 家属条件冻结 | PASS | 产品章程第 2.2—3 节 |
+| P0 冻结 | PASS | 产品章程第 9 节 |
+| Excluded 冻结 | PASS | 产品章程第 11 节 |
+| 固定演示数据冻结 | PASS | 产品章程第 13 节 |
+| 权限原则冻结 | PASS | 产品章程第 12 节 |
