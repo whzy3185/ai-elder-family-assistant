@@ -25,6 +25,9 @@
 | 10 | [执行 Plan](docs/10-execution-plan.md) | 工作分解、验收、分支和提交策略 |
 | 11 | [来源索引](docs/11-sources.md) | 官方来源、访问日期及用途 |
 | 12 | [研究决策登记](docs/12-decision-register.md) | 已确定决策、待验证假设和变更规则 |
+| 13 | [项目需求框架草案](docs/13-requirements-framework-draft.md) | 题目拆解、角色、需求、状态与验收映射 |
+| 14 | [产品阶段限制草案](docs/14-stage-guardrails-draft.md) | 各阶段范围、数据、AI、安全、成本和退出门槛 |
+| 15 | [能力边界与主观决策审计](docs/15-ability-boundaries-and-decision-audit.md) | 无代码条件下的交付边界、已知信息和完整决策积压 |
 
 ## 证据标记
 
