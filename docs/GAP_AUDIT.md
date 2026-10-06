@@ -60,11 +60,11 @@
 
 | 题目要求 | 当前已有成果 | 状态 | 明确缺失 | 后续阶段 | 验收证据 |
 |---|---|---|---|---|---|
-| 正式页面与状态清单 | 老人、关系、家属和 Demo 页面均已编号并映射测试 | PASS | 实际画面在 Prompt 06 产生 | Prompt 06、15 | `docs/product/page-state-matrix.md` |
+| 正式页面与状态清单 | 老人、关系、家属和 Demo 页面均已编号并映射测试 | PASS | 65 个 Figma 画面已生成并与清单精确一致 | Prompt 06、15 | `docs/product/page-state-matrix.md`、`artifacts/design/figma-source.md` |
 | 信息架构与完整 Flow | IA、主流程 A、修改/撤回/取消 B、失败/未回应/拒绝 C 已冻结 | PASS | 运行态验证在 Prompt 08—13 完成 | Prompt 08—13 | `information-architecture.md`、`user-flows.md` |
 | 适老交互规范 | 390×844、字号、对比度、主按钮、交互、文案和验收表已冻结 | PASS | 实际视觉审计随后续页面产生 | Prompt 06、14 | 三份 Prompt 05 规范与视觉审计 |
-| 老人端完整静态原型 | 无画面 | FAIL | 全部必要页面和状态 | Prompt 06、15 | 可独立查看的导出目录/PDF |
-| 家属端完整静态原型 | 无画面 | FAIL | 全部必要页面和状态 | Prompt 06、15 | 可独立查看的导出目录/PDF |
+| 老人端完整静态原型 | 规范设计源已有 36 个老人端画面 | PARTIAL | Prompt 15 仍需逐画面导出 PNG/PDF | Prompt 15 | HTML/CSS 设计源、导出目录/PDF |
+| 家属端完整静态原型 | 规范设计源已有 12 个家属端画面，P0 挤压已修复 | PARTIAL | Prompt 15 仍需逐画面导出 PNG/PDF | Prompt 15 | HTML/CSS 设计源、Design Audit、导出目录/PDF |
 | 可操作 Web 原型与源码 | 无工程、无源码 | FAIL | 工程、组件、状态机、全部流程 | Prompt 07—10 | 浏览器操作和源码 |
 | Demo Controller | 仅有概念 | FAIL | 角色、状态、重置和场景入口 | Prompt 10 | 控制器页面与自动测试 |
 | Docker 启动 | 无 Docker 文件 | FAIL | Dockerfile、Compose、Nginx 和启动验证 | Prompt 11、20 | `docker compose up --build` 日志 |
@@ -91,8 +91,8 @@
 
 1. 研究资产可直接复用，不应重做泛行业调研；
 2. 核心用户、核心事务和主要隐私原则已有稳定基础；
-3. 正式需求追踪矩阵、业务规则、页面矩阵、完整 Flow、AI 规则、适老和文案规范已建立；最大产品缺口转为高保真画面和运行实现；
-4. 最大交付缺口是静态设计、Web、Docker、运行态测试与正式交付文档全部尚未开始；
+3. 正式需求追踪矩阵、业务规则、页面矩阵、完整 Flow、AI 规则、适老、文案规范和 65 个高保真画面已建立；当前产品缺口转为运行实现；
+4. 最大交付缺口是可操作 Web、Docker、运行态测试、全量静态导出与正式交付文档；
 5. 体验证据存在，但严格可复核程度仍为 `PARTIAL`；
-6. Prompt 00—05 已按顺序通过阶段 Gate；下一步为 Prompt 06 高保真设计与设计审计；
+6. Prompt 00—06 已按顺序通过阶段 Gate；Figma Starter 额度已通过仓库内规范设计源方案解除阻碍；
 7. 在 Prompt 22 通过前，`FINAL_ACCEPTANCE_STATUS` 必须保持 `FAIL`；在最终 SHA、材料回执和网页确认完成前，`SUBMISSION_STATUS` 必须保持 `FAIL`。

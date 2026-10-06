@@ -1,0 +1,88 @@
+{
+  "runId": "prompt06-hifi-20261006",
+  "scope": "full P0 mobile UI and design audit",
+  "fileKey": "mrG3v1XKOEaTMztedG1zpt",
+  "fileUrl": "https://www.figma.com/design/mrG3v1XKOEaTMztedG1zpt",
+  "step": "complete-supplemental-figma",
+  "inventory": {
+    "viewport": "390x844",
+    "font": "Noto Sans SC",
+    "screenCount": 65,
+    "groups": ["Elder", "Relationship", "Family", "Demo"],
+    "components": ["Button", "StatusBadge", "FieldRow", "RoleBar"]
+  },
+  "discovery": {
+    "codeConnect": "none",
+    "existingScreens": "empty new file",
+    "libraries": ["Material 3 Design Kit", "Simple Design System"],
+    "reuseDecision": "local components required because the project freezes Noto Sans SC, 20px elder body text and 56px main controls",
+    "planConstraint": "Starter plan supports 3 Figma pages; Elder, Relationship and Family use separate boards on one Product Screens page"
+  },
+  "entities": {
+    "pages": {
+      "foundations": "0:1",
+      "productScreens": "3:2",
+      "demo": "3:3"
+    },
+    "collections": {
+      "primitives": "VariableCollectionId:3:4",
+      "semantic": "VariableCollectionId:3:5",
+      "size": "VariableCollectionId:3:6"
+    },
+    "variables": {
+      "color/bg/canvas": "VariableID:3:25",
+      "color/bg/surface": "VariableID:3:26",
+      "color/bg/subtle": "VariableID:3:27",
+      "color/text/primary": "VariableID:3:31",
+      "color/text/secondary": "VariableID:3:32",
+      "color/border/default": "VariableID:3:34",
+      "spacing/sm": "VariableID:3:48",
+      "spacing/md": "VariableID:3:49",
+      "spacing/lg": "VariableID:3:50",
+      "radius/lg": "VariableID:3:55"
+    },
+    "styles": {
+      "Display/Strong": "S:a4a7053b60d9f7c0e8a2d71e1e43a5d74011a63e,",
+      "Heading/Page": "S:d78477fc584ca82205205e314f6ada9dcf45c13a,",
+      "Title/Card": "S:7ce54e1c7873b6709dbf9c2886c63fc0c76d6f51,",
+      "Body/Elder": "S:86b102aade683a7b146c19030752bfcbb2ebd2a0,",
+      "Body/Strong": "S:5c10b71b80da092343e9a215f43e296a37dd7986,",
+      "Meta/Regular": "S:b0fda3bd2af090ae5e5a206405c696ad4b1aa6f3,",
+      "Meta/Strong": "S:e55a9d05aefb2835d5ad760e1dd6bd8f17d55616,",
+      "Button/Label": "S:80cdabe0e4e3328080cdc027dde2c44f6b63e906,",
+      "Elevation/Card": "S:e83dd739066d73ca40fed8d387a2deea496c686a,"
+    },
+    "components": {
+      "Button": "3:75",
+      "StatusBadge": "3:86",
+      "RoleBar": "3:99",
+      "FieldRow": "3:100",
+      "InfoCard": "3:103"
+    },
+    "boards": {
+      "elder": {"nodeId": "7:18", "screenCount": 36},
+      "relationship": {"nodeId": "8:329", "screenCount": 12},
+      "family": {"nodeId": "8:513", "screenCount": 12},
+      "demo": {"nodeId": "8:697", "screenCount": 5}
+    }
+  },
+  "pendingValidations": [],
+  "completedSteps": [
+    "prompt04-page-matrix",
+    "prompt05-ai-accessibility-content",
+    "figma-discovery",
+    "foundations-created",
+    "65-screens-created",
+    "screen-id-exact-match",
+    "structural-audit-no-issues",
+    "business-consistency-audit",
+    "three-board-visual-review",
+    "source-copy-fix-prepared",
+    "repository-native-65-screen-layout-audit",
+    "repository-native-five-screen-visual-review",
+    "spec-freeze-true"
+  ],
+  "blocker": null,
+  "specFreeze": true,
+  "canonicalDesignSource": "artifacts/design/local-prototype/"
+}

@@ -11,12 +11,12 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 05 / AI 规则和适老交互规范冻结
+CURRENT_PHASE=Prompt 06 / 高保真设计审计完成，待提交
 CURRENT_BRANCH=research
-CURRENT_COMMIT=81ccaee5af5b97ea4bebed3e96858a543e9be97a
+CURRENT_COMMIT=0a128d692bf860ac3b5fba4337eae4b58cd4bc7a
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
-UI_VERSION=not-created
+UI_VERSION=repository-hifi-1.0.0
 CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
 REPOSITORY_AUDIT_STATUS=PASS
@@ -37,6 +37,10 @@ VISUAL_REQUIREMENT_MAPPING_STATUS=PASS
 AI_RULES_STATUS=PASS
 ACCESSIBILITY_GUIDELINES_STATUS=PASS
 CONTENT_GUIDELINES_STATUS=PASS
+DESIGN_SOURCE_STATUS=PASS
+HIFI_SCREEN_STATUS=PASS
+DESIGN_AUDIT_STATUS=PASS
+SPEC_FREEZE=TRUE
 WEB_STATUS=FAIL
 DOCKER_STATUS=FAIL
 MAIN_FLOW_STATUS=PARTIAL
@@ -52,9 +56,10 @@ PROMPT_02_GATE_STATUS=PASS
 PROMPT_03_GATE_STATUS=PASS
 PROMPT_04_GATE_STATUS=PASS
 PROMPT_05_GATE_STATUS=PASS
+PROMPT_06_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 05 的输入基线。Prompt 05 产生的新提交 SHA 以本阶段报告和 Git 历史为准，下一阶段开始时更新本字段。
+`CURRENT_COMMIT` 是 Prompt 06 的输入基线。Prompt 06 已通过 Gate，当前高保真工作将在本阶段完成 commit 后更新 Git 历史。
 
 ## 2. 仓库真实状态
 
@@ -63,9 +68,9 @@ PROMPT_05_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `81ccaee5af5b97ea4bebed3e96858a543e9be97a` | PASS | Prompt 05 输入基线 |
-| 远端跟踪 | `origin/research` 为 `81ccaee5af5b97ea4bebed3e96858a543e9be97a` | PASS | Prompt 05 开始时本地与远端一致 |
-| 工作区变更 | Prompt 05 开始前工作区干净 | PASS | `git status --porcelain=v2 --branch` |
+| `research` | `0a128d692bf860ac3b5fba4337eae4b58cd4bc7a` | PASS | Prompt 06 输入基线 |
+| 远端跟踪 | `origin/research` 为 `0a128d692bf860ac3b5fba4337eae4b58cd4bc7a` | PASS | Prompt 06 开始时本地与远端一致 |
+| 工作区变更 | Prompt 06 高保真设计文件和审计结果待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
 | 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
 | 代码与构建文件 | 尚不存在 | FAIL | 无 `package.json`、前端源码、Dockerfile 或 Compose 文件 |
 
@@ -102,7 +107,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 ### PAGE_MATRIX_STATUS=PASS
 
-正式页面与状态总表已覆盖老人端、关系、家属端和 Demo Controller，且每项均包含编号、角色、进入条件、状态、内容、操作、去向和测试映射。高保真画面尚未产生，不影响本字段对“清单完整性”的判定。
+正式页面与状态总表已覆盖老人端、关系、家属端和 Demo Controller，且每项均包含编号、角色、进入条件、状态、内容、操作、去向和测试映射。Figma 已生成 65 个对应画面，编号集合与矩阵精确一致。
 
 ### MAIN_FLOW_STATUS=PARTIAL
 
@@ -125,7 +130,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PASS |
 | Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | PASS |
 | Prompt 05 | 冻结 AI 规则和适老交互规范 | PASS |
-| Prompt 06 | 完成高保真设计并进行设计审计 | FAIL |
+| Prompt 06 | 完成高保真设计并进行设计审计 | PASS |
 | Prompt 07 | 建立 Web 工程和基础状态模型 | FAIL |
 | Prompt 08 | 实现完整主流程 | FAIL |
 | Prompt 09 | 实现全部异常和修改分支 | FAIL |
@@ -232,4 +237,19 @@ Prompt 04 已完成；页面矩阵、信息架构和 A/B/C 流程已作为 Promp
 | 成年化、尊重式文案和固定术语已冻结 | PASS | `content-guidelines.md` |
 | AI 失败、纠错和降级均映射页面 ID | PASS | `ai-rules.md` 第 9 节 |
 
-Prompt 05 可以结束。下一阶段进入 Prompt 06，完成高保真设计并做设计审计；当前尚无高保真画面，因此 `WEB_STATUS` 和静态视觉证据仍为 `FAIL`。
+Prompt 05 已结束。Prompt 06 已生成完整高保真画面，但尚有一个 live Figma P0 视觉修正未闭环；`WEB_STATUS` 仍为 `FAIL`，静态导出仍待 Prompt 15。
+
+## 13. Prompt 06 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 65 个页面状态均有高保真画面 | PASS | Figma 四个 Board；`figma-source.md` |
+| 页面矩阵与设计编号精确一致 | PASS | 65 对 65，无缺失、无额外、无重复 |
+| 统一字号、组件、间距、角色和状态表达 | PASS | Foundations 变量、样式和五类组件 |
+| 业务一致性十一项检查 | PASS | `docs/validation/design-audit.md` 第 2 节 |
+| 结构审计无溢出、字体或触控尺寸问题 | PASS | `06-structural-audit.js` 返回 `issues=[]` |
+| 代表性视觉抽查 | PASS | 老人纠错、改期、权限、家属请求和 Demo 五类本地浏览器截图 |
+| 所有 P0 UI 问题在规范设计源中修复 | PASS | `DA-P0-001` 已关闭；`FM-REQ-01` 本地截图无挤压 |
+| `SPEC_FREEZE = TRUE` | PASS | 仓库内规范设计源已冻结 |
+
+Prompt 06 已通过。Figma 文件保留为补充参考；规范设计源切换为仓库内 HTML/CSS 画廊，已通过 65 屏自动布局审计和五类视觉抽查，因此外部平台额度不再阻碍 Prompt 07。

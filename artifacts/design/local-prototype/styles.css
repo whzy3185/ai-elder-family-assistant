@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  --canvas: #f8f5ee;
+  --surface: #ffffff;
+  --subtle: #f1f5f4;
+  --text: #15323a;
+  --muted: #64787b;
+  --border: #b9c9c8;
+  --primary: #19776e;
+  --primary-soft: #d7f0ed;
+  --family-soft: #dceff8;
+  --demo-soft: #eee5fb;
+  --info: #dceff8;
+  --success: #dcefe2;
+  --warning: #fff0c3;
+  --danger: #f9dedc;
+  --neutral: #edf1f1;
+  --shadow: 0 10px 24px rgba(21, 50, 58, .14), 0 2px 5px rgba(21, 50, 58, .12);
+  font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #eaf0ef; color: var(--text); }
+button { font: inherit; }
+
+.gallery-header {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; justify-content: space-between; gap: 32px; align-items: end;
+  padding: 24px 32px; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--border);
+}
+.gallery-header h1 { margin: 4px 0; font-size: 30px; line-height: 1.25; }
+.gallery-header p { margin: 0; color: var(--muted); }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .08em; color: var(--primary) !important; }
+#filters { display: flex; flex-wrap: wrap; gap: 8px; }
+#filters button { min-height: 44px; padding: 0 16px; border: 1px solid var(--border); border-radius: 12px; background: white; color: var(--text); cursor: pointer; }
+#filters button[aria-pressed="true"] { border-color: var(--primary); background: var(--primary); color: white; }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(390px, 390px)); justify-content: center; gap: 56px; padding: 48px; }
+.screen-wrap { display: grid; gap: 12px; }
+.screen-label { margin: 0; font-size: 14px; font-weight: 700; color: #3c5b5e; }
+.screen {
+  width: 390px; height: 844px; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 24px; background: var(--canvas); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow);
+}
+.rolebar { height: 48px; flex: 0 0 48px; display: flex; align-items: center; gap: 12px; padding: 0 14px; border-radius: 24px; background: var(--primary-soft); font-size: 17px; font-weight: 700; }
+.rolebar.family { background: var(--family-soft); }
+.rolebar.demo { background: var(--demo-soft); }
+.avatar { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: white; }
+.screen h2 { margin: 0; font-size: 29px; line-height: 1.28; letter-spacing: -.02em; }
+.badge { align-self: flex-start; min-height: 36px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 18px; font-size: 16px; font-weight: 500; }
+.badge.info { background: var(--info); }.badge.success { background: var(--success); }.badge.warning { background: var(--warning); }.badge.danger { background: var(--danger); }.badge.neutral { background: var(--neutral); }
+.card { min-height: 190px; padding: 18px 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); box-shadow: 0 3px 8px rgba(21,50,58,.08); }
+.card h3 { margin: 0 0 6px; font-size: 23px; line-height: 1.4; }
+.card p { margin: 0; font-size: 20px; line-height: 1.65; color: var(--muted); }
+.field { min-height: 82px; padding: 10px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--subtle); }
+.field small { display: block; margin-bottom: 3px; font-size: 15px; color: var(--muted); }
+.field strong { display: block; font-size: 19px; line-height: 1.45; }
+.actions { display: grid; gap: 12px; margin-top: auto; }
+.action { min-height: 56px; border-radius: 14px; border: 2px solid transparent; padding: 10px 16px; font-size: 20px; line-height: 1.3; font-weight: 700; text-align: center; }
+.action.primary { color: white; background: var(--primary); }
+.action.secondary { color: var(--primary); background: white; border-color: var(--primary); }
+.action.danger { color: #8f1d18; background: var(--danger); border-color: #cf5149; }
+.action.quiet { color: var(--text); background: #f3f6f5; }
+
+body.single { width: 438px; min-height: 892px; background: transparent; }
+body.single .gallery-header, body.single .screen-label { display: none; }
+body.single .gallery { display: block; padding: 24px; }
+
+@media (max-width: 700px) {
+  .gallery-header { position: static; align-items: start; flex-direction: column; padding: 20px; }
+  .gallery { padding: 20px; grid-template-columns: minmax(0,390px); }
+}

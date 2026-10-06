@@ -117,16 +117,16 @@
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
 | RTM-057 | 先列页面与状态清单 | 每项含编号、名称、角色、入口、操作、去向和原型位置 | `DOC-PAGE-MATRIX` | `docs/product/page-state-matrix.md` | `TC-DOC-006` 字段完整性 | 当前页面与状态总表 | PASS |
-| RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/pages/*` | `TC-PAGE-001` 页面覆盖 | 全部静态导出（缺失） | FAIL |
+| RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/pages/*` | `TC-PAGE-001` 页面覆盖 | 65 屏 HTML/CSS 设计源已完成；运行实现和全量导出待后续 | PARTIAL |
 | RTM-059 | 导航中不出现空按钮或未完成入口 | 只有 P0 和已完成 P1 可进入；Excluded 不显示 | 全局导航 | `src/app/routes.tsx` | `TC-NAV-002` 可点击元素遍历 | 导航截图与测试（缺失） | FAIL |
-| RTM-060 | 覆盖首次/空状态和正常有数据状态 | 关系首次、家属空列表、已建立关系和有请求均可进入 | `EL-REL-01`、`FM-REQ-00/01` | `src/features/*` | `TC-STATE-001` 首次/空/有数据 | 对应状态图（缺失） | FAIL |
-| RTM-061 | 覆盖处理中、成功、失败和重试 | AI 处理、请求发送中、保存/回应成功、解析/发送失败和重试分别可见 | `EL-TASK-02`、`EL-SHARE-03`、`EL-EX-02/03` | `src/features/*` | `TC-STATE-002` 状态覆盖 | 状态截图组（缺失） | FAIL |
-| RTM-062 | 覆盖修改、取消和返回 | 单字段修改、撤回请求、取消事务、非破坏性返回均可操作 | `EL-TASK-04/08`、`EL-EX-05/06` | `src/features/*` | `TC-STATE-003` 修改取消返回 | 状态截图组（缺失） | FAIL |
+| RTM-060 | 覆盖首次/空状态和正常有数据状态 | 关系首次、家属空列表、已建立关系和有请求均可进入 | `EL-REL-01`、`FM-REQ-00/01` | `src/features/*` | `TC-STATE-001` 首次/空/有数据 | 对应高保真画面已完成；可操作验证待后续 | PARTIAL |
+| RTM-061 | 覆盖处理中、成功、失败和重试 | AI 处理、请求发送中、保存/回应成功、解析/发送失败和重试分别可见 | `EL-TASK-02`、`EL-SHARE-03`、`EL-EX-02/03` | `src/features/*` | `TC-STATE-002` 状态覆盖 | 对应高保真画面已完成；可操作验证待后续 | PARTIAL |
+| RTM-062 | 覆盖修改、取消和返回 | 单字段修改、撤回请求、取消事务、非破坏性返回均可操作 | `EL-TASK-04/08`、`EL-EX-05/06` | `src/features/*` | `TC-STATE-003` 修改取消返回 | 对应高保真画面已完成；可操作验证待后续 | PARTIAL |
 | RTM-063 | 页面和关键操作连通 | 入口到结果、返回修改、角色切换均无断点 | 主流程和异常 Flow | `tests/e2e/navigation.spec.ts` | `TC-E2E-002` 全链接走查 | 录屏与走查记录（缺失） | FAIL |
-| RTM-064 | 示例内容和状态保持一致 | 修改时间后提醒、共享详情、家属端和结果页同步；取消后不显示成功 | 全部跨角色状态 | `src/domain/selectors.ts` | `TC-CONSIST-001` 跨页面一致性 | 对照截图（缺失） | FAIL |
-| RTM-065 | AI、业务数据、等待和失败可以模拟且需说明 | Demo Controller 显式标注模拟，不伪装真实服务 | `DM-01/02` | `src/features/demo/*` | `TC-DEMO-001` 模拟标识 | Demo 工具图（缺失） | FAIL |
-| RTM-066 | 统一布局、导航和视觉层级 | 390 × 844 移动 Web；老人端和家属端共享设计系统 | 全部页面 | `src/styles/*`、`src/components/*` | `TC-VISUAL-001` 一致性审计 | 全套静态图（缺失） | FAIL |
-| RTM-067 | 可从预置登录状态开始但不能省略核心授权 | 不实现登录注册；保留关系确认和每次共享确认 | 首屏预置身份、`EL-REL-*` | `src/app/fixtures.ts` | `TC-AUTH-001` 预置身份与授权 | 身份说明和授权图（缺失） | FAIL |
+| RTM-064 | 示例内容和状态保持一致 | 修改时间后提醒、共享详情、家属端和结果页同步；取消后不显示成功 | 全部跨角色状态 | `src/domain/selectors.ts` | `TC-CONSIST-001` 跨页面一致性 | Design Audit 纸面与画面一致性通过；运行验证待后续 | PARTIAL |
+| RTM-065 | AI、业务数据、等待和失败可以模拟且需说明 | Demo Controller 显式标注模拟，不伪装真实服务 | `DM-01/02` | `src/features/demo/*` | `TC-DEMO-001` 模拟标识 | `review-local/DM-01.png`；交互待 Prompt 10 | PARTIAL |
+| RTM-066 | 统一布局、导航和视觉层级 | 390 × 844 移动 Web；老人端和家属端共享设计系统 | 全部页面 | `src/styles/*`、`src/components/*` | `TC-VISUAL-001` 一致性审计 | 65 屏自动布局审计 `issues=[]`；Web 实现待后续 | PARTIAL |
+| RTM-067 | 可从预置登录状态开始但不能省略核心授权 | 不实现登录注册；保留关系确认和每次共享确认 | 首屏预置身份、`EL-REL-*` | `src/app/fixtures.ts` | `TC-AUTH-001` 预置身份与授权 | 身份和授权画面已完成；运行实现待后续 | PARTIAL |
 
 ## 9. 核心功能说明、指标和验证
 
@@ -151,7 +151,7 @@
 | RTM-079 | 产品说明覆盖用户、依据、范围、流程、AI、指标和验证 | 最终合并为一份与 Release 一致的正式说明 | `DOC-PRODUCT-SPEC` | `docs/product/17-product-spec.md` | `TC-DOC-008` 章节覆盖 | 正式产品说明（缺失） | FAIL |
 | RTM-080 | 完整原型图按页面与状态编号整理 | 每个必要页面和关键状态可独立查看 | `DOC-STATIC-INDEX` | `artifacts/static/index.md`、`artifacts/static/*.png`、PDF | `TC-STATIC-001` 页面矩阵一一对应 | PNG/PDF（缺失） | FAIL |
 | RTM-081 | 可操作 Web 原型和可编辑源码 | 全部 P0 连续可操作，使用本地确定性状态和虚构数据 | 全部 `EL-*`、`FM-*`、`DM-*` | `src/*` | `TC-E2E-*`、`TC-UNIT-*` | 运行截图与源码（缺失） | FAIL |
-| RTM-082 | 设计工具存在时提供源文件或访问方式 | 若 Prompt 06 使用设计工具，则源文件进入 `artifacts/design/`；否则以 Web 源码和导出为准 | `DOC-DESIGN-SOURCE` | `artifacts/design/` | `TC-DELIVERY-001` 源文件可访问 | 设计源文件（缺失） | FAIL |
+| RTM-082 | 设计工具存在时提供源文件或访问方式 | 规范源使用仓库内 HTML/CSS；Figma 文件作为补充参考 | `DOC-DESIGN-SOURCE` | `artifacts/design/local-prototype/`、`artifacts/design/figma-source.md` | `TC-DELIVERY-001` 源文件可访问 | 可编辑设计源、生成脚本、Figma URL 和审计证据 | PASS |
 | RTM-083 | 提供 Dockerfile | 多阶段构建或等效静态镜像，无秘密和外部服务 | `DOC-DOCKER` | `Dockerfile` | `TC-DOCKER-001` 镜像构建 | Dockerfile（缺失） | FAIL |
 | RTM-084 | 提供 Docker Compose 配置 | 单命令启动前端，端口和健康检查明确 | `DOC-DOCKER` | `compose.yaml` | `TC-DOCKER-002` Compose 启动 | Compose 文件（缺失） | FAIL |
 | RTM-085 | `docker compose up --build` 后浏览器可完成演示 | 干净环境、无公网、无密钥完成主流程和异常 | `WEB-RUNNING` | Docker 运行环境 | `TC-DOCKER-003` 浏览器冒烟 | 启动日志和截图（缺失） | FAIL |
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 文档型要求已有当前证据 | 12 |
-| PARTIAL | 已有规则或体验证据，但视觉/运行证据不完整 | 11 |
-| FAIL | 实际页面、操作、实现、运行测试或交付证据尚不存在 | 67 |
+| PASS | 当前要求已有足够仓库证据 | 13 |
+| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 19 |
+| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 58 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
@@ -182,7 +182,7 @@
 | 每项包含实现位置 | PASS | 当前或冻结的目标路径 |
 | 每项包含测试用例 | PASS | `TC-*` ID 无空项 |
 | 每项包含静态证据位置 | PASS | 当前证据或明确目标位置 |
-| 实际画面/操作缺失项标为 FAIL | PASS | 所有尚无运行证据的操作型要求均为 `FAIL` |
+| 缺失证据如实标记 | PASS | 有画面无运行证据的项目为 `PARTIAL`；完全无当前证据的项目为 `FAIL` |
 | P0 无“后面再说”空项 | PASS | 所有 P0 已有规则、状态、路径、测试和证据目标 |
 
 `REQUIREMENT_MATRIX_STATUS=PASS` 只表示追踪矩阵完整，不表示产品已经通过验收。`FINAL_ACCEPTANCE_STATUS` 仍为 `FAIL`。

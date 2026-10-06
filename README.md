@@ -38,6 +38,9 @@
 | P-05A | [AI 理解规则](docs/product/ai-rules.md) | 输入/输出白名单、确认、纠错、失败与手动降级 |
 | P-05B | [适老交互规范](docs/product/accessibility-guidelines.md) | viewport、字号、触控、反馈、缩放与验收基线 |
 | P-05C | [产品文案规范](docs/product/content-guidelines.md) | 成人化语言、固定术语、结果模板与禁用表达 |
+| D-06A | [仓库内高保真设计源](artifacts/design/local-prototype/README.md) | 65 个高保真画面、逐屏访问、可编辑 HTML/CSS 和自动布局审计 |
+| D-06F | [Figma 补充设计源](artifacts/design/figma-source.md) | 早期设计系统、节点索引和 Figma 快照限制 |
+| D-06B | [Design Audit](docs/validation/design-audit.md) | 页面完整性、业务一致性、视觉抽查与 P0 缺口 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |
