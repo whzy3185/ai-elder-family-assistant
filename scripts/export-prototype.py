@@ -18,7 +18,8 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'exports'
 SCREENS = OUT / 'screens'
-FREEZE_SHA = 'e3144cc75796f0b3179f4daa55f3f9ace9474f9e'
+VERSION = json.loads((ROOT / 'package.json').read_text())['version']
+FREEZE_SHA = subprocess.check_output(['git','log','-1','--format=%H','--','src','package.json','package-lock.json','Dockerfile','compose.yaml','compose.local.yaml','index.html','server.mjs'],cwd=ROOT,text=True).strip()
 items = json.loads(subprocess.check_output([
     'node', '--input-type=module', '-e',
     "import {screenDefinitions} from './src/screen-catalog.js'; console.log(JSON.stringify(screenDefinitions));"
@@ -28,7 +29,7 @@ assert audit['status'] == 'PASS' and audit['count'] == 65
 assert len(items) == 65 and len(list(SCREENS.glob('*.png'))) == 65
 pdfmetrics.registerFont(TTFont('Chinese', os.environ['PDF_FONT'], subfontIndex=0))
 c = canvas.Canvas(str(OUT / 'prototype-pages.pdf'), pagesize=(595, 842))
-c.setTitle('安心记事 - Release 1.0.0 完整页面原型')
+c.setTitle(f'安心记事 - Release {VERSION} 完整页面原型')
 c.setAuthor('AI elder family assistant project')
 c.setFillColor(HexColor('#15323a'))
 c.setFont('Chinese', 27)
@@ -37,7 +38,7 @@ c.setFont('Chinese', 18)
 c.drawString(42, 735, '面向老年人的 AI 日常事务与家庭协作助手')
 c.setFont('Chinese', 13)
 lines = [
-    'Release 1.0.0 | 2026-10-07 | 65 个页面与关键状态',
+    f'Release {VERSION} | 2026-10-07 | 65 个页面与关键状态',
     '全部图片来自最终 Docker Web；不是旧设计稿。',
     '主要演示视口：390 x 844；图片完整保留页面滚动内容。',
     '长页面采用随图片高度变化的 PDF 页面，避免缩小或截断。',
@@ -80,7 +81,7 @@ for number, item in enumerate(items, 1):
     c.drawString(30, page_height - 46, item['name'])
     c.drawImage(str(image), 30, 30, width=width, height=height)
     c.setFont('Chinese', 9)
-    c.drawString(30, 12, f"Release 1.0.0 | {item['role']} | {number}/65 | 完整滚动页面")
+    c.drawString(30, 12, f"Release {VERSION} | {item['role']} | {number}/65 | 完整滚动页面")
     c.bookmarkPage(item['id'])
     c.addOutlineEntry(f"{item['id']} {item['name']}", item['id'], 0)
     c.showPage()
@@ -92,7 +93,7 @@ reader = PdfReader(str(OUT / 'prototype-pages.pdf'))
 assert len(reader.pages) == 69, len(reader.pages)
 for record in records:
     assert record['id'] in reader.pages[record['pdfPage']-1].extract_text()
-rows = ['# Release 1.0.0 完整原型索引', '',
+rows = [f'# Release {VERSION} 完整原型索引', '',
         f'源码冻结：`{FREEZE_SHA}`。65/65 项来自同版 Docker Web 全长截图。', '',
         'Web 入口统一为：演示控制 → 按编号查看全部页面与状态 → 选择编号。加载会替换当前模拟数据。', '',
         'DM-01 是每页底部角色工具；DM-02/DM-03 共用控制台布局，分别定位场景及固定时钟，不省略状态。', '',
@@ -106,5 +107,5 @@ for record in records:
 source_files = [ROOT / x for x in ['package.json','package-lock.json','index.html','server.mjs','Dockerfile','compose.yaml','compose.local.yaml']]
 source_files += sorted((ROOT / 'src').rglob('*'))
 manifest = {str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest() for f in source_files if f.is_file()}
-(OUT / 'source-manifest.json').write_text(json.dumps({'version':'1.0.0','sourceFreezeSha':FREEZE_SHA,'files':manifest},indent=2)+'\n')
+(OUT / 'source-manifest.json').write_text(json.dumps({'version':VERSION,'sourceFreezeSha':FREEZE_SHA,'files':manifest},indent=2)+'\n')
 print(json.dumps({'status':'PASS','screens':65,'pdfPages':len(reader.pages),'output':'exports/prototype-pages.pdf'}))

@@ -1,0 +1,327 @@
+[
+  {
+    "id": "EL-TASK-00",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-01",
+    "sameSize": false,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-02",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-03A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-03B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-04",
+    "sameSize": false,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-05",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-06",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-07",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-08",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-09A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-09B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-TASK-10",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-02A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-02B",
+    "sameSize": false,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-01B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-02",
+    "sameSize": false,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-03",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-04A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-04B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-05",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-06",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-07",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-08",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SHARE-09",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-03",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-04",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-05A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-05B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-06A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-06B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-07A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-EX-07B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-SET-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REL-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-02",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-02A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-03",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REL-03",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-06",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REL-02",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-07",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-04A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "EL-REL-05",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REL-04",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-00",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-02",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-03A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-03B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-04A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-04B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-05A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-REQ-05B",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-EX-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-EX-02",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "FM-EX-03",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "DM-01",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "DM-02",
+    "sameSize": false,
+    "pixelIdentical": false
+  },
+  {
+    "id": "DM-03",
+    "sameSize": false,
+    "pixelIdentical": false
+  },
+  {
+    "id": "DM-04A",
+    "sameSize": true,
+    "pixelIdentical": false
+  },
+  {
+    "id": "DM-04B",
+    "sameSize": true,
+    "pixelIdentical": false
+  }
+]
