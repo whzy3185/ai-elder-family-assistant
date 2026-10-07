@@ -1,0 +1,61 @@
+ Container ai-elder-family-assistant-prototype-1 Stopping 
+ Container ai-elder-family-assistant-prototype-1 Stopped 
+ Container ai-elder-family-assistant-prototype-1 Removing 
+ Container ai-elder-family-assistant-prototype-1 Removed 
+ Network ai-elder-family-assistant_default Removing 
+ Network ai-elder-family-assistant_default Removed 
+time="2026-10-07T18:37:09+08:00" level=warning msg="buildx Docker CLI plugin not found: falling back to the classic builder. BuildKit-only build features (multi-arch, secrets, ssh, additional contexts, ...) will not be available"
+ Image ai-elder-family-assistant-prototype Building 
+ Image ai-elder-family-assistant-prototype Building 
+Sending build context to Docker daemon  541.8kB
+Sending build context to Docker daemon  8.241MB
+
+Step 1/12 : FROM node:22.20.0-alpine3.22@sha256:dbcedd8aeab47fbc0f4dd4bffa55b7c3c729a707875968d467aaaea42d6225af
+ ---> dbcedd8aeab4
+Step 2/12 : WORKDIR /app
+ ---> Using cache
+ ---> 82840a1ebef3
+Step 3/12 : COPY package.json package-lock.json ./
+ ---> Using cache
+ ---> f68b9eb155e4
+Step 4/12 : RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
+ ---> Using cache
+ ---> ec4ced47ae80
+Step 5/12 : COPY index.html server.mjs ./
+ ---> Using cache
+ ---> db511c49bfd1
+Step 6/12 : COPY src ./src
+ ---> Using cache
+ ---> ff9cc8af1d8c
+Step 7/12 : ENV NODE_ENV=production     PORT=8080
+ ---> Using cache
+ ---> de23adcadef7
+Step 8/12 : EXPOSE 8080
+ ---> Using cache
+ ---> 1e7d72dcb6bf
+Step 9/12 : USER node
+ ---> Using cache
+ ---> 09d7f62fb944
+Step 10/12 : HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3   CMD wget -q -O /dev/null http://127.0.0.1:8080/ || exit 1
+ ---> Using cache
+ ---> 05d0a3af4df0
+Step 11/12 : CMD ["node", "server.mjs"]
+ ---> Using cache
+ ---> 8f8241c23817
+Step 12/12 : LABEL com.docker.compose.image.builder=classic
+ ---> Using cache
+ ---> e0f3040d48d8
+Successfully built e0f3040d48d8
+Successfully tagged ai-elder-family-assistant-prototype:latest
+ Image ai-elder-family-assistant-prototype Built 
+ Image ai-elder-family-assistant-prototype Built 
+ Network ai-elder-family-assistant_default Creating 
+ Network ai-elder-family-assistant_default Creating 
+ Network ai-elder-family-assistant_default Created 
+ Network ai-elder-family-assistant_default Created 
+ Container ai-elder-family-assistant-prototype-1 Creating 
+ Container ai-elder-family-assistant-prototype-1 Created 
+ Container ai-elder-family-assistant-prototype-1 Starting 
+ Container ai-elder-family-assistant-prototype-1 Started 
+ Container ai-elder-family-assistant-prototype-1 Waiting 
+ Container ai-elder-family-assistant-prototype-1 Healthy 

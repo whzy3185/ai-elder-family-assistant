@@ -22,3 +22,4 @@ P10=PASS：65状态扫描与默认两路由检查，forbidden visible tokens=0�
 P11=PASS：Prompt驱动文件/目录与设计命名按用途整理，路径引用同步，45状态测试通过；历史证据保留。
 P12=PASS：45状态测试、T01–T09及两组附加流程、七组浏览器专项和完整键盘主流程通过；角色独立地址正常操作，异常由Review进入。
 P13=PASS：compose down/up全新容器healthy，11业务流程和65状态purity再次通过，老人/家属/Review子路由刷新正常。
+P14=PASS：最终新Docker13类代表画面人工审查通过；场景特异性、用户语言、主要操作和布局差异可见。
