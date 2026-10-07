@@ -26,6 +26,10 @@ items = json.loads(subprocess.check_output([
 ], cwd=ROOT, text=True))
 audit = json.loads((SCREENS / 'audit.json').read_text())
 assert audit['status'] == 'PASS' and audit['count'] == 65
+for item in items:
+    actual=next(x['standard'] for x in audit['results'] if x['id']==item['id'])
+    item['name']=actual['title']
+    if item['id'].startswith('DM-'):item['role']='评审辅助'
 assert len(items) == 65 and len(list(SCREENS.glob('*.png'))) == 65
 pdfmetrics.registerFont(TTFont('Chinese', os.environ['PDF_FONT'], subfontIndex=0))
 c = canvas.Canvas(str(OUT / 'prototype-pages.pdf'), pagesize=(595, 842))
@@ -43,11 +47,11 @@ lines = [
     '主要演示视口：390 x 844；图片完整保留页面滚动内容。',
     '长页面采用随图片高度变化的 PDF 页面，避免缩小或截断。',
     '访问：http://localhost:8080',
-    'Web 定位：演示控制 > 按编号查看全部页面与状态。',
+    'Web 定位：/review > 查看全部画面 > 自然中文名称。',
     'AI、语音、消息、时钟、提醒和账号身份均为本地模拟。',
     '源码冻结 SHA：', FREEZE_SHA,
     '导出与最终提交同版性通过 exports/source-manifest.json 核对。',
-    '原型图用于查看状态；操作步骤见 README 和 Demo Guide。',
+    '原型图用于查看状态；操作步骤见 README 和演示指南。',
 ]
 for i, line in enumerate(lines):
     c.drawString(42, 675 - i * 30, line)
@@ -71,7 +75,7 @@ for number, item in enumerate(items, 1):
     image = SCREENS / f"{item['id']}.png"
     with Image.open(image) as im:
         width, height = im.size
-    assert width == 390
+    assert width == 390 if not item['id'].startswith('DM-') else width == 338
     page_width, page_height = 450, height + 100
     c.setPageSize((page_width, page_height))
     c.setFillColor(HexColor('#15323a'))
@@ -79,7 +83,7 @@ for number, item in enumerate(items, 1):
     c.drawString(30, page_height - 24, item['id'])
     c.setFont('Chinese', 13)
     c.drawString(30, page_height - 46, item['name'])
-    c.drawImage(str(image), 30, 30, width=width, height=height)
+    c.drawImage(str(image), 30+(390-width)/2, 30, width=width, height=height)
     c.setFont('Chinese', 9)
     c.drawString(30, 12, f"Release {VERSION} | {item['role']} | {number}/65 | 完整滚动页面")
     c.bookmarkPage(item['id'])
@@ -95,13 +99,13 @@ for record in records:
     assert record['id'] in reader.pages[record['pdfPage']-1].extract_text()
 rows = [f'# Release {VERSION} 完整原型索引', '',
         f'源码冻结：`{FREEZE_SHA}`。65/65 项来自同版 Docker Web 全长截图。', '',
-        'Web 入口统一为：演示控制 → 按编号查看全部页面与状态 → 选择编号。加载会替换当前模拟数据。', '',
-        'DM-01 是每页底部角色工具；DM-02/DM-03 共用控制台布局，分别定位场景及固定时钟，不省略状态。', '',
+        'Web 入口：/review → 查看全部画面 → 对应自然中文标题。加载会替换当前模拟数据；页面编号只用于材料定位。', '',
+        '60产品图只截取手机产品；5项DM图分别截取独立辅助面板的身份、快捷情况、时间和恢复区域。', '',
         '| 页面编号 | 名称 | 角色 | 状态 | 图片 | PDF 页 | Web 入口 | 测试 |',
         '|---|---|---|---|---|---:|---|---|']
 for record in records:
     actual = next(x['standard'] for x in audit['results'] if x['id'] == record['id'])
-    rows.append(f"| {record['id']} | {record['name']} | {record['role']} | {actual['status']} | [{record['id']}]({record['image']}) | {record['pdfPage']} | 控制台编号 {record['id']} | {record['test']}；全页实测 |")
+    rows.append(f"| {record['id']} | {record['name']} | {record['role']} | {actual.get('status',actual['title'])} | [{record['id']}]({record['image']}) | {record['pdfPage']} | 辅助工具对应中文画面 | {record['test']}；全页实测 |")
 (OUT / 'prototype-index.md').write_text('\n'.join(rows) + '\n')
 (OUT / 'prototype-index.json').write_text(json.dumps(records, ensure_ascii=False, indent=2) + '\n')
 source_files = [ROOT / x for x in ['package.json','package-lock.json','index.html','server.mjs','Dockerfile','compose.yaml','compose.local.yaml']]

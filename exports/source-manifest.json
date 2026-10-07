@@ -1,21 +1,23 @@
 {
-  "version": "1.0.1",
-  "sourceFreezeSha": "ca044a5e6ae2dbca24bb15fa3f9716d5274c7890",
+  "version": "1.1.0",
+  "sourceFreezeSha": "6a3734be5488e85f43096564cded675994e66244",
   "files": {
-    "package.json": "32934267b097cfdf711e7985ce85c0d518ef72d1ff3f151ff8e138068647f0a5",
-    "package-lock.json": "dc5625316eaec49405f07bfe74ce6f2227f0bf7117a37fed36d065b37126b8b1",
-    "index.html": "9e8d05f81fbac4c97430bb139eda5e740d45d2e4cf79c6f0f9dea8796d9212b0",
+    "package.json": "d75f9e0ddcc1721b06e092223b88cfdfbadfb37f010849aa0920bad6fb6aa9a6",
+    "package-lock.json": "d9799b175cd476028fb4bd390ff39cebaa85b7bb6576b61c52ec1d7d5612f0fe",
+    "index.html": "d7f138dadc31d42469c164df14b07b8545336047032cc56700cbfc2b95b06b86",
     "server.mjs": "36a503a97954a13ed4020d3fb40a6feb16e1f3afc9bc8b2c294b3b62e9fa41c2",
     "Dockerfile": "e608eba37f3d07ff2eb625f48c8b871983976ce3e63dc773753111c2725dba95",
     "compose.yaml": "6be0abaa8149d92a07883d904761cfc1f879648de604d66d8e26e5946e65a83d",
     "compose.local.yaml": "cc3f7bd44d1977412dcb6dc8d43c664ac945f1501edff8fa62a7f1dc020532be",
-    "src/app.js": "20fed50136afcc1aa6600fce9541e2fe0daa53dfa8e0f4ee26a6ae10be7c7145",
-    "src/release-views.js": "6196de524811db3d00bac421cbc8ab6223fae3330d12f2fe7de132af2313cfbf",
+    "src/app.js": "dad7f3b81fa0d87737b88cb98229cfc41953f7c98eb5092ab4a14ad721d8599f",
+    "src/product-copy.js": "f22df5bb72c7aeef176d9b6832a6b33d06e4bca260588940d0355c76ad3bf0ff",
+    "src/release-views.js": "2d0333f04cf91d0c2c6611823ff29806a87269f3566d5bb4c253ce1539125582",
+    "src/review-views.js": "6cf70407e14c87c1126b3fca1678ff67df7f12327a1b34935b6f4af395bfd01e",
     "src/screen-catalog.js": "0167f38abd20d02b1bcafe6e66383243a4ba97337c7207f34f79c0e274a0e919",
     "src/state/initial-state.js": "d693797d2778929e7badf143eda65e965f0f3247b9807bed312bfdf1779a004d",
     "src/state/model.js": "7fd3cbc4ba63ab3b354a7341c7d307872010e3ed560bfe52f71c24794cf4c335",
     "src/state/store.js": "7137f74a3f865600233957e10833718d2c7d2460785c783566595b5a10a5409f",
-    "src/styles.css": "ed400b8c16a2c66d40a1c38c6659cae76bf07c661753baef5812c3de75ebe2fe",
-    "src/views.js": "bde7c59fcabebe4d67f6f717cf1e45c09b42be0566653eb3bafb6f9ace5e2b76"
+    "src/styles.css": "d5c3084e195134295641b8edfe7bd787481ea652ab1e92db6e719d86fc1302e3",
+    "src/views.js": "5ef2d1ed9808f6b5fdd8297e2cf1cb3fe62d7e1000ac63c897aa834670babc2e"
   }
 }

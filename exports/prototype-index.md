@@ -1,75 +1,75 @@
-# Release 1.0.1 完整原型索引
+# Release 1.1.0 完整原型索引
 
-源码冻结：`ca044a5e6ae2dbca24bb15fa3f9716d5274c7890`。65/65 项来自同版 Docker Web 全长截图。
+源码冻结：`6a3734be5488e85f43096564cded675994e66244`。65/65 项来自同版 Docker Web 全长截图。
 
-Web 入口统一为：演示控制 → 按编号查看全部页面与状态 → 选择编号。加载会替换当前模拟数据。
+Web 入口：/review → 查看全部画面 → 对应自然中文标题。加载会替换当前模拟数据；页面编号只用于材料定位。
 
-DM-01 是每页底部角色工具；DM-02/DM-03 共用控制台布局，分别定位场景及固定时钟，不省略状态。
+60产品图只截取手机产品；5项DM图分别截取独立辅助面板的身份、快捷情况、时间和恢复区域。
 
 | 页面编号 | 名称 | 角色 | 状态 | 图片 | PDF 页 | Web 入口 | 测试 |
 |---|---|---|---|---|---:|---|---|
-| EL-TASK-00 | 首页空状态 | 老人 | 还没有事务 | [EL-TASK-00](screens/EL-TASK-00.png) | 5 | 控制台编号 EL-TASK-00 | `TC-STATE-001`；全页实测 |
-| EL-TASK-01 | 输入事务 | 老人 | 等待输入 | [EL-TASK-01](screens/EL-TASK-01.png) | 6 | 控制台编号 EL-TASK-01 | `TC-MAIN-001`、`TC-AI-003`；全页实测 |
-| EL-TASK-02 | AI 处理中 | 老人 | 处理中 | [EL-TASK-02](screens/EL-TASK-02.png) | 7 | 控制台编号 EL-TASK-02 | `TC-MAIN-002`；全页实测 |
-| EL-TASK-03A | AI 理解结果（无已知错误） | 老人 | 尚未保存，需要你确认 | [EL-TASK-03A](screens/EL-TASK-03A.png) | 8 | 控制台编号 EL-TASK-03A | `TC-AI-005`；全页实测 |
-| EL-TASK-03B | 识别错误状态 | 老人 | 识别错误 | [EL-TASK-03B](screens/EL-TASK-03B.png) | 9 | 控制台编号 EL-TASK-03B | `TC-MAIN-003/004`；全页实测 |
-| EL-TASK-04 | 修改单字段 | 老人 | 只修改时间 | [EL-TASK-04](screens/EL-TASK-04.png) | 10 | 控制台编号 EL-TASK-04 | `TC-MAIN-004`；全页实测 |
-| EL-TASK-05 | 确认事务 | 老人 | 确认后才会记好 | [EL-TASK-05](screens/EL-TASK-05.png) | 11 | 控制台编号 EL-TASK-05 | `TC-MAIN-005/006`；全页实测 |
-| EL-TASK-06 | 保存个人提醒结果/事务详情 | 老人 | 个人事务已保存 | [EL-TASK-06](screens/EL-TASK-06.png) | 12 | 控制台编号 EL-TASK-06 | `TC-REM-001`；全页实测 |
-| EL-TASK-07 | 提醒触发 | 老人 | 提醒已触发 | [EL-TASK-07](screens/EL-TASK-07.png) | 13 | 控制台编号 EL-TASK-07 | `TC-REM-002`；全页实测 |
-| EL-TASK-08 | 修改已共享事务 | 老人 | 请先了解对陪同安排的影响 | [EL-TASK-08](screens/EL-TASK-08.png) | 14 | 控制台编号 EL-TASK-08 | `TC-VERSION-001`；全页实测 |
-| EL-TASK-09A | 确认事务完成 | 老人 | 需要你确认 | [EL-TASK-09A](screens/EL-TASK-09A.png) | 15 | 控制台编号 EL-TASK-09A | `TC-COMPLETE-001`；全页实测 |
-| EL-TASK-09B | 事务完成结果 | 老人 | 由张阿姨确认完成 | [EL-TASK-09B](screens/EL-TASK-09B.png) | 16 | 控制台编号 EL-TASK-09B | `TC-COMPLETE-001`；全页实测 |
-| EL-TASK-10 | 结束结果/首页有完成结果 | 老人 | 这件事已完成 | [EL-TASK-10](screens/EL-TASK-10.png) | 17 | 控制台编号 EL-TASK-10 | `TC-STATE-004`；全页实测 |
-| EL-EX-01 | 必要信息缺失 | 老人 | 没有替你猜 | [EL-EX-01](screens/EL-EX-01.png) | 18 | 控制台编号 EL-EX-01 | `TC-AI-001`；全页实测 |
-| EL-EX-02A | AI 解析失败 | 老人 | 原话已经保留 | [EL-EX-02A](screens/EL-EX-02A.png) | 19 | 控制台编号 EL-EX-02A | `TC-AI-002`；全页实测 |
-| EL-EX-02B | 手动填写 | 老人 | 原话保留，不使用 AI | [EL-EX-02B](screens/EL-EX-02B.png) | 20 | 控制台编号 EL-EX-02B | `TC-AI-003`；全页实测 |
-| EL-SHARE-01 | 是否邀请小梅 | 老人 | 个人提醒已经保存 | [EL-SHARE-01](screens/EL-SHARE-01.png) | 21 | 控制台编号 EL-SHARE-01 | `TC-MAIN-007`、`TC-SHARE-001`；全页实测 |
-| EL-SHARE-01B | 只提醒自己结果 | 老人 | 没有告诉小梅 | [EL-SHARE-01B](screens/EL-SHARE-01B.png) | 22 | 控制台编号 EL-SHARE-01B | `TC-SHARE-001`；全页实测 |
-| EL-SHARE-02 | 本次共享预览 | 老人 | 等待你确认共享 | [EL-SHARE-02](screens/EL-SHARE-02.png) | 23 | 控制台编号 EL-SHARE-02 | `TC-MAIN-008/009`；全页实测 |
-| EL-SHARE-03 | 请求发送中 | 老人 | 还未送达 | [EL-SHARE-03](screens/EL-SHARE-03.png) | 24 | 控制台编号 EL-SHARE-03 | `TC-STATE-002`；全页实测 |
-| EL-SHARE-04A | 请求发送成功 | 老人 | 等待回应 | [EL-SHARE-04A](screens/EL-SHARE-04A.png) | 25 | 控制台编号 EL-SHARE-04A | `TC-MAIN-009`；全页实测 |
-| EL-SHARE-04B | 等待回应 | 老人 | 已发送，还没有答应 | [EL-SHARE-04B](screens/EL-SHARE-04B.png) | 26 | 控制台编号 EL-SHARE-04B | `TC-MAIN-009`；全页实测 |
-| EL-SHARE-05 | 家属已接受 | 老人 | 已接受陪同请求 | [EL-SHARE-05](screens/EL-SHARE-05.png) | 27 | 控制台编号 EL-SHARE-05 | `TC-MAIN-011`；全页实测 |
-| EL-SHARE-06 | 家属已拒绝 | 老人 | 你的事务继续 | [EL-SHARE-06](screens/EL-SHARE-06.png) | 28 | 控制台编号 EL-SHARE-06 | `TC-COLLAB-002`；全页实测 |
-| EL-SHARE-07 | 改期建议 | 老人 | 由你决定是否修改 | [EL-SHARE-07](screens/EL-SHARE-07.png) | 29 | 控制台编号 EL-SHARE-07 | `TC-COLLAB-003`；全页实测 |
-| EL-SHARE-08 | 接受改期/新版本待重新分享 | 老人 | 旧答复已失效；尚未重新发送 | [EL-SHARE-08](screens/EL-SHARE-08.png) | 30 | 控制台编号 EL-SHARE-08 | `TC-COLLAB-004`；全页实测 |
-| EL-SHARE-09 | 拒绝改期结果 | 老人 | 仍在等待小梅回应 | [EL-SHARE-09](screens/EL-SHARE-09.png) | 31 | 控制台编号 EL-SHARE-09 | `TC-COLLAB-005`；全页实测 |
-| EL-EX-03 | 请求发送失败 | 老人 | 可以重试 | [EL-EX-03](screens/EL-EX-03.png) | 32 | 控制台编号 EL-EX-03 | `TC-REQ-001`；全页实测 |
-| EL-EX-04 | 家属未回应 | 老人 | 未回应不等于拒绝 | [EL-EX-04](screens/EL-EX-04.png) | 33 | 控制台编号 EL-EX-04 | `TC-REQ-002`；全页实测 |
-| EL-EX-05A | 撤回请求确认 | 老人 | 只撤回协作 | [EL-EX-05A](screens/EL-EX-05A.png) | 34 | 控制台编号 EL-EX-05A | `TC-CANCEL-001`；全页实测 |
-| EL-EX-05B | 撤回结果 | 老人 | 个人提醒仍然有效 | [EL-EX-05B](screens/EL-EX-05B.png) | 35 | 控制台编号 EL-EX-05B | `TC-CANCEL-001`；全页实测 |
-| EL-EX-06A | 取消整个事务确认 | 老人 | 这会同时停止提醒和协作 | [EL-EX-06A](screens/EL-EX-06A.png) | 36 | 控制台编号 EL-EX-06A | `TC-CANCEL-002`；全页实测 |
-| EL-EX-06B | 取消事务结果 | 老人 | 提醒和协作请求均已失效 | [EL-EX-06B](screens/EL-EX-06B.png) | 37 | 控制台编号 EL-EX-06B | `TC-CANCEL-002`；全页实测 |
-| EL-EX-07A | 修改共享字段/旧请求将失效 | 老人 | 旧请求和答复不会继承 | [EL-EX-07A](screens/EL-EX-07A.png) | 38 | 控制台编号 EL-EX-07A | `TC-VERSION-001`；全页实测 |
-| EL-EX-07B | 新版本重新分享 | 老人 | 旧答复已失效；尚未重新发送 | [EL-EX-07B](screens/EL-EX-07B.png) | 39 | 控制台编号 EL-EX-07B | `TC-VERSION-001/002`；全页实测 |
-| EL-SET-01 | 显示设置（P1） | 老人 | 按自己的阅读习惯选择 | [EL-SET-01](screens/EL-SET-01.png) | 40 | 控制台编号 EL-SET-01 | `TC-A11Y-004`；全页实测 |
-| EL-REL-01 | 首次关系介绍 | 老人 | 首次建立关系 | [EL-REL-01](screens/EL-REL-01.png) | 41 | 控制台编号 EL-REL-01 | `TC-REL-001`；全页实测 |
-| FM-REL-01 | 模拟扫码并发起关系 | 家属 | 等待扫码 | [FM-REL-01](screens/FM-REL-01.png) | 42 | 控制台编号 FM-REL-01 | `TC-REL-001`；全页实测 |
-| EL-REL-02 | 查看身份和权限 | 老人 | 需要你确认 | [EL-REL-02](screens/EL-REL-02.png) | 43 | 控制台编号 EL-REL-02 | `TC-REL-001/002`；全页实测 |
-| EL-REL-02A | 同意建立关系确认 | 老人 | 请核对：小梅（女儿） | [EL-REL-02A](screens/EL-REL-02A.png) | 44 | 控制台编号 EL-REL-02A | `TC-REL-001`；全页实测 |
-| EL-REL-03 | 拒绝关系结果 | 老人 | 仍可使用个人提醒 | [EL-REL-03](screens/EL-REL-03.png) | 45 | 控制台编号 EL-REL-03 | `TC-REL-002`；全页实测 |
-| FM-REL-03 | 关系申请被拒绝 | 家属 | 没有建立关系 | [FM-REL-03](screens/FM-REL-03.png) | 46 | 控制台编号 FM-REL-03 | `TC-REL-002`；全页实测 |
-| EL-REL-06 | 关系建立成功 | 老人 | 关系已确认 | [EL-REL-06](screens/EL-REL-06.png) | 47 | 控制台编号 EL-REL-06 | `TC-REL-001`；全页实测 |
-| FM-REL-02 | 关系建立成功 | 家属 | 已和张阿姨建立协作 | [FM-REL-02](screens/FM-REL-02.png) | 48 | 控制台编号 FM-REL-02 | `TC-REL-001`；全页实测 |
-| EL-REL-07 | 她能看到什么 | 老人 | 只有你主动分享的本次事务 | [EL-REL-07](screens/EL-REL-07.png) | 49 | 控制台编号 EL-REL-07 | `TC-PERM-001`；全页实测 |
-| EL-REL-04A | 关系详情/结束确认 | 老人 | 现有陪同请求也会失效 | [EL-REL-04A](screens/EL-REL-04A.png) | 50 | 控制台编号 EL-REL-04A | `TC-REL-003`；全页实测 |
-| EL-REL-05 | 关系已结束 | 老人 | 旧请求已失效 | [EL-REL-05](screens/EL-REL-05.png) | 51 | 控制台编号 EL-REL-05 | `TC-REL-003`；全页实测 |
-| FM-REL-04 | 关系已结束 | 家属 | 旧请求已失效 | [FM-REL-04](screens/FM-REL-04.png) | 52 | 控制台编号 FM-REL-04 | `TC-REL-003`；全页实测 |
-| FM-REQ-00 | 请求列表空状态 | 家属 | 暂时没有新请求 | [FM-REQ-00](screens/FM-REQ-00.png) | 53 | 控制台编号 FM-REQ-00 | `TC-STATE-001`；全页实测 |
-| FM-REQ-01 | 请求列表有数据 | 家属 | 有 1 个待回复请求 | [FM-REQ-01](screens/FM-REQ-01.png) | 54 | 控制台编号 FM-REQ-01 | `TC-MAIN-010`；全页实测 |
-| FM-REQ-02 | 请求详情 | 家属 | 等待你的回复 | [FM-REQ-02](screens/FM-REQ-02.png) | 55 | 控制台编号 FM-REQ-02 | `TC-MAIN-010`；全页实测 |
-| FM-REQ-03A | 接受确认 | 家属 | 只回应当前请求 | [FM-REQ-03A](screens/FM-REQ-03A.png) | 56 | 控制台编号 FM-REQ-03A | `TC-COLLAB-001`；全页实测 |
-| FM-REQ-03B | 接受结果 | 家属 | 已接受请求 | [FM-REQ-03B](screens/FM-REQ-03B.png) | 57 | 控制台编号 FM-REQ-03B | `TC-COLLAB-001`；全页实测 |
-| FM-REQ-04A | 拒绝确认 | 家属 | 只回应当前请求 | [FM-REQ-04A](screens/FM-REQ-04A.png) | 58 | 控制台编号 FM-REQ-04A | `TC-COLLAB-002`；全页实测 |
-| FM-REQ-04B | 拒绝结果 | 家属 | 事务仍属于张阿姨 | [FM-REQ-04B](screens/FM-REQ-04B.png) | 59 | 控制台编号 FM-REQ-04B | `TC-COLLAB-002`；全页实测 |
-| FM-REQ-05A | 建议改期 | 家属 | 只回应当前请求 | [FM-REQ-05A](screens/FM-REQ-05A.png) | 60 | 控制台编号 FM-REQ-05A | `TC-COLLAB-003`；全页实测 |
-| FM-REQ-05B | 建议已发送 | 家属 | 等待张阿姨决定 | [FM-REQ-05B](screens/FM-REQ-05B.png) | 61 | 控制台编号 FM-REQ-05B | `TC-COLLAB-003`；全页实测 |
-| FM-EX-01 | 请求已撤回 | 家属 | 不能回应 | [FM-EX-01](screens/FM-EX-01.png) | 62 | 控制台编号 FM-EX-01 | `TC-CANCEL-001`；全页实测 |
-| FM-EX-02 | 事务已取消 | 家属 | 不能回应 | [FM-EX-02](screens/FM-EX-02.png) | 63 | 控制台编号 FM-EX-02 | `TC-CANCEL-002`；全页实测 |
-| FM-EX-03 | 旧请求已失效 | 家属 | 不能回应 | [FM-EX-03](screens/FM-EX-03.png) | 64 | 控制台编号 FM-EX-03 | `TC-VERSION-002`；全页实测 |
-| DM-01 | 角色切换条 | 演示控制 | 还没有事务 | [DM-01](screens/DM-01.png) | 65 | 控制台编号 DM-01 | `TC-DEMO-001`；全页实测 |
-| DM-02 | 场景预设面板 | 演示控制 | 评审快捷入口 | [DM-02](screens/DM-02.png) | 66 | 控制台编号 DM-02 | `TC-DEMO-002`；全页实测 |
-| DM-03 | 固定演示时间 | 演示控制 | 评审快捷入口 | [DM-03](screens/DM-03.png) | 67 | 控制台编号 DM-03 | `TC-DEMO-003`；全页实测 |
-| DM-04A | Reset 确认 | 演示控制 | 只清空这份浏览器中的模拟数据 | [DM-04A](screens/DM-04A.png) | 68 | 控制台编号 DM-04A | `TC-DEMO-004`；全页实测 |
-| DM-04B | Reset 结果 | 演示控制 | 无关系、无事务、无请求 | [DM-04B](screens/DM-04B.png) | 69 | 控制台编号 DM-04B | `TC-DEMO-004`；全页实测 |
+| EL-TASK-00 | 张阿姨，记一件事吧 | 老人 | 张阿姨，记一件事吧 | [EL-TASK-00](screens/EL-TASK-00.png) | 5 | 辅助工具对应中文画面 | `TC-STATE-001`；全页实测 |
+| EL-TASK-01 | 想记什么事？ | 老人 | 想记什么事？ | [EL-TASK-01](screens/EL-TASK-01.png) | 6 | 辅助工具对应中文画面 | `TC-MAIN-001`、`TC-AI-003`；全页实测 |
+| EL-TASK-02 | 正在帮你整理 | 老人 | 正在帮你整理 | [EL-TASK-02](screens/EL-TASK-02.png) | 7 | 辅助工具对应中文画面 | `TC-MAIN-002`；全页实测 |
+| EL-TASK-03A | 我这样记，对吗？ | 老人 | 我这样记，对吗？ | [EL-TASK-03A](screens/EL-TASK-03A.png) | 8 | 辅助工具对应中文画面 | `TC-AI-005`；全页实测 |
+| EL-TASK-03B | 我这样记，对吗？ | 老人 | 我这样记，对吗？ | [EL-TASK-03B](screens/EL-TASK-03B.png) | 9 | 辅助工具对应中文画面 | `TC-MAIN-003/004`；全页实测 |
+| EL-TASK-04 | 改成几点？ | 老人 | 改成几点？ | [EL-TASK-04](screens/EL-TASK-04.png) | 10 | 辅助工具对应中文画面 | `TC-MAIN-004`；全页实测 |
+| EL-TASK-05 | 再看一遍 | 老人 | 再看一遍 | [EL-TASK-05](screens/EL-TASK-05.png) | 11 | 辅助工具对应中文画面 | `TC-MAIN-005/006`；全页实测 |
+| EL-TASK-06 | 办理公交卡年审 | 老人 | 办理公交卡年审 | [EL-TASK-06](screens/EL-TASK-06.png) | 12 | 辅助工具对应中文画面 | `TC-REM-001`；全页实测 |
+| EL-TASK-07 | 该准备出发了 | 老人 | 该准备出发了 | [EL-TASK-07](screens/EL-TASK-07.png) | 13 | 辅助工具对应中文画面 | `TC-REM-002`；全页实测 |
+| EL-TASK-08 | 要改时间吗？ | 老人 | 要改时间吗？ | [EL-TASK-08](screens/EL-TASK-08.png) | 14 | 辅助工具对应中文画面 | `TC-VERSION-001`；全页实测 |
+| EL-TASK-09A | 这件事办完了吗？ | 老人 | 这件事办完了吗？ | [EL-TASK-09A](screens/EL-TASK-09A.png) | 15 | 辅助工具对应中文画面 | `TC-COMPLETE-001`；全页实测 |
+| EL-TASK-09B | 这件事办完了 | 老人 | 这件事办完了 | [EL-TASK-09B](screens/EL-TASK-09B.png) | 16 | 辅助工具对应中文画面 | `TC-COMPLETE-001`；全页实测 |
+| EL-TASK-10 | 这件事办完了 | 老人 | 这件事办完了 | [EL-TASK-10](screens/EL-TASK-10.png) | 17 | 辅助工具对应中文画面 | `TC-STATE-004`；全页实测 |
+| EL-EX-01 | 还需要时间和地点 | 老人 | 还需要时间和地点 | [EL-EX-01](screens/EL-EX-01.png) | 18 | 辅助工具对应中文画面 | `TC-AI-001`；全页实测 |
+| EL-EX-02A | 这次没整理好 | 老人 | 这次没整理好 | [EL-EX-02A](screens/EL-EX-02A.png) | 19 | 辅助工具对应中文画面 | `TC-AI-002`；全页实测 |
+| EL-EX-02B | 把这件事写下来 | 老人 | 把这件事写下来 | [EL-EX-02B](screens/EL-EX-02B.png) | 20 | 辅助工具对应中文画面 | `TC-AI-003`；全页实测 |
+| EL-SHARE-01 | 要请小梅陪你去吗？ | 老人 | 要请小梅陪你去吗？ | [EL-SHARE-01](screens/EL-SHARE-01.png) | 21 | 辅助工具对应中文画面 | `TC-MAIN-007`、`TC-SHARE-001`；全页实测 |
+| EL-SHARE-01B | 只提醒你自己 | 老人 | 只提醒你自己 | [EL-SHARE-01B](screens/EL-SHARE-01B.png) | 22 | 辅助工具对应中文画面 | `TC-SHARE-001`；全页实测 |
+| EL-SHARE-02 | 发给小梅前，再看看 | 老人 | 发给小梅前，再看看 | [EL-SHARE-02](screens/EL-SHARE-02.png) | 23 | 辅助工具对应中文画面 | `TC-MAIN-008/009`；全页实测 |
+| EL-SHARE-03 | 正在发给小梅 | 老人 | 正在发给小梅 | [EL-SHARE-03](screens/EL-SHARE-03.png) | 24 | 辅助工具对应中文画面 | `TC-STATE-002`；全页实测 |
+| EL-SHARE-04A | 已经发给小梅 | 老人 | 已经发给小梅 | [EL-SHARE-04A](screens/EL-SHARE-04A.png) | 25 | 辅助工具对应中文画面 | `TC-MAIN-009`；全页实测 |
+| EL-SHARE-04B | 等小梅回复 | 老人 | 等小梅回复 | [EL-SHARE-04B](screens/EL-SHARE-04B.png) | 26 | 辅助工具对应中文画面 | `TC-MAIN-009`；全页实测 |
+| EL-SHARE-05 | 小梅可以陪你去 | 老人 | 小梅可以陪你去 | [EL-SHARE-05](screens/EL-SHARE-05.png) | 27 | 辅助工具对应中文画面 | `TC-MAIN-011`；全页实测 |
+| EL-SHARE-06 | 小梅这次不能陪你 | 老人 | 小梅这次不能陪你 | [EL-SHARE-06](screens/EL-SHARE-06.png) | 28 | 辅助工具对应中文画面 | `TC-COLLAB-002`；全页实测 |
+| EL-SHARE-07 | 小梅想下午2:00去 | 老人 | 小梅想下午2:00去 | [EL-SHARE-07](screens/EL-SHARE-07.png) | 29 | 辅助工具对应中文画面 | `TC-COLLAB-003`；全页实测 |
+| EL-SHARE-08 | 已改到下午2:00 | 老人 | 已改到下午2:00 | [EL-SHARE-08](screens/EL-SHARE-08.png) | 30 | 辅助工具对应中文画面 | `TC-COLLAB-004`；全页实测 |
+| EL-SHARE-09 | 仍按原来的时间 | 老人 | 仍按原来的时间 | [EL-SHARE-09](screens/EL-SHARE-09.png) | 31 | 辅助工具对应中文画面 | `TC-COLLAB-005`；全页实测 |
+| EL-EX-03 | 没有发给小梅 | 老人 | 没有发给小梅 | [EL-EX-03](screens/EL-EX-03.png) | 32 | 辅助工具对应中文画面 | `TC-REQ-001`；全页实测 |
+| EL-EX-04 | 小梅还没有回复 | 老人 | 小梅还没有回复 | [EL-EX-04](screens/EL-EX-04.png) | 33 | 辅助工具对应中文画面 | `TC-REQ-002`；全页实测 |
+| EL-EX-05A | 不需要小梅陪了吗？ | 老人 | 不需要小梅陪了吗？ | [EL-EX-05A](screens/EL-EX-05A.png) | 34 | 辅助工具对应中文画面 | `TC-CANCEL-001`；全页实测 |
+| EL-EX-05B | 陪同请求已撤回 | 老人 | 陪同请求已撤回 | [EL-EX-05B](screens/EL-EX-05B.png) | 35 | 辅助工具对应中文画面 | `TC-CANCEL-001`；全页实测 |
+| EL-EX-06A | 要取消这件事吗？ | 老人 | 要取消这件事吗？ | [EL-EX-06A](screens/EL-EX-06A.png) | 36 | 辅助工具对应中文画面 | `TC-CANCEL-002`；全页实测 |
+| EL-EX-06B | 这件事已取消 | 老人 | 这件事已取消 | [EL-EX-06B](screens/EL-EX-06B.png) | 37 | 辅助工具对应中文画面 | `TC-CANCEL-002`；全页实测 |
+| EL-EX-07A | 改到下午2:00？ | 老人 | 改到下午2:00？ | [EL-EX-07A](screens/EL-EX-07A.png) | 38 | 辅助工具对应中文画面 | `TC-VERSION-001`；全页实测 |
+| EL-EX-07B | 已改到下午2:00 | 老人 | 已改到下午2:00 | [EL-EX-07B](screens/EL-EX-07B.png) | 39 | 辅助工具对应中文画面 | `TC-VERSION-001/002`；全页实测 |
+| EL-SET-01 | 看得更清楚 | 老人 | 看得更清楚 | [EL-SET-01](screens/EL-SET-01.png) | 40 | 辅助工具对应中文画面 | `TC-A11Y-004`；全页实测 |
+| EL-REL-01 | 和小梅一起记挂 | 老人 | 和小梅一起记挂 | [EL-REL-01](screens/EL-REL-01.png) | 41 | 辅助工具对应中文画面 | `TC-REL-001`；全页实测 |
+| FM-REL-01 | 和妈妈建立协作 | 家属 | 和妈妈建立协作 | [FM-REL-01](screens/FM-REL-01.png) | 42 | 辅助工具对应中文画面 | `TC-REL-001`；全页实测 |
+| EL-REL-02 | 小梅想与你建立协作 | 老人 | 小梅想与你建立协作 | [EL-REL-02](screens/EL-REL-02.png) | 43 | 辅助工具对应中文画面 | `TC-REL-001/002`；全页实测 |
+| EL-REL-02A | 同意和小梅协作吗？ | 老人 | 同意和小梅协作吗？ | [EL-REL-02A](screens/EL-REL-02A.png) | 44 | 辅助工具对应中文画面 | `TC-REL-001`；全页实测 |
+| EL-REL-03 | 这次先不建立协作 | 老人 | 这次先不建立协作 | [EL-REL-03](screens/EL-REL-03.png) | 45 | 辅助工具对应中文画面 | `TC-REL-002`；全页实测 |
+| FM-REL-03 | 妈妈这次先不同意 | 家属 | 妈妈这次先不同意 | [FM-REL-03](screens/FM-REL-03.png) | 46 | 辅助工具对应中文画面 | `TC-REL-002`；全页实测 |
+| EL-REL-06 | 小梅 · 女儿 | 老人 | 小梅 · 女儿 | [EL-REL-06](screens/EL-REL-06.png) | 47 | 辅助工具对应中文画面 | `TC-REL-001`；全页实测 |
+| FM-REL-02 | 妈妈 · 张阿姨 | 家属 | 妈妈 · 张阿姨 | [FM-REL-02](screens/FM-REL-02.png) | 48 | 辅助工具对应中文画面 | `TC-REL-001`；全页实测 |
+| EL-REL-07 | 她能看到什么？ | 老人 | 她能看到什么？ | [EL-REL-07](screens/EL-REL-07.png) | 49 | 辅助工具对应中文画面 | `TC-PERM-001`；全页实测 |
+| EL-REL-04A | 结束和小梅的协作？ | 老人 | 结束和小梅的协作？ | [EL-REL-04A](screens/EL-REL-04A.png) | 50 | 辅助工具对应中文画面 | `TC-REL-003`；全页实测 |
+| EL-REL-05 | 家庭协作已结束 | 老人 | 家庭协作已结束 | [EL-REL-05](screens/EL-REL-05.png) | 51 | 辅助工具对应中文画面 | `TC-REL-003`；全页实测 |
+| FM-REL-04 | 家庭协作已结束 | 家属 | 家庭协作已结束 | [FM-REL-04](screens/FM-REL-04.png) | 52 | 辅助工具对应中文画面 | `TC-REL-003`；全页实测 |
+| FM-REQ-00 | 妈妈的消息 | 家属 | 妈妈的消息 | [FM-REQ-00](screens/FM-REQ-00.png) | 53 | 辅助工具对应中文画面 | `TC-STATE-001`；全页实测 |
+| FM-REQ-01 | 妈妈的消息 | 家属 | 妈妈的消息 | [FM-REQ-01](screens/FM-REQ-01.png) | 54 | 辅助工具对应中文画面 | `TC-MAIN-010`；全页实测 |
+| FM-REQ-02 | 妈妈想请你陪她去 | 家属 | 妈妈想请你陪她去 | [FM-REQ-02](screens/FM-REQ-02.png) | 55 | 辅助工具对应中文画面 | `TC-MAIN-010`；全页实测 |
+| FM-REQ-03A | 确认可以陪妈妈？ | 家属 | 确认可以陪妈妈？ | [FM-REQ-03A](screens/FM-REQ-03A.png) | 56 | 辅助工具对应中文画面 | `TC-COLLAB-001`；全页实测 |
+| FM-REQ-03B | 已告诉妈妈你可以陪同 | 家属 | 已告诉妈妈你可以陪同 | [FM-REQ-03B](screens/FM-REQ-03B.png) | 57 | 辅助工具对应中文画面 | `TC-COLLAB-001`；全页实测 |
+| FM-REQ-04A | 这次不能陪妈妈？ | 家属 | 这次不能陪妈妈？ | [FM-REQ-04A](screens/FM-REQ-04A.png) | 58 | 辅助工具对应中文画面 | `TC-COLLAB-002`；全页实测 |
+| FM-REQ-04B | 已告诉妈妈这次不能陪同 | 家属 | 已告诉妈妈这次不能陪同 | [FM-REQ-04B](screens/FM-REQ-04B.png) | 59 | 辅助工具对应中文画面 | `TC-COLLAB-002`；全页实测 |
+| FM-REQ-05A | 建议下午2:00去？ | 家属 | 建议下午2:00去？ | [FM-REQ-05A](screens/FM-REQ-05A.png) | 60 | 辅助工具对应中文画面 | `TC-COLLAB-003`；全页实测 |
+| FM-REQ-05B | 已把建议告诉妈妈 | 家属 | 已把建议告诉妈妈 | [FM-REQ-05B](screens/FM-REQ-05B.png) | 61 | 辅助工具对应中文画面 | `TC-COLLAB-003`；全页实测 |
+| FM-EX-01 | 妈妈不用你陪同了 | 家属 | 妈妈不用你陪同了 | [FM-EX-01](screens/FM-EX-01.png) | 62 | 辅助工具对应中文画面 | `TC-CANCEL-001`；全页实测 |
+| FM-EX-02 | 妈妈取消了这件事 | 家属 | 妈妈取消了这件事 | [FM-EX-02](screens/FM-EX-02.png) | 63 | 辅助工具对应中文画面 | `TC-CANCEL-002`；全页实测 |
+| FM-EX-03 | 之前的安排更新了 | 家属 | 之前的安排更新了 | [FM-EX-03](screens/FM-EX-03.png) | 64 | 辅助工具对应中文画面 | `TC-VERSION-002`；全页实测 |
+| DM-01 | 当前身份：张阿姨 | 评审辅助 | 工具画面 | [DM-01](screens/DM-01.png) | 65 | 辅助工具对应中文画面 | `TC-DEMO-001`；全页实测 |
+| DM-02 | 快速查看 | 评审辅助 | 工具画面 | [DM-02](screens/DM-02.png) | 66 | 辅助工具对应中文画面 | `TC-DEMO-002`；全页实测 |
+| DM-03 | 演示时间 | 评审辅助 | 工具画面 | [DM-03](screens/DM-03.png) | 67 | 辅助工具对应中文画面 | `TC-DEMO-003`；全页实测 |
+| DM-04A | 恢复初始状态？ | 评审辅助 | 工具画面 | [DM-04A](screens/DM-04A.png) | 68 | 辅助工具对应中文画面 | `TC-DEMO-004`；全页实测 |
+| DM-04B | 已恢复初始状态 | 评审辅助 | 工具画面 | [DM-04B](screens/DM-04B.png) | 69 | 辅助工具对应中文画面 | `TC-DEMO-004`；全页实测 |

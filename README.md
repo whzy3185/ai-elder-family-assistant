@@ -61,7 +61,7 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 - [业务走查](docs/validation/walkthrough.md)、[可见内容审计](docs/validation/presentation-purity-audit.md)、[适老审计](docs/validation/senior-usability-audit.md)。
 - [已知问题](docs/validation/known-issues.md)、[冻结记录](docs/delivery/release-freeze.md)、[研究证据](docs/research/evidence-index.md)。
 
-`src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料仍待本轮最终截图导出，不把历史图当本版本。
+`src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料由本轮最终Docker重新截图导出；同版源码及图片校验见exports/source-manifest.json。
 
 无Docker开发可用Node22以上：`npm start`后打开http://localhost:4173；`npm test`运行状态测试。浏览器自动测试需独立Chrome CDP会话；当前主回归脚本为`scripts/smoke-regression.mjs`。
 

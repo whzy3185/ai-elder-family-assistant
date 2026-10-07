@@ -23,3 +23,4 @@ P11=PASS：Prompt驱动文件/目录与设计命名按用途整理，路径引�
 P12=PASS：45状态测试、T01–T09及两组附加流程、七组浏览器专项和完整键盘主流程通过；角色独立地址正常操作，异常由Review进入。
 P13=PASS：compose down/up全新容器healthy，11业务流程和65状态purity再次通过，老人/家属/Review子路由刷新正常。
 P14=PASS：最终新Docker13类代表画面人工审查通过；场景特异性、用户语言、主要操作和布局差异可见。
+P15=PASS：转义修复后重新导出65张同版画面、69页原型PDF及7页产品说明PDF；渲染人工检查通过，源码及图片SHA-256全部一致。见final-export-validation.md。

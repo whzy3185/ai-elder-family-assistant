@@ -1,7 +1,7 @@
 [
   {
     "id": "EL-TASK-00",
-    "name": "首页空状态",
+    "name": "张阿姨，记一件事吧",
     "role": "老人",
     "entry": "已登录 fixture；无事务",
     "operations": "记一件事；查看家庭协作",
@@ -10,12 +10,12 @@
     "image": "screens/EL-TASK-00.png",
     "pdfPage": 5,
     "width": 390,
-    "height": 893,
-    "imageSha256": "7c9a6a8455132e5c821998ea81e85f5717e97d8601c536c8c87ef81a37a6fec7"
+    "height": 844,
+    "imageSha256": "b74c5507cdd5b2d7dfa2d601e8fad2d9470158125c1139889a2060cd6a397c34"
   },
   {
     "id": "EL-TASK-01",
-    "name": "输入事务",
+    "name": "想记什么事？",
     "role": "老人",
     "entry": "点击“记一件事”",
     "operations": "模拟说话；手动输入；返回",
@@ -24,12 +24,12 @@
     "image": "screens/EL-TASK-01.png",
     "pdfPage": 6,
     "width": 390,
-    "height": 1167,
-    "imageSha256": "635cd680a285e435573a44143bb7a57f95a82e79e9d658c2c66c2604974130c8"
+    "height": 911,
+    "imageSha256": "2bdc9265ba14c618621c46e4e8038a623bab4f1c6d3cdd0ac254155292b2a52b"
   },
   {
     "id": "EL-TASK-02",
-    "name": "AI 处理中",
+    "name": "正在帮你整理",
     "role": "老人",
     "entry": "提交有效输入",
     "operations": "等待；返回取消解析",
@@ -38,12 +38,12 @@
     "image": "screens/EL-TASK-02.png",
     "pdfPage": 7,
     "width": 390,
-    "height": 893,
-    "imageSha256": "b7739447eb3eac555dc1afe717f3c6a574de44b2d90331970cebfa891f6a3a34"
+    "height": 844,
+    "imageSha256": "a16ab1f7a6587726dc6e2b897e7061808b47f0f1fe8705f8a39fb5bd74499e37"
   },
   {
     "id": "EL-TASK-03A",
-    "name": "AI 理解结果（无已知错误）",
+    "name": "我这样记，对吗？",
     "role": "老人",
     "entry": "正常解析 fixture 成功",
     "operations": "改字段；确认",
@@ -52,12 +52,12 @@
     "image": "screens/EL-TASK-03A.png",
     "pdfPage": 8,
     "width": 390,
-    "height": 1071,
-    "imageSha256": "fea28b18db429e94e214968c34f319907edcf50ecf730fe6ba69efaae2ff0407"
+    "height": 883,
+    "imageSha256": "9302206da49f7583f9d50c00f2900d760f036b751d25f2a36549bc221b5e4257"
   },
   {
     "id": "EL-TASK-03B",
-    "name": "识别错误状态",
+    "name": "我这样记，对吗？",
     "role": "老人",
     "entry": "主演示 fixture 解析成功",
     "operations": "改时间；改其他字段；确认",
@@ -66,12 +66,12 @@
     "image": "screens/EL-TASK-03B.png",
     "pdfPage": 9,
     "width": 390,
-    "height": 1234,
-    "imageSha256": "bb63f18dc3c3c82bd45f50d080aec928519ad118ed0a514be18c7d448565b529"
+    "height": 883,
+    "imageSha256": "782ac345fb6735dbab4f4f852efd97be1c7222150ddab58a52a01a1764dcdd9b"
   },
   {
     "id": "EL-TASK-04",
-    "name": "修改单字段",
+    "name": "改成几点？",
     "role": "老人",
     "entry": "在理解结果点击字段",
     "operations": "选 9:00；取消修改",
@@ -80,12 +80,12 @@
     "image": "screens/EL-TASK-04.png",
     "pdfPage": 10,
     "width": 390,
-    "height": 895,
-    "imageSha256": "85b85dd94587475d58cf1e61d3cfc450467597a4d857a24276aea935be448fb1"
+    "height": 844,
+    "imageSha256": "4949a3f2837d93cffa53a411e957edb78ececb25c8d2c7d9091102999de58eb9"
   },
   {
     "id": "EL-TASK-05",
-    "name": "确认事务",
+    "name": "再看一遍",
     "role": "老人",
     "entry": "字段已修正且齐全",
     "operations": "确认记好；返回修改",
@@ -94,12 +94,12 @@
     "image": "screens/EL-TASK-05.png",
     "pdfPage": 11,
     "width": 390,
-    "height": 1234,
-    "imageSha256": "51669026e3715a6bbeaeb9198ffde2a6af53b1efe57e2a350b673aeadb5ad364"
+    "height": 883,
+    "imageSha256": "0e65c25d277b682829963b74191ba839638967ac05de1651bf7c4920e8709ae7"
   },
   {
     "id": "EL-TASK-06",
-    "name": "保存个人提醒结果/事务详情",
+    "name": "办理公交卡年审",
     "role": "老人",
     "entry": "确认保存",
     "operations": "请小梅陪同；只提醒我；修改；取消",
@@ -108,12 +108,12 @@
     "image": "screens/EL-TASK-06.png",
     "pdfPage": 12,
     "width": 390,
-    "height": 1244,
-    "imageSha256": "ec552d4f6d2835a77eb64f17291366e8539f0048ea82b8535b0a1cd0e7665dbb"
+    "height": 1047,
+    "imageSha256": "1309203cffa9b80dffa7287503dc4368c2111466dfa243717df00ff7580eaa9f"
   },
   {
     "id": "EL-TASK-07",
-    "name": "提醒触发",
+    "name": "该准备出发了",
     "role": "老人",
     "entry": "Demo 时钟到 08:30；事务仍 `SAVED`",
     "operations": "知道了；查看事务",
@@ -122,12 +122,12 @@
     "image": "screens/EL-TASK-07.png",
     "pdfPage": 13,
     "width": 390,
-    "height": 939,
-    "imageSha256": "64b4cec603de0925a3d832a2f1371e2be24771671b2d7365a47e2e4a90adbd8e"
+    "height": 844,
+    "imageSha256": "fae179b8a240189fca1cdb0efe42e5ae9358cd540698bed205e4cfe8bade02c9"
   },
   {
     "id": "EL-TASK-08",
-    "name": "修改已共享事务",
+    "name": "要改时间吗？",
     "role": "老人",
     "entry": "已有请求且点击修改",
     "operations": "继续修改；暂不修改",
@@ -136,12 +136,12 @@
     "image": "screens/EL-TASK-08.png",
     "pdfPage": 14,
     "width": 390,
-    "height": 1005,
-    "imageSha256": "89c7b220058279fb1591063f79d583477c65a1245fb4d575dca18b3f4ae58725"
+    "height": 844,
+    "imageSha256": "a27f3cdae91f52d9206b0941771ba01bc3ebd0883c490b098b99eeaea1775ea9"
   },
   {
     "id": "EL-TASK-09A",
-    "name": "确认事务完成",
+    "name": "这件事办完了吗？",
     "role": "老人",
     "entry": "事务 `SAVED`",
     "operations": "这件事办完了；返回",
@@ -150,12 +150,12 @@
     "image": "screens/EL-TASK-09A.png",
     "pdfPage": 15,
     "width": 390,
-    "height": 893,
-    "imageSha256": "96aa59884b9281ac656d7ba2a5f48b8a76e8499098fffb5dc45d2c04229aa8dd"
+    "height": 844,
+    "imageSha256": "101ca3b19ca0c3946dc9785b14afd152f7d8821adea97015fb0e636c03c83f42"
   },
   {
     "id": "EL-TASK-09B",
-    "name": "事务完成结果",
+    "name": "这件事办完了",
     "role": "老人",
     "entry": "老人确认完成",
     "operations": "返回首页",
@@ -164,12 +164,12 @@
     "image": "screens/EL-TASK-09B.png",
     "pdfPage": 16,
     "width": 390,
-    "height": 893,
-    "imageSha256": "660728c57b7b366dee938dc2514c8e6af539f149f63d75220c0d3104bbe4850a"
+    "height": 844,
+    "imageSha256": "8e5e908c926525f493c44f8337d549cf85b7afef6de1fd368e2e40d0ff0964eb"
   },
   {
     "id": "EL-TASK-10",
-    "name": "结束结果/首页有完成结果",
+    "name": "这件事办完了",
     "role": "老人",
     "entry": "事务终结",
     "operations": "记一件新事；查看只读详情",
@@ -178,12 +178,12 @@
     "image": "screens/EL-TASK-10.png",
     "pdfPage": 17,
     "width": 390,
-    "height": 939,
-    "imageSha256": "a41ee9465e6b3061d1dc588b6c9db36ad271474e383c67374beb696f5893f8bb"
+    "height": 844,
+    "imageSha256": "c1af32085bfb8ad15f26228ed2674342a1405584a5f2e68b29c90765d077fa30"
   },
   {
     "id": "EL-EX-01",
-    "name": "必要信息缺失",
+    "name": "还需要时间和地点",
     "role": "老人",
     "entry": "解析缺少必要字段",
     "operations": "补填；返回输入",
@@ -192,12 +192,12 @@
     "image": "screens/EL-EX-01.png",
     "pdfPage": 18,
     "width": 390,
-    "height": 893,
-    "imageSha256": "c8251ce3cc5be9165fb2897e4541c813dba68b4aa7252a5ac08889090f804934"
+    "height": 844,
+    "imageSha256": "e5039c4036fbdc5b1e71c9b76caca4a8182171343d58a8f886cb9b15117e6849"
   },
   {
     "id": "EL-EX-02A",
-    "name": "AI 解析失败",
+    "name": "这次没整理好",
     "role": "老人",
     "entry": "失败场景 fixture",
     "operations": "再试一次；手动填写",
@@ -206,12 +206,12 @@
     "image": "screens/EL-EX-02A.png",
     "pdfPage": 19,
     "width": 390,
-    "height": 893,
-    "imageSha256": "1d02da0ea191e7fddee17e3abbc4e84b28faca1749a1420b734acab75e6f8812"
+    "height": 844,
+    "imageSha256": "84102ac1c5fc3eb3e89907a1ac567508385862be5915bfb758ccb9d6fb233ed0"
   },
   {
     "id": "EL-EX-02B",
-    "name": "手动填写",
+    "name": "把这件事写下来",
     "role": "老人",
     "entry": "选择手动填写或补字段",
     "operations": "保存并检查；返回",
@@ -220,12 +220,12 @@
     "image": "screens/EL-EX-02B.png",
     "pdfPage": 20,
     "width": 390,
-    "height": 1285,
-    "imageSha256": "cf26691a28a5dc3ef5c515c12b7907a48c7ca12f7496a555b372cb35e07ccfd9"
+    "height": 1005,
+    "imageSha256": "b4da70177bfce5d2585800dc10ef825845c56def9e0a4b18caea1c3cd02fd546"
   },
   {
     "id": "EL-SHARE-01",
-    "name": "是否邀请小梅",
+    "name": "要请小梅陪你去吗？",
     "role": "老人",
     "entry": "个人事务已保存",
     "operations": "请小梅陪同；只提醒我",
@@ -234,12 +234,12 @@
     "image": "screens/EL-SHARE-01.png",
     "pdfPage": 21,
     "width": 390,
-    "height": 1073,
-    "imageSha256": "e88a34fad59bb041b2087a37068fd422bdbdae263f642e9578cdbf1efe00b57a"
+    "height": 844,
+    "imageSha256": "7d8031f817eb75954c9e5651987b52ef9565a16daebb1cf1ba097bd9ce333fdd"
   },
   {
     "id": "EL-SHARE-01B",
-    "name": "只提醒自己结果",
+    "name": "只提醒你自己",
     "role": "老人",
     "entry": "选择不共享",
     "operations": "返回事务详情",
@@ -248,12 +248,12 @@
     "image": "screens/EL-SHARE-01B.png",
     "pdfPage": 22,
     "width": 390,
-    "height": 893,
-    "imageSha256": "9f84ff5e16661eb45ceab3408eaed6110263fab8c2c1824e44ff2125a367fb1b"
+    "height": 844,
+    "imageSha256": "abc318253dbdda004798af66aca70b971337b526cbb291396d88e0a07548a142"
   },
   {
     "id": "EL-SHARE-02",
-    "name": "本次共享预览",
+    "name": "发给小梅前，再看看",
     "role": "老人",
     "entry": "选择请求小梅",
     "operations": "发给小梅；暂不发送；她能看到什么",
@@ -262,12 +262,12 @@
     "image": "screens/EL-SHARE-02.png",
     "pdfPage": 23,
     "width": 390,
-    "height": 1103,
-    "imageSha256": "1a5973af685e59272e13533a920fd5af97f135fc8598ad1966b37bf0ced152f4"
+    "height": 844,
+    "imageSha256": "5ed75edc1ad14694ca913d4df99e4c916ee8a61c927610145463b89dcef96793"
   },
   {
     "id": "EL-SHARE-03",
-    "name": "请求发送中",
+    "name": "正在发给小梅",
     "role": "老人",
     "entry": "明确确认发送",
     "operations": "等待",
@@ -276,12 +276,12 @@
     "image": "screens/EL-SHARE-03.png",
     "pdfPage": 24,
     "width": 390,
-    "height": 972,
-    "imageSha256": "e9af13842e72dc2ea7cd844760fd8a71b7ba77cbb73eeca329f6ae3e88479463"
+    "height": 844,
+    "imageSha256": "fb6f554f6ae398465ba336bde051f0de46b01a5ff9668f016b3573069688c1be"
   },
   {
     "id": "EL-SHARE-04A",
-    "name": "请求发送成功",
+    "name": "已经发给小梅",
     "role": "老人",
     "entry": "发送 adapter 成功",
     "operations": "查看等待状态",
@@ -290,12 +290,12 @@
     "image": "screens/EL-SHARE-04A.png",
     "pdfPage": 25,
     "width": 390,
-    "height": 1021,
-    "imageSha256": "2bd238ed0279f2e3c9840fdddacdc290d2cf8a0793fd466a63ddcfa9e8033ff4"
+    "height": 844,
+    "imageSha256": "9e0e753a1ec8b0196734ebcde9bc568537df4177b89dfa2d3914c94e2968df38"
   },
   {
     "id": "EL-SHARE-04B",
-    "name": "等待回应",
+    "name": "等小梅回复",
     "role": "老人",
     "entry": "请求已成功送达且暂无答复",
     "operations": "查看详情；撤回请求",
@@ -304,12 +304,12 @@
     "image": "screens/EL-SHARE-04B.png",
     "pdfPage": 26,
     "width": 390,
-    "height": 1040,
-    "imageSha256": "9ce61ce26ceb947edf2b1e3e16dc3de5deaca992924f68ce7c67781395aed270"
+    "height": 844,
+    "imageSha256": "406ba802eac93c38a71e378ef19d1da7585ecadb43f9bea080cc01f95e863c52"
   },
   {
     "id": "EL-SHARE-05",
-    "name": "家属已接受",
+    "name": "小梅可以陪你去",
     "role": "老人",
     "entry": "小梅接受有效请求",
     "operations": "知道了；查看事务；完成事务",
@@ -318,12 +318,12 @@
     "image": "screens/EL-SHARE-05.png",
     "pdfPage": 27,
     "width": 390,
-    "height": 893,
-    "imageSha256": "f46eec4d9c9333ad80087d38ce7f115dc446f0b37ea900ab3b47b0dcd514acf6"
+    "height": 844,
+    "imageSha256": "83684941823d43360706e16b076d361af5c4985389d42a80fed48d7495297779"
   },
   {
     "id": "EL-SHARE-06",
-    "name": "家属已拒绝",
+    "name": "小梅这次不能陪你",
     "role": "老人",
     "entry": "小梅拒绝",
     "operations": "自行安排；取消事务",
@@ -332,12 +332,12 @@
     "image": "screens/EL-SHARE-06.png",
     "pdfPage": 28,
     "width": 390,
-    "height": 893,
-    "imageSha256": "1d54d5a7eec32f39f6bc66511b695538c216370e330d7ff4c4f155345ba58297"
+    "height": 844,
+    "imageSha256": "6e889eb470e10b33c9c2563d4d19829fee490f8adb669bbc74bea554f038ed90"
   },
   {
     "id": "EL-SHARE-07",
-    "name": "改期建议",
+    "name": "小梅想下午2:00去",
     "role": "老人",
     "entry": "小梅建议 14:00",
     "operations": "改成 14:00；还是 9:00；撤回请求",
@@ -346,12 +346,12 @@
     "image": "screens/EL-SHARE-07.png",
     "pdfPage": 29,
     "width": 390,
-    "height": 1005,
-    "imageSha256": "4ed8c20f82e11a7df806fa5c048bb70e62e28477f25223ad2d4e327d2bd2149d"
+    "height": 844,
+    "imageSha256": "a6eb32e6a1a7327cfab6ce3035c64e9735adce9dc4b9fd97229b9f7fac663441"
   },
   {
     "id": "EL-SHARE-08",
-    "name": "接受改期/新版本待重新分享",
+    "name": "已改到下午2:00",
     "role": "老人",
     "entry": "接受建议",
     "operations": "重新发给小梅；只保留事务",
@@ -360,12 +360,12 @@
     "image": "screens/EL-SHARE-08.png",
     "pdfPage": 30,
     "width": 390,
-    "height": 972,
-    "imageSha256": "980920e6e5642a863cfe8c903303bbda74db5e2f25b7a6110b5472ddb3da6f8f"
+    "height": 844,
+    "imageSha256": "f4e76ec586c40c52642b0123a7bf4fc247f77f3378dfd8dab7542a15bb1edcce"
   },
   {
     "id": "EL-SHARE-09",
-    "name": "拒绝改期结果",
+    "name": "仍按原来的时间",
     "role": "老人",
     "entry": "坚持 9:00",
     "operations": "继续等待；撤回",
@@ -374,12 +374,12 @@
     "image": "screens/EL-SHARE-09.png",
     "pdfPage": 31,
     "width": 390,
-    "height": 972,
-    "imageSha256": "8225f6cc388335569be5a47854462b4a551066c2afd87beab5cb8ba05ec0c50e"
+    "height": 844,
+    "imageSha256": "69241a2d505e16c276ab0cd43f6ac3143f1bc36cb00c8cfa7c681bec9293e2d0"
   },
   {
     "id": "EL-EX-03",
-    "name": "请求发送失败",
+    "name": "没有发给小梅",
     "role": "老人",
     "entry": "发送 adapter 失败",
     "operations": "重试；暂不发送",
@@ -388,12 +388,12 @@
     "image": "screens/EL-EX-03.png",
     "pdfPage": 32,
     "width": 390,
-    "height": 893,
-    "imageSha256": "98823abe3c71ec7d5f51b96c6a37f625902c8cbf2b695b32145fd18c0633fd94"
+    "height": 844,
+    "imageSha256": "b693a19053f9c6c706d5882c97e67b9034eda1a4d9e1e722349367eda0c70d79"
   },
   {
     "id": "EL-EX-04",
-    "name": "家属未回应",
+    "name": "小梅还没有回复",
     "role": "老人",
     "entry": "`PENDING` 超过演示期限",
     "operations": "继续等；撤回；自行安排",
@@ -402,12 +402,12 @@
     "image": "screens/EL-EX-04.png",
     "pdfPage": 33,
     "width": 390,
-    "height": 893,
-    "imageSha256": "c75ac3f925c4c37d6ade97bc0411936340783c20fdfbc7edf2443ac5e0fbc292"
+    "height": 844,
+    "imageSha256": "4b12bc57b44744d3add7a6ccd3d85be6d9ff0bd9b7204af4a748a255b0eca218"
   },
   {
     "id": "EL-EX-05A",
-    "name": "撤回请求确认",
+    "name": "不需要小梅陪了吗？",
     "role": "老人",
     "entry": "请求仍可撤回",
     "operations": "确认撤回；返回",
@@ -416,12 +416,12 @@
     "image": "screens/EL-EX-05A.png",
     "pdfPage": 34,
     "width": 390,
-    "height": 893,
-    "imageSha256": "9dc95388d7ac9c5d2270c8e99e9dddd922d435ae891aa458c74b805a8cf77632"
+    "height": 844,
+    "imageSha256": "51ae39db43177de3b16a88721a83e1373c3cb9ab3ea2130d7af44bac0a8dc5cd"
   },
   {
     "id": "EL-EX-05B",
-    "name": "撤回结果",
+    "name": "陪同请求已撤回",
     "role": "老人",
     "entry": "确认撤回",
     "operations": "返回事务详情",
@@ -430,12 +430,12 @@
     "image": "screens/EL-EX-05B.png",
     "pdfPage": 35,
     "width": 390,
-    "height": 893,
-    "imageSha256": "f165090b6c67c229cbdc48b8f982038ada8f22afe10d320a9fa1c18bffca0c2e"
+    "height": 844,
+    "imageSha256": "de9a26e47a87eb853adfe2a81b35434616998c4809d3081a535a7ffd618e9c52"
   },
   {
     "id": "EL-EX-06A",
-    "name": "取消整个事务确认",
+    "name": "要取消这件事吗？",
     "role": "老人",
     "entry": "事务 `SAVED`",
     "operations": "确认取消；返回",
@@ -444,12 +444,12 @@
     "image": "screens/EL-EX-06A.png",
     "pdfPage": 36,
     "width": 390,
-    "height": 893,
-    "imageSha256": "ac16ac287cccb19d89b6c34832e9ef4efc42b98783c7b1de0656d4886d2675bf"
+    "height": 844,
+    "imageSha256": "e227ca5233f708eee00c214d7ea64cfa6c6a6e9f8332f8acfc3bba0444a8b9b0"
   },
   {
     "id": "EL-EX-06B",
-    "name": "取消事务结果",
+    "name": "这件事已取消",
     "role": "老人",
     "entry": "确认取消",
     "operations": "返回首页",
@@ -458,12 +458,12 @@
     "image": "screens/EL-EX-06B.png",
     "pdfPage": 37,
     "width": 390,
-    "height": 893,
-    "imageSha256": "b198b60e80d618812f88eaec72ed0de1205085633392eafad0d616065d5fed5f"
+    "height": 844,
+    "imageSha256": "9c60c5d3b7658e815ed045dd75b41dae4840f63092bd8aefdf88000c3372a90e"
   },
   {
     "id": "EL-EX-07A",
-    "name": "修改共享字段/旧请求将失效",
+    "name": "改到下午2:00？",
     "role": "老人",
     "entry": "从 `EL-TASK-08` 继续",
     "operations": "确认新版本；返回",
@@ -472,12 +472,12 @@
     "image": "screens/EL-EX-07A.png",
     "pdfPage": 38,
     "width": 390,
-    "height": 1005,
-    "imageSha256": "5d2c9a0806d1437acc7e0ae63bb64cc6be5f6b26a1002033a2c197cad2cf0eed"
+    "height": 844,
+    "imageSha256": "05f097b0e9b74a22b6b4c122e982791c7ee58049aa6cabb2ed6f375387590096"
   },
   {
     "id": "EL-EX-07B",
-    "name": "新版本重新分享",
+    "name": "已改到下午2:00",
     "role": "老人",
     "entry": "新版本已保存，旧请求 `INVALIDATED`",
     "operations": "查看共享并重新发送；只提醒自己",
@@ -486,12 +486,12 @@
     "image": "screens/EL-EX-07B.png",
     "pdfPage": 39,
     "width": 390,
-    "height": 972,
-    "imageSha256": "980920e6e5642a863cfe8c903303bbda74db5e2f25b7a6110b5472ddb3da6f8f"
+    "height": 844,
+    "imageSha256": "f4e76ec586c40c52642b0123a7bf4fc247f77f3378dfd8dab7542a15bb1edcce"
   },
   {
     "id": "EL-SET-01",
-    "name": "显示设置（P1）",
+    "name": "看得更清楚",
     "role": "老人",
     "entry": "P1 功能已启用",
     "operations": "切换显示模式；恢复默认；返回",
@@ -500,12 +500,12 @@
     "image": "screens/EL-SET-01.png",
     "pdfPage": 40,
     "width": 390,
-    "height": 1009,
-    "imageSha256": "177a8b0db38c99f17068ac7f810c164f215f41ddb7b16395a75bbace92065cbd"
+    "height": 844,
+    "imageSha256": "7520406e44146922ef024a00e762f3f76affaad651e9ecfe616167b38ebd4320"
   },
   {
     "id": "EL-REL-01",
-    "name": "首次关系介绍",
+    "name": "和小梅一起记挂",
     "role": "老人",
     "entry": "尚无关系，进入家庭协作",
     "operations": "显示二维码；暂不建立",
@@ -514,12 +514,12 @@
     "image": "screens/EL-REL-01.png",
     "pdfPage": 41,
     "width": 390,
-    "height": 893,
-    "imageSha256": "12805112e48c67211d09b2baed538c13ed5f4aed29840e4167538d7a10ad457b"
+    "height": 844,
+    "imageSha256": "4d167048fc23c45e0f836adfd894d9acfff1aa402ad65efbf9d8f1dbb238688f"
   },
   {
     "id": "FM-REL-01",
-    "name": "模拟扫码并发起关系",
+    "name": "和妈妈建立协作",
     "role": "家属",
     "entry": "扫描老人端演示二维码",
     "operations": "申请建立；取消",
@@ -528,12 +528,12 @@
     "image": "screens/FM-REL-01.png",
     "pdfPage": 42,
     "width": 390,
-    "height": 893,
-    "imageSha256": "0710886ed45566767cfcf12eee6c6a8016a1473490cecd12d6a977096eb4fef1"
+    "height": 844,
+    "imageSha256": "51b351e0844ea312628d421daa400aa58b4d62728f7340d3df140f4aae668824"
   },
   {
     "id": "EL-REL-02",
-    "name": "查看身份和权限",
+    "name": "小梅想与你建立协作",
     "role": "老人",
     "entry": "小梅已发起申请",
     "operations": "同意建立；暂不同意；她能看到什么",
@@ -542,12 +542,12 @@
     "image": "screens/EL-REL-02.png",
     "pdfPage": 43,
     "width": 390,
-    "height": 893,
-    "imageSha256": "4d5acbdb9ef39efd9ef33b60dc13fa37418e74b4b9802cb2bb0dd98e17f461b1"
+    "height": 844,
+    "imageSha256": "a7852d42164216f2bcebd623181b1b5fee68b4764a027ec16c0b5b366348cc5b"
   },
   {
     "id": "EL-REL-02A",
-    "name": "同意建立关系确认",
+    "name": "同意和小梅协作吗？",
     "role": "老人",
     "entry": "在身份和权限页点击同意",
     "operations": "确认同意；返回",
@@ -556,12 +556,12 @@
     "image": "screens/EL-REL-02A.png",
     "pdfPage": 44,
     "width": 390,
-    "height": 893,
-    "imageSha256": "28adc86095638095c8af666c01ddab8082f669fa84850c8d062931bd64ae78ac"
+    "height": 844,
+    "imageSha256": "01c41225bc2636065962113ff56e4cf21ce745fa496552658213d476523012ac"
   },
   {
     "id": "EL-REL-03",
-    "name": "拒绝关系结果",
+    "name": "这次先不建立协作",
     "role": "老人",
     "entry": "点击暂不同意",
     "operations": "返回首页",
@@ -570,12 +570,12 @@
     "image": "screens/EL-REL-03.png",
     "pdfPage": 45,
     "width": 390,
-    "height": 893,
-    "imageSha256": "d542c8caa88d57217263c805acb7bda989e8971c24a40040b859468e7e82b993"
+    "height": 844,
+    "imageSha256": "5e6dc64c19188c59cd5eca875ecfd4314faa83dd0ba804800f48e5d43541afe1"
   },
   {
     "id": "FM-REL-03",
-    "name": "关系申请被拒绝",
+    "name": "妈妈这次先不同意",
     "role": "家属",
     "entry": "老人拒绝",
     "operations": "返回首页",
@@ -584,12 +584,12 @@
     "image": "screens/FM-REL-03.png",
     "pdfPage": 46,
     "width": 390,
-    "height": 893,
-    "imageSha256": "fa08f1238dc3be7a2f53222373a4280c630f254267f34b2a24b33c5be19c57ec"
+    "height": 844,
+    "imageSha256": "8a58510d09682d3c5f740d6ee6932b7a4c1a522f826be1640e306b5e65ce45db"
   },
   {
     "id": "EL-REL-06",
-    "name": "关系建立成功",
+    "name": "小梅 · 女儿",
     "role": "老人",
     "entry": "老人同意",
     "operations": "返回首页；查看关系",
@@ -598,12 +598,12 @@
     "image": "screens/EL-REL-06.png",
     "pdfPage": 47,
     "width": 390,
-    "height": 893,
-    "imageSha256": "750c87358ee6943b75bb3754310c4025f711814dc88bb2c30277ad0e339ecfea"
+    "height": 844,
+    "imageSha256": "d32c780007b9cda815c0b076d51b7ea1b91635c2c79125a065a15352170db43c"
   },
   {
     "id": "FM-REL-02",
-    "name": "关系建立成功",
+    "name": "妈妈 · 张阿姨",
     "role": "家属",
     "entry": "老人同意",
     "operations": "查看请求",
@@ -612,12 +612,12 @@
     "image": "screens/FM-REL-02.png",
     "pdfPage": 48,
     "width": 390,
-    "height": 893,
-    "imageSha256": "8cd3a37b82158a5615164ad8830929c55d5a86b9c3cad3eb3aecb05fecc26cc2"
+    "height": 844,
+    "imageSha256": "a18ae2fc66bce2a06ab1f7048f8fb6e03a8ae7353656ec0e9af7cc7d7efe3deb"
   },
   {
     "id": "EL-REL-07",
-    "name": "她能看到什么",
+    "name": "她能看到什么？",
     "role": "老人",
     "entry": "关系或共享说明入口",
     "operations": "知道了",
@@ -626,12 +626,12 @@
     "image": "screens/EL-REL-07.png",
     "pdfPage": 49,
     "width": 390,
-    "height": 968,
-    "imageSha256": "a29097872b17498510c372e2885817cf84662868fee5f7d96c1c8422bea20045"
+    "height": 844,
+    "imageSha256": "b45d3471e0a8574c0519729dfb5897328cb6080604921e6173adb60059026ad1"
   },
   {
     "id": "EL-REL-04A",
-    "name": "关系详情/结束确认",
+    "name": "结束和小梅的协作？",
     "role": "老人",
     "entry": "关系 `ACTIVE`",
     "operations": "结束关系；返回",
@@ -640,12 +640,12 @@
     "image": "screens/EL-REL-04A.png",
     "pdfPage": 50,
     "width": 390,
-    "height": 893,
-    "imageSha256": "7259df162d7f0b04c7a325ab0b8a5ee8275e4d8bffd863c9532f890bc457d344"
+    "height": 844,
+    "imageSha256": "f9df59279e5728f85f7c4a954826186d489cbf9db41d73df5e5dcd25129e1833"
   },
   {
     "id": "EL-REL-05",
-    "name": "关系已结束",
+    "name": "家庭协作已结束",
     "role": "老人",
     "entry": "确认结束",
     "operations": "返回首页",
@@ -654,12 +654,12 @@
     "image": "screens/EL-REL-05.png",
     "pdfPage": 51,
     "width": 390,
-    "height": 893,
-    "imageSha256": "4e264c1beb60173e0ae801fe166d6376ecf2d3160cf9216746f30d61a242ac9c"
+    "height": 844,
+    "imageSha256": "1d71442f107bca15c86e26bf15f2a624e4c5269237dcd13bdc69c3324bda54c6"
   },
   {
     "id": "FM-REL-04",
-    "name": "关系已结束",
+    "name": "家庭协作已结束",
     "role": "家属",
     "entry": "任一方结束关系",
     "operations": "返回首页",
@@ -668,12 +668,12 @@
     "image": "screens/FM-REL-04.png",
     "pdfPage": 52,
     "width": 390,
-    "height": 893,
-    "imageSha256": "651be9fea46db4f3dc8b25a0b5368aeda8b2483c74885ce1317247d1ba2210a1"
+    "height": 844,
+    "imageSha256": "564870bec6aea9a43e2e8ed80ae5392443f6cb553f9675b52b6543dd6e748984"
   },
   {
     "id": "FM-REQ-00",
-    "name": "请求列表空状态",
+    "name": "妈妈的消息",
     "role": "家属",
     "entry": "关系未建立、刚建立或没有有效请求",
     "operations": "查看关系",
@@ -682,12 +682,12 @@
     "image": "screens/FM-REQ-00.png",
     "pdfPage": 53,
     "width": 390,
-    "height": 893,
-    "imageSha256": "b27eb37bba888fd6ff82ac806321e842cd9015f715f3e06cd4f02418b69a2d0e"
+    "height": 844,
+    "imageSha256": "e4de7de0d1063a8e9845ef0064ab8dced425df7f2dfe84c73540fcd3bb532824"
   },
   {
     "id": "FM-REQ-01",
-    "name": "请求列表有数据",
+    "name": "妈妈的消息",
     "role": "家属",
     "entry": "有 `PENDING` 请求",
     "operations": "查看请求",
@@ -696,12 +696,12 @@
     "image": "screens/FM-REQ-01.png",
     "pdfPage": 54,
     "width": 390,
-    "height": 893,
-    "imageSha256": "d8d986ded92b29efeddbb9970e34c96656ed9907a9e220905c4df5c5a98b6f41"
+    "height": 844,
+    "imageSha256": "72aa10af7fe15ce31bac5225e0bd444fb55e82f87a35682c396995f528e82f6e"
   },
   {
     "id": "FM-REQ-02",
-    "name": "请求详情",
+    "name": "妈妈想请你陪她去",
     "role": "家属",
     "entry": "打开当前有效请求",
     "operations": "我可以陪；这次不行；建议改期",
@@ -710,12 +710,12 @@
     "image": "screens/FM-REQ-02.png",
     "pdfPage": 55,
     "width": 390,
-    "height": 974,
-    "imageSha256": "c2c6105983194ee9806705eff189b34c4d03933528bef22bb7214c7d3d91e455"
+    "height": 880,
+    "imageSha256": "c8cc329cae0a29d0cdb165744c8984457bb5c77128d68f91282beba40b7b8e27"
   },
   {
     "id": "FM-REQ-03A",
-    "name": "接受确认",
+    "name": "确认可以陪妈妈？",
     "role": "家属",
     "entry": "点击接受",
     "operations": "确认可以陪；返回",
@@ -724,12 +724,12 @@
     "image": "screens/FM-REQ-03A.png",
     "pdfPage": 56,
     "width": 390,
-    "height": 893,
-    "imageSha256": "14f17b2ac65ff14874034af22ca4aff5403dbc9cf257cb921057472cb0bb43f7"
+    "height": 844,
+    "imageSha256": "801c4c7a4b75b688790ec5564114fdafcd91477bf5e8f45207c4a7c581c042de"
   },
   {
     "id": "FM-REQ-03B",
-    "name": "接受结果",
+    "name": "已告诉妈妈你可以陪同",
     "role": "家属",
     "entry": "确认接受",
     "operations": "返回列表",
@@ -738,12 +738,12 @@
     "image": "screens/FM-REQ-03B.png",
     "pdfPage": 57,
     "width": 390,
-    "height": 893,
-    "imageSha256": "bb3627ba016ceb19fea6adb1a8805004ce116ab4329c897e5af9e9534eab302c"
+    "height": 844,
+    "imageSha256": "b7fe509fee4be26ca1cfee7407ac3daa60572f56b5656073fd460e1dc3602f53"
   },
   {
     "id": "FM-REQ-04A",
-    "name": "拒绝确认",
+    "name": "这次不能陪妈妈？",
     "role": "家属",
     "entry": "点击拒绝",
     "operations": "确认不能陪；返回",
@@ -752,12 +752,12 @@
     "image": "screens/FM-REQ-04A.png",
     "pdfPage": 58,
     "width": 390,
-    "height": 893,
-    "imageSha256": "c058b0d2d1c68597a7ec6b22a5eaa5513dcd2b263caff60f838e75bfc2083fa6"
+    "height": 844,
+    "imageSha256": "6943b1aaf60bb652eb6f74c8f3f88af72ce47622dbae8681148e9c83971a2446"
   },
   {
     "id": "FM-REQ-04B",
-    "name": "拒绝结果",
+    "name": "已告诉妈妈这次不能陪同",
     "role": "家属",
     "entry": "确认拒绝",
     "operations": "返回列表",
@@ -766,12 +766,12 @@
     "image": "screens/FM-REQ-04B.png",
     "pdfPage": 59,
     "width": 390,
-    "height": 893,
-    "imageSha256": "3c63fcac7cf63c41a2ae03407e24a07319a7284cdc4f2862bef9d27c1edb9508"
+    "height": 844,
+    "imageSha256": "8c0ca98b8476f6e5a3ff1905845295a672f31cbdd7ace811ec47a14b97a8a110"
   },
   {
     "id": "FM-REQ-05A",
-    "name": "建议改期",
+    "name": "建议下午2:00去？",
     "role": "家属",
     "entry": "点击建议改期",
     "operations": "提交建议；返回",
@@ -780,12 +780,12 @@
     "image": "screens/FM-REQ-05A.png",
     "pdfPage": 60,
     "width": 390,
-    "height": 893,
-    "imageSha256": "51da865139633e126b1d0b50ae95f2c84c5855236594d81e8783c83686a194ca"
+    "height": 844,
+    "imageSha256": "d4b0c0e7dc43f978148547b22e5ccce38c02726c9c7e25ff3b53fa5b2290b9fd"
   },
   {
     "id": "FM-REQ-05B",
-    "name": "建议已发送",
+    "name": "已把建议告诉妈妈",
     "role": "家属",
     "entry": "提交建议",
     "operations": "返回列表",
@@ -794,12 +794,12 @@
     "image": "screens/FM-REQ-05B.png",
     "pdfPage": 61,
     "width": 390,
-    "height": 893,
-    "imageSha256": "13c25d3eef09b95eff5f648e75dbfa0ac20030afc559e12dc5e76e17ee8bb78d"
+    "height": 844,
+    "imageSha256": "f460a26946fa8b3b044ccf261930e30c6e794f5bd1092638026a5b71a8f4c055"
   },
   {
     "id": "FM-EX-01",
-    "name": "请求已撤回",
+    "name": "妈妈不用你陪同了",
     "role": "家属",
     "entry": "老人撤回",
     "operations": "返回列表",
@@ -808,12 +808,12 @@
     "image": "screens/FM-EX-01.png",
     "pdfPage": 62,
     "width": 390,
-    "height": 893,
-    "imageSha256": "484b204ced1ca65533dadba51818c12790f1600d808dcfc18c2563325f956d7b"
+    "height": 844,
+    "imageSha256": "352df034cffb45312cfa6003df9091658dd494a42ae355f8d8cb8b5e24b808e5"
   },
   {
     "id": "FM-EX-02",
-    "name": "事务已取消",
+    "name": "妈妈取消了这件事",
     "role": "家属",
     "entry": "老人取消整个事务",
     "operations": "返回列表",
@@ -822,12 +822,12 @@
     "image": "screens/FM-EX-02.png",
     "pdfPage": 63,
     "width": 390,
-    "height": 893,
-    "imageSha256": "afc0ff735a54136e60ba5e8aca55ce8926414400b1c32aed3b43d3c0685e4b3c"
+    "height": 844,
+    "imageSha256": "2ee5b0843ecfccc3dcdbb38b25a64ac8cdb15976a8f101591dc0426b792fe550"
   },
   {
     "id": "FM-EX-03",
-    "name": "旧请求已失效",
+    "name": "之前的安排更新了",
     "role": "家属",
     "entry": "事务版本变化或关系结束",
     "operations": "刷新请求列表",
@@ -836,77 +836,77 @@
     "image": "screens/FM-EX-03.png",
     "pdfPage": 64,
     "width": 390,
-    "height": 893,
-    "imageSha256": "c9196ea69f76fd9d33ede233961d509d6f263c773013e51f0dd6435e3131811f"
+    "height": 844,
+    "imageSha256": "bfd35e4aa3133535860dfa19044c57c1a5cb92330384c55ae27daac49e3a4aef"
   },
   {
     "id": "DM-01",
-    "name": "角色切换条",
-    "role": "演示控制",
+    "name": "当前身份：张阿姨",
+    "role": "评审辅助",
     "entry": "任意业务页面",
     "operations": "切换角色",
     "next": "对应角色同一业务状态",
     "test": "`TC-DEMO-001`",
     "image": "screens/DM-01.png",
     "pdfPage": 65,
-    "width": 390,
-    "height": 893,
-    "imageSha256": "7c9a6a8455132e5c821998ea81e85f5717e97d8601c536c8c87ef81a37a6fec7"
+    "width": 338,
+    "height": 282,
+    "imageSha256": "f99b8cef590785cb66c90503605f9c3a6e356ca6b655d73671ae499e33d1a9de"
   },
   {
     "id": "DM-02",
-    "name": "场景预设面板",
-    "role": "演示控制",
+    "name": "快速查看",
+    "role": "评审辅助",
     "entry": "展开演示工具",
     "operations": "加载场景",
     "next": "场景起始页面",
     "test": "`TC-DEMO-002`",
     "image": "screens/DM-02.png",
     "pdfPage": 66,
-    "width": 390,
-    "height": 2083,
-    "imageSha256": "fd845a125160639080b3e1cb93088e8ab7ef94a034df4b883b4af03a10d006e8"
+    "width": 338,
+    "height": 889,
+    "imageSha256": "ab90d24aff72e5250692929baad802822b06e7b4ad379b984d32de5938a55dd0"
   },
   {
     "id": "DM-03",
-    "name": "固定演示时间",
-    "role": "演示控制",
+    "name": "演示时间",
+    "role": "评审辅助",
     "entry": "展开演示工具",
     "operations": "推进时间；恢复时间",
     "next": "相关提醒/未回应页面",
     "test": "`TC-DEMO-003`",
     "image": "screens/DM-03.png",
     "pdfPage": 67,
-    "width": 390,
-    "height": 2083,
-    "imageSha256": "fd845a125160639080b3e1cb93088e8ab7ef94a034df4b883b4af03a10d006e8"
+    "width": 338,
+    "height": 219,
+    "imageSha256": "9b03878acd8a577a989b3b6eb2d13064cce2c29d99c0caf98653d21df62bd24f"
   },
   {
     "id": "DM-04A",
-    "name": "Reset 确认",
-    "role": "演示控制",
+    "name": "恢复初始状态？",
+    "role": "评审辅助",
     "entry": "点击重置",
     "operations": "确认重置；返回",
     "next": "`DM-04B` 或原页",
     "test": "`TC-DEMO-004`",
     "image": "screens/DM-04A.png",
     "pdfPage": 68,
-    "width": 390,
-    "height": 893,
-    "imageSha256": "5eed2019f4f9ffaa277baae77ad99be71d87aa7831f8af64bfbcdcc2a008ada7"
+    "width": 338,
+    "height": 231,
+    "imageSha256": "fbb48a4167bc73e855a75b116dd5a326688ba32b6810230c207ad30327ece819"
   },
   {
     "id": "DM-04B",
-    "name": "Reset 结果",
-    "role": "演示控制",
+    "name": "已恢复初始状态",
+    "role": "评审辅助",
     "entry": "确认重置",
     "operations": "开始演示",
     "next": "`EL-REL-01`",
     "test": "`TC-DEMO-004`",
     "image": "screens/DM-04B.png",
     "pdfPage": 69,
-    "width": 390,
-    "height": 893,
-    "imageSha256": "6ec3586c41d8388caa3d2c50aa181027cff31e129df373547424aa6f8a52e58d"
+    "width": 338,
+    "height": 136,
+    "imageSha256": "4f980806ce7b6ff06595d3ce7e42719de9b6ccbaebe8bdb3a5cfea44918c204b"
   }
 ]
