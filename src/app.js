@@ -26,6 +26,11 @@ root.addEventListener('click', event => {
   const control = event.target.closest('[data-action]');
   if (!control) return;
   const action = control.dataset.action;
+  const reviewOnly = new Set(['load-screen','load-demo-scenario','role-elder','role-family','demo','ask-reset','reset','finish-parsing','finish-sending','review-reminder','review-no-response','simulate-missing','simulate-parse-failure','simulate-send-failure','mark-no-response','trigger-reminder']);
+  if (reviewOnly.has(action) && (surface !== 'review' || !control.closest('.review-tools'))) return;
+  if (action === 'review-reminder') {store.dispatch({type:'SET_ROLE',role:'ELDER'});store.dispatch({type:'TRIGGER_REMINDER'});}
+  if (action === 'review-no-response') {store.dispatch({type:'SET_ROLE',role:'ELDER'});store.dispatch({type:'MARK_NO_RESPONSE'});}
+
   if (action === 'load-screen') store.dispatch({type:'LOAD_SCREEN',id:control.dataset.screen,snapshot:screenSnapshot(control.dataset.screen)});
   if (action === 'continue-post-edit') store.dispatch({type:'NAVIGATE',view:'POST_ACCEPT_EDIT'});
   if (action === 'ask-share') store.dispatch({type:'NAVIGATE',view:'SHARE_DECISION'});
@@ -52,7 +57,7 @@ root.addEventListener('click', event => {
   if (action === 'role-family') store.dispatch({ type: 'SET_ROLE', role: 'FAMILY' });
   if (action === 'relationship') store.dispatch({ type: 'NAVIGATE', view: 'RELATIONSHIP' });
   if (action === 'demo') store.dispatch({ type: 'NAVIGATE', view: 'DEMO' });
-  if (action === 'load-demo-scenario') store.dispatch({ type: 'LOAD_DEMO_SCENARIO', scenario: control.dataset.scenario });
+  if (action === 'load-demo-scenario') {store.dispatch({ type: 'LOAD_DEMO_SCENARIO', scenario: control.dataset.scenario });if(control.dataset.scenario==='PENDING_FAMILY'){store.dispatch({type:'SET_ROLE',role:'ELDER'});store.dispatch({type:'MARK_NO_RESPONSE'});}}
   if (action === 'establish-relationship') store.dispatch({ type: 'ESTABLISH_RELATIONSHIP' });
   if (action === 'decline-relationship') store.dispatch({ type: 'DECLINE_RELATIONSHIP' });
   if (action === 'show-qr') store.dispatch({ type: 'SHOW_RELATIONSHIP_QR' });

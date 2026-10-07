@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "testedAt": "2026-10-07T10:20:37.714Z",
+  "count": 13,
+  "results": [
+    {
+      "id": "INITIAL",
+      "label": "首次使用",
+      "view": "ELDER_HOME",
+      "role": "ELDER"
+    },
+    {
+      "id": "MAIN_FLOW",
+      "label": "正常流程",
+      "view": "TASK_SAVED",
+      "role": "ELDER"
+    },
+    {
+      "id": "RECOGNITION_ERROR",
+      "label": "时间需要修改",
+      "view": "TASK_CONFIRM",
+      "role": "ELDER"
+    },
+    {
+      "id": "MISSING_INFORMATION",
+      "label": "信息没听全",
+      "view": "TASK_MISSING",
+      "role": "ELDER"
+    },
+    {
+      "id": "AI_FAILURE",
+      "label": "暂时没整理好",
+      "view": "TASK_PARSE_FAILED",
+      "role": "ELDER"
+    },
+    {
+      "id": "SEND_FAILURE",
+      "label": "消息没有发出去",
+      "view": "REQUEST_SEND_FAILED",
+      "role": "ELDER"
+    },
+    {
+      "id": "PENDING_FAMILY",
+      "label": "小梅还没回复",
+      "view": "REQUEST_NO_RESPONSE",
+      "role": "ELDER"
+    },
+    {
+      "id": "ACCEPTED",
+      "label": "小梅可以陪同",
+      "view": "ELDER_ACCEPTED",
+      "role": "ELDER"
+    },
+    {
+      "id": "DECLINED",
+      "label": "小梅这次不能陪同",
+      "view": "ELDER_DECLINED",
+      "role": "ELDER"
+    },
+    {
+      "id": "CHANGE_PROPOSED",
+      "label": "小梅建议改时间",
+      "view": "ELDER_CHANGE_PROPOSED",
+      "role": "ELDER"
+    },
+    {
+      "id": "WITHDRAWN",
+      "label": "已撤回陪同",
+      "view": "REQUEST_WITHDRAWN",
+      "role": "ELDER"
+    },
+    {
+      "id": "CANCELLED",
+      "label": "事情已取消",
+      "view": "TASK_CANCELLED",
+      "role": "ELDER"
+    },
+    {
+      "id": "REMINDER_TRIGGER",
+      "label": "提醒时间到了",
+      "view": "TASK_REMINDER",
+      "role": "ELDER"
+    }
+  ],
+  "reset": true
+}

@@ -1,0 +1,8 @@
+import fs from 'node:fs';import {connectBrowser} from './browser-session.mjs';import {reviewScenarios} from '../src/review-views.js';
+const b=await connectBrowser(),out='artifacts/qa/review-tools';fs.mkdirSync(out,{recursive:true});const results=[];
+await b.navigate('/review');
+for(const [id,label] of reviewScenarios){await b.click(`[data-scenario="${id}"]`);const state=await b.evaluate(`JSON.parse(localStorage.getItem('elder-family-assistant/state/v1'))`),text=await b.evaluate('document.querySelector(".review-tools").innerText');if(state.demoScenario!==id)throw Error(id+' not loaded');if(reviewScenarios.some(([id])=>text.includes(id)))throw Error('Scenario ID leaked');results.push({id,label,view:state.currentView,role:state.currentRole});}
+for(const [id,group] of [['DM-01','identity'],['DM-02','scenarios'],['DM-03','time'],['DM-04A','reset'],['DM-04B','reset']]){await b.click('.screen-index summary');await b.click(`[data-screen="${id}"]`);await b.screenshot(out+'/'+id+'.png',`[data-review-group="${group}"]`);}
+await b.click('[data-action=ask-reset]');await b.click('[data-action=reset]');const initial=await b.evaluate(`JSON.parse(localStorage.getItem('elder-family-assistant/state/v1'))`);if(initial.task.status!=='EMPTY'||initial.relationship.status!=='UNLINKED')throw Error('Reset failed');
+await b.call('Emulation.setDeviceMetricsOverride',{width:1100,height:1000,deviceScaleFactor:1,mobile:false});await b.screenshot(out+'/desktop.png','.review-layout');
+fs.writeFileSync(out+'/results.json',JSON.stringify({status:'PASS',testedAt:new Date().toISOString(),count:results.length,results,reset:true},null,2));b.close();console.log('13 scenarios and 5 review states PASS');

@@ -14,7 +14,11 @@ test('Demo Controller exposes every required reproducible scenario', () => {
   assert.deepEqual(DEMO_SCENARIOS.map(([id]) => id), expectedIds);
   const html = renderApp({ ...createInitialState(), currentView: 'DEMO' }, [], {surface:'review'});
   assert.match(html, /不属于正式产品功能/);
-  // Full review controls are validated after the review surface is completed.
+  assert.match(html, /演示时间/);
+  assert.match(html, /恢复初始状态/);
+  for (const id of expectedIds) assert.match(html, new RegExp(`data-scenario="${id}"`));
+  const text=html.replace(/<[^>]*>/g,'');
+  for (const id of expectedIds.filter(id=>id!=='INITIAL')) assert.ok(!text.includes(id),id+' leaked');
   assert.doesNotMatch(renderApp(createInitialState()), /评审辅助|Prototype|Demo/);
   assert.match(html, /切换到小梅/);
 });
