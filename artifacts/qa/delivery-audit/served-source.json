@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "sourceFreezeSha": "54440215c9bc6a57e6917cc89106b10a33728e76",
+  "files": [
+    "index.html",
+    "src/app.js",
+    "src/product-copy.js",
+    "src/release-views.js",
+    "src/review-views.js",
+    "src/screen-catalog.js",
+    "src/state/initial-state.js",
+    "src/state/model.js",
+    "src/state/store.js",
+    "src/styles.css",
+    "src/views.js"
+  ]
+}

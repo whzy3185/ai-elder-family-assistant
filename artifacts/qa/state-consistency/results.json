@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "testedAt": "2026-10-07T10:35:29.292Z",
+  "testedAt": "2026-10-07T11:35:05.188Z",
   "viewport": "390x844",
   "url": "http://127.0.0.1:8080",
   "externalResources": [],
@@ -124,7 +124,7 @@
           "version": 1,
           "wasCorrected": true,
           "pendingChange": null,
-          "parseToken": "1bdc81fe-56a4-45be-91d9-c52f4742d0c1"
+          "parseToken": "32b8e5eb-171e-49d8-ae1b-1820b252c5fe"
         },
         "collaborationRequest": {
           "id": "request-1-1",
@@ -284,7 +284,7 @@
           "version": 1,
           "wasCorrected": true,
           "pendingChange": null,
-          "parseToken": "8532f211-ca4c-4eb2-932a-808f0277df92"
+          "parseToken": "c85d0801-59fc-4579-b25d-2ec3ba06194b"
         },
         "collaborationRequest": {
           "id": "request-1-1",
@@ -545,7 +545,7 @@
           "version": 1,
           "wasCorrected": true,
           "pendingChange": null,
-          "parseToken": "89de82f9-5491-45b5-897c-48b38840d18f"
+          "parseToken": "a39e7939-b03c-44cd-a6ff-d0ea995426f5"
         },
         "collaborationRequest": {
           "id": "request-1-1",
@@ -701,7 +701,7 @@
           "version": 1,
           "wasCorrected": true,
           "pendingChange": null,
-          "parseToken": "6b9b3cdc-73e6-41ad-92ee-00b4de39fb6b"
+          "parseToken": "4d58977f-b9eb-4583-b964-1620f6c619db"
         },
         "collaborationRequest": {
           "id": "request-1-1",
@@ -897,7 +897,7 @@
           "version": 1,
           "wasCorrected": true,
           "pendingChange": null,
-          "parseToken": "c72ed292-64ef-459f-a279-2dacbb165e44"
+          "parseToken": "511b361c-1b90-4e0a-ba74-7f03fffda047"
         },
         "collaborationRequest": {
           "id": "request-1-1",
@@ -1057,7 +1057,7 @@
           "version": 1,
           "wasCorrected": true,
           "pendingChange": null,
-          "parseToken": "618a0d04-6ca4-4f49-aefd-f978908a47d5"
+          "parseToken": "baa08b91-ac5d-4a75-be62-fceeed0f04d3"
         },
         "collaborationRequest": {
           "id": "request-1-1",
