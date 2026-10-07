@@ -1,12 +1,12 @@
-# Prompt 06 Figma 设计源
+# 阶段 06 Figma 设计源
 
 更新时间：2026-10-06（Asia/Shanghai）
 
 ## 1. 规范源与补充设计文件
 
-Prompt 06 的规范源已切换为 `artifacts/design/local-prototype/`，它包含全部 65 个画面、逐屏访问、可编辑 HTML/CSS 和自动布局审计，不依赖外部额度。
+阶段 06 的规范源已切换为 `artifacts/design/local-prototype/`，它包含全部 65 个画面、逐屏访问、可编辑 HTML/CSS 和自动布局审计，不依赖外部额度。
 
-- 文件：[AI 老年家庭协作助手｜Prompt 06 高保真](https://www.figma.com/design/mrG3v1XKOEaTMztedG1zpt)
+- 文件：[AI 老年家庭协作助手｜阶段 06 高保真](https://www.figma.com/design/mrG3v1XKOEaTMztedG1zpt)
 - File key：`mrG3v1XKOEaTMztedG1zpt`
 - 主要设备：移动端 `390 × 844`
 - 字体：`Noto Sans SC`
@@ -41,7 +41,7 @@ Figma 生成脚本位于 `artifacts/design/scripts/`：
 5. `05-demo-screens.js`
 6. `06-structural-audit.js`
 
-状态账本位于 `artifacts/design/figma-state-prompt06.json`。脚本是可编辑设计源，但当前脚本按“新建 Board”工作，不应在同一文件无条件重复运行。
+状态账本位于 `artifacts/design/figma-state.json`。脚本是可编辑设计源，但当前脚本按“新建 Board”工作，不应在同一文件无条件重复运行。
 
 ## 5. Figma 快照限制
 

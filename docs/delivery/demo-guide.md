@@ -46,4 +46,4 @@ Release1.0.1，390×844移动Web。启动与固定原话见根README。全部身
 
 根README列出产品说明、两份PDF、65张PNG、页面索引和实测证据。原型无需私人账号或服务额度。研究原始体验证据仍PARTIAL，真人验证尚未开展。当前事务结果不是全量历史；跨设备/跨标签页实时协同未实现，URL刷新返回应用壳并恢复本地状态。
 
-PROMPT_18_GATE_STATUS=PASS（按实际页面入口编写；独立Reviewer复核见后续验收记录）
+VALIDATION_18_STATUS=PASS（按实际页面入口编写；独立Reviewer复核见后续验收记录）

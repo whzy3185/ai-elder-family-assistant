@@ -69,7 +69,7 @@ assert(state.currentRole === 'FAMILY', 'Current role was not persisted');
 await click('role-elder');
 await wait(80);
 const screenshot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
-const output = path.resolve('artifacts', 'qa', 'prompt07-main-flow.png');
+const output = path.resolve('artifacts', 'qa', 'foundation-main-flow-baseline.png');
 fs.mkdirSync(path.dirname(output), { recursive: true });
 fs.writeFileSync(output, Buffer.from(screenshot.result.data, 'base64'));
 

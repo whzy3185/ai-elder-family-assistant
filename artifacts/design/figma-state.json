@@ -1,5 +1,5 @@
 {
-  "runId": "prompt06-hifi-20261006",
+  "runId": "visual-design-20261006",
   "scope": "full P0 mobile UI and design audit",
   "fileKey": "mrG3v1XKOEaTMztedG1zpt",
   "fileUrl": "https://www.figma.com/design/mrG3v1XKOEaTMztedG1zpt",
@@ -68,8 +68,8 @@
   },
   "pendingValidations": [],
   "completedSteps": [
-    "prompt04-page-matrix",
-    "prompt05-ai-accessibility-content",
+    "page-state-matrix",
+    "ai-accessibility-content",
     "figma-discovery",
     "foundations-created",
     "65-screens-created",

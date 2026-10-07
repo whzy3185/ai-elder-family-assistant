@@ -1,7 +1,7 @@
 # 能力边界与主观决策审计
 
 更新时间：2026-10-06（Asia/Shanghai）  
-文档性质：**历史能力边界快照。** 本文记录用户此前要求“全程不做代码”时的影响分析。用户随后要求按完整任务链从 Prompt 00 继续，现行边界已更新为 Prompt 07 起实现 Web、Prompt 11 起完成 Docker；正式范围以 [产品章程](product/01-product-charter.md) 和 [PROJECT_STATUS](PROJECT_STATUS.md) 为准。本文中的无代码冲突不再是现行阻碍。
+文档性质：**历史能力边界快照。** 本文记录用户此前要求“全程不做代码”时的影响分析。用户随后要求按完整任务链从 阶段 00 继续，现行边界已更新为 阶段 07 起实现 Web、阶段 11 起完成 Docker；正式范围以 [产品章程](product/01-product-charter.md) 和 [PROJECT_STATUS](PROJECT_STATUS.md) 为准。本文中的无代码冲突不再是现行阻碍。
 
 ## 1. 执行结论
 

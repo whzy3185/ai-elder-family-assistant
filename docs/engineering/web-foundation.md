@@ -1,4 +1,4 @@
-# Prompt 07 Web 基础架构
+# 阶段 07 Web 基础架构
 
 更新时间：2026-10-06（Asia/Shanghai）
 
@@ -27,7 +27,7 @@
 | `src/styles.css` | 适老移动 Web 视觉实现 |
 | `server.mjs` | 无依赖静态服务器 |
 | `tests/state-model.test.mjs` | 状态模型单元测试 |
-| `scripts/smoke-prompt07.mjs` | 浏览器主路径与刷新持久化走查 |
+| `scripts/smoke-foundation-baseline.mjs` | 浏览器主路径与刷新持久化走查 |
 
 ## 3. 统一状态模型
 
@@ -54,7 +54,7 @@
 - 固定 9:00 事务与 8:30 提醒；
 - 本地确定性解析，不调用真实 AI。
 
-异常、完整关系建立、单次共享和家属回应留给 Prompt 08—10，未通过空按钮假装完成。
+异常、完整关系建立、单次共享和家属回应留给 阶段 08—10，未通过空按钮假装完成。
 
 ## 5. 验证结果
 
@@ -62,8 +62,8 @@
 npm test
 4 tests passed
 
-scripts/smoke-prompt07.mjs
+scripts/smoke-foundation-baseline.mjs
 PASS / 10 steps
 ```
 
-浏览器走查覆盖：初始首页、输入、处理中、确认、提醒同步、保存、刷新持久化、家属角色切换、共享状态读取和返回老人首页。证据截图为 `artifacts/qa/prompt07-main-flow.png`。
+浏览器走查覆盖：初始首页、输入、处理中、确认、提醒同步、保存、刷新持久化、家属角色切换、共享状态读取和返回老人首页。证据截图为 `artifacts/qa/foundation-main-flow-baseline.png`。

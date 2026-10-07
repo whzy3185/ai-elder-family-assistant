@@ -1,11 +1,11 @@
-# Prompt 11 Docker 启动验证
+# 阶段 11 Docker 启动验证
 
 验证日期：2026-10-07（Asia/Shanghai）
 版本：`web-prototype-0.11.0`
 
 ## 1. Gate 结论
 
-`PROMPT_11_GATE_STATUS=PASS`
+`VALIDATION_11_STATUS=PASS`
 
 项目已通过真实 Docker Engine 构建、Compose 启动、容器健康检查、Windows 浏览器 HTTP 访问、子路由刷新、23 步主流程、13 个 Demo 场景、双角色快捷入口和全量 Reset 验证。
 
@@ -57,7 +57,7 @@ docker compose up --build -d
 
 ### 5.1 主流程
 
-通过 `APP_URL=http://127.0.0.1:8080 node scripts/smoke-prompt08.mjs` 实际连续点击 23 步：
+通过 `APP_URL=http://127.0.0.1:8080 node scripts/smoke-main-flow-baseline.mjs` 实际连续点击 23 步：
 
 关系建立 → 老人输入 → 固定识别错误 → 单字段改正 → 保存提醒 → 审阅最小共享 → 发送请求 → 家属接受 → 老人查看结果 → 提醒触发 → 老人确认完成。
 
@@ -67,11 +67,11 @@ docker compose up --build -d
 {"status":"PASS","steps":23,"taskStatus":"COMPLETED","requestStatus":"ACCEPTED","externalRequests":0}
 ```
 
-截图：[prompt11-docker-main-flow.png](../../artifacts/qa/prompt11-docker-main-flow.png)
+截图：[docker-main-flow-baseline.png](../../artifacts/qa/docker-main-flow-baseline.png)
 
 ### 5.2 Demo Controller 与 Reset
 
-通过 `APP_URL=http://127.0.0.1:8080 node scripts/smoke-prompt10.mjs` 实际验证：
+通过 `APP_URL=http://127.0.0.1:8080 node scripts/smoke-review-tools-baseline.mjs` 实际验证：
 
 - 13 个规定场景；
 - 老人/家属 2 个角色快捷入口；
@@ -84,7 +84,7 @@ docker compose up --build -d
 {"status":"PASS","scenarios":13,"roleShortcuts":2,"reset":true}
 ```
 
-截图：[prompt11-docker-demo-controller.png](../../artifacts/qa/prompt11-docker-demo-controller.png)
+截图：[docker-review-tools-baseline.png](../../artifacts/qa/docker-review-tools-baseline.png)
 
 ## 6. 运行约束验证
 
@@ -115,4 +115,4 @@ docker compose down
 
 ## 8. 结论
 
-Prompt 11 所有 Gate 条件均已有实际运行证据。Docker 交付不依赖宿主机 Node、后端、数据库、密钥、私人账号、绝对路径或未提交依赖，可以进入 Prompt 12 完整功能走查。
+阶段 11 所有 Gate 条件均已有实际运行证据。Docker 交付不依赖宿主机 Node、后端、数据库、密钥、私人账号、绝对路径或未提交依赖，可以进入 阶段 12 完整功能走查。

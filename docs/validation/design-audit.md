@@ -1,4 +1,4 @@
-# Prompt 06 Design Audit
+# 阶段 06 Design Audit
 
 审计时间：2026-10-06（Asia/Shanghai）  
 审计对象：仓库内 HTML/CSS 高保真设计源；Figma 文件作为补充参考  
@@ -59,7 +59,7 @@
 - 业务规则审计：`PASS`；
 - 视觉结构审计：`PASS`；
 - 所有 P0 UI 问题在规范设计源修复并验证：`PASS`；
-- Prompt 06 Gate：`PASS`；
+- 阶段 06 Gate：`PASS`；
 - `SPEC_FREEZE = TRUE`。
 
-Prompt 06 可以提交并进入 Prompt 07。Figma 外部额度不再阻碍交付，后续 Web 和静态导出均以仓库内规范设计源为基线。
+阶段 06 可以提交并进入 阶段 07。Figma 外部额度不再阻碍交付，后续 Web 和静态导出均以仓库内规范设计源为基线。

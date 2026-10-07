@@ -1,4 +1,4 @@
-# Prompt 12 完整功能走查（当前版本）
+# 阶段 12 完整功能走查（当前版本）
 
 日期：2026-10-07（Asia/Shanghai）；Web 0.12.0；Chrome，390×844；Docker Linux arm64。
 
@@ -20,18 +20,18 @@
 
 ## 证据和复现
 
-证据目录：`artifacts/qa/prompt12-current/`。
+证据目录：`artifacts/qa/baseline-functional-walkthrough/`。
 
 - `results.json`：第二轮全部通过的逐步操作、最终状态及时间。
 - `results-attempt-1.json`、`T08-FAIL.png`：首轮失败保留，不冒充最终通过版本。
 - `source-manifest.json`：本轮运行版本的源码 SHA-256 清单。
 - `state-tests.txt`：状态模型测试21/21通过。
-- `scripts/smoke-prompt12.mjs`：完整九组 UI 操作脚本。
+- `scripts/smoke-regression.mjs`：完整九组 UI 操作脚本。
 
 ```sh
 docker compose up --build
 # 另在独立 Chrome 测试会话打开 URL，并启用 CDP 9335
-APP_URL=http://127.0.0.1:8080 CDP_URL=http://127.0.0.1:9335 node scripts/smoke-prompt12.mjs
+APP_URL=http://127.0.0.1:8080 CDP_URL=http://127.0.0.1:9335 node scripts/smoke-regression.mjs
 npm test
 ```
 
@@ -41,4 +41,4 @@ npm test
 
 全部是本地固定模拟，不是现实老人测试、真实AI、消息或提醒设备。Web0.11原始记录另存`walkthrough-baseline-web011.md`。本次PASS只覆盖九组指定流程；65项页面覆盖、18项业务攻击、完整适老检查和最终截图同版审计仍需后续阶段验证，不能由本轮结果推定。
 
-PROMPT_12_GATE_STATUS=PASS
+VALIDATION_12_STATUS=PASS

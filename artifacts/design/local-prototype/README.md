@@ -1,6 +1,6 @@
 # Repository-native 高保真设计源
 
-这是 Prompt 06 的规范设计源，不依赖 Figma、私人账号、模型额度或外部服务。
+这是 阶段 06 的规范设计源，不依赖 Figma、私人账号、模型额度或外部服务。
 
 ## 使用
 
@@ -19,4 +19,4 @@ node artifacts/design/local-prototype/generate-data.mjs
 
 ## 证据
 
-代表性浏览器截图位于 `artifacts/design/review-local/`。全量独立 PNG 在 Prompt 15 Release 冻结时导出；此阶段以完整画廊、逐屏路由和自动布局审计作为 65 个画面的设计证据。
+代表性浏览器截图位于 `artifacts/design/review-local/`。全量独立 PNG 在 阶段 15 Release 冻结时导出；此阶段以完整画廊、逐屏路由和自动布局审计作为 65 个画面的设计证据。

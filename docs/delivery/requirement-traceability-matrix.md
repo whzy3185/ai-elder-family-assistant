@@ -18,7 +18,7 @@
 
 ## 2. 预留页面与状态 ID
 
-这些 ID 在 Prompt 04 形成正式页面矩阵时可以合并到同一页面布局，但状态 ID、进入方式和证据定位不得删除。
+这些 ID 在 阶段 04 形成正式页面矩阵时可以合并到同一页面布局，但状态 ID、进入方式和证据定位不得删除。
 
 | ID 组 | 含义 |
 |---|---|
@@ -49,20 +49,20 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-010 | 首次建立家庭协作关系 | 小梅扫码发起；张阿姨查看身份、用途、范围和撤回方式后同意 | `FM-REL-01`、`EL-REL-01/02`、`REL-PENDING/ACTIVE` | `src/views.js`、`src/state/model.js` | `TC-REL-001` 建立关系 | Prompt 08 连续浏览器走查 | PASS |
+| RTM-010 | 首次建立家庭协作关系 | 小梅扫码发起；张阿姨查看身份、用途、范围和撤回方式后同意 | `FM-REL-01`、`EL-REL-01/02`、`REL-PENDING/ACTIVE` | `src/views.js`、`src/state/model.js` | `TC-REL-001` 建立关系 | 阶段 08 连续浏览器走查 | PASS |
 | RTM-011 | 老人可以拒绝建立关系 | 拒绝后关系不成立，小梅不能查看事务，张阿姨仍可使用个人提醒 | `EL-REL-03`、`FM-REL-03`、`REL-DECLINED` | `src/views.js`、`src/state/model.js` | `TC-REL-002` 拒绝关系 | Scenario A 浏览器截图与状态测试 | PASS |
 | RTM-012 | 说明双方分别能看什么 | 小梅只见已授权的事项、日期、时间、地点和帮助；不见提醒、原文、位置和其他事务 | `EL-REL-02`、`EL-SHARE-02`、`FM-REQ-02` | `src/views.js`、`src/state/model.js` | `TC-PERM-001` 字段白名单 | 浏览器断言家属无 8:30 私人提醒 | PASS |
 | RTM-013 | 说明双方分别能做什么 | 张阿姨拥有事务；小梅只能接受、拒绝、建议改期 | `EL-REL-02`、`FM-REQ-02/03/04/05` | `src/views.js`、`src/state/model.js` | `TC-PERM-002` 角色动作矩阵 | 三类家属回应均已浏览器验证 | PASS |
 | RTM-014 | 明确何时需要老人确认 | 建立关系、保存事务、共享、接受改期、撤回、取消和完成均由老人确认 | `EL-REL-02`、`EL-TASK-05`、`EL-SHARE-02`、`EL-EX-04/05`、`EL-TASK-09` | `src/state/model.js`、`src/views.js` | `TC-PERM-003` 未确认不得执行 | 主流程及撤回、取消、改期确认均已验证 | PASS |
 | RTM-015 | 关系授权不等于全部信息开放 | 关系只建立通道，每件事务单独授权 | `EL-REL-02`、`EL-SHARE-02` | `src/state/model.js`、`src/views.js` | `TC-CONSENT-001` 无事务授权不可见 | 关系建立后仍需独立共享确认 | PASS |
 | RTM-016 | 拒绝共享后流程仍清楚，支持“只提醒自己、不共享” | 张阿姨选择只提醒自己；事务和 08:30 提醒保留，小梅无请求 | `EL-SHARE-01`、`EL-TASK-06`、`FM-REQ-00` | `src/views.js`、`src/state/model.js` | `TC-SHARE-001` 只提醒自己 | Scenario B 家属空状态截图 | PASS |
-| RTM-017 | 老人可以结束关系 | 结束后阻止新共享和新访问；已有演示状态按 Prompt 03 规则处理 | `EL-REL-04/05`、`FM-REL-04` | `src/features/relationship/*` | `TC-REL-003` 解除关系 | 解除确认与结果图（缺失） | FAIL |
+| RTM-017 | 老人可以结束关系 | 结束后阻止新共享和新访问；已有演示状态按 阶段 03 规则处理 | `EL-REL-04/05`、`FM-REL-04` | `src/features/relationship/*` | `TC-REL-003` 解除关系 | 解除确认与结果图（缺失） | FAIL |
 
 ## 5. 一次完整事务主流程
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-018 | 老人表达一件日常事务 | 支持固定模拟语音和手动文字；使用冻结原句 | `EL-TASK-01`、`TASK-DRAFT` | `src/views.js` | `TC-MAIN-001` 输入事务 | Prompt 08 浏览器走查 | PASS |
+| RTM-018 | 老人表达一件日常事务 | 支持固定模拟语音和手动文字；使用冻结原句 | `EL-TASK-01`、`TASK-DRAFT` | `src/views.js` | `TC-MAIN-001` 输入事务 | 阶段 08 浏览器走查 | PASS |
 | RTM-019 | 展示 AI 处理状态 | 处理中不得提前显示成功；模拟等待短于 2 秒且可复现 | `EL-TASK-02`、`TASK-UNDERSTANDING` | `src/app.js`、`src/views.js` | `TC-MAIN-002` 处理中状态 | 450ms 确定性模拟及浏览器断言 | PASS |
 | RTM-020 | 老人确认系统理解 | 分字段显示事项、日期、时间、地点、提醒和协作意图 | `EL-TASK-03A/03B`、`TASK-NEEDS_CONFIRMATION` | `src/views.js` | `TC-MAIN-003` 字段复述 | 结构化确认页与走查 | PASS |
 | RTM-021 | 展示并修改一处识别错误 | 固定把 9:00 识别为 8:00，老人单字段改回 9:00 | `EL-TASK-03B/04` | `src/state/model.js`、`src/views.js` | `TC-MAIN-004` 8:00→9:00 | 自动走查前后断言 | PASS |
@@ -75,7 +75,7 @@
 | RTM-028 | 家属接收并查看请求 | 小梅看到请求列表和详情，且内容与老人确认一致 | `FM-REQ-01/02`、`REQUEST-DELIVERED/VIEWED` | `src/views.js` | `TC-MAIN-010` 家属查看 | 共享快照时间和字段断言 | PASS |
 | RTM-029 | 家属回应 | 小梅可以接受、拒绝或建议改期，三者互斥 | `FM-REQ-03/04/05` | `src/state/model.js`、`src/views.js` | `TC-COLLAB-001/002/003` | 主流程接受及 Scenario G/H 通过 | PASS |
 | RTM-030 | 老人获知家属结果 | 张阿姨看到明确结果、时间和下一步，不把陪同接受当作事务完成 | `EL-SHARE-05/06/07` | `src/views.js` | `TC-MAIN-011` 返回老人结果 | 接受结果和未完成断言 | PASS |
-| RTM-031 | 正常完成协作闭环 | 关系建立、纠错、保存、共享、小梅接受、老人看到结果连续可操作 | 主流程全部状态 | `scripts/smoke-prompt08.mjs` | `TC-E2E-001` 完整主流程 | 23 步 PASS 和完成截图 | PASS |
+| RTM-031 | 正常完成协作闭环 | 关系建立、纠错、保存、共享、小梅接受、老人看到结果连续可操作 | 主流程全部状态 | `scripts/smoke-main-flow-baseline.mjs` | `TC-E2E-001` 完整主流程 | 23 步 PASS 和完成截图 | PASS |
 | RTM-032 | 老人确认现实事务完成 | 只有张阿姨可点“这件事办完了”；陪同接受不自动完成 | `EL-TASK-09`、`TASK-COMPLETED` | `src/state/model.js`、`src/views.js` | `TC-COMPLETE-001` 确认完成 | 接受后 CONFIRMED、老人确认后 COMPLETED | PASS |
 
 ## 6. 异常、取消和版本一致性
@@ -93,7 +93,7 @@
 | RTM-041 | 老人撤回协作请求 | 撤回只结束陪同请求，不删除事务和 08:30 提醒 | `EL-EX-05`、`FM-EX-01`、`REQUEST-WITHDRAWN` | `src/views.js`、`src/state/model.js` | `TC-CANCEL-001` 撤回请求 | Scenario I 二次确认和家属不可回应 | PASS |
 | RTM-042 | 老人取消整个事务 | 取消事务同时取消未终结请求和未来提醒 | `EL-EX-06`、`FM-EX-02`、`TASK-CANCELLED` | `src/views.js`、`src/state/model.js` | `TC-CANCEL-002` 取消事务 | Scenario J 二次确认和家属不可回应 | PASS |
 | RTM-043 | 已发送后修改事务 | 修改须确认；旧请求作废，新任务版本生成新请求 | `EL-TASK-08`、`EL-EX-07`、`TASK-V2` | `src/views.js`、`src/state/model.js` | `TC-VERSION-001` 已发送后修改 | Scenario K 新旧版本状态测试 | PASS |
-| RTM-044 | 旧家属答复失效 | 小梅在旧页面答复时得到“请求已更新，不能继续处理” | `FM-EX-03`、`REQUEST-SUPERSEDED` | `src/state/model.js`、`requestHistory` | `TC-VERSION-002` 旧答复冲突 | 旧接受归档为 INVALIDATED；专项旧页攻击待 Prompt 13 | PARTIAL |
+| RTM-044 | 旧家属答复失效 | 小梅在旧页面答复时得到“请求已更新，不能继续处理” | `FM-EX-03`、`REQUEST-SUPERSEDED` | `src/state/model.js`、`requestHistory` | `TC-VERSION-002` 旧答复冲突 | 旧接受归档为 INVALIDATED；专项旧页攻击待 阶段 13 | PARTIAL |
 | RTM-045 | 提醒触发 | 固定时钟到 08:30 显示提醒；取消或完成后不得触发 | `EL-TASK-07`、`REMINDER-TRIGGERED/SUPPRESSED` | `src/state/model.js` | `TC-REM-002/003` 触发/抑制 | 正常触发通过；取消守卫有状态测试 | PASS |
 | RTM-046 | 返回或取消不丢失必要内容 | 非破坏性返回保留草稿；破坏性取消明确说明后果 | 所有编辑/确认状态 | `src/domain/persistence.ts` | `TC-NAV-001` 返回保留 | 返回前后截图（缺失） | FAIL |
 
@@ -109,7 +109,7 @@
 | RTM-052 | 历史记忆仅在必要时设计 | 本版不读取或保留 AI 历史记忆；完整历史中心排除 | `DOC-CHARTER-EXCLUDED`、无历史入口 | `docs/product/01-product-charter.md` | `TC-SCOPE-002` 无历史读取/入口 | 当前产品章程；运行证据缺失 | PARTIAL |
 | RTM-053 | 字体、对比度、按钮和步骤适老 | 默认正文约 20 px、主按钮至少 56 px、对比达 AA 基线、一屏一主操作 | 所有老人端页面 | `docs/product/accessibility-guidelines.md`、`src/styles/tokens.css` | `TC-A11Y-001/002/003` | 适老规范已冻结；视觉审计与截图缺失 | PARTIAL |
 | RTM-054 | 措辞和反馈适老 | 成人、直接、尊重；反馈包含发生了什么、当前状态和下一步 | 所有结果/错误状态 | `docs/product/content-guidelines.md` | `TC-CONTENT-001` 文案审计 | 文案词典已冻结；页面图缺失 | PARTIAL |
-| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/views.js`、`src/state/model.js` | `TC-MAIN-004` | Prompt 08 浏览器修改前后断言 | PASS |
+| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/views.js`、`src/state/model.js` | `TC-MAIN-004` | 阶段 08 浏览器修改前后断言 | PASS |
 | RTM-056 | 支持可调适老能力 | 默认界面已适老；P1 可提供标准/大字与高对比切换 | `EL-SET-01`（P1） | `src/features/settings/*` | `TC-A11Y-004` 显示切换 | P1 设置图（缺失） | FAIL |
 
 ## 8. 页面、状态与连通性
@@ -117,16 +117,16 @@
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
 | RTM-057 | 先列页面与状态清单 | 每项含编号、名称、角色、入口、操作、去向和原型位置 | `DOC-PAGE-MATRIX` | `docs/product/page-state-matrix.md` | `TC-DOC-006` 字段完整性 | 当前页面与状态总表 | PASS |
-| RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/views.js` | `TC-PAGE-001` 页面覆盖 | 主流程、异常和 13 个快照均可操作；全量静态导出待 Prompt 15 | PASS |
+| RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/views.js` | `TC-PAGE-001` 页面覆盖 | 主流程、异常和 13 个快照均可操作；全量静态导出待 阶段 15 | PASS |
 | RTM-059 | 导航中不出现空按钮或未完成入口 | 只有 P0 和已完成 P1 可进入；Excluded 不显示 | 全局导航 | `src/app.js`、`src/views.js` | `TC-NAV-002` 可点击元素遍历 | 三套浏览器脚本覆盖全部暴露导航与场景入口 | PASS |
 | RTM-060 | 覆盖首次/空状态和正常有数据状态 | 关系首次、家属空列表、已建立关系和有请求均可进入 | `EL-REL-01`、`FM-REQ-00/01` | `src/views.js`、Demo snapshots | `TC-STATE-001` 首次/空/有数据 | Initial、Scenario B、Main Flow、Pending Family | PASS |
-| RTM-061 | 覆盖处理中、成功、失败和重试 | AI 处理、请求发送中、保存/回应成功、解析/发送失败和重试分别可见 | `EL-TASK-02`、`EL-SHARE-03`、`EL-EX-02/03` | `src/views.js`、`src/state/model.js` | `TC-STATE-002` 状态覆盖 | Prompt 08—10 浏览器证据 | PASS |
-| RTM-062 | 覆盖修改、取消和返回 | 单字段修改、撤回请求、取消事务、非破坏性返回均可操作 | `EL-TASK-04/08`、`EL-EX-05/06` | `src/views.js`、`src/state/model.js` | `TC-STATE-003` 修改取消返回 | Prompt 09 Scenario H—I—J—K | PASS |
-| RTM-063 | 页面和关键操作连通 | 入口到结果、返回修改、角色切换均无断点 | 主流程和异常 Flow | `scripts/smoke-prompt08.mjs`、`smoke-prompt09.mjs` | `TC-E2E-002` 全链接走查 | 主流程 23 步、异常 11 场景均连续通过 | PASS |
+| RTM-061 | 覆盖处理中、成功、失败和重试 | AI 处理、请求发送中、保存/回应成功、解析/发送失败和重试分别可见 | `EL-TASK-02`、`EL-SHARE-03`、`EL-EX-02/03` | `src/views.js`、`src/state/model.js` | `TC-STATE-002` 状态覆盖 | 阶段 08—10 浏览器证据 | PASS |
+| RTM-062 | 覆盖修改、取消和返回 | 单字段修改、撤回请求、取消事务、非破坏性返回均可操作 | `EL-TASK-04/08`、`EL-EX-05/06` | `src/views.js`、`src/state/model.js` | `TC-STATE-003` 修改取消返回 | 阶段 09 Scenario H—I—J—K | PASS |
+| RTM-063 | 页面和关键操作连通 | 入口到结果、返回修改、角色切换均无断点 | 主流程和异常 Flow | `scripts/smoke-main-flow-baseline.mjs`、`smoke-exception-flows-baseline.mjs` | `TC-E2E-002` 全链接走查 | 主流程 23 步、异常 11 场景均连续通过 | PASS |
 | RTM-064 | 示例内容和状态保持一致 | 修改时间后提醒、共享详情、家属端和结果页同步；取消后不显示成功 | 全部跨角色状态 | `src/state/model.js`、完整 snapshots | `TC-CONSIST-001` 跨页面一致性 | 状态测试及浏览器字段断言 | PASS |
-| RTM-065 | AI、业务数据、等待和失败可以模拟且需说明 | Demo Controller 显式标注模拟，不伪装真实服务 | `DM-01/02` | `src/views.js`、`src/state/initial-state.js` | `TC-DEMO-001` 模拟标识 | Prompt 10 控制台截图和 13/13 走查 | PASS |
+| RTM-065 | AI、业务数据、等待和失败可以模拟且需说明 | Demo Controller 显式标注模拟，不伪装真实服务 | `DM-01/02` | `src/views.js`、`src/state/initial-state.js` | `TC-DEMO-001` 模拟标识 | 阶段 10 控制台截图和 13/13 走查 | PASS |
 | RTM-066 | 统一布局、导航和视觉层级 | 390 × 844 移动 Web；老人端和家属端共享设计系统 | 全部页面 | `src/styles/*`、`src/components/*` | `TC-VISUAL-001` 一致性审计 | 65 屏自动布局审计 `issues=[]`；Web 实现待后续 | PARTIAL |
-| RTM-067 | 可从预置登录状态开始但不能省略核心授权 | 不实现登录注册；保留关系确认和每次共享确认 | 首屏预置身份、`EL-REL-*` | `src/state/initial-state.js`、`src/views.js` | `TC-AUTH-001` 预置身份与授权 | Prompt 08 关系确认和单次共享均已运行 | PASS |
+| RTM-067 | 可从预置登录状态开始但不能省略核心授权 | 不实现登录注册；保留关系确认和每次共享确认 | 首屏预置身份、`EL-REL-*` | `src/state/initial-state.js`、`src/views.js` | `TC-AUTH-001` 预置身份与授权 | 阶段 08 关系确认和单次共享均已运行 | PASS |
 
 ## 9. 核心功能说明、指标和验证
 
@@ -138,11 +138,11 @@
 | RTM-071 | 说明如何发现误导建议和操作失败 | 记录字段误导、状态误判、失败恢复、严重事件和用户复述 | `DOC-VALIDATION` | `docs/product/17-product-spec.md#验证` | `TC-VALID-001` 风险记录模板审计 | 正式验证方案（缺失） | FAIL |
 | RTM-072 | 给出最小验证方法和下一步依据 | 约 5 组老人—家属，使用虚构任务，观察纠错、授权、回应和误判 | `DOC-VALIDATION` | `docs/03-reach-and-validation.md` | `TC-VALID-002` 方法完整性 | 当前验证方法 | PASS |
 | RTM-073 | 不把预期值写成实测结果 | 所有指标标记为定义或目标；没有真实测试就不报告结果 | `DOC-VALIDATION` | `docs/00-research-method.md` | `TC-VALID-003` 实测声明扫描 | 当前研究边界 | PASS |
-| RTM-074 | 自行走查完整主流程 | 按冻结数据从关系建立走到老人看到小梅接受 | `DOC-WALKTHROUGH-MAIN` | `docs/validation/prompt08-main-flow.md` | `TC-E2E-001` | 23 步运行结果和截图；正式综合报告待 Prompt 12 | PARTIAL |
-| RTM-075 | 走查修改或取消流程 | 覆盖纠错、撤回请求、取消事务和已发送后修改 | `DOC-WALKTHROUGH-CHANGE` | `docs/validation/prompt09-exception-flows.md` | `TC-E2E-003` | Scenario H—I—J—K；正式综合报告待 Prompt 12 | PARTIAL |
-| RTM-076 | 走查失败或无法继续流程 | 覆盖必要信息缺失、AI 失败、发送失败和重试 | `DOC-WALKTHROUGH-FAIL` | `docs/validation/prompt09-exception-flows.md` | `TC-E2E-004` | Scenario C—D—E；正式综合报告待 Prompt 12 | PARTIAL |
-| RTM-077 | 多角色产品走通角色间协作 | 老人发起、家属回应、老人获知，双端状态一致 | `DOC-WALKTHROUGH-ROLE` | `docs/validation/prompt08-main-flow.md`、Prompt 09 记录 | `TC-E2E-005` | 接受、拒绝、建议、撤回和取消均双端通过 | PARTIAL |
-| RTM-078 | 记录步骤、实际结果和已知问题 | 逐步记录预期、实际、截图、问题、严重度和处理 | `DOC-WALKTHROUGH-REPORT` | `docs/validation/*` | `TC-QA-001` 报告字段检查 | 分阶段记录已存在；正式综合报告待 Prompt 12 | PARTIAL |
+| RTM-074 | 自行走查完整主流程 | 按冻结数据从关系建立走到老人看到小梅接受 | `DOC-WALKTHROUGH-MAIN` | `docs/validation/main-flow-validation.md` | `TC-E2E-001` | 23 步运行结果和截图；正式综合报告待 阶段 12 | PARTIAL |
+| RTM-075 | 走查修改或取消流程 | 覆盖纠错、撤回请求、取消事务和已发送后修改 | `DOC-WALKTHROUGH-CHANGE` | `docs/validation/exception-flow-validation.md` | `TC-E2E-003` | Scenario H—I—J—K；正式综合报告待 阶段 12 | PARTIAL |
+| RTM-076 | 走查失败或无法继续流程 | 覆盖必要信息缺失、AI 失败、发送失败和重试 | `DOC-WALKTHROUGH-FAIL` | `docs/validation/exception-flow-validation.md` | `TC-E2E-004` | Scenario C—D—E；正式综合报告待 阶段 12 | PARTIAL |
+| RTM-077 | 多角色产品走通角色间协作 | 老人发起、家属回应、老人获知，双端状态一致 | `DOC-WALKTHROUGH-ROLE` | `docs/validation/main-flow-validation.md`、阶段 09 记录 | `TC-E2E-005` | 接受、拒绝、建议、撤回和取消均双端通过 | PARTIAL |
+| RTM-078 | 记录步骤、实际结果和已知问题 | 逐步记录预期、实际、截图、问题、严重度和处理 | `DOC-WALKTHROUGH-REPORT` | `docs/validation/*` | `TC-QA-001` 报告字段检查 | 分阶段记录已存在；正式综合报告待 阶段 12 | PARTIAL |
 
 ## 10. 交付物与 Docker
 
@@ -172,7 +172,7 @@
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
 
-## 12. Prompt 02 Gate
+## 12. 阶段 02 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|

@@ -1,4 +1,4 @@
-# Prompt 14 适老和视觉质量终检
+# 阶段 14 适老和视觉质量终检
 
 日期：2026-10-07；Web0.12.0；Docker Chrome；65项页面/状态。入口：演示控制→按编号查看全部页面与状态。
 
@@ -20,14 +20,14 @@
 
 首轮发现字段标签和场景按钮16px，已提高；小viewport下菜单重排为单列，避免放大后的按钮横向溢出。补齐共享选择、修改影响提示、等待回应与全量编号入口。家属结果增加返回列表；回应文案不擅自判断老人事务是否已办完。
 
-`artifacts/qa/prompt14-pages/audit-attempt-1.json`保留失败；`audit.json`为修复后的65页实测数据和尺寸/对比审计。全长截图同目录。已通过五张联系表查看全部画面，另查看识别错误、家属接受、改期授权等原尺寸页面，未发现文字遮挡或操作截断。
+`artifacts/qa/baseline-pages/audit-attempt-1.json`保留失败；`audit.json`为修复后的65页实测数据和尺寸/对比审计。全长截图同目录。已通过五张联系表查看全部画面，另查看识别错误、家属接受、改期授权等原尺寸页面，未发现文字遮挡或操作截断。
 
-键盘证据：`artifacts/qa/prompt14-keyboard/results.json`、`keyboard-completed.png`。输入使用预置文本写入可编辑textarea，所有按钮实际用Tab和Enter。初次CDP Enter缺少字符事件参数，修正测试驱动后主流程通过；不是产品按钮修复。
+键盘证据：`artifacts/qa/baseline-keyboard/results.json`、`keyboard-completed.png`。输入使用预置文本写入可编辑textarea，所有按钮实际用Tab和Enter。初次CDP Enter缺少字符事件参数，修正测试驱动后主流程通过；不是产品按钮修复。
 
-新增页面后的T01–T09鼠标回归：`artifacts/qa/prompt14-regression/results.json`，9/9通过；最后文案修订后全页审计及完整键盘主流程再次通过。状态模型43/43：`artifacts/qa/prompt14-pages/state-tests.txt`。
+新增页面后的T01–T09鼠标回归：`artifacts/qa/baseline-regression/results.json`，9/9通过；最后文案修订后全页审计及完整键盘主流程再次通过。状态模型43/43：`artifacts/qa/baseline-pages/state-tests.txt`。
 
 ## 验证限制
 
 200%是通过CSS视口减半并增加像素比例模拟浏览器放大的重排检查，不声称实际点击了浏览器缩放菜单。自动布局、计算对比和Agent视觉检查不等于真人适老可用性验证。下一步仍需真实目标用户独立操作测试。
 
-PROMPT_14_GATE_STATUS=PASS
+VALIDATION_14_STATUS=PASS

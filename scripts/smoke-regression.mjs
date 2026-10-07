@@ -4,7 +4,7 @@ import { FIXED_INPUT } from '../src/state/initial-state.js';
 
 const appUrl = process.env.APP_URL || 'http://127.0.0.1:8080';
 const endpoint = process.env.CDP_URL || 'http://127.0.0.1:9335';
-const output = process.env.SCREENSHOT_DIR || 'artifacts/qa/prompt12-current';
+const output = process.env.SCREENSHOT_DIR || 'artifacts/qa/baseline-functional-walkthrough';
 fs.mkdirSync(output, { recursive: true });
 const pages = await fetch(`${endpoint}/json/list`).then(r => r.json());
 const tab = pages.find(p => p.type === 'page' && p.url.startsWith(appUrl));

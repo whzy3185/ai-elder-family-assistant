@@ -1,11 +1,11 @@
-# Prompt 09 异常与修改分支验证
+# 阶段 09 异常与修改分支验证
 
 验证日期：2026-10-07（Asia/Shanghai）  
 版本：`web-prototype-0.9.0`
 
 ## 1. Gate 结论
 
-`PROMPT_09_GATE_STATUS=PASS`
+`VALIDATION_09_STATUS=PASS`
 
 11 个场景均从合理前置状态进入，通过页面按钮连续完成；状态模型测试 16/16 通过，浏览器走查 11/11 通过。
 
@@ -25,12 +25,12 @@
 | J 取消事务 | 二次确认后任务取消、提醒清空、请求失效 | 家属不能回应 `INVALIDATED` 请求 | `J-task-cancelled-request-invalidated.png` |
 | K 已接受后修改 | 老人确认从 09:00 改为 14:00 | 旧接受归档为 `INVALIDATED`；新版本为 `PENDING` 且无继承答复 | `K-old-acceptance-invalidated-new-pending.png` |
 
-截图目录：`artifacts/qa/prompt09/`。
+截图目录：`artifacts/qa/exception-flows-baseline/`。
 
 ## 3. 自动验证
 
 - 状态模型：`npm test`
-- 浏览器走查：`node scripts/smoke-prompt09.mjs`
+- 浏览器走查：`node scripts/smoke-exception-flows-baseline.mjs`
 - 浏览器脚本使用本地 Edge CDP，只操作本地静态原型，不调用真实 AI、消息或外部服务。
 
 ## 4. 权限与一致性检查

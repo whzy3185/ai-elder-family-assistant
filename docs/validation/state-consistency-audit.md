@@ -1,4 +1,4 @@
-# Prompt 13 业务一致性攻击审计
+# 阶段 13 业务一致性攻击审计
 
 2026-10-07；输入基线2cac9f7；当前Web0.12.0修订版。全部为本地模拟验证，不是实际消息或真人使用研究。
 
@@ -6,30 +6,30 @@
 
 | 编号 | 攻击项与结果 | 状态 | 证据 |
 |---|---|---|---|
-| A01 | 改时间使旧请求失效、新请求展示最终时间 | PASS | tests/prompt13-state-attacks.test.mjs / A01 |
-| A02 | 取消后家属不能接受 | PASS | tests/prompt13-state-attacks.test.mjs / A02 |
-| A03 | 家属接受后老人显示正确且不完成事务 | PASS | tests/prompt13-state-attacks.test.mjs / A03 |
-| A04 | 撤回不删除个人事务 | PASS | tests/prompt13-state-attacks.test.mjs / A04 |
-| A05 | 拒绝共享后家属不可见 | PASS | tests/prompt13-state-attacks.test.mjs / A05 |
-| A06 | 发送失败后家属无请求 | PASS | tests/prompt13-state-attacks.test.mjs / A06 |
-| A07 | 连点发送无重复 | PASS | tests/prompt13-state-attacks.test.mjs / A07 |
-| A08 | 连点接受不改变结果 | PASS | tests/prompt13-state-attacks.test.mjs / A08 |
-| A09 | 旧请求回复不能覆盖新版本 | PASS | tests/prompt13-state-attacks.test.mjs / A09 |
-| A10 | 家属建议不直接修改老人事务 | PASS | tests/prompt13-state-attacks.test.mjs / A10 |
-| A11 | AI失败保留原话 | PASS | tests/prompt13-state-attacks.test.mjs / A11 |
-| A12 | 返回保留草稿，包括清空后的输入 | PASS | tests/prompt13-state-attacks.test.mjs / A12 |
-| A13 | 建立关系不会自动共享事务 | PASS | tests/prompt13-state-attacks.test.mjs / A13 |
-| A14 | 关系拒绝仍可使用个人提醒 | PASS | tests/prompt13-state-attacks.test.mjs / A14 |
-| A15 | 家属不能修改、解析、取消老人事务 | PASS | tests/prompt13-state-attacks.test.mjs / A15 |
-| A16 | 家属不能完成老人事务 | PASS | tests/prompt13-state-attacks.test.mjs / A16 |
-| A17 | 刷新不回退且发送中刷新可恢复 | PASS | tests/prompt13-state-attacks.test.mjs / A17 |
-| A18 | Demo场景完整替换、不污染 | PASS | tests/prompt13-state-attacks.test.mjs / A18 |
+| A01 | 改时间使旧请求失效、新请求展示最终时间 | PASS | tests/state-consistency.test.mjs / A01 |
+| A02 | 取消后家属不能接受 | PASS | tests/state-consistency.test.mjs / A02 |
+| A03 | 家属接受后老人显示正确且不完成事务 | PASS | tests/state-consistency.test.mjs / A03 |
+| A04 | 撤回不删除个人事务 | PASS | tests/state-consistency.test.mjs / A04 |
+| A05 | 拒绝共享后家属不可见 | PASS | tests/state-consistency.test.mjs / A05 |
+| A06 | 发送失败后家属无请求 | PASS | tests/state-consistency.test.mjs / A06 |
+| A07 | 连点发送无重复 | PASS | tests/state-consistency.test.mjs / A07 |
+| A08 | 连点接受不改变结果 | PASS | tests/state-consistency.test.mjs / A08 |
+| A09 | 旧请求回复不能覆盖新版本 | PASS | tests/state-consistency.test.mjs / A09 |
+| A10 | 家属建议不直接修改老人事务 | PASS | tests/state-consistency.test.mjs / A10 |
+| A11 | AI失败保留原话 | PASS | tests/state-consistency.test.mjs / A11 |
+| A12 | 返回保留草稿，包括清空后的输入 | PASS | tests/state-consistency.test.mjs / A12 |
+| A13 | 建立关系不会自动共享事务 | PASS | tests/state-consistency.test.mjs / A13 |
+| A14 | 关系拒绝仍可使用个人提醒 | PASS | tests/state-consistency.test.mjs / A14 |
+| A15 | 家属不能修改、解析、取消老人事务 | PASS | tests/state-consistency.test.mjs / A15 |
+| A16 | 家属不能完成老人事务 | PASS | tests/state-consistency.test.mjs / A16 |
+| A17 | 刷新不回退且发送中刷新可恢复 | PASS | tests/state-consistency.test.mjs / A17 |
+| A18 | Demo场景完整替换、不污染 | PASS | tests/state-consistency.test.mjs / A18 |
 
-状态测试43/43通过，其中包含上述18项和解析过期回调、新事务请求身份、异常手动字段、HTML转义四项附加检查。`artifacts/qa/prompt13-browser/state-tests.txt`保留真实输出。
+状态测试43/43通过，其中包含上述18项和解析过期回调、新事务请求身份、异常手动字段、HTML转义四项附加检查。`artifacts/qa/baseline-state-consistency/state-tests.txt`保留真实输出。
 
 ## Docker 浏览器补充验证
 
-七组实际操作均通过：重复发送、重复接受、草稿返回及清空、已接受状态刷新、发送中刷新与重试、拒绝改期后家属再次回应、发送中返回预览后重试。结果与步骤位于`artifacts/qa/prompt13-browser/results.json`，对应独立截图同目录。
+七组实际操作均通过：重复发送、重复接受、草稿返回及清空、已接受状态刷新、发送中刷新与重试、拒绝改期后家属再次回应、发送中返回预览后重试。结果与步骤位于`artifacts/qa/baseline-state-consistency/results.json`，对应独立截图同目录。
 
 第一次发送中刷新测试发现：界面恢复但LocalStorage仍保留SENDING。修复：Store加载归一化后立即持久化，防止二次刷新与数据读取不一致。失败保留为`results-attempt-1.json`及`A17-refresh-sending-FAIL.png`；修复后七组全量重跑PASS。
 
@@ -49,4 +49,4 @@
 
 本Gate证明上述状态冲突已消除；65项全页面入口与截图、全页适老和最终独立验收尚不由本Gate推定。
 
-PROMPT_13_GATE_STATUS=PASS
+VALIDATION_13_STATUS=PASS

@@ -66,7 +66,7 @@ const externalResources = await evaluate(`performance.getEntriesByType('resource
 assert(externalResources.length === 0, `Unexpected external runtime requests: ${externalResources.join(', ')}`);
 
 const screenshot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
-const output = path.resolve(process.env.SCREENSHOT_OUTPUT || path.join('artifacts', 'qa', 'prompt08-completed.png'));
+const output = path.resolve(process.env.SCREENSHOT_OUTPUT || path.join('artifacts', 'qa', 'main-flow-completed-baseline.png'));
 fs.mkdirSync(path.dirname(output), { recursive: true });
 fs.writeFileSync(output, Buffer.from(screenshot.result.data, 'base64'));
 socket.close();

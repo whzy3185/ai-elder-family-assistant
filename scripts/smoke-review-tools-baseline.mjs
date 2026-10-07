@@ -46,7 +46,7 @@ const controllerText = await bodyText();
 assert(controllerText.includes('Fixed Demo Clock') && controllerText.includes('Reset All Demo Data'), 'Controller controls missing');
 
 const controllerShot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
-const controllerOutput = path.resolve(process.env.SCREENSHOT_OUTPUT || path.join('artifacts', 'qa', 'prompt10-demo-controller.png'));
+const controllerOutput = path.resolve(process.env.SCREENSHOT_OUTPUT || path.join('artifacts', 'qa', 'review-tools-baseline.png'));
 fs.mkdirSync(path.dirname(controllerOutput), { recursive: true });
 fs.writeFileSync(controllerOutput, Buffer.from(controllerShot.result.data, 'base64'));
 

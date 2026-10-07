@@ -1,4 +1,4 @@
-# Prompt 08 完整主流程验证
+# 阶段 08 完整主流程验证
 
 验证日期：2026-10-07（Asia/Shanghai）  
 结果：`PASS`
@@ -26,7 +26,7 @@ Reset 后未通过 Demo Controller 强行跳转，按真实页面操作完成：
 
 ## 自动验证
 
-`scripts/smoke-prompt08.mjs` 在 Edge 中执行 23 个操作/断言，结果：
+`scripts/smoke-main-flow-baseline.mjs` 在 Edge 中执行 23 个操作/断言，结果：
 
 ```text
 status=PASS
@@ -44,7 +44,7 @@ requestStatus=ACCEPTED
 - 老人确认后事务才进入 `COMPLETED`；
 - 完成操作发生在 `currentRole=ELDER`。
 
-最终截图：`artifacts/qa/prompt08-completed.png`。
+最终截图：`artifacts/qa/main-flow-completed-baseline.png`。
 
 ## 状态来源
 

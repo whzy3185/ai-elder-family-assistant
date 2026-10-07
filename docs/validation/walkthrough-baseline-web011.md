@@ -1,6 +1,6 @@
-# Prompt 12 完整功能走查
+# 阶段 12 完整功能走查
 
-2026-10-07，Docker / Web 0.11.0，Chrome。每组从 Reset 或完整前置状态开始；测试脚本为 smoke-prompt08/09/10。
+2026-10-07，Docker / Web 0.11.0，Chrome。每组从 Reset 或完整前置状态开始；测试脚本为 主流程/异常流程/辅助工具基线脚本。
 
 | Test | 前置与操作 | 预期 | 实际 | 结果 | 证据 |
 |---|---|---|---|---|---|
@@ -8,7 +8,7 @@
 | T02 | 保存后只提醒自己，切换家属 | 无请求 | 家属列表为空 | PASS | exceptions/B-private-only-family-empty.png |
 | T03 | PENDING→未回应→撤回确认 | 提醒保留、不可回应 | WITHDRAWN；提醒8:30 | PASS | exceptions/F-I-no-response-withdrawn.png |
 | T04 | 保存且已发送→取消确认 | 提醒和请求失效 | CANCELLED，reminder=null，INVALIDATED | PASS | exceptions/J-task-cancelled-request-invalidated.png |
-| T05 | PENDING→未回应→继续等待 | 不默认接受 | NO_RESPONSE→PENDING | PASS | smoke-prompt09 / F |
+| T05 | PENDING→未回应→继续等待 | 不默认接受 | NO_RESPONSE→PENDING | PASS | smoke-exception-flows-baseline / F |
 | T06 | 家属拒绝→老人查看 | 个人事务继续 | CONFIRMED、提醒保留 | PASS | exceptions/G-family-declined-task-kept.png |
 | T07 | AI失败→手动→确认 | 原话保留、可恢复 | 原话不变、确认成功 | PASS | exceptions/D-parse-failure-manual-recovered.png |
 | T08 | 发送失败→重试 | 家属无伪成功；仅1条 | NONE→PENDING；无重复历史 | PASS | exceptions/E-send-retry-single-request.png |
@@ -18,6 +18,6 @@
 
 ## 已知问题及下一阶段
 
-走查通过仅涵盖指定案例。对照规格发现：接受/拒绝家属改期后的协作状态、未回应请求的家属可回复性、完成后的提醒字段、首页返回详情、真实手动输入和若干设计稿页面仍需 Prompt 13–14 修复。最终 Release 必须重新执行这些测试；本记录保留输入基线的实际结果。
+走查通过仅涵盖指定案例。对照规格发现：接受/拒绝家属改期后的协作状态、未回应请求的家属可回复性、完成后的提醒字段、首页返回详情、真实手动输入和若干设计稿页面仍需 阶段 13–14 修复。最终 Release 必须重新执行这些测试；本记录保留输入基线的实际结果。
 
-PROMPT_12_GATE_STATUS=PASS
+VALIDATION_12_STATUS=PASS

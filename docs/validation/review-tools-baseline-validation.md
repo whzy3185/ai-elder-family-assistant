@@ -1,11 +1,11 @@
-# Prompt 10 Demo Controller 验证
+# 阶段 10 Demo Controller 验证
 
 验证日期：2026-10-07（Asia/Shanghai）  
 版本：`web-prototype-0.10.0`
 
 ## 1. Gate 结论
 
-`PROMPT_10_GATE_STATUS=PASS`
+`VALIDATION_10_STATUS=PASS`
 
 独立 Demo Controller 已完成，13 个规定场景、老人/家属角色快捷入口、固定演示时钟和全量重置均已实际点击验证。
 
@@ -41,7 +41,7 @@
 ## 4. 验证证据
 
 - 单元与状态测试：`npm test`，21/21 PASS。
-- 浏览器走查：`scripts/smoke-prompt10.mjs`，13 场景 + 2 角色 + Reset PASS。
-- 控制台截图：`artifacts/qa/prompt10-demo-controller.png`。
-- 主流程不依赖 Demo Controller；`scripts/smoke-prompt08.mjs` 仍可从 Reset 后连续完成 23 步。
+- 浏览器走查：`scripts/smoke-review-tools-baseline.mjs`，13 场景 + 2 角色 + Reset PASS。
+- 控制台截图：`artifacts/qa/review-tools-baseline.png`。
+- 主流程不依赖 Demo Controller；`scripts/smoke-main-flow-baseline.mjs` 仍可从 Reset 后连续完成 23 步。
 

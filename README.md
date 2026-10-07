@@ -1,95 +1,72 @@
-# 安心记事｜AI 日常事务与家庭协作助手
+# 安心记事｜日常事务与家庭协作助手
 
-Release **1.0.1**。为72岁、有自主决定能力、会基础手机操作的张阿姨，完成一次公交卡年审事务：核对并纠正AI整理结果、保存个人提醒、自主选择是否请女儿小梅陪同，再查看回应。小梅只能回应单次请求，不能修改、取消或完成妈妈的事务。
+当前版本 **1.1.0**。为72岁、会基础手机操作且有自主决定能力的张阿姨，记录一次公交卡年审：核对时间、保存提醒，自主决定是否请同城女儿小梅陪同。小梅只能回应妈妈主动分享的单件事情。
 
-## 启动
+## 启动与访问
 
-前置条件：Docker Engine/Desktop及Docker Compose v2，8080端口可用。首次构建需要联网下载基础镜像；运行无需账号、密钥、真实AI或外部服务。
-
-在项目根目录执行：
+需要Docker Engine/Desktop、Docker Compose v2及空闲的8080端口。在项目根目录运行：
 
 ```sh
 docker compose up --build
 ```
 
-等待容器healthy后打开 **http://localhost:8080**。手机或桌面浏览器均可，主要演示尺寸 **390×844**；桌面可用浏览器移动设备模式。停止：`docker compose down`。
+容器healthy后访问：http://localhost:8080。停止：`docker compose down`。首次构建需下载固定基础镜像；运行无需私人账号、密钥、模型额度或真实外部服务。
 
-Apple Silicon本机已使用独立Colima环境实测。若使用已有的`colima-elder-demo`：
+| 地址 | 内容 |
+|---|---|
+| `/` | 张阿姨的产品：事情 / 家人 |
+| `/family` | 小梅的产品：消息 / 家人 |
+| `/review` | 手机产品画面旁的独立评审辅助 |
+
+主要手机尺寸390×844。桌面Review建议1100px以上宽度，窄屏辅助工具在产品画面下方、容器外。产品内没有身份切换或场景按钮。
+
+Apple Silicon本机使用独立Colima环境，已有该环境时可执行：
 
 ```sh
 docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml up --build -d --wait
 ```
 
-此override将端口绑定127.0.0.1，不要求评审安装Colima。默认Compose仍可直接启动。
+本机override绑定127.0.0.1；评审无需安装Colima，默认Compose可直接启动。
 
 ## 5–10分钟主流程
 
-页面最下方的“演示工具”提供**老人端 / 家属端 / 演示控制**。角色切换是模拟工具。每一步观察页面说明，不把“记好”“发出”“答应”“办完”混为一件事。
+1. `/review` → 恢复初始状态 → 确认。切换张阿姨，在产品“家人”里邀请小梅。
+2. 辅助工具切换小梅 → 产品“家人” → 向妈妈申请。切回张阿姨 → 家人 → 核对小梅身份 → 同意建立 → 确认同意。建立关系不会自动分享事情。
+3. 产品“事情” → 记一件事。输入下面原话，点“帮我整理”。看清8:00结果后点“改时间”，改成9:00，核对8:30提醒，再“确认记好”。
+4. 请小梅陪你去 → 查看要告诉她的内容 → 确认发给小梅。她只看到事项、日期、时间、地点、希望陪同。
+5. 辅助工具切换小梅 → 查看消息 → 我可以陪你 → 确认。切回张阿姨 → 查看这件事 → 看看小梅的答复。
+6. 产品事务详情 → 这件事办完了 → 确认已经办完。接受陪同本身不会完成事务。
 
-1. 演示控制 → 恢复初始演示 → 确认恢复 → 开始演示。
-2. 老人：家庭协作 → 显示二维码 → 切换到小梅扫码 → 模拟扫码并申请 → 切换到张阿姨确认 → 同意建立 → 确认同意 → 继续记事。
-3. 记一件事 → 输入下面原话（或“使用预置语音示例（模拟）”）→ 整理。系统模拟把9点听成8点；点“改时间”，点“改成上午 9:00”，核对提醒8:30后“确认记好”。
-4. 事务详情 → 请小梅陪同 → 请小梅陪同，查看共享 → 核对五项信息 → 发给小梅。个人提醒时间和原话不共享。
-5. 页底家属端 → 查看请求 → 我可以陪你 → 确认可以陪 → 切换到张阿姨端。老人看到答应，事务仍未完成。
-6. 返回首页 → 查看这件事 → 模拟到提醒时间 → 知道了，去办事 → 这件事办完了。只有此确认才完成事务。
-
-固定示例：
+身份切换仅模拟两人的设备；无需加载中间状态也能走完主流程。也可依次访问两个独立产品地址操作，刷新恢复同一浏览器内的本地状态。提醒快捷查看在辅助工具“演示时间”区域。
 
 > 明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。
 
-演示时钟固定 **2026-10-06 20:00 Asia/Shanghai**；“明天”指10月7日，正常安排09:00、提醒08:30。改期14:00、提醒13:30。不随评审打开日期改变。
+起始演示时间2026-10-06 20:00 Asia/Shanghai；“明天”对应10月7日。正常09:00/08:30提醒，改期14:00/13:30提醒。语音按钮将上述原话填入输入框；本版本不录音。
 
-## 异常、修改与全部画面
+## 关键状态与恢复
 
-[演示指南](docs/delivery/demo-guide.md)包含每条路径和预期结果。可从头操作，也可在演示控制加载13个完整预设场景；加载会替换当前模拟数据。
+`/review`的“快速查看”提供13种自然中文情况：首次使用、正常流程、时间需要修改、信息没听全、暂时没整理好、消息没有发出去、小梅还没回复、可以陪同、不能陪同、建议改时间、已撤回、已取消、提醒时间到了。加载会完整替换当前数据。
 
-| 要演示 | 入口与操作 | 结果 |
-|---|---|---|
-| 识别错误 | Recognition Error → 改时间 | 8:00→9:00，提醒7:30→8:30 |
-| 只提醒自己 | Main Flow → 只提醒我自己 → 页底家属端 | 家属无请求 |
-| 未回应 | Pending Family → 老人端 → 查看这件事 → 查看协作结果 → 演示还未回应 | 尚未答应，提醒继续 |
-| 拒绝 | Pending Family → 这次不能陪同 → 确认不能陪 → 老人端结果 | 个人事务不取消 |
-| 建议改期 | Pending Family → 建议改到下午2:00 → 提交 → 老人接受或拒绝 | 同意才修改，同意后需重新共享 |
-| 撤回 | Pending Family → 老人端 → 事务/协作结果 → 撤回陪同请求 → 确认 | 事务和提醒保留，家属不可回应 |
-| 取消 | Main Flow → 取消整件事 → 确认取消 | 停提醒，请求失效 |
-| AI失败 | AI Failure → 手动填写 → 确认 | 原话保留，无AI仍可记事 |
-| 发送失败 | Send Failure → 返回共享预览 → 发给小梅 | 失败时家属无请求，重试只生成一条 |
-| 修改已接受 | Accepted → 返回首页 → 查看这件事 → 修改时间 → 继续修改时间 → 确认修改 | 旧答复失效；再次查看共享并发出才有新请求 |
-| Reset | 演示控制 → 恢复初始演示 → 确认 → 开始 | 无关系、无事务、无请求 |
+“查看全部画面”覆盖65项（60产品画面、5辅助画面）。界面只显示自然中文名称；材料索引使用稳定页面编号定位。辅助快照中的整理/发送过程可在工具中继续；正常连续流程自动等待450/350ms。
 
-控制台另有**按编号查看全部页面与状态**：65个编号均有独立Web画面、PNG和PDF页。快照中的“发送中”需点“继续，查看发送结果”；正常连续流程的发送自动模拟350ms等待。页面定位由应用状态和`data-screen-id`实现，不以URL子路由定位角色。
+恢复：辅助工具→恢复初始状态→确认；关系、事务、请求和时钟回到首次。取消事务会停提醒；撤回陪同只撤回请求。失败保留输入与个人提醒；改时间后必须再次查看共享并确认发送，旧答复不会沿用。
 
-## 交付入口
+[完整演示指南](docs/delivery/demo-guide.md)提供各条路径及预期结果。
+
+## 材料与源码
 
 - [产品说明](docs/product/product-description.md)，PDF：`exports/product-description.pdf`。
-- [完整页面索引](exports/prototype-index.md)，PDF：`exports/prototype-pages.pdf`，65张全长PNG：`exports/screens/`。
-- [页面与状态清单](docs/product/page-state-matrix.md)、[需求追踪](docs/delivery/requirement-traceability-matrix.md)。
-- [操作走查](docs/validation/walkthrough.md)、[状态审计](docs/validation/state-consistency-audit.md)、[适老审计](docs/validation/accessibility-audit.md)。
-- [已知问题](docs/validation/known-issues.md)、[源码冻结记录](docs/delivery/release-freeze.md)、[研究证据分类](docs/research/evidence-index.md)。
+- [全部页面索引](exports/prototype-index.md)，原型PDF：`exports/prototype-pages.pdf`，独立PNG：`exports/screens/`。
+- [页面与状态清单](docs/product/page-state-matrix.md)、[需求追踪矩阵](docs/delivery/requirement-traceability-matrix.md)。
+- [业务走查](docs/validation/walkthrough.md)、[可见内容审计](docs/validation/presentation-purity-audit.md)、[适老审计](docs/validation/senior-usability-audit.md)。
+- [已知问题](docs/validation/known-issues.md)、[冻结记录](docs/delivery/release-freeze.md)、[研究证据](docs/research/evidence-index.md)。
 
-## 源码与目录
+`src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料仍待本轮最终截图导出，不把历史图当本版本。
 
-```text
-src/                 可编辑页面、样式和本地状态模型
-index.html           前端入口
-server.mjs           容器静态文件服务
-Dockerfile           固定基础镜像、非root运行
-compose.yaml         默认Docker演示；compose.local.yaml为本机override
-package*.json        Node项目及锁文件，无第三方运行依赖
-docs/product/        范围、流程、权限、状态机、AI和适老说明
-docs/research/       Huawei/Apple继承记录及证据边界
-docs/validation/     实测结果、独立验收、回归和限制
-docs/delivery/       追踪、演示指南及交付记录
-exports/             当前Release的全部原型PNG、两份PDF和索引
-evidence/            研究与测试证据索引
-scripts/ tests/      可复现的检查脚本和状态测试
-artifacts/           历史设计与各阶段QA，不是当前静态原型入口
-```
+无Docker开发可用Node22以上：`npm start`后打开http://localhost:4173；`npm test`运行状态测试。浏览器自动测试需独立Chrome CDP会话；当前主回归脚本为`scripts/smoke-regression.mjs`。
 
-可选无Docker开发：Node22或更新版本，`npm start`后打开http://localhost:4173；`npm test`运行状态测试。自动浏览器检查需另开独立Chrome CDP会话，示例见走查文档。
+## 模拟边界与待验证事项
 
-## 模拟与限制
+语音、整理、消息、邀请、提醒和失败使用预设状态；不会联系真实家属。数据存于当前浏览器LocalStorage，跨设备/跨标签页实时协同未实现。支持固定公交卡年审案例与09:00/14:00；事项和地点可手动修改，日期固定10月7日；不保证任意自然语言解析。
 
-语音、AI整理、消息、身份、二维码、提醒及失败全部预置模拟。状态保存在当前浏览器LocalStorage，刷新恢复；同一浏览器角色切换可连续操作，跨设备和跨标签页实时协同未实现。支持固定案例与09:00/14:00时间；不保证任意自然语言解析。可手动修改事项和地点，日期固定10月7日。
-
-只保留当前事务结果，不提供完整历史、真实通知、后台、诊断、应急、监控或政务建议。两次相关产品体验的原始设备/版本/截图证据仍 **PARTIAL**；没有真人访谈或真实用户指标，Agent测试不替代用户验证。保存这些限制不代表已经完成平台上传、SHA确认或最终交卷。
+不提供医疗、应急、定位、真实通知或完整历史。Huawei/Apple两次体验的原始设备、版本、截图证据仍 **PARTIAL**，没有真人访谈或真实用户指标。自行走查和预期指标不冒充真实研究。平台SHA确认、材料上传和最终交卷须分别核验。

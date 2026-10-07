@@ -11,7 +11,7 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 11 / Docker 化与真实启动验证完成，待提交
+CURRENT_PHASE=阶段 11 / Docker 化与真实启动验证完成，待提交
 CURRENT_BRANCH=research
 CURRENT_COMMIT=94d44cd
 SPEC_VERSION=product-charter-1.0.0
@@ -50,21 +50,21 @@ DOCUMENT_STATUS=PARTIAL
 RESEARCH_EVIDENCE_STATUS=PARTIAL
 FINAL_ACCEPTANCE_STATUS=FAIL
 SUBMISSION_STATUS=FAIL
-PROMPT_00_GATE_STATUS=PASS
-PROMPT_01_GATE_STATUS=PASS
-PROMPT_02_GATE_STATUS=PASS
-PROMPT_03_GATE_STATUS=PASS
-PROMPT_04_GATE_STATUS=PASS
-PROMPT_05_GATE_STATUS=PASS
-PROMPT_06_GATE_STATUS=PASS
-PROMPT_07_GATE_STATUS=PASS
-PROMPT_08_GATE_STATUS=PASS
-PROMPT_09_GATE_STATUS=PASS
-PROMPT_10_GATE_STATUS=PASS
-PROMPT_11_GATE_STATUS=PASS
+VALIDATION_00_STATUS=PASS
+VALIDATION_01_STATUS=PASS
+VALIDATION_02_STATUS=PASS
+VALIDATION_03_STATUS=PASS
+VALIDATION_04_STATUS=PASS
+VALIDATION_05_STATUS=PASS
+VALIDATION_06_STATUS=PASS
+VALIDATION_07_STATUS=PASS
+VALIDATION_08_STATUS=PASS
+VALIDATION_09_STATUS=PASS
+VALIDATION_10_STATUS=PASS
+VALIDATION_11_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 11 的输入基线，即 Prompt 10 完成提交；Prompt 11 通过 Gate 后将创建下一提交。
+`CURRENT_COMMIT` 是 阶段 11 的输入基线，即 阶段 10 完成提交；阶段 11 通过 Gate 后将创建下一提交。
 
 ## 2. 仓库真实状态
 
@@ -73,15 +73,15 @@ PROMPT_11_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `94d44cd` | PASS | Prompt 10 完成提交 |
-| 远端跟踪 | `origin/research` 为 `94d44cd` | PASS | Prompt 00—10 已成功推送 |
-| 工作区变更 | Prompt 11 Docker 文件、子路由修复和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
+| `research` | `94d44cd` | PASS | 阶段 10 完成提交 |
+| 远端跟踪 | `origin/research` 为 `94d44cd` | PASS | 阶段 00—10 已成功推送 |
+| 工作区变更 | 阶段 11 Docker 文件、子路由修复和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
 | 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
 | 代码与构建文件 | 原生 Web 工程、Dockerfile、Compose、依赖锁和健康检查均已建立并实测 | PASS | `package.json`、`package-lock.json`、`Dockerfile`、`compose.yaml`、`docs/validation/docker-validation.md` |
 
 ## 3. 已读取的现有成果
 
-Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，而非只读取目录或摘要。
+阶段 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，而非只读取目录或摘要。
 
 | 成果组 | 文件 | 判断 | 状态 |
 |---|---|---|---|
@@ -120,11 +120,11 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 ### EXCEPTION_FLOW_STATUS=PASS
 
-Prompt 09 的 A—K 共 11 个异常与修改场景已实际点击通过，状态模型测试和逐场景截图见 `docs/validation/prompt09-exception-flows.md`。
+阶段 09 的 A—K 共 11 个异常与修改场景已实际点击通过，状态模型测试和逐场景截图见 `docs/validation/exception-flow-validation.md`。
 
 ### DOCKER_STATUS=PASS
 
-Prompt 11 已通过真实 Docker Engine 构建、Compose 启动、健康检查、HTTP 和子路由刷新验证；Docker URL 上的 23 步主流程、13 个 Demo 场景、双角色入口和 Reset 均已实际点击通过，详见 `docs/validation/docker-validation.md`。
+阶段 11 已通过真实 Docker Engine 构建、Compose 启动、健康检查、HTTP 和子路由刷新验证；Docker URL 上的 23 步主流程、13 个 Demo 场景、双角色入口和 Reset 均已实际点击通过，详见 `docs/validation/docker-validation.md`。
 
 ### DOCUMENT_STATUS=PARTIAL
 
@@ -134,34 +134,34 @@ Prompt 11 已通过真实 Docker Engine 构建、Compose 启动、健康检查�
 
 | 阶段 | 目标 | 当前状态 |
 |---|---|---|
-| Prompt 01 | 冻结唯一事务、用户、范围与产品边界 | PASS |
-| Prompt 02 | 建立题目验收追踪矩阵 | PASS |
-| Prompt 03 | 冻结业务规则、双状态机与权限矩阵 | PASS |
-| Prompt 04 | 建立页面与状态总表、信息架构和完整 Flow | PASS |
-| Prompt 05 | 冻结 AI 规则和适老交互规范 | PASS |
-| Prompt 06 | 完成高保真设计并进行设计审计 | PASS |
-| Prompt 07 | 建立 Web 工程和基础状态模型 | PASS |
-| Prompt 08 | 实现完整主流程 | PASS |
-| Prompt 09 | 实现全部异常和修改分支 | PASS |
-| Prompt 10 | 完成 Demo Controller 与可复现场景 | PASS |
-| Prompt 11 | Docker 化并完成真实启动验证 | PASS |
-| Prompt 12 | 完整功能走查 | FAIL |
-| Prompt 13 | 专项业务一致性攻击测试 | FAIL |
-| Prompt 14 | 适老和视觉质量终检 | FAIL |
-| Prompt 15 | 冻结 Release 并导出全部静态原型 | FAIL |
-| Prompt 16 | 整理研究与证据 | PARTIAL |
-| Prompt 17 | 完成正式产品说明 | FAIL |
-| Prompt 18 | 完成 README 与 Demo Guide | PARTIAL |
-| Prompt 19 | 独立 Agent 反向验收 | FAIL |
-| Prompt 20 | 第二次 Docker 与 Release 回归 | FAIL |
-| Prompt 21 | 整理最终提交包 | FAIL |
-| Prompt 22 | 最终 Go / No-Go 审计 | FAIL |
-| Prompt 23 | 合并最终 `main` 并冻结 SHA | FAIL |
-| Prompt 24 | 提交前人工操作清单 | FAIL |
+| 阶段 01 | 冻结唯一事务、用户、范围与产品边界 | PASS |
+| 阶段 02 | 建立题目验收追踪矩阵 | PASS |
+| 阶段 03 | 冻结业务规则、双状态机与权限矩阵 | PASS |
+| 阶段 04 | 建立页面与状态总表、信息架构和完整 Flow | PASS |
+| 阶段 05 | 冻结 AI 规则和适老交互规范 | PASS |
+| 阶段 06 | 完成高保真设计并进行设计审计 | PASS |
+| 阶段 07 | 建立 Web 工程和基础状态模型 | PASS |
+| 阶段 08 | 实现完整主流程 | PASS |
+| 阶段 09 | 实现全部异常和修改分支 | PASS |
+| 阶段 10 | 完成 Demo Controller 与可复现场景 | PASS |
+| 阶段 11 | Docker 化并完成真实启动验证 | PASS |
+| 阶段 12 | 完整功能走查 | FAIL |
+| 阶段 13 | 专项业务一致性攻击测试 | FAIL |
+| 阶段 14 | 适老和视觉质量终检 | FAIL |
+| 阶段 15 | 冻结 Release 并导出全部静态原型 | FAIL |
+| 阶段 16 | 整理研究与证据 | PARTIAL |
+| 阶段 17 | 完成正式产品说明 | FAIL |
+| 阶段 18 | 完成 README 与 Demo Guide | PARTIAL |
+| 阶段 19 | 独立 Agent 反向验收 | FAIL |
+| 阶段 20 | 第二次 Docker 与 Release 回归 | FAIL |
+| 阶段 21 | 整理最终提交包 | FAIL |
+| 阶段 22 | 最终 Go / No-Go 审计 | FAIL |
+| 阶段 23 | 合并最终 `main` 并冻结 SHA | FAIL |
+| 阶段 24 | 提交前人工操作清单 | FAIL |
 
 详细缺口、负责阶段与验收证据见 [Gap Audit](GAP_AUDIT.md)。
 
-## 7. Prompt 00 Gate
+## 7. 阶段 00 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -173,9 +173,9 @@ Prompt 11 已通过真实 Docker Engine 构建、Compose 启动、健康检查�
 | 已建立后续阶段清单 | PASS | 本文件第 6 节 |
 | 工作区和 Git 状态清楚 | PASS | 本文件第 2 节 |
 
-Prompt 00 已完成：仓库状态、已有成果、缺口和后续阶段均已建立基线。
+阶段 00 已完成：仓库状态、已有成果、缺口和后续阶段均已建立基线。
 
-## 8. Prompt 01 Gate
+## 8. 阶段 01 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -187,9 +187,9 @@ Prompt 00 已完成：仓库状态、已有成果、缺口和后续阶段均已�
 | 固定演示数据冻结 | PASS | 产品章程第 13 节 |
 | 权限原则冻结 | PASS | 产品章程第 12 节 |
 
-Prompt 01 已完成：唯一事务、用户、家属条件、P0/P1、Explicitly Excluded、固定演示数据和权限原则已冻结。
+阶段 01 已完成：唯一事务、用户、家属条件、P0/P1、Explicitly Excluded、固定演示数据和权限原则已冻结。
 
-## 9. Prompt 02 Gate
+## 9. 阶段 02 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -202,9 +202,9 @@ Prompt 01 已完成：唯一事务、用户、家属条件、P0/P1、Explicitly 
 | 缺少实际画面或操作的要求标为 FAIL | PASS | Matrix 当前状态列 |
 | P0 没有“后面再说”空项 | PASS | 全部 P0 均有完整追踪字段 |
 
-Prompt 02 已完成：90 项原题要求均已有规则、状态、实现位置、测试 ID 和证据位置。
+阶段 02 已完成：90 项原题要求均已有规则、状态、实现位置、测试 ID 和证据位置。
 
-## 10. Prompt 03 Gate
+## 10. 阶段 03 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -215,9 +215,9 @@ Prompt 02 已完成：90 项原题要求均已有规则、状态、实现位置�
 | 字段级权限矩阵完整 | PASS | `docs/product/permissions.md` |
 | 七项状态一致性纸面审查 | PASS | 协作状态机第 6 节 |
 
-Prompt 03 已完成；其状态机和权限规则已作为 Prompt 04 页面矩阵与流程设计的输入。运行态验证仍未开始，因此主流程和异常流程保持 `PARTIAL`。
+阶段 03 已完成；其状态机和权限规则已作为 阶段 04 页面矩阵与流程设计的输入。运行态验证仍未开始，因此主流程和异常流程保持 `PARTIAL`。
 
-## 11. Prompt 04 Gate
+## 11. 阶段 04 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -230,9 +230,9 @@ Prompt 03 已完成；其状态机和权限规则已作为 Prompt 04 页面矩�
 | 失败/未回应/拒绝流程 C 完整 | PASS | `user-flows.md` C |
 | RTM 所有 P0 视觉要求映射到页面编号 | PASS | `page-state-matrix.md` 第 6 节 |
 
-Prompt 04 已完成；页面矩阵、信息架构和 A/B/C 流程已作为 Prompt 05 规则冻结的页面基线。实际高保真画面仍为 `FAIL`。
+阶段 04 已完成；页面矩阵、信息架构和 A/B/C 流程已作为 阶段 05 规则冻结的页面基线。实际高保真画面仍为 `FAIL`。
 
-## 12. Prompt 05 Gate
+## 12. 阶段 05 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -246,9 +246,9 @@ Prompt 04 已完成；页面矩阵、信息架构和 A/B/C 流程已作为 Promp
 | 成年化、尊重式文案和固定术语已冻结 | PASS | `content-guidelines.md` |
 | AI 失败、纠错和降级均映射页面 ID | PASS | `ai-rules.md` 第 9 节 |
 
-Prompt 05 已结束。Prompt 06 已生成完整高保真画面，但尚有一个 live Figma P0 视觉修正未闭环；`WEB_STATUS` 仍为 `FAIL`，静态导出仍待 Prompt 15。
+阶段 05 已结束。阶段 06 已生成完整高保真画面，但尚有一个 live Figma P0 视觉修正未闭环；`WEB_STATUS` 仍为 `FAIL`，静态导出仍待 阶段 15。
 
-## 13. Prompt 06 Gate
+## 13. 阶段 06 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -261,9 +261,9 @@ Prompt 05 已结束。Prompt 06 已生成完整高保真画面，但尚有一个
 | 所有 P0 UI 问题在规范设计源中修复 | PASS | `DA-P0-001` 已关闭；`FM-REQ-01` 本地截图无挤压 |
 | `SPEC_FREEZE = TRUE` | PASS | 仓库内规范设计源已冻结 |
 
-Prompt 06 已通过。Figma 文件保留为补充参考；规范设计源切换为仓库内 HTML/CSS 画廊，已通过 65 屏自动布局审计和五类视觉抽查，因此外部平台额度不再阻碍 Prompt 07。
+阶段 06 已通过。Figma 文件保留为补充参考；规范设计源切换为仓库内 HTML/CSS 画廊，已通过 65 屏自动布局审计和五类视觉抽查，因此外部平台额度不再阻碍 阶段 07。
 
-## 14. Prompt 07 Gate
+## 14. 阶段 07 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -273,12 +273,12 @@ Prompt 06 已通过。Figma 文件保留为补充参考；规范设计源切换�
 | LocalStorage 刷新持久化 | PASS | 浏览器走查刷新后仍显示已保存结果 |
 | App Shell 与导航 | PASS | 四项底部导航全部有实际页面 |
 | 老人端、家属端、Relationship、Demo 基础结构 | PASS | `src/views.js` |
-| 老人首页到任务保存结果 | PASS | 浏览器自动走查 10 步；`prompt07-main-flow.png` |
+| 老人首页到任务保存结果 | PASS | 浏览器自动走查 10 步；`foundation-main-flow-baseline.png` |
 | 无真实后端、数据库、AI、账号或密钥 | PASS | 静态源码与秘密扫描 |
 
-Prompt 07 已通过，可提交并进入 Prompt 08 完整主流程。
+阶段 07 已通过，可提交并进入 阶段 08 完整主流程。
 
-## 15. Prompt 08 Gate
+## 15. 阶段 08 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -292,9 +292,9 @@ Prompt 07 已通过，可提交并进入 Prompt 08 完整主流程。
 | 只有老人确认才完成 | PASS | 老人完成后 `task=COMPLETED` |
 | 提醒触发 | PASS | Demo 时钟推进至 2026-10-07 08:30 |
 
-Prompt 08 已通过，可提交并进入 Prompt 09 全部异常和修改分支。
+阶段 08 已通过，可提交并进入 阶段 09 全部异常和修改分支。
 
-## 16. Prompt 09 Gate
+## 16. 阶段 09 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -307,12 +307,12 @@ Prompt 08 已通过，可提交并进入 Prompt 09 全部异常和修改分支�
 | H 改期由老人最终确认 | PASS | 拒绝保持 09:00；接受后 14:00 |
 | J 取消事务终止提醒和请求 | PASS | `CANCELLED`、提醒为空、请求 `INVALIDATED` |
 | K 修改已接受事务产生新版本 | PASS | 旧接受 `INVALIDATED`，新请求 `PENDING` |
-| 全部场景实际点击 | PASS | Edge 浏览器自动走查 11/11；截图目录 `artifacts/qa/prompt09/` |
+| 全部场景实际点击 | PASS | Edge 浏览器自动走查 11/11；截图目录 `artifacts/qa/exception-flows-baseline/` |
 | 状态模型回归 | PASS | `npm test` 16/16 |
 
-Prompt 09 已通过，可提交并进入 Prompt 10 Demo Controller 与可复现场景。
+阶段 09 已通过，可提交并进入 阶段 10 Demo Controller 与可复现场景。
 
-## 17. Prompt 10 Gate
+## 17. 阶段 10 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -324,11 +324,11 @@ Prompt 09 已通过，可提交并进入 Prompt 10 Demo Controller 与可复现�
 | Reset All Demo Data | PASS | 恢复规范初始快照 |
 | 场景使用完整 snapshot | PASS | 脏状态加载后与规范快照深度相等 |
 | 前一场景无数据残留 | PASS | `requestHistory`、角色、时钟、对象状态逐场景检查 |
-| 主流程不依赖控制器 | PASS | Prompt 08 仍可 Reset 后连续 23 步完成 |
+| 主流程不依赖控制器 | PASS | 阶段 08 仍可 Reset 后连续 23 步完成 |
 
-Prompt 10 已通过，可提交并进入 Prompt 11 Docker 化与真实启动验证。
+阶段 10 已通过，可提交并进入 阶段 11 Docker 化与真实启动验证。
 
-## 18. Prompt 11 Gate
+## 18. 阶段 11 Gate
 
 | Gate | 状态 | 证据 |
 |---|---|---|
@@ -341,4 +341,4 @@ Prompt 10 已通过，可提交并进入 Prompt 11 Docker 化与真实启动验�
 | 无后端、数据库、密钥或私人账号 | PASS | 外部运行请求 0；镜像和 Compose 审计 |
 | 不依赖宿主机 Node 或未提交文件 | PASS | 容器内 Node、锁文件、无宿主机挂载 |
 
-Prompt 11 已通过，可提交并进入 Prompt 12 完整功能走查。
+阶段 11 已通过，可提交并进入 阶段 12 完整功能走查。
