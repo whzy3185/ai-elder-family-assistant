@@ -1,102 +1,95 @@
-# AI 日常事务与家庭协作助手
+# 安心记事｜AI 日常事务与家庭协作助手
 
-面向产品岗位考核的研究与产品设计仓库。当前分支为 `research`，目标是先完成可追溯的前期调研、范围决策、安全基线、实现路线和交付计划，再进入交互原型开发。
+Release **1.0.0**。为72岁、有自主决定能力、会基础手机操作的张阿姨，完成一次公交卡年审事务：核对并纠正AI整理结果、保存个人提醒、自主选择是否请女儿小梅陪同，再查看回应。小梅只能回应单次请求，不能修改、取消或完成妈妈的事务。
 
-## 当前冻结范围
+## 启动
 
-为 72 岁、具备自主决策能力、会使用智能手机基础功能的张阿姨，解决一次“明天上午 9:00 去社区服务中心办理公交卡年审，提前 30 分钟提醒，并询问女儿小梅能否陪同”的事务。AI 仅负责把自然语言整理为结构化事务；创建、修改、共享和取消都由张阿姨确认。
+前置条件：Docker Engine/Desktop及Docker Compose v2，8080端口可用。首次构建需要联网下载基础镜像；运行无需账号、密钥、真实AI或外部服务。
 
-本阶段不做医疗诊断、应急救援、定位监控、完整陪聊、支付、智能家居或真实消息服务。
+在项目根目录执行：
 
-## 本地运行
-
-当前 Web 基础原型无第三方运行依赖：
-
-```powershell
-npm test
-npm start
-```
-
-浏览器访问 `http://localhost:4173`。当前 Prompt 08 已支持完整主流程；Prompt 09 已补齐全部异常与修改分支；Prompt 10 已提供独立 Demo Controller，可快速加载 13 个完整场景快照、切换双角色、查看固定时钟并重置全部演示数据。
-
-浏览器走查脚本为 `scripts/smoke-prompt08.mjs`、`scripts/smoke-prompt09.mjs` 与 `scripts/smoke-prompt10.mjs`，验证记录见 `docs/validation/`。
-
-## Docker 演示
-
-评审只需在项目根目录执行：
-
-```powershell
+```sh
 docker compose up --build
 ```
 
-容器健康后访问 `http://localhost:8080`。停止并移除演示容器：
+等待容器healthy后打开 **http://localhost:8080**。手机或桌面浏览器均可，主要演示尺寸 **390×844**；桌面可用浏览器移动设备模式。停止：`docker compose down`。
 
-```powershell
-docker compose down
+Apple Silicon本机已使用独立Colima环境实测。若使用已有的`colima-elder-demo`：
+
+```sh
+docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml up --build -d --wait
 ```
 
-- 无需宿主机安装 Node；Node 仅存在于构建后的容器镜像中。
-- 不需要后端、数据库、API Key、私人账号或外部服务。
-- 所有业务数据、AI 结果、消息、失败和时间均为浏览器内固定模拟。
-- 容器以非 root 用户和只读文件系统运行，运行态只给 `/tmp` 临时空间。
-- 未命中静态文件的无扩展名子路由会回退到 `index.html`，刷新仍可进入演示；缺失静态资源保持 404。
+此override将端口绑定127.0.0.1，不要求评审安装Colima。默认Compose仍可直接启动。
 
-## 文档索引
+## 5–10分钟主流程
 
-| 编号 | 文档 | 作用 |
+页面最下方的“演示工具”提供**老人端 / 家属端 / 演示控制**。角色切换是模拟工具。每一步观察页面说明，不把“记好”“发出”“答应”“办完”混为一件事。
+
+1. 演示控制 → 恢复初始演示 → 确认恢复 → 开始演示。
+2. 老人：家庭协作 → 显示二维码 → 切换到小梅扫码 → 模拟扫码并申请 → 切换到张阿姨确认 → 同意建立 → 确认同意 → 继续记事。
+3. 记一件事 → 输入下面原话（或“填入语音示例”）→ 整理。系统模拟把9点听成8点；点“改时间”，选择9点并保存修改，核对提醒8:30后“确认记好”。
+4. 事务详情 → 请小梅陪同 → 请小梅陪同，查看共享 → 核对五项信息 → 发给小梅。个人提醒时间和原话不共享。
+5. 页底家属端 → 查看请求 → 我可以陪你 → 确认可以陪 → 切换到张阿姨端。老人看到答应，事务仍未完成。
+6. 返回首页 → 查看这件事 → 模拟到提醒时间 → 知道了，去办事 → 这件事办完了。只有此确认才完成事务。
+
+固定示例：
+
+> 明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。
+
+演示时钟固定 **2026-10-06 20:00 Asia/Shanghai**；“明天”指10月7日，正常安排09:00、提醒08:30。改期14:00、提醒13:30。不随评审打开日期改变。
+
+## 异常、修改与全部画面
+
+[演示指南](docs/delivery/demo-guide.md)包含每条路径和预期结果。可从头操作，也可在演示控制加载13个完整预设场景；加载会替换当前模拟数据。
+
+| 要演示 | 入口与操作 | 结果 |
 |---|---|---|
-| 00 | [研究方法与证据边界](docs/00-research-method.md) | 资料分级、研究限制、提交前证据门槛 |
-| 01 | [产业与发展判断](docs/01-industry-landscape.md) | 人口、数字化、政策、产业链和趋势 |
-| 02 | [相关产品与替代方案](docs/02-product-examples.md) | 桌面研究样本与机会空白 |
-| 03 | [用户触达与验证方法](docs/03-reach-and-validation.md) | 双边用户、渠道、漏斗和验证设计 |
-| 04 | [风险与主动排除](docs/04-risks-and-exclusions.md) | 产品、伦理、隐私、运营和交付雷点 |
-| 05 | [开发准则](docs/05-development-guidelines.md) | 状态、适老、质量和交付 Definition of Done |
-| 06 | [接口与 GUI 暴露防护准则](docs/06-api-and-gui-security.md) | API、权限、密钥、调试界面和发布安全 |
-| 07 | [实现方案与综合成本](docs/07-implementation-and-cost.md) | 技术选型、阶段成本和方案权衡 |
-| 08 | [可实现性与可延续性](docs/08-feasibility-and-sustainability.md) | 可行性、依赖、扩展边界和退出条件 |
-| 09 | [产品 Roadmap](docs/09-roadmap.md) | 48 小时交付及中长期演进 |
-| 10 | [执行 Plan](docs/10-execution-plan.md) | 工作分解、验收、分支和提交策略 |
-| 11 | [来源索引](docs/11-sources.md) | 官方来源、访问日期及用途 |
-| 12 | [研究决策登记](docs/12-decision-register.md) | 已确定决策、待验证假设和变更规则 |
-| 13 | [项目需求框架草案](docs/13-requirements-framework-draft.md) | 题目拆解、角色、需求、状态与验收映射 |
-| 14 | [产品阶段限制草案](docs/14-stage-guardrails-draft.md) | 各阶段范围、数据、AI、安全、成本和退出门槛 |
-| 15 | [能力边界与主观决策审计](docs/15-ability-boundaries-and-decision-audit.md) | 无代码条件下的交付边界、已知信息和完整决策积压 |
-| P-01 | [正式产品章程](docs/product/01-product-charter.md) | 冻结用户、唯一事务、P0/P1、排除范围、权限和演示时钟 |
-| P-03A | [事务状态机](docs/product/task-state-machine.md) | 事务、解析过程、提醒、版本和完成/取消规则 |
-| P-03B | [家庭协作状态机](docs/product/collaboration-state-machine.md) | 请求发送、回应、未回应、撤回、改期和失效规则 |
-| P-03C | [字段级权限矩阵](docs/product/permissions.md) | 双方可见字段、动作权限、确认点和拒绝规则 |
-| P-04A | [页面与状态总表](docs/product/page-state-matrix.md) | 老人、关系、家属和 Demo 全部页面状态及测试映射 |
-| P-04B | [信息架构](docs/product/information-architecture.md) | 双角色结构、对象所有权、路由与导航边界 |
-| P-04C | [正式用户流程](docs/product/user-flows.md) | 主流程、修改/撤回/取消及失败/未回应/拒绝流程 |
-| P-05A | [AI 理解规则](docs/product/ai-rules.md) | 输入/输出白名单、确认、纠错、失败与手动降级 |
-| P-05B | [适老交互规范](docs/product/accessibility-guidelines.md) | viewport、字号、触控、反馈、缩放与验收基线 |
-| P-05C | [产品文案规范](docs/product/content-guidelines.md) | 成人化语言、固定术语、结果模板与禁用表达 |
-| D-06A | [仓库内高保真设计源](artifacts/design/local-prototype/README.md) | 65 个高保真画面、逐屏访问、可编辑 HTML/CSS 和自动布局审计 |
-| D-06F | [Figma 补充设计源](artifacts/design/figma-source.md) | 早期设计系统、节点索引和 Figma 快照限制 |
-| D-06B | [Design Audit](docs/validation/design-audit.md) | 页面完整性、业务一致性、视觉抽查与 P0 缺口 |
-| E-07 | [Web 基础架构](docs/engineering/web-foundation.md) | 原生前端选择、统一状态模型、LocalStorage 和浏览器走查 |
-| V-08 | [完整主流程验证](docs/validation/prompt08-main-flow.md) | 23 步浏览器走查、跨角色数据一致性和完成权限验证 |
-| V-09 | [异常与修改分支验证](docs/validation/prompt09-exception-flows.md) | 11 个异常场景、状态不变量、浏览器走查和截图证据 |
-| V-10 | [Demo Controller 验证](docs/validation/prompt10-demo-controller.md) | 13 个完整快照、双角色、固定时钟和全量重置验证 |
-| V-11 | [Docker 启动验证](docs/validation/docker-validation.md) | Compose 构建、健康检查、HTTP、子路由、23 步主流程与 Reset 验证 |
-| D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
-| S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
-| G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |
-| R-01 | [竞品体验证据索引](docs/research/evidence-index.md) | 华为与 Apple 体验材料、证据分级和待补项 |
-| R-02 | [华为体验研究](docs/research/huawei-study.md) | 长辈关怀、远程守护、双层授权与适老启示 |
-| R-03 | [Apple 体验研究](docs/research/apple-study.md) | 结构化提醒、共享权限与双状态机启示 |
+| 识别错误 | Recognition Error → 改时间 | 8:00→9:00，提醒7:30→8:30 |
+| 只提醒自己 | Main Flow → 只提醒我自己 → 页底家属端 | 家属无请求 |
+| 未回应 | Pending Family → 老人端 → 查看这件事 → 查看协作结果 → 演示还未回应 | 尚未答应，提醒继续 |
+| 拒绝 | Pending Family → 这次不能陪同 → 确认不能陪 → 老人端结果 | 个人事务不取消 |
+| 建议改期 | Pending Family → 建议改到下午2:00 → 提交 → 老人接受或拒绝 | 同意才修改，同意后需重新共享 |
+| 撤回 | Pending Family → 老人端 → 事务/协作结果 → 撤回陪同请求 → 确认 | 事务和提醒保留，家属不可回应 |
+| 取消 | Main Flow → 取消整件事 → 确认取消 | 停提醒，请求失效 |
+| AI失败 | AI Failure → 手动填写 → 确认 | 原话保留，无AI仍可记事 |
+| 发送失败 | Send Failure → 返回共享预览 → 发给小梅 | 失败时家属无请求，重试只生成一条 |
+| 修改已接受 | Accepted → 返回首页 → 查看这件事 → 修改时间 → 继续修改 → 确认修改 | 旧答复失效；再次查看共享并发出才有新请求 |
+| Reset | 演示控制 → 恢复初始演示 → 确认 → 开始 | 无关系、无事务、无请求 |
 
-## 证据标记
+控制台另有**按编号查看全部页面与状态**：65个编号均有独立Web画面、PNG和PDF页。快照中的“发送中”需点“继续，查看发送结果”；正常连续流程的发送自动模拟350ms等待。页面定位由应用状态和`data-screen-id`实现，不以URL子路由定位角色。
 
-- **[事实]**：可由列明的公开来源直接支持。
-- **[分析]**：基于事实作出的产品或商业判断。
-- **[假设]**：尚待用户研究或实验验证，不作为事实陈述。
-- **[候选人观察]**：候选人提供的实际操作文字记录；若缺截图、设备或版本细节，标为 `C-PARTIAL`。
-- **[待补实证]**：已有文字记录，但仍需截图、录屏或设备版本信息才能独立复核。
+## 交付入口
 
-## 仓库约束
+- [产品说明](docs/product/product-description.md)，PDF：`exports/product-description.pdf`。
+- [完整页面索引](exports/prototype-index.md)，PDF：`exports/prototype-pages.pdf`，65张全长PNG：`exports/screens/`。
+- [页面与状态清单](docs/product/page-state-matrix.md)、[需求追踪](docs/delivery/requirement-traceability-matrix.md)。
+- [操作走查](docs/validation/walkthrough.md)、[状态审计](docs/validation/state-consistency-audit.md)、[适老审计](docs/validation/accessibility-audit.md)。
+- [已知问题](docs/validation/known-issues.md)、[源码冻结记录](docs/delivery/release-freeze.md)、[研究证据分类](docs/research/evidence-index.md)。
 
-- 项目文件仅位于 E 盘。
-- 原型阶段默认不连接真实后端、数据库、AI、短信或推送服务。
-- 不把密钥、令牌、真实老人数据、真实家庭关系或原始语音提交到仓库。
-- `research` 分支用于研究基线；后续原型和交付文档使用独立分支并通过合并进入 `main`。
+## 源码与目录
+
+```text
+src/                 可编辑页面、样式和本地状态模型
+index.html           前端入口
+server.mjs           容器静态文件服务
+Dockerfile           固定基础镜像、非root运行
+compose.yaml         默认Docker演示；compose.local.yaml为本机override
+package*.json        Node项目及锁文件，无第三方运行依赖
+docs/product/        范围、流程、权限、状态机、AI和适老说明
+docs/research/       Huawei/Apple继承记录及证据边界
+docs/validation/     实测结果、独立验收、回归和限制
+docs/delivery/       追踪、演示指南及交付记录
+exports/             当前Release的全部原型PNG、两份PDF和索引
+evidence/            研究与测试证据索引
+scripts/ tests/      可复现的检查脚本和状态测试
+artifacts/           历史设计与各阶段QA，不是当前静态原型入口
+```
+
+可选无Docker开发：Node22或更新版本，`npm start`后打开http://localhost:4173；`npm test`运行状态测试。自动浏览器检查需另开独立Chrome CDP会话，示例见走查文档。
+
+## 模拟与限制
+
+语音、AI整理、消息、身份、二维码、提醒及失败全部预置模拟。状态保存在当前浏览器LocalStorage，刷新恢复；同一浏览器角色切换可连续操作，跨设备和跨标签页实时协同未实现。支持固定案例与09:00/14:00时间；不保证任意自然语言解析。可手动修改事项和地点，日期固定10月7日。
+
+只保留当前事务结果，不提供完整历史、真实通知、后台、诊断、应急、监控或政务建议。两次相关产品体验的原始设备/版本/截图证据仍 **PARTIAL**；没有真人访谈或真实用户指标，Agent测试不替代用户验证。保存这些限制不代表已经完成平台上传、SHA确认或最终交卷。
