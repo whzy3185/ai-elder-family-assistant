@@ -11,12 +11,12 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 07 / Web 基础状态模型与保存主路径完成，待提交
+CURRENT_PHASE=Prompt 08 / 完整主流程完成，待提交
 CURRENT_BRANCH=research
-CURRENT_COMMIT=6334b4debaa4c1637e0e6e5a74e4563e06efaaaf
+CURRENT_COMMIT=b679223
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
-UI_VERSION=repository-hifi-1.0.0
+UI_VERSION=web-prototype-0.8.0
 CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
 REPOSITORY_AUDIT_STATUS=PASS
@@ -43,7 +43,7 @@ DESIGN_AUDIT_STATUS=PASS
 SPEC_FREEZE=TRUE
 WEB_STATUS=PARTIAL
 DOCKER_STATUS=FAIL
-MAIN_FLOW_STATUS=PARTIAL
+MAIN_FLOW_STATUS=PASS
 EXCEPTION_FLOW_STATUS=PARTIAL
 STATIC_EXPORT_STATUS=FAIL
 DOCUMENT_STATUS=PARTIAL
@@ -58,9 +58,10 @@ PROMPT_04_GATE_STATUS=PASS
 PROMPT_05_GATE_STATUS=PASS
 PROMPT_06_GATE_STATUS=PASS
 PROMPT_07_GATE_STATUS=PASS
+PROMPT_08_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 07 的输入基线，即 Prompt 06 本地完成提交。Prompt 07 通过 Gate 后将创建下一提交。
+`CURRENT_COMMIT` 是 Prompt 08 的输入基线，即 Prompt 07 完成提交。Prompt 08 通过 Gate 后将创建下一提交。
 
 ## 2. 仓库真实状态
 
@@ -69,9 +70,9 @@ PROMPT_07_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `6334b4debaa4c1637e0e6e5a74e4563e06efaaaf` | PASS | Prompt 06 本地完成提交 |
-| 远端跟踪 | `origin/research` 暂停留在 `0a128d692bf860ac3b5fba4337eae4b58cd4bc7a` | PARTIAL | GitHub HTTPS 两次连接重置，待网络恢复重推 |
-| 工作区变更 | Prompt 07 Web 基础工程和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
+| `research` | `b679223` | PASS | Prompt 07 完成提交 |
+| 远端跟踪 | `origin/research` 为 `b679223` | PASS | Prompt 06—07 已成功推送 |
+| 工作区变更 | Prompt 08 完整主流程和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
 | 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
 | 代码与构建文件 | 原生 Web 工程已建立；Docker 尚未建立 | PARTIAL | `package.json`、`index.html`、`src/`、`server.mjs`、`tests/` |
 
@@ -133,7 +134,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | Prompt 05 | 冻结 AI 规则和适老交互规范 | PASS |
 | Prompt 06 | 完成高保真设计并进行设计审计 | PASS |
 | Prompt 07 | 建立 Web 工程和基础状态模型 | PASS |
-| Prompt 08 | 实现完整主流程 | FAIL |
+| Prompt 08 | 实现完整主流程 | PASS |
 | Prompt 09 | 实现全部异常和修改分支 | FAIL |
 | Prompt 10 | 完成 Demo Controller 与可复现场景 | FAIL |
 | Prompt 11 | Docker 化并完成真实启动验证 | FAIL |
@@ -269,3 +270,19 @@ Prompt 06 已通过。Figma 文件保留为补充参考；规范设计源切换�
 | 无真实后端、数据库、AI、账号或密钥 | PASS | 静态源码与秘密扫描 |
 
 Prompt 07 已通过，可提交并进入 Prompt 08 完整主流程。
+
+## 15. Prompt 08 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| Reset 后不跳状态连续走完整流程 | PASS | Edge 自动走查 23 步 |
+| 首次关系由双方动作建立 | PASS | 二维码、家属申请、老人确认 |
+| 固定错误与单字段纠正 | PASS | 8:00 / 7:30 → 9:00 / 8:30 |
+| 保存个人提醒和单次共享分离 | PASS | 保存后另行进入共享确认 |
+| 家属端读取最终 9:00 | PASS | 请求快照断言 |
+| 家属端不读取私人提醒 | PASS | 共享确认和家属页均无 8:30 |
+| 家属接受不等于事务完成 | PASS | 接受后 `request=ACCEPTED`、`task=CONFIRMED` |
+| 只有老人确认才完成 | PASS | 老人完成后 `task=COMPLETED` |
+| 提醒触发 | PASS | Demo 时钟推进至 2026-10-07 08:30 |
+
+Prompt 08 已通过，可提交并进入 Prompt 09 全部异常和修改分支。

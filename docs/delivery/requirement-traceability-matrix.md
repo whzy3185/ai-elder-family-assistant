@@ -49,12 +49,12 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-010 | 首次建立家庭协作关系 | 小梅扫码发起；张阿姨查看身份、用途、范围和撤回方式后同意 | `FM-REL-01`、`EL-REL-01/02`、`REL-PENDING/ACTIVE` | `src/features/relationship/*` | `TC-REL-001` 建立关系 | `artifacts/static/FM-REL-01.png`、`EL-REL-01.png`（缺失） | FAIL |
+| RTM-010 | 首次建立家庭协作关系 | 小梅扫码发起；张阿姨查看身份、用途、范围和撤回方式后同意 | `FM-REL-01`、`EL-REL-01/02`、`REL-PENDING/ACTIVE` | `src/views.js`、`src/state/model.js` | `TC-REL-001` 建立关系 | Prompt 08 连续浏览器走查 | PASS |
 | RTM-011 | 老人可以拒绝建立关系 | 拒绝后关系不成立，小梅不能查看事务，张阿姨仍可使用个人提醒 | `EL-REL-03`、`FM-REL-03`、`REL-DECLINED` | `src/features/relationship/*` | `TC-REL-002` 拒绝关系 | 对应双端静态图（缺失） | FAIL |
-| RTM-012 | 说明双方分别能看什么 | 小梅只见已授权的事项、日期、时间、地点和帮助；不见提醒、原文、位置和其他事务 | `EL-REL-02`、`EL-SHARE-02`、`FM-REQ-02` | `src/domain/permissions.ts`、相关页面 | `TC-PERM-001` 字段白名单 | 权限说明与家属详情图（缺失） | FAIL |
-| RTM-013 | 说明双方分别能做什么 | 张阿姨拥有事务；小梅只能接受、拒绝、建议改期 | `EL-REL-02`、`FM-REQ-02/03/04/05` | `src/domain/permissions.ts` | `TC-PERM-002` 角色动作矩阵 | 双端操作画面（缺失） | FAIL |
-| RTM-014 | 明确何时需要老人确认 | 建立关系、保存事务、共享、接受改期、撤回、取消和完成均由老人确认 | `EL-REL-02`、`EL-TASK-05`、`EL-SHARE-02`、`EL-EX-04/05`、`EL-TASK-09` | `src/domain/guards.ts` | `TC-PERM-003` 未确认不得执行 | 全部确认画面（缺失） | FAIL |
-| RTM-015 | 关系授权不等于全部信息开放 | 关系只建立通道，每件事务单独授权 | `EL-REL-02`、`EL-SHARE-02` | `src/domain/consent.ts` | `TC-CONSENT-001` 无事务授权不可见 | 关系与共享两层画面（缺失） | FAIL |
+| RTM-012 | 说明双方分别能看什么 | 小梅只见已授权的事项、日期、时间、地点和帮助；不见提醒、原文、位置和其他事务 | `EL-REL-02`、`EL-SHARE-02`、`FM-REQ-02` | `src/views.js`、`src/state/model.js` | `TC-PERM-001` 字段白名单 | 浏览器断言家属无 8:30 私人提醒 | PASS |
+| RTM-013 | 说明双方分别能做什么 | 张阿姨拥有事务；小梅只能接受、拒绝、建议改期 | `EL-REL-02`、`FM-REQ-02/03/04/05` | `src/views.js`、`src/state/model.js` | `TC-PERM-002` 角色动作矩阵 | 接受路径已实现；拒绝与建议改期待 Prompt 09 | PARTIAL |
+| RTM-014 | 明确何时需要老人确认 | 建立关系、保存事务、共享、接受改期、撤回、取消和完成均由老人确认 | `EL-REL-02`、`EL-TASK-05`、`EL-SHARE-02`、`EL-EX-04/05`、`EL-TASK-09` | `src/state/model.js`、`src/views.js` | `TC-PERM-003` 未确认不得执行 | 主流程确认点已运行；异常确认待 Prompt 09 | PARTIAL |
+| RTM-015 | 关系授权不等于全部信息开放 | 关系只建立通道，每件事务单独授权 | `EL-REL-02`、`EL-SHARE-02` | `src/state/model.js`、`src/views.js` | `TC-CONSENT-001` 无事务授权不可见 | 关系建立后仍需独立共享确认 | PASS |
 | RTM-016 | 拒绝共享后流程仍清楚，支持“只提醒自己、不共享” | 张阿姨选择只提醒自己；事务和 08:30 提醒保留，小梅无请求 | `EL-SHARE-01`、`EL-TASK-06`、`FM-REQ-00` | `src/features/collaboration/*` | `TC-SHARE-001` 只提醒自己 | 双端结果图（缺失） | FAIL |
 | RTM-017 | 老人可以结束关系 | 结束后阻止新共享和新访问；已有演示状态按 Prompt 03 规则处理 | `EL-REL-04/05`、`FM-REL-04` | `src/features/relationship/*` | `TC-REL-003` 解除关系 | 解除确认与结果图（缺失） | FAIL |
 
@@ -62,21 +62,21 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-018 | 老人表达一件日常事务 | 支持固定模拟语音和手动文字；使用冻结原句 | `EL-TASK-01`、`TASK-DRAFT` | `src/features/task/TaskInputPage.tsx` | `TC-MAIN-001` 输入事务 | `artifacts/static/EL-TASK-01.png`（缺失） | FAIL |
-| RTM-019 | 展示 AI 处理状态 | 处理中不得提前显示成功；模拟等待短于 2 秒且可复现 | `EL-TASK-02`、`TASK-UNDERSTANDING` | `src/features/task/UnderstandingPage.tsx` | `TC-MAIN-002` 处理中状态 | `EL-TASK-02.png`（缺失） | FAIL |
-| RTM-020 | 老人确认系统理解 | 分字段显示事项、日期、时间、地点、提醒和协作意图 | `EL-TASK-03A/03B`、`TASK-NEEDS_CONFIRMATION` | `src/features/task/ConfirmUnderstandingPage.tsx` | `TC-MAIN-003` 字段复述 | `EL-TASK-03A/03B.png`（缺失） | FAIL |
-| RTM-021 | 展示并修改一处识别错误 | 固定把 9:00 识别为 8:00，老人单字段改回 9:00 | `EL-TASK-03B/04` | `src/features/task/EditTimeSheet.tsx` | `TC-MAIN-004` 8:00→9:00 | 修改前后静态图（缺失） | FAIL |
-| RTM-022 | 提醒时间随事务时间同步 | 错误时 7:30，修正后 8:30；自然语言再次复述 | `EL-TASK-03B/05` | `src/domain/reminder.ts` | `TC-MAIN-005` 时间联动 | 修正后确认图（缺失） | FAIL |
-| RTM-023 | 老人确认并保存个人事务 | 未确认不创建；确认后 `TASK-CONFIRMED` | `EL-TASK-05/06` | `src/domain/taskMachine.ts` | `TC-MAIN-006` 保存事务 | 保存成功与详情图（缺失） | FAIL |
-| RTM-024 | 保存个人提醒 | 提醒属于张阿姨，不因家属拒绝、未回应或撤回请求而删除 | `EL-TASK-06`、`REMINDER-SCHEDULED` | `src/domain/reminder.ts` | `TC-REM-001` 保存提醒 | 事务详情提醒区（缺失） | FAIL |
-| RTM-025 | 决定是否请求家属 | 保存事务后单独选择“请小梅陪同”或“只提醒我” | `EL-SHARE-01` | `src/features/collaboration/ShareChoicePage.tsx` | `TC-MAIN-007` 两分支 | 选择页静态图（缺失） | FAIL |
-| RTM-026 | 查看本次共享内容 | 发送前逐项显示接收者和五个共享字段 | `EL-SHARE-02`、`CONSENT-REQUIRED` | `src/features/collaboration/ShareReviewPage.tsx` | `TC-MAIN-008` 复述共享字段 | 共享确认图（缺失） | FAIL |
-| RTM-027 | 明确确认后才发送 | 只有点击“发给小梅”才创建请求；返回不发送 | `EL-SHARE-02/03`、`REQUEST-SENDING` | `src/domain/requestMachine.ts` | `TC-MAIN-009` 发送授权 | 发送中图（缺失） | FAIL |
-| RTM-028 | 家属接收并查看请求 | 小梅看到请求列表和详情，且内容与老人确认一致 | `FM-REQ-01/02`、`REQUEST-DELIVERED/VIEWED` | `src/features/family/*` | `TC-MAIN-010` 家属查看 | 家属列表和详情图（缺失） | FAIL |
-| RTM-029 | 家属回应 | 小梅可以接受、拒绝或建议改期，三者互斥 | `FM-REQ-03/04/05` | `src/features/family/RequestResponsePage.tsx` | `TC-COLLAB-001/002/003` | 三类回应图（缺失） | FAIL |
-| RTM-030 | 老人获知家属结果 | 张阿姨看到明确结果、时间和下一步，不把陪同接受当作事务完成 | `EL-SHARE-05/06/07` | `src/features/collaboration/ResponseResultPage.tsx` | `TC-MAIN-011` 返回老人结果 | 老人结果图（缺失） | FAIL |
-| RTM-031 | 正常完成协作闭环 | 关系建立、纠错、保存、共享、小梅接受、老人看到结果连续可操作 | 主流程全部状态 | `tests/e2e/main-flow.spec.ts` | `TC-E2E-001` 完整主流程 | 主流程截图组/录屏（缺失） | FAIL |
-| RTM-032 | 老人确认现实事务完成 | 只有张阿姨可点“这件事办完了”；陪同接受不自动完成 | `EL-TASK-09`、`TASK-COMPLETED` | `src/features/task/CompleteTaskDialog.tsx` | `TC-COMPLETE-001` 确认完成 | 完成确认与结果图（缺失） | FAIL |
+| RTM-018 | 老人表达一件日常事务 | 支持固定模拟语音和手动文字；使用冻结原句 | `EL-TASK-01`、`TASK-DRAFT` | `src/views.js` | `TC-MAIN-001` 输入事务 | Prompt 08 浏览器走查 | PASS |
+| RTM-019 | 展示 AI 处理状态 | 处理中不得提前显示成功；模拟等待短于 2 秒且可复现 | `EL-TASK-02`、`TASK-UNDERSTANDING` | `src/app.js`、`src/views.js` | `TC-MAIN-002` 处理中状态 | 450ms 确定性模拟及浏览器断言 | PASS |
+| RTM-020 | 老人确认系统理解 | 分字段显示事项、日期、时间、地点、提醒和协作意图 | `EL-TASK-03A/03B`、`TASK-NEEDS_CONFIRMATION` | `src/views.js` | `TC-MAIN-003` 字段复述 | 结构化确认页与走查 | PASS |
+| RTM-021 | 展示并修改一处识别错误 | 固定把 9:00 识别为 8:00，老人单字段改回 9:00 | `EL-TASK-03B/04` | `src/state/model.js`、`src/views.js` | `TC-MAIN-004` 8:00→9:00 | 自动走查前后断言 | PASS |
+| RTM-022 | 提醒时间随事务时间同步 | 错误时 7:30，修正后 8:30；自然语言再次复述 | `EL-TASK-03B/05` | `src/state/model.js` | `TC-MAIN-005` 时间联动 | 状态测试与浏览器断言 | PASS |
+| RTM-023 | 老人确认并保存个人事务 | 未确认不创建；确认后 `TASK-CONFIRMED` | `EL-TASK-05/06` | `src/state/model.js`、`src/views.js` | `TC-MAIN-006` 保存事务 | 保存结果与 LocalStorage 证据 | PASS |
+| RTM-024 | 保存个人提醒 | 提醒属于张阿姨，不因家属拒绝、未回应或撤回请求而删除 | `EL-TASK-06`、`REMINDER-SCHEDULED` | `src/state/model.js` | `TC-REM-001` 保存提醒 | 正常保存已实现；异常保持待 Prompt 09 | PARTIAL |
+| RTM-025 | 决定是否请求家属 | 保存事务后单独选择“请小梅陪同”或“只提醒我” | `EL-SHARE-01` | `src/views.js` | `TC-MAIN-007` 两分支 | 两个入口已实现；不共享专项测试待 Prompt 09 | PARTIAL |
+| RTM-026 | 查看本次共享内容 | 发送前逐项显示接收者和五个共享字段 | `EL-SHARE-02`、`CONSENT-REQUIRED` | `src/views.js` | `TC-MAIN-008` 复述共享字段 | 分享页与隐私字段断言 | PASS |
+| RTM-027 | 明确确认后才发送 | 只有点击“发给小梅”才创建请求；返回不发送 | `EL-SHARE-02/03`、`REQUEST-SENDING` | `src/state/model.js`、`src/views.js` | `TC-MAIN-009` 发送授权 | 确认发送已实现；发送中视觉待 Prompt 09 | PARTIAL |
+| RTM-028 | 家属接收并查看请求 | 小梅看到请求列表和详情，且内容与老人确认一致 | `FM-REQ-01/02`、`REQUEST-DELIVERED/VIEWED` | `src/views.js` | `TC-MAIN-010` 家属查看 | 共享快照时间和字段断言 | PASS |
+| RTM-029 | 家属回应 | 小梅可以接受、拒绝或建议改期，三者互斥 | `FM-REQ-03/04/05` | `src/state/model.js`、`src/views.js` | `TC-COLLAB-001/002/003` | 接受已实现；拒绝和建议改期待 Prompt 09 | PARTIAL |
+| RTM-030 | 老人获知家属结果 | 张阿姨看到明确结果、时间和下一步，不把陪同接受当作事务完成 | `EL-SHARE-05/06/07` | `src/views.js` | `TC-MAIN-011` 返回老人结果 | 接受结果和未完成断言 | PASS |
+| RTM-031 | 正常完成协作闭环 | 关系建立、纠错、保存、共享、小梅接受、老人看到结果连续可操作 | 主流程全部状态 | `scripts/smoke-prompt08.mjs` | `TC-E2E-001` 完整主流程 | 23 步 PASS 和完成截图 | PASS |
+| RTM-032 | 老人确认现实事务完成 | 只有张阿姨可点“这件事办完了”；陪同接受不自动完成 | `EL-TASK-09`、`TASK-COMPLETED` | `src/state/model.js`、`src/views.js` | `TC-COMPLETE-001` 确认完成 | 接受后 CONFIRMED、老人确认后 COMPLETED | PASS |
 
 ## 6. 异常、取消和版本一致性
 
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 当前要求已有足够仓库证据 | 13 |
-| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 20 |
-| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 57 |
+| PASS | 当前要求已有足够仓库证据 | 27 |
+| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 26 |
+| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 37 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
