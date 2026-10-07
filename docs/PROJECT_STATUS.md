@@ -3,12 +3,12 @@
 更新日期：2026-10-07（Asia/Shanghai）。本文件只报告当前状态；此前摘要存于`validation/project-status-baseline-prompt11.md`，历史PASS不能替代当前Release验收。
 
 ```text
-CURRENT_PHASE=Prompt 14 65页适老终检通过；下一阶段 Prompt 15
+CURRENT_PHASE=Prompt 15 Release 1.0.0 全量静态导出完成；下一阶段 Prompt 16
 CURRENT_BRANCH=research
 CURRENT_COMMIT=由 git rev-parse HEAD 获取；阶段证据随该提交保存，避免自引用SHA
 INPUT_COMMIT=878b8fb
 SPEC_VERSION=product-charter-1.0.0
-UI_VERSION=web-prototype-0.12.0
+UI_VERSION=web-prototype-1.0.0
 CORE_SCENARIO=固定时钟2026-10-06 20:00 Asia/Shanghai；次日9点社区服务中心公交卡年审；8:30提醒；小梅陪同请求
 REQUIREMENT_MATRIX_STATUS=PARTIAL
 PAGE_MATRIX_STATUS=PASS
@@ -16,7 +16,7 @@ WEB_STATUS=PASS
 DOCKER_STATUS=PASS
 MAIN_FLOW_STATUS=PASS
 EXCEPTION_FLOW_STATUS=PASS
-STATIC_EXPORT_STATUS=FAIL
+STATIC_EXPORT_STATUS=PASS
 DOCUMENT_STATUS=PARTIAL
 RESEARCH_EVIDENCE_STATUS=PARTIAL
 FINAL_ACCEPTANCE_STATUS=FAIL
@@ -24,7 +24,7 @@ SUBMISSION_STATUS=FAIL
 PROMPT_12_GATE_STATUS=PASS
 PROMPT_13_GATE_STATUS=PASS
 PROMPT_14_GATE_STATUS=PASS
-PROMPT_15_GATE_STATUS=FAIL
+PROMPT_15_GATE_STATUS=PASS
 PROMPT_16_GATE_STATUS=PARTIAL
 PROMPT_17_GATE_STATUS=FAIL
 PROMPT_18_GATE_STATUS=PARTIAL
@@ -58,3 +58,5 @@ Prompt13先执行18项状态攻击、修复后回归；Prompt14逐页适老终�
 Prompt13：43/43状态测试、7/7 Docker浏览器专项检查通过；详见`validation/state-consistency-audit.md`。
 
 Prompt14：65/65编号Web入口、两种视口布局审计及完整Tab/Enter主流程通过；静态Release尚待导出。
+
+Prompt15：65张同版Docker截图、69页原型PDF、索引和源码SHA-256清单已完成。
