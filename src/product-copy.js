@@ -1,4 +1,7 @@
 export const productCopy = {
+  "EL-REL-01A":{"title":"等小梅打开邀请","lead":"她申请后，还要你亲自同意。","archetype":"wait"},
+  "FM-REL-01A":{"title":"等妈妈确认","lead":"申请已经送出。","archetype":"wait"},
+  "FM-REL-04A":{"title":"结束和妈妈的协作？","lead":"妈妈的事情和提醒会保留。","archetype":"confirm"},
   "EL-TASK-00": {
     "title": "晚上好，张阿姨",
     "lead": "把要办的事记下来，到了时间提醒你。",
