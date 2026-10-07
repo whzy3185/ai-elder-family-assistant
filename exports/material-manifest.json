@@ -1,6 +1,6 @@
 {
   "runtimeVersion": "1.1.1",
-  "documentRevision": "2026-10-07 user-definition-and-delivery-semantics",
+  "documentRevision": "2026-10-07 competitor-reports-with-evidence-boundaries",
   "sourceFreezeSha": "54440215c9bc6a57e6917cc89106b10a33728e76",
   "pdfPages": {
     "exports/product-description.pdf": 7,
@@ -9,17 +9,23 @@
   "prototypeScreens": 68,
   "productSections": 26,
   "files": {
-    "README.md": "146ca84547842dbbe15ef934e56d4c82e95dd0712a52613f87575db6930cde12",
-    "docs/product/product-description.md": "477641346e983c279fb80fbaed429755040cfe8c446e64920f2138c39c29036a",
+    "README.md": "423574f94014411fffba19005813259d464984ed1882799b5b37ef6020308223",
+    "docs/product/product-description.md": "77299f31b6b5b3ab3fa4c4bdb1afc870e0634b334dac5dfeadd3061b08bf816b",
     "docs/product/01-product-charter.md": "bd59f611aed5b4eb03c67a7bfb86f756793ffbc9df3a168a69e6def90d4fcd83",
     "docs/delivery/demo-guide.md": "82d8133f2366f64caec4202a40516789d95adde19bd2b2d3a9631d7e35167e2c",
-    "docs/delivery/requirement-traceability-matrix.md": "c357577c5990fd9b7f4362031a10b375c8ea5c452fb9e60e36796c684754febf",
+    "docs/delivery/requirement-traceability-matrix.md": "d9b1bbb8f3c36bf9d584aea85fc31f52b619dccec4e2a080075b10fec8d89a19",
     "docs/delivery/definition-and-delivery-audit.md": "328b52195743384c534c7dc964818f0dc93ade8f171a64fc9798df6e35678e93",
     "docs/delivery/platform-finalization.md": "842af8577b1cd616fc85ec96cf1b683240d7396fae5b3f4570ec00542031a528",
-    "exports/product-description.pdf": "613d0c33b075e1262b9c8e0a15954c746468613b5e4f061c625f286a37db1e60",
+    "exports/product-description.pdf": "70f308c1a297c27e8b1a614e08c3776029d64f013881cc17da491a71a2017da7",
     "exports/prototype-pages.pdf": "a9bac4ab8fa28b36e3773d670ee690583a4625b15f5c329f51f933977812e8ed",
     "exports/prototype-index.md": "d84ebab1e68f2de1a70980b71b408695ab3824eb06b642b899409086a5c14509",
     "exports/prototype-index.json": "7a51aa19cd197ccece751d3b4fb64e6650082e13a70d9f760efdd166d11bfef3",
-    "exports/source-manifest.json": "fc79925e09e70136b13336262c4b7be99c738db285964f3e6cb8a54305084163"
+    "exports/source-manifest.json": "fc79925e09e70136b13336262c4b7be99c738db285964f3e6cb8a54305084163",
+    "docs/research/huawei-study.md": "9873c3c1d0efcc68cf4a5a2d728458cc484902c67c771a745ed6cb99f76d79f0",
+    "docs/research/apple-study.md": "95cca6f827bc8c6de8cbad01f3ea0a23360952c87f5a710964224034efacfc4c",
+    "docs/research/evidence-index.md": "0fafb5061c5e929340e89825eed95c4a9b2dc8e142e2b4e8cce1e0d294c72214",
+    "docs/11-sources.md": "576cbe64a6cbdaf22ad871190ea946de854d8ca578ab087763c148aed9f84078",
+    "evidence/official-source-verification.json": "a7f796db3687fa434218eded2d1a4c77f00374661c636cb5af2a79cc0ef92a88",
+    "docs/validation/research-report-update.md": "98967451092d6b8a3a8e5a10bed2378ca306310f8c84f0f256f9551d91a8bb3a"
   }
 }

@@ -1,7 +1,7 @@
 # 交付版本
 
 - BUILD_VERSION：1.1.1
-- DOCUMENT_REVISION：2026-10-07用户定义与交付语义校正版；运行代码未变。
+- DOCUMENT_REVISION：2026-10-07用户定义、交付语义与研究文字报告校正版；运行代码未变。
 - FINAL_BRANCH：main（最终发布分支，远端核验后生效）
 - SOURCE_FREEZE_SHA：54440215c9bc6a57e6917cc89106b10a33728e76
 - FINAL_COMMIT_SHA：在最终main执行`git rev-parse HEAD`，以远端main一致的40位SHA为准。

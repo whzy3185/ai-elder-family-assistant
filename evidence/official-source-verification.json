@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-07T13:16:50.440602+00:00",
+  "evidenceType": "Official documentation; desktop HTTP text verification",
+  "deviceExperiencePerformed": false,
+  "sources": [
+    {
+      "id": "huawei-care",
+      "title": "华为：关爱长辈",
+      "url": "https://consumer.huawei.com/cn/support/content/zh-cn16094108/",
+      "httpStatus": 200,
+      "pageScope": "HarmonyOS 6.1",
+      "retrievedPlainTextSha256": "75ce8028fc9ca8688d69390efc8b5b27afec27ebe02fd5664074e06541fcab05",
+      "excerpts": [
+        "为您查询到以下结果，请选择 无法查询到结果，请重新选择 开启关怀模式 关怀模式支持屏幕放大显示、更换桌面简易布局，让您看得更清楚。启用骚扰和诈骗拦截，帮您拦截骚扰信息、电话，还可添加个人紧急信息，便于发生紧急情况时快速求助。进入 设置 > 关怀和无障碍 > 关怀模式 ，根据界面提示开启 关怀模式 。 设置放大显",
+        "拦截骚扰信息、电话，还可添加个人紧急信息，便于发生紧急情况时快速求助。进入 设置 > 关怀和无障碍 > 关怀模式 ，根据界面提示开启 关怀模式 。 设置放大显示 放大显示可一键放大字体和桌面应用图标等，还支持多档位调节，设置最合适的显示大小，使您更清楚地浏览屏幕内容。 进入 关怀模式 ，在 放大显示 中拖动滑块",
+        "无障碍 > 关怀模式 ，根据界面提示开启 关怀模式 。 设置放大显示 放大显示可一键放大字体和桌面应用图标等，还支持多档位调节，设置最合适的显示大小，使您更清楚地浏览屏幕内容。 进入 关怀模式 ，在 放大显示 中拖动滑块，根据个人习惯选择最合适的档位。 配图仅供参考，请以产品实际为准。 开启骚扰和诈骗拦截 进入 关怀模式 ，"
+      ]
+    },
+    {
+      "id": "huawei-guardian",
+      "title": "华为：远程守护长辈",
+      "url": "https://consumer.huawei.com/cn/support/content/zh-cn16073229/",
+      "httpStatus": 200,
+      "pageScope": "HarmonyOS 6.0 / 6.1",
+      "retrievedPlainTextSha256": "b9eb8164343576c452793a584a58b8850fc0b3a88d926cf2b08320bf574faa82",
+      "excerpts": [
+        "击 > 扫码添加 。 用您的设备扫描长辈的二维码，选择 长辈 ，点击 发送申请 ，在长辈设备上收到通知后，点击 同意 ，并根据提示完成绑定。 您的设备为 HarmonyOS 6 及以上版本，长辈设备为 HarmonyOS 4.3 及以下版本 在长辈设备上登录与您不同的 华为账号",
+        "长辈的二维码，选择 长辈 ，点击 发送申请 ，在长辈设备上收到通知后，点击 同意 ，并根据提示完成绑定。 您的设备为 HarmonyOS 6 及以上版本，长辈设备为 HarmonyOS 4.3 及以下版本 在长辈设备上登录与您不同的 华为账号 ，进入 设置 > 健康使用手机 ，点",
+        "设置 > 健康使用设备 ，点击 守护家人 卡片，选择已绑定的长辈账号，可随时查看长辈所在位置。 如需退出远程守护，可在您设备的 远程守护 界面下方点击 取消守护 。 在您的设备上通过 扫码添加 最多可添加 6 个不同的账号。 长时间未使用设备提醒 在您的 手机 上，进入 设置 > 健康使用设",
+        "辈所在位置。 如需退出远程守护，可在您设备的 远程守护 界面下方点击 取消守护 。 在您的设备上通过 扫码添加 最多可添加 6 个不同的账号。 长时间未使用设备提醒 在您的 手机 上，进入 设置 > 健康使用设备 ，点击 守护家人 卡片，点击已绑定的长辈账号。 开启 长时间未使"
+      ]
+    },
+    {
+      "id": "apple-sharing",
+      "title": "Apple：共享和分配提醒事项",
+      "url": "https://support.apple.com/zh-cn/105124",
+      "httpStatus": 200,
+      "pageScope": "官方支持页，版本条件见正文",
+      "retrievedPlainTextSha256": "3fa491760f046ebfcf6af4a8a49ac782e39ceccddabeed9cb24ba2a01b11263e",
+      "excerpts": [
+        "者“信息”或“邮件”等 App，然后共享列表。 在某人接受你的邀请后，他们可以添加项目、删除项目以及将其标记为已完成。要查看你在 iOS 13 或更高版本中创建的共享列表，你邀请的人还必须在自己的设备上装有 iOS 13 或更高版本。你为提醒事项设置的通知不会与其他任何人共享。 在共享列表中分配提醒事项 轻点相应提",
+        "享列表，你邀请的人还必须在自己的设备上装有 iOS 13 或更高版本。你为提醒事项设置的通知不会与其他任何人共享。 在共享列表中分配提醒事项 轻点相应提醒事项。 轻点快速工具栏中的 “分配”按钮 。 选取你要将提醒事项分配给的联系人。 轻点 “完成”按钮 。 只有在共享提醒事项列表后，才能分配提醒事项。 需要重"
+      ]
+    },
+    {
+      "id": "apple-guide",
+      "title": "Apple：在iPhone共享列表和协作",
+      "url": "https://support.apple.com/zh-cn/guide/iphone/iph2a8f9121e/27/ios/27",
+      "httpStatus": 200,
+      "pageScope": "iOS 27",
+      "retrievedPlainTextSha256": "2f6ea8577ee98b3f043bf118d02cebd69388023163a18c28484356c418da7bb0",
+      "excerpts": [
+        "Pods 家居 娱乐 配件 技术支持 0 + iPhone 使用手册 iOS 27 iOS 26 iOS 18 iOS 17 iOS 16 iOS 15 iOS 14 iOS 13 iOS 12 选择版本： iOS 27 iOS 26 iOS 18 iOS 17 iOS 16 iO",
+        " 协作处理列表 你可以与使用 iCloud 的用户共享列表并进行协作。接受邀请的人可添加和编辑项目以及将项目标记为完成，并且所有参与者都可看到每个人的更改。协作的所有人都必须 登录其 Apple 账户 ，并且 在 iCloud 设置中打开“提醒事项” 。 在 iPhone 上前往“提醒事项” App 。 查看要共享的"
+      ]
+    }
+  ],
+  "limits": "Official source versions are not candidate device versions. Original device operation attachments remain unavailable. No personal user experience or usability result is inferred."
+}

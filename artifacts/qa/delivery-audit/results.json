@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "trackedFiles": 1151,
-  "localLinksChecked": 314,
+  "trackedFiles": 1153,
+  "localLinksChecked": 322,
   "sourceFilesChecked": 17,
-  "materialFilesChecked": 12,
+  "materialFilesChecked": 18,
   "screens": 68,
   "requirementStatuses": {
     "PASS": 88,

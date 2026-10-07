@@ -39,8 +39,8 @@
 | RTM-002 | 明确家属参与条件 | 一名成年家属适度参与且不能持续在线；小梅为同城、工作忙、不能保证陪同的家属Persona | `DOC-CHARTER-FAMILY` | `docs/product/01-product-charter.md` 第2.2、2.4–3节 | `TC-DOC-002` 核对关系、距离、响应能力 | 当前产品章程家庭条件 | PASS |
 | RTM-003 | 区分老人需求与家属诉求 | 老人关注理解、提醒、决定权；家属关注信息明确、响应负担和非监控 | `DOC-CHARTER-GOALS` | `docs/product/01-product-charter.md#6-用户目标` | `TC-DOC-003` 双角色目标无混写 | 当前产品章程第 6—7 节 | PASS |
 | RTM-004 | 围绕一个主要问题和一个事务 | 主要问题是理解确认、可控制的必要共享和明确回应；公交卡年审为固定提醒/陪同案例 | `DOC-CHARTER-SCENARIO` | `docs/product/01-product-charter.md#4-固定演示事务` | `TC-DOC-004` 问题与案例分开且固定事务一致 | 当前产品章程第4、8节 | PASS |
-| RTM-005 | 明确当前替代方式及选择依据 | 对比 Apple 提醒、共享列表、华为关怀和远程守护 | `DOC-RESEARCH-COMPETITORS` | `docs/research/apple-study.md`、`docs/research/huawei-study.md` | `TC-RES-001` 结论可追溯检查 | docs/research/evidence-index.md：继承文字及官方资料；设备/版本/原始截图尚缺 | PARTIAL |
-| RTM-006 | 至少实际体验两个产品或替代方案并保留证据 | 采用华为与 Apple；文字记录可用，截图、录屏和设备版本仍需补 | `DOC-RESEARCH-EVIDENCE` | `docs/research/evidence-index.md` | `TC-RES-002` 证据完整性检查 | docs/research/evidence-index.md：继承文字及官方资料；设备/版本/原始截图尚缺 | PARTIAL |
+| RTM-005 | 明确当前替代方式及选择依据 | 对比Apple提醒、共享列表、华为关怀和远程守护；按本轮文字材料整理，官方资料与设计推演分开 | `DOC-RESEARCH-COMPETITORS` | `docs/research/apple-study.md`、`docs/research/huawei-study.md` | `TC-RES-001` 结论可追溯检查 | 两份新报告及evidence/official-source-verification.json；原始体验依据仍不足，保留PARTIAL | PARTIAL |
+| RTM-006 | 至少实际体验两个产品或替代方案并保留证据 | 华为与Apple文字报告已更新；设备与实际版本明确未记录，不据官方资料升级实际体验 | `DOC-RESEARCH-EVIDENCE` | `docs/research/evidence-index.md` | `TC-RES-002` 证据完整性检查 | 现有文字材料；未收到对应实机截图/录屏；C-001/C-002仍C-PARTIAL | PARTIAL |
 | RTM-007 | 区分真实观察、二手资料和假设 | 使用 A/B/C/D 与候选人观察、官方事实、方案推演、待验证假设标记 | `DOC-RESEARCH-METHOD` | `docs/00-research-method.md`、`docs/research/*` | `TC-RES-003` 抽样追溯标记 | 当前研究方法和来源索引 | PASS |
 | RTM-008 | 列出必做范围、主动舍弃和理由 | P0、P1、Explicitly Excluded 已冻结；P1 不得阻塞 P0 | `DOC-CHARTER-SCOPE` | `docs/product/01-product-charter.md#9-p0本次必须交付` | `TC-DOC-005` 范围与导航一致性检查 | 当前产品章程第 9—15 节 | PASS |
 | RTM-009 | 不扩展成陪聊、硬件、智能家居、定位、医疗或应急 | 上述能力全部排除，不设计入口 | `DOC-CHARTER-EXCLUDED` | `docs/product/01-product-charter.md#11-explicitly-excluded` | `TC-SCOPE-001` 全库禁用能力扫描 | 当前 Explicitly Excluded | PASS |

@@ -1,6 +1,6 @@
 # 来源索引
 
-访问日期：2026-10-05。
+初始来源索引访问日期：2026-10-05。本轮2026-10-07重新核对的竞品页面另列于末尾，不把资料核对日期当作设备体验日期。
 
 优先列入政府、标准组织和厂商官方资料。链接支持公开事实，不自动支持本文中的分析和假设。
 
@@ -42,6 +42,17 @@
 25. Amazon：[Alexa and Alexa Device FAQs](https://digprjsurvey.amazon.com/csad/help/node/201602230)——通信、隐私和紧急能力边界。
 26. Amazon：[What Is an Alexa Emergency Contact?](https://digprjsurvey.amazon.com/csad/help/node/G6WYZPF5XKHNBZKA)——联系人、网络和失败条件。
 27. Amazon：[Alexa Routines Kit](https://developer.amazon.com/en-US/alexa/alexa-routines-kit/)——2026 年停止该开发能力的官方说明。
+
+## 本轮竞品官方资料复核
+
+2026-10-07实际桌面获取四个页面，HTTP 200，具体摘录及摘要见[evidence/official-source-verification.json](../evidence/official-source-verification.json)：
+
+- 第20项华为远程守护：当前页面适用HarmonyOS 6.0/6.1，申请、同意、位置与取消机制。
+- 第21项华为关爱长辈：当前页面适用HarmonyOS 6.1，关怀模式、放大显示与简易布局。
+- [Apple共享和分配提醒事项](https://support.apple.com/zh-cn/105124)：共享列表、添加/删除/完成及个人通知不共享。
+- [Apple在iPhone共享列表和协作](https://support.apple.com/zh-cn/guide/iphone/iph2a8f9121e/27/ios/27)：当前手册显示iOS 27，接受邀请后可添加、编辑、完成项目。
+
+这些版本属于官方页面，不代表候选人的实际设备版本；本轮未执行实机操作或重新验证Mac提醒事项。
 
 ## 使用说明
 

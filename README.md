@@ -64,6 +64,7 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 - [独立验收](docs/validation/independent-acceptance.md)、[最终Docker回归](docs/validation/final-regression.md)、[版本记录](docs/delivery/version.md)。
 - [本轮用户定义与交付核对](docs/delivery/definition-and-delivery-audit.md)、[平台最后操作](docs/delivery/platform-finalization.md)。
 - [已知问题](docs/validation/known-issues.md)、[冻结记录](docs/delivery/release-freeze.md)、[研究证据](docs/research/evidence-index.md)。
+- 本轮文字报告：[华为](docs/research/huawei-study.md)、[Apple](docs/research/apple-study.md)；设备及实际版本未记录，严格体验证据仍PARTIAL。
 
 `src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料由本轮最终Docker重新截图导出；同版源码及图片校验见exports/source-manifest.json。
 
