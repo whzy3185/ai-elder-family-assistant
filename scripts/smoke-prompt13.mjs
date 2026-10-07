@@ -84,8 +84,12 @@ async function confirmed() {
   assert(corrected.includes('上午 9:00') && corrected.includes('上午 8:30'),'Reminder did not follow corrected time');
   await step('confirm-task','这件事已记好');
 }
-async function send() {
+async function sharePreview() {
+  if(await evaluate('!!document.querySelector("[data-action=ask-share]")')) await step('ask-share','要请小梅陪同吗？');
   await step('start-share','这次小梅会看到');
+}
+async function send() {
+  await sharePreview();
   assert(!(await body()).includes('上午 8:30'),'Personal reminder leaked to shared preview');
   await step('send-request','正在发给小梅');
   await wait(400);
@@ -103,7 +107,7 @@ async function familyReply(kind = 'accept') {
 }
 const tests = [
   ['A07-repeat-send',async()=>{
-    await relationship(); await confirmed(); await step('start-share','这次小梅会看到');
+    await relationship(); await confirmed(); await sharePreview();
     await evaluate("(() => { const el=document.querySelector('[data-action=send-request]'); el.click(); el.click(); })()");
     await wait(450); const s=await state();
     assert(s.collaborationRequest.status==='PENDING' && s.collaborationRequest.sendAttempts===1 && s.requestHistory.length===0,'Duplicate send created a second request');
@@ -128,7 +132,7 @@ const tests = [
     await step('elder-result','小梅答应陪你去');
   }],
   ['A17-refresh-sending',async()=>{
-    await relationship(); await confirmed(); await step('start-share','这次小梅会看到'); await step('send-request','正在发给小梅',0);
+    await relationship(); await confirmed(); await sharePreview(); await step('send-request','正在发给小梅',0);
     await evaluate('location.reload(); true'); await wait(400);
     assert((await state()).currentView==='REQUEST_SEND_FAILED' && (await state()).collaborationRequest.status==='NONE','Interrupted send stuck or fake success');
     await step('send-request','正在发给小梅'); await wait(400);
@@ -142,7 +146,7 @@ const tests = [
     await step('open-family-request','张阿姨希望你陪同'); await step('ask-accept-request','确认这次可以陪同？'); await step('accept-request','已回复可以陪同');
   }],
   ['send-back-retry',async()=>{
-    await relationship(); await confirmed(); await step('start-share','这次小梅会看到'); await step('send-request','正在发给小梅',0);
+    await relationship(); await confirmed(); await sharePreview(); await step('send-request','正在发给小梅',0);
     await step('start-share','这次小梅会看到',0); await wait(400);
     assert((await state()).collaborationRequest.status==='NONE','Returned send left pending or stuck');
     await step('send-request','正在发给小梅'); await wait(400); assert((await state()).collaborationRequest.status==='PENDING','Cannot retry after return');

@@ -84,8 +84,12 @@ async function confirmed() {
   assert(corrected.includes('上午 9:00') && corrected.includes('上午 8:30'),'Reminder did not follow corrected time');
   await step('confirm-task','这件事已记好');
 }
-async function send() {
+async function sharePreview() {
+  if(await evaluate('!!document.querySelector("[data-action=ask-share]")')) await step('ask-share','要请小梅陪同吗？');
   await step('start-share','这次小梅会看到');
+}
+async function send() {
+  await sharePreview();
   assert(!(await body()).includes('上午 8:30'),'Personal reminder leaked to shared preview');
   await step('send-request','正在发给小梅');
   await wait(400);
@@ -156,7 +160,7 @@ const tests = [
     assert((await state()).task.rawInput === FIXED_INPUT && (await state()).task.status === 'CONFIRMED','Manual recovery failed');
   }],
   ['T08', async () => {
-    await relationship(); await confirmed(); await step('start-share','这次小梅会看到');
+    await relationship(); await confirmed(); await sharePreview();
     await step('simulate-send-failure','这次没有发出去'); await screenshot('T08-send-failure');
     await step('role-family','暂时没有新请求');
     assert(!(await body()).includes('公交卡年审'),'Failed send leaked task');
@@ -167,11 +171,11 @@ const tests = [
   }],
   ['T09', async () => {
     await pendingRequest(); await familyReply(); await step('elder-result','小梅答应陪你去');
-    await step('start-post-accept-edit','把时间改到下午 2:00？'); await step('confirm-post-accept-change','旧答复已失效；尚未重新发送');
+    await step('start-post-accept-edit','修改已保存的时间'); await step('continue-post-edit','把时间改到下午 2:00？'); await step('confirm-post-accept-change','旧答复已失效；尚未重新发送');
     let s = await state();
     assert(s.task.version === 2 && s.task.details.time === '14:00' && s.task.reminderAt.includes('13:30') && s.collaborationRequest.status === 'INVALIDATED','Old acceptance inherited or automatic send');
     await screenshot('T09-before-renewed-consent');
-    await step('start-share','这次小梅会看到'); assert((await body()).includes('下午 2:00'),'Preview retained old time');
+    await sharePreview(); assert((await body()).includes('下午 2:00'),'Preview retained old time');
     await step('send-request','正在发给小梅'); await wait(400);
     await step('family-request','有 1 个待回复请求'); await step('open-family-request','张阿姨希望你陪同');
     s = await state();

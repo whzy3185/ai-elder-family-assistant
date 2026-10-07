@@ -64,7 +64,7 @@ function familyView(state) {
     if (request.status !== 'PENDING') return page('这条请求不能再回应', request.status === 'WITHDRAWN' ? '张阿姨已撤回' : '请求已失效', card(shared.title, '原请求已结束，不能接受、拒绝或建议改期。'), button('返回列表', 'family-home'));
     return page('张阿姨希望你陪同', '等待你的回复', `${card(shared.title, `10 月 7 日${displayTime(shared.time)}，${shared.location}；${shared.help}。`)}${fields([['可见范围', '事项、时间、地点、陪同请求'], ['不可操作', '不能改、删或标记完成']])}`, button('我可以陪你', 'accept-request') + button('这次不能陪同', 'decline-request', 'secondary') + button('建议改到下午 2:00', 'propose-change', 'secondary'));
   }
-  if (state.currentView === 'FAMILY_ACCEPTED' && shared) return page('已回复可以陪同', '已接受请求', `${card('张阿姨会看到', `你可以在明天${displayTime(shared.time)}陪同。`, 'success-card')}<p class="hint">事务仍需张阿姨自己确认完成。</p>`, button('切换到张阿姨端', 'elder-result'));
+  if (state.currentView === 'FAMILY_ACCEPTED' && shared) return page('已回复可以陪同', '已接受请求', `${card('张阿姨会看到', `你可以在明天${displayTime(shared.time)}陪同。`, 'success-card')}<p class="hint">陪同回复不能代替事务完成；事务由张阿姨自己确认。</p>`, button('切换到张阿姨端', 'elder-result'));
   if (state.currentView === 'FAMILY_DECLINED' && shared) return page('已回复不能陪同', '事务仍属于张阿姨', card('张阿姨会看到', '你这次不能陪同；她自己的事务和提醒不会被取消。'), button('切换到张阿姨端', 'elder-declined'));
   if (state.currentView === 'FAMILY_CHANGE_PROPOSED' && shared) return page('已建议下午 2:00', '等待张阿姨决定', card('你只是提出建议', '原时间不会自动改变。'), button('切换到张阿姨端', 'elder-change-proposed'));
   const unavailable = ['WITHDRAWN', 'INVALIDATED'].includes(request.status);

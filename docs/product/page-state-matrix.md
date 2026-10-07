@@ -4,7 +4,7 @@
 
 冻结日期：2026-10-06（Asia/Shanghai）
 
-状态：`PASS` 仅表示页面和状态清单完整；高保真画面、Web 和静态导出尚未产生。
+状态：页面清单和65项Web编号入口已完成，Prompt14全页检查通过；最终同版静态导出在Prompt15产生。每项可在演示控制→按编号查看全部页面与状态定位；导出文件统一为`exports/screens/编号.png`，完整索引见`exports/prototype-index.md`。
 
 ## 1. 编号规则
 

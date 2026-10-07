@@ -135,6 +135,10 @@ test('Additional: new task after completion has a new version and request identi
   assert.notEqual(next.collaborationRequest.id,first.collaborationRequest.id);
 });
 test('Additional: unknown input fails safely; invalid manual fields cannot save',()=>{
+  const empty=dispatch(createInitialState(),{type:'START_TASK',rawInput:''},{type:'PARSE_TASK_SUCCESS'});
+  assert.equal(empty.task.details.title,null);
+  assert.match(renderReleaseApp(empty),/输入为空/);
+  assert.doesNotMatch(renderReleaseApp(empty),/已经听清/);
   const failed=dispatch(createInitialState(),{type:'START_TASK',rawInput:'别的事情'},{type:'PARSE_TASK_SUCCESS'});
   assert.equal(failed.task.status,'PARSE_FAILED');
   const blank=dispatch(failed,{type:'SHOW_MANUAL_FORM'},{type:'UPDATE_MANUAL_FIELD',field:'title',value:''},{type:'MANUAL_FILL_TASK'});

@@ -1,0 +1,1748 @@
+{
+  "testedAt": "2026-10-07T08:18:24.867Z",
+  "url": "http://127.0.0.1:8080",
+  "count": 65,
+  "status": "FAIL",
+  "keyboard": {
+    "focused": "task-input",
+    "outline": "solid",
+    "label": "可以说，也可以手动填写"
+  },
+  "results": [
+    {
+      "id": "EL-TASK-00",
+      "standard": {
+        "screen": "EL-TASK-00",
+        "title": "今天要记什么事？",
+        "status": "还没有事务",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-00",
+        "title": "今天要记什么事？",
+        "status": "还没有事务",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-01",
+      "standard": {
+        "screen": "EL-TASK-01",
+        "title": "你想记什么事？",
+        "status": "等待输入",
+        "issues": [],
+        "viewport": 390,
+        "height": 1167,
+        "controls": 13
+      },
+      "zoom200": {
+        "screen": "EL-TASK-01",
+        "title": "你想记什么事？",
+        "status": "等待输入",
+        "issues": [],
+        "viewport": 195,
+        "height": 1626,
+        "controls": 13
+      }
+    },
+    {
+      "id": "EL-TASK-02",
+      "standard": {
+        "screen": "EL-TASK-02",
+        "title": "正在帮你整理",
+        "status": "处理中",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-02",
+        "title": "正在帮你整理",
+        "status": "处理中",
+        "issues": [],
+        "viewport": 195,
+        "height": 1325,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-03A",
+      "standard": {
+        "screen": "EL-TASK-03A",
+        "title": "请核对系统理解",
+        "status": "尚未保存，需要你确认",
+        "issues": [],
+        "viewport": 390,
+        "height": 1071,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-03A",
+        "title": "请核对系统理解",
+        "status": "尚未保存，需要你确认",
+        "issues": [],
+        "viewport": 195,
+        "height": 1811,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-03B",
+      "standard": {
+        "screen": "EL-TASK-03B",
+        "title": "时间可能不对",
+        "status": "识别错误",
+        "issues": [],
+        "viewport": 390,
+        "height": 1234,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-03B",
+        "title": "时间可能不对",
+        "status": "识别错误",
+        "issues": [],
+        "viewport": 195,
+        "height": 1986,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-04",
+      "standard": {
+        "screen": "EL-TASK-04",
+        "title": "改成几点？",
+        "status": "只修改时间",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "当前",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "改为",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "提醒将变为",
+            "size": 16
+          }
+        ],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-04",
+        "title": "改成几点？",
+        "status": "只修改时间",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "当前",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "改为",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "提醒将变为",
+            "size": 16
+          }
+        ],
+        "viewport": 195,
+        "height": 1342,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-05",
+      "standard": {
+        "screen": "EL-TASK-05",
+        "title": "再看一遍",
+        "status": "确认后才会记好",
+        "issues": [],
+        "viewport": 390,
+        "height": 1234,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-05",
+        "title": "再看一遍",
+        "status": "确认后才会记好",
+        "issues": [],
+        "viewport": 195,
+        "height": 1949,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-06",
+      "standard": {
+        "screen": "EL-TASK-06",
+        "title": "这件事已记好",
+        "status": "个人事务已保存",
+        "issues": [],
+        "viewport": 390,
+        "height": 1244,
+        "controls": 12
+      },
+      "zoom200": {
+        "screen": "EL-TASK-06",
+        "title": "这件事已记好",
+        "status": "个人事务已保存",
+        "issues": [],
+        "viewport": 195,
+        "height": 1788,
+        "controls": 12
+      }
+    },
+    {
+      "id": "EL-TASK-07",
+      "standard": {
+        "screen": "EL-TASK-07",
+        "title": "该准备出发了",
+        "status": "提醒已触发",
+        "issues": [],
+        "viewport": 390,
+        "height": 939,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-07",
+        "title": "该准备出发了",
+        "status": "提醒已触发",
+        "issues": [],
+        "viewport": 195,
+        "height": 1418,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-08",
+      "standard": {
+        "screen": "EL-TASK-08",
+        "title": "修改已保存的时间",
+        "status": "请先了解对陪同安排的影响",
+        "issues": [],
+        "viewport": 390,
+        "height": 1005,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-08",
+        "title": "修改已保存的时间",
+        "status": "请先了解对陪同安排的影响",
+        "issues": [],
+        "viewport": 195,
+        "height": 1654,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-09A",
+      "standard": {
+        "screen": "EL-TASK-09A",
+        "title": "这件事已经办完了吗？",
+        "status": "需要你确认",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-09A",
+        "title": "这件事已经办完了吗？",
+        "status": "需要你确认",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-TASK-09B",
+      "standard": {
+        "screen": "EL-TASK-09B",
+        "title": "这件事已完成",
+        "status": "由张阿姨确认完成",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "EL-TASK-09B",
+        "title": "这件事已完成",
+        "status": "由张阿姨确认完成",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 7
+      }
+    },
+    {
+      "id": "EL-TASK-10",
+      "standard": {
+        "screen": "EL-TASK-10",
+        "title": "今天要记什么事？",
+        "status": "这件事已完成",
+        "issues": [],
+        "viewport": 390,
+        "height": 939,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-TASK-10",
+        "title": "今天要记什么事？",
+        "status": "这件事已完成",
+        "issues": [],
+        "viewport": 195,
+        "height": 1361,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-01",
+      "standard": {
+        "screen": "EL-EX-01",
+        "title": "还缺两项信息",
+        "status": "没有替你猜",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "时间",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "地点",
+            "size": 16
+          }
+        ],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-01",
+        "title": "还缺两项信息",
+        "status": "没有替你猜",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "时间",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "地点",
+            "size": 16
+          }
+        ],
+        "viewport": 195,
+        "height": 1302,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-02A",
+      "standard": {
+        "screen": "EL-EX-02A",
+        "title": "这次没能整理出来",
+        "status": "原话已经保留",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 9
+      },
+      "zoom200": {
+        "screen": "EL-EX-02A",
+        "title": "这次没能整理出来",
+        "status": "原话已经保留",
+        "issues": [],
+        "viewport": 195,
+        "height": 1339,
+        "controls": 9
+      }
+    },
+    {
+      "id": "EL-EX-02B",
+      "standard": {
+        "screen": "EL-EX-02B",
+        "title": "手动填写这件事",
+        "status": "原话保留，不使用 AI",
+        "issues": [],
+        "viewport": 390,
+        "height": 1285,
+        "controls": 11
+      },
+      "zoom200": {
+        "screen": "EL-EX-02B",
+        "title": "手动填写这件事",
+        "status": "原话保留，不使用 AI",
+        "issues": [],
+        "viewport": 195,
+        "height": 1894,
+        "controls": 11
+      }
+    },
+    {
+      "id": "EL-SHARE-01",
+      "standard": {
+        "screen": "EL-SHARE-01",
+        "title": "要请小梅陪同吗？",
+        "status": "个人提醒已经保存",
+        "issues": [],
+        "viewport": 390,
+        "height": 1073,
+        "controls": 9
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-01",
+        "title": "要请小梅陪同吗？",
+        "status": "个人提醒已经保存",
+        "issues": [],
+        "viewport": 195,
+        "height": 1713,
+        "controls": 9
+      }
+    },
+    {
+      "id": "EL-SHARE-01B",
+      "standard": {
+        "screen": "EL-SHARE-01B",
+        "title": "只提醒你自己",
+        "status": "没有告诉小梅",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-01B",
+        "title": "只提醒你自己",
+        "status": "没有告诉小梅",
+        "issues": [],
+        "viewport": 195,
+        "height": 1200,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-SHARE-02",
+      "standard": {
+        "screen": "EL-SHARE-02",
+        "title": "这次小梅会看到",
+        "status": "等待你确认共享",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "事情",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "日期",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "时间",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "地点",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "希望她",
+            "size": 16
+          }
+        ],
+        "viewport": 390,
+        "height": 1103,
+        "controls": 10
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-02",
+        "title": "这次小梅会看到",
+        "status": "等待你确认共享",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "事情",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "日期",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "时间",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "地点",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "希望她",
+            "size": 16
+          }
+        ],
+        "viewport": 195,
+        "height": 1660,
+        "controls": 10
+      }
+    },
+    {
+      "id": "EL-SHARE-03",
+      "standard": {
+        "screen": "EL-SHARE-03",
+        "title": "正在发给小梅",
+        "status": "还未送达",
+        "issues": [],
+        "viewport": 390,
+        "height": 972,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-03",
+        "title": "正在发给小梅",
+        "status": "还未送达",
+        "issues": [],
+        "viewport": 195,
+        "height": 1483,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-SHARE-04A",
+      "standard": {
+        "screen": "EL-SHARE-04A",
+        "title": "已经发给小梅",
+        "status": "等待回应",
+        "issues": [],
+        "viewport": 390,
+        "height": 1021,
+        "controls": 11
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-04A",
+        "title": "已经发给小梅",
+        "status": "等待回应",
+        "issues": [],
+        "viewport": 195,
+        "height": 1503,
+        "controls": 11
+      }
+    },
+    {
+      "id": "EL-SHARE-04B",
+      "standard": {
+        "screen": "EL-SHARE-04B",
+        "title": "正在等小梅回复",
+        "status": "已发送，还没有答应",
+        "issues": [],
+        "viewport": 390,
+        "height": 1040,
+        "controls": 9
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-04B",
+        "title": "正在等小梅回复",
+        "status": "已发送，还没有答应",
+        "issues": [],
+        "viewport": 195,
+        "height": 1623,
+        "controls": 9
+      }
+    },
+    {
+      "id": "EL-SHARE-05",
+      "standard": {
+        "screen": "EL-SHARE-05",
+        "title": "小梅答应陪你去",
+        "status": "已接受陪同请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 9
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-05",
+        "title": "小梅答应陪你去",
+        "status": "已接受陪同请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1294,
+        "controls": 9
+      }
+    },
+    {
+      "id": "EL-SHARE-06",
+      "standard": {
+        "screen": "EL-SHARE-06",
+        "title": "小梅这次不能陪同",
+        "status": "你的事务继续",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-06",
+        "title": "小梅这次不能陪同",
+        "status": "你的事务继续",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 7
+      }
+    },
+    {
+      "id": "EL-SHARE-07",
+      "standard": {
+        "screen": "EL-SHARE-07",
+        "title": "小梅建议改到下午 2:00",
+        "status": "由你决定是否修改",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-07",
+        "title": "小梅建议改到下午 2:00",
+        "status": "由你决定是否修改",
+        "issues": [],
+        "viewport": 195,
+        "height": 1184,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-SHARE-08",
+      "standard": {
+        "screen": "EL-SHARE-08",
+        "title": "已改到下午 2:00",
+        "status": "旧答复已失效；尚未重新发送",
+        "issues": [],
+        "viewport": 390,
+        "height": 972,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-08",
+        "title": "已改到下午 2:00",
+        "status": "旧答复已失效；尚未重新发送",
+        "issues": [],
+        "viewport": 195,
+        "height": 1570,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-SHARE-09",
+      "standard": {
+        "screen": "EL-SHARE-09",
+        "title": "保留上午 9:00",
+        "status": "仍在等待小梅回应",
+        "issues": [],
+        "viewport": 390,
+        "height": 972,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-SHARE-09",
+        "title": "保留上午 9:00",
+        "status": "仍在等待小梅回应",
+        "issues": [],
+        "viewport": 195,
+        "height": 1555,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-03",
+      "standard": {
+        "screen": "EL-EX-03",
+        "title": "这次没有发出去",
+        "status": "可以重试",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-03",
+        "title": "这次没有发出去",
+        "status": "可以重试",
+        "issues": [],
+        "viewport": 195,
+        "height": 1236,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-04",
+      "standard": {
+        "screen": "EL-EX-04",
+        "title": "小梅还没有回复",
+        "status": "未回应不等于拒绝",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-04",
+        "title": "小梅还没有回复",
+        "status": "未回应不等于拒绝",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-05A",
+      "standard": {
+        "screen": "EL-EX-05A",
+        "title": "确定撤回陪同请求？",
+        "status": "只撤回协作",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-05A",
+        "title": "确定撤回陪同请求？",
+        "status": "只撤回协作",
+        "issues": [],
+        "viewport": 195,
+        "height": 1204,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-05B",
+      "standard": {
+        "screen": "EL-EX-05B",
+        "title": "陪同请求已撤回",
+        "status": "个人提醒仍然有效",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-05B",
+        "title": "陪同请求已撤回",
+        "status": "个人提醒仍然有效",
+        "issues": [],
+        "viewport": 195,
+        "height": 1267,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-06A",
+      "standard": {
+        "screen": "EL-EX-06A",
+        "title": "确定取消整件事？",
+        "status": "这会同时停止提醒和协作",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-06A",
+        "title": "确定取消整件事？",
+        "status": "这会同时停止提醒和协作",
+        "issues": [],
+        "viewport": 195,
+        "height": 1288,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-06B",
+      "standard": {
+        "screen": "EL-EX-06B",
+        "title": "这件事已取消",
+        "status": "提醒和协作请求均已失效",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-06B",
+        "title": "这件事已取消",
+        "status": "提醒和协作请求均已失效",
+        "issues": [],
+        "viewport": 195,
+        "height": 1201,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-07A",
+      "standard": {
+        "screen": "EL-EX-07A",
+        "title": "把时间改到下午 2:00？",
+        "status": "旧请求和答复不会继承",
+        "issues": [],
+        "viewport": 390,
+        "height": 1005,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-07A",
+        "title": "把时间改到下午 2:00？",
+        "status": "旧请求和答复不会继承",
+        "issues": [],
+        "viewport": 195,
+        "height": 1621,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-EX-07B",
+      "standard": {
+        "screen": "EL-EX-07B",
+        "title": "已改到下午 2:00",
+        "status": "旧答复已失效；尚未重新发送",
+        "issues": [],
+        "viewport": 390,
+        "height": 972,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-EX-07B",
+        "title": "已改到下午 2:00",
+        "status": "旧答复已失效；尚未重新发送",
+        "issues": [],
+        "viewport": 195,
+        "height": 1570,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-SET-01",
+      "standard": {
+        "screen": "EL-SET-01",
+        "title": "显示设置",
+        "status": "按自己的阅读习惯选择",
+        "issues": [],
+        "viewport": 390,
+        "height": 1009,
+        "controls": 10
+      },
+      "zoom200": {
+        "screen": "EL-SET-01",
+        "title": "显示设置",
+        "status": "按自己的阅读习惯选择",
+        "issues": [],
+        "viewport": 195,
+        "height": 1521,
+        "controls": 10
+      }
+    },
+    {
+      "id": "EL-REL-01",
+      "standard": {
+        "screen": "EL-REL-01",
+        "title": "邀请小梅建立家庭协作",
+        "status": "首次建立关系",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 9
+      },
+      "zoom200": {
+        "screen": "EL-REL-01",
+        "title": "邀请小梅建立家庭协作",
+        "status": "首次建立关系",
+        "issues": [],
+        "viewport": 195,
+        "height": 1232,
+        "controls": 9
+      }
+    },
+    {
+      "id": "FM-REL-01",
+      "standard": {
+        "screen": "FM-REL-01",
+        "title": "扫描张阿姨的二维码",
+        "status": "等待扫码",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "FM-REL-01",
+        "title": "扫描张阿姨的二维码",
+        "status": "等待扫码",
+        "issues": [],
+        "viewport": 195,
+        "height": 1155,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-REL-02",
+      "standard": {
+        "screen": "EL-REL-02",
+        "title": "小梅想和你建立协作",
+        "status": "需要你确认",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 9
+      },
+      "zoom200": {
+        "screen": "EL-REL-02",
+        "title": "小梅想和你建立协作",
+        "status": "需要你确认",
+        "issues": [],
+        "viewport": 195,
+        "height": 1307,
+        "controls": 9
+      }
+    },
+    {
+      "id": "EL-REL-02A",
+      "standard": {
+        "screen": "EL-REL-02A",
+        "title": "同意与小梅建立协作？",
+        "status": "请核对：小梅（女儿）",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-REL-02A",
+        "title": "同意与小梅建立协作？",
+        "status": "请核对：小梅（女儿）",
+        "issues": [],
+        "viewport": 195,
+        "height": 1227,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-REL-03",
+      "standard": {
+        "screen": "EL-REL-03",
+        "title": "暂不建立家庭协作",
+        "status": "仍可使用个人提醒",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-REL-03",
+        "title": "暂不建立家庭协作",
+        "status": "仍可使用个人提醒",
+        "issues": [],
+        "viewport": 195,
+        "height": 1194,
+        "controls": 8
+      }
+    },
+    {
+      "id": "FM-REL-03",
+      "standard": {
+        "screen": "FM-REL-03",
+        "title": "张阿姨暂不同意",
+        "status": "没有建立关系",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-REL-03",
+        "title": "张阿姨暂不同意",
+        "status": "没有建立关系",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "EL-REL-06",
+      "standard": {
+        "screen": "EL-REL-06",
+        "title": "已建立家庭协作",
+        "status": "关系已确认",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 10
+      },
+      "zoom200": {
+        "screen": "EL-REL-06",
+        "title": "已建立家庭协作",
+        "status": "关系已确认",
+        "issues": [],
+        "viewport": 195,
+        "height": 1234,
+        "controls": 10
+      }
+    },
+    {
+      "id": "FM-REL-02",
+      "standard": {
+        "screen": "FM-REL-02",
+        "title": "家庭协作",
+        "status": "已和张阿姨建立协作",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "FM-REL-02",
+        "title": "家庭协作",
+        "status": "已和张阿姨建立协作",
+        "issues": [],
+        "viewport": 195,
+        "height": 1124,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-REL-07",
+      "standard": {
+        "screen": "EL-REL-07",
+        "title": "她能看到什么？",
+        "status": "只有你主动分享的本次事务",
+        "issues": [],
+        "viewport": 390,
+        "height": 968,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "EL-REL-07",
+        "title": "她能看到什么？",
+        "status": "只有你主动分享的本次事务",
+        "issues": [],
+        "viewport": 195,
+        "height": 1551,
+        "controls": 7
+      }
+    },
+    {
+      "id": "EL-REL-04A",
+      "standard": {
+        "screen": "EL-REL-04A",
+        "title": "结束家庭协作？",
+        "status": "现有陪同请求也会失效",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "EL-REL-04A",
+        "title": "结束家庭协作？",
+        "status": "现有陪同请求也会失效",
+        "issues": [],
+        "viewport": 195,
+        "height": 1194,
+        "controls": 8
+      }
+    },
+    {
+      "id": "EL-REL-05",
+      "standard": {
+        "screen": "EL-REL-05",
+        "title": "家庭协作已结束",
+        "status": "旧请求已失效",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "EL-REL-05",
+        "title": "家庭协作已结束",
+        "status": "旧请求已失效",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 7
+      }
+    },
+    {
+      "id": "FM-REL-04",
+      "standard": {
+        "screen": "FM-REL-04",
+        "title": "家庭协作已结束",
+        "status": "旧请求已失效",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-REL-04",
+        "title": "家庭协作已结束",
+        "status": "旧请求已失效",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-REQ-00",
+      "standard": {
+        "screen": "FM-REQ-00",
+        "title": "张阿姨的协作请求",
+        "status": "暂时没有新请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-REQ-00",
+        "title": "张阿姨的协作请求",
+        "status": "暂时没有新请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-REQ-01",
+      "standard": {
+        "screen": "FM-REQ-01",
+        "title": "张阿姨的协作请求",
+        "status": "有 1 个待回复请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "FM-REQ-01",
+        "title": "张阿姨的协作请求",
+        "status": "有 1 个待回复请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 7
+      }
+    },
+    {
+      "id": "FM-REQ-02",
+      "standard": {
+        "screen": "FM-REQ-02",
+        "title": "张阿姨希望你陪同",
+        "status": "等待你的回复",
+        "issues": [],
+        "viewport": 390,
+        "height": 974,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "FM-REQ-02",
+        "title": "张阿姨希望你陪同",
+        "status": "等待你的回复",
+        "issues": [],
+        "viewport": 195,
+        "height": 1444,
+        "controls": 8
+      }
+    },
+    {
+      "id": "FM-REQ-03A",
+      "standard": {
+        "screen": "FM-REQ-03A",
+        "title": "确认这次可以陪同？",
+        "status": "只回应当前请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "FM-REQ-03A",
+        "title": "确认这次可以陪同？",
+        "status": "只回应当前请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1194,
+        "controls": 7
+      }
+    },
+    {
+      "id": "FM-REQ-03B",
+      "standard": {
+        "screen": "FM-REQ-03B",
+        "title": "已回复可以陪同",
+        "status": "已接受请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-REQ-03B",
+        "title": "已回复可以陪同",
+        "status": "已接受请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-REQ-04A",
+      "standard": {
+        "screen": "FM-REQ-04A",
+        "title": "确认这次不能陪同？",
+        "status": "只回应当前请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "FM-REQ-04A",
+        "title": "确认这次不能陪同？",
+        "status": "只回应当前请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1194,
+        "controls": 7
+      }
+    },
+    {
+      "id": "FM-REQ-04B",
+      "standard": {
+        "screen": "FM-REQ-04B",
+        "title": "已回复不能陪同",
+        "status": "事务仍属于张阿姨",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-REQ-04B",
+        "title": "已回复不能陪同",
+        "status": "事务仍属于张阿姨",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-REQ-05A",
+      "standard": {
+        "screen": "FM-REQ-05A",
+        "title": "建议改到下午 2:00？",
+        "status": "只回应当前请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "FM-REQ-05A",
+        "title": "建议改到下午 2:00？",
+        "status": "只回应当前请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1227,
+        "controls": 7
+      }
+    },
+    {
+      "id": "FM-REQ-05B",
+      "standard": {
+        "screen": "FM-REQ-05B",
+        "title": "已建议下午 2:00",
+        "status": "等待张阿姨决定",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-REQ-05B",
+        "title": "已建议下午 2:00",
+        "status": "等待张阿姨决定",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-EX-01",
+      "standard": {
+        "screen": "FM-EX-01",
+        "title": "陪同请求已撤回",
+        "status": "不能回应",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-EX-01",
+        "title": "陪同请求已撤回",
+        "status": "不能回应",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-EX-02",
+      "standard": {
+        "screen": "FM-EX-02",
+        "title": "这件事已取消",
+        "status": "不能回应",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-EX-02",
+        "title": "这件事已取消",
+        "status": "不能回应",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "FM-EX-03",
+      "standard": {
+        "screen": "FM-EX-03",
+        "title": "旧请求已失效",
+        "status": "不能回应",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 6
+      },
+      "zoom200": {
+        "screen": "FM-EX-03",
+        "title": "旧请求已失效",
+        "status": "不能回应",
+        "issues": [],
+        "viewport": 195,
+        "height": 1111,
+        "controls": 6
+      }
+    },
+    {
+      "id": "DM-01",
+      "standard": {
+        "screen": "DM-01",
+        "title": "今天要记什么事？",
+        "status": "还没有事务",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "DM-01",
+        "title": "今天要记什么事？",
+        "status": "还没有事务",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 8
+      }
+    },
+    {
+      "id": "DM-02",
+      "standard": {
+        "screen": "DM-02",
+        "title": "演示控制台",
+        "status": "评审快捷入口",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "Initial\nINITIAL",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Main Flow\nMAIN_FLOW",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Recognition Error\nRECOGNITION_ERROR",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Missing Information\nMISSING_INFORMATION",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "AI Failure\nAI_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Send Failure\nSEND_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Pending Family\nPENDING_FAMILY",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Accepted\nACCEPTED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Declined\nDECLINED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Change Proposed\nCHANGE_PROPOSED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Withdrawn\nWITHDRAWN",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Cancelled\nCANCELLED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Reminder Trigger\nREMINDER_TRIGGER",
+            "size": 16
+          }
+        ],
+        "viewport": 390,
+        "height": 2057,
+        "controls": 87
+      },
+      "zoom200": {
+        "screen": "DM-02",
+        "title": "演示控制台",
+        "status": "评审快捷入口",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "Initial\nINITIAL",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Main Flow\nMAIN_FLOW",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Recognition Error\nRECOGNITION_ERROR",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Missing Information\nMISSING_INFORMATION",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "AI Failure\nAI_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Send Failure\nSEND_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Pending Family\nPENDING_FAMILY",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Accepted\nACCEPTED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Declined\nDECLINED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Change Proposed\nCHANGE_PROPOSED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Withdrawn\nWITHDRAWN",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Cancelled\nCANCELLED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Reminder Trigger\nREMINDER_TRIGGER",
+            "size": 16
+          }
+        ],
+        "viewport": 195,
+        "height": 2966,
+        "controls": 87
+      }
+    },
+    {
+      "id": "DM-03",
+      "standard": {
+        "screen": "DM-03",
+        "title": "演示控制台",
+        "status": "评审快捷入口",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "Initial\nINITIAL",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Main Flow\nMAIN_FLOW",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Recognition Error\nRECOGNITION_ERROR",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Missing Information\nMISSING_INFORMATION",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "AI Failure\nAI_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Send Failure\nSEND_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Pending Family\nPENDING_FAMILY",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Accepted\nACCEPTED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Declined\nDECLINED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Change Proposed\nCHANGE_PROPOSED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Withdrawn\nWITHDRAWN",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Cancelled\nCANCELLED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Reminder Trigger\nREMINDER_TRIGGER",
+            "size": 16
+          }
+        ],
+        "viewport": 390,
+        "height": 2057,
+        "controls": 87
+      },
+      "zoom200": {
+        "screen": "DM-03",
+        "title": "演示控制台",
+        "status": "评审快捷入口",
+        "issues": [
+          {
+            "type": "font-size",
+            "text": "Initial\nINITIAL",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Main Flow\nMAIN_FLOW",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Recognition Error\nRECOGNITION_ERROR",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Missing Information\nMISSING_INFORMATION",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "AI Failure\nAI_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Send Failure\nSEND_FAILURE",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Pending Family\nPENDING_FAMILY",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Accepted\nACCEPTED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Declined\nDECLINED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Change Proposed\nCHANGE_PROPOSED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Withdrawn\nWITHDRAWN",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Cancelled\nCANCELLED",
+            "size": 16
+          },
+          {
+            "type": "font-size",
+            "text": "Reminder Trigger\nREMINDER_TRIGGER",
+            "size": 16
+          }
+        ],
+        "viewport": 195,
+        "height": 2966,
+        "controls": 87
+      }
+    },
+    {
+      "id": "DM-04A",
+      "standard": {
+        "screen": "DM-04A",
+        "title": "恢复初始演示？",
+        "status": "只清空这份浏览器中的模拟数据",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 8
+      },
+      "zoom200": {
+        "screen": "DM-04A",
+        "title": "恢复初始演示？",
+        "status": "只清空这份浏览器中的模拟数据",
+        "issues": [],
+        "viewport": 195,
+        "height": 1276,
+        "controls": 8
+      }
+    },
+    {
+      "id": "DM-04B",
+      "standard": {
+        "screen": "DM-04B",
+        "title": "已恢复初始演示",
+        "status": "无关系、无事务、无请求",
+        "issues": [],
+        "viewport": 390,
+        "height": 893,
+        "controls": 7
+      },
+      "zoom200": {
+        "screen": "DM-04B",
+        "title": "已恢复初始演示",
+        "status": "无关系、无事务、无请求",
+        "issues": [],
+        "viewport": 195,
+        "height": 1179,
+        "controls": 7
+      }
+    }
+  ]
+}

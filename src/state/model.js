@@ -3,6 +3,8 @@ import { createDemoSnapshot, createInitialState } from './initial-state.js';
 export const STORAGE_KEY = 'elder-family-assistant/state/v1';
 
 export function reduce(state, action) {
+  if (action.type === 'LOAD_SCREEN') return action.snapshot;
+  if (state.catalogScreenId) state = { ...state, catalogScreenId: null };
   if (state.collaborationRequest.status === 'SENDING' && ['NAVIGATE','SET_ROLE','SET_ROLE_VIEW','START_SHARE'].includes(action.type)) {
     state = { ...state, collaborationRequest: { ...state.collaborationRequest, status: state.collaborationRequest.sendingFrom || 'NONE', sendingToken: null } };
   }
@@ -86,7 +88,7 @@ export function reduce(state, action) {
           ...state.task,
           status: 'MISSING_REQUIRED',
           parsingStatus: 'SUCCEEDED',
-          details: { title: '办理公交卡年审', date: '2026-10-07', time: null, location: null, familyIntent: '希望小梅陪同' },
+          details: state.task.rawInput.trim() ? { title: '办理公交卡年审', date: '2026-10-07', time: null, location: null, familyIntent: '希望小梅陪同' } : { title: null, date: null, time: null, location: null, familyIntent: null },
           reminderAt: null,
         },
         currentView: 'TASK_MISSING',
@@ -276,7 +278,7 @@ export function reduce(state, action) {
     }
     case 'START_POST_ACCEPT_EDIT':
       if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED') return state;
-      return { ...state, task: { ...state.task, pendingChange: { time: '14:00' } }, currentView: 'POST_ACCEPT_EDIT' };
+      return { ...state, task: { ...state.task, pendingChange: { time: '14:00' } }, currentView: 'TASK_EDIT_IMPACT' };
     case 'CONFIRM_POST_ACCEPT_CHANGE': {
       if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED' || state.task.pendingChange?.time !== '14:00') return state;
       const nextVersion = state.task.version + 1;

@@ -1,12 +1,13 @@
 import { createStore } from './state/store.js';
 import { renderReleaseApp } from './release-views.js';
 import { FIXED_INPUT } from './state/initial-state.js';
+import { screenDefinitions, screenSnapshot } from './screen-catalog.js';
 
 const root = document.querySelector('#app');
 const store = createStore();
 
 function render(state = store.getState()) {
-  root.innerHTML = renderReleaseApp(state, window.screenCatalog || []);
+  root.innerHTML = renderReleaseApp(state, screenDefinitions);
   root.querySelector('h1')?.focus({ preventScroll: true });
 }
 
@@ -19,6 +20,10 @@ root.addEventListener('click', event => {
   const control = event.target.closest('[data-action]');
   if (!control) return;
   const action = control.dataset.action;
+  if (action === 'load-screen') store.dispatch({type:'LOAD_SCREEN',id:control.dataset.screen,snapshot:screenSnapshot(control.dataset.screen)});
+  if (action === 'continue-post-edit') store.dispatch({type:'NAVIGATE',view:'POST_ACCEPT_EDIT'});
+  if (action === 'ask-share') store.dispatch({type:'NAVIGATE',view:'SHARE_DECISION'});
+  if (action === 'wait-request') store.dispatch({type:'NAVIGATE',view:'REQUEST_WAITING'});
   if (action === 'task-input') store.dispatch({ type: 'ENTER_TASK_INPUT' });
   if (action === 'use-voice-example') store.dispatch({ type: 'UPDATE_RAW_INPUT', value: FIXED_INPUT });
   if (action === 'view-permissions') store.dispatch({ type: 'VIEW_PERMISSIONS' });
@@ -89,6 +94,7 @@ root.addEventListener('click', event => {
       if (store.getState().currentView === 'REQUEST_SENDING' && store.getState().task.version === version && store.getState().collaborationRequest.sendingToken === token) store.dispatch({ type: 'SEND_REQUEST' });
     }, 350);
   }
+  if (action === 'finish-sending') store.dispatch({type:'SEND_REQUEST'});
   if (action === 'simulate-send-failure') store.dispatch({ type: 'SIMULATE_SEND_FAILURE' });
   if (action === 'mark-no-response') store.dispatch({ type: 'MARK_NO_RESPONSE' });
   if (action === 'continue-waiting') store.dispatch({ type: 'CONTINUE_WAITING' });

@@ -1,0 +1,55 @@
+
+> ai-elder-family-assistant@0.12.0 test
+> node --test tests/*.test.mjs
+
+✔ Scenario A: declining relationship still permits a private reminder (0.856416ms)
+✔ Scenario B: private-only choice creates no family request (0.0775ms)
+✔ Scenarios C and D: missing and failed parsing both recover without losing the raw input (0.083333ms)
+✔ Scenario E: send failure keeps reminder and retry creates exactly one request (0.071792ms)
+✔ Scenario F and I: no response can continue or withdraw, and withdrawn request cannot be answered (0.719084ms)
+✔ Scenario G: family decline does not cancel the elder task (0.09925ms)
+✔ Scenario H: family proposal changes time only after elder accepts (0.065708ms)
+✔ Scenario J: cancelling task disables reminder and invalidates family response (0.055125ms)
+✔ Scenario K: modifying invalidates acceptance; only renewed sharing creates a pending version (0.153375ms)
+✔ Demo Controller exposes every required reproducible scenario (9.826417ms)
+✔ every scenario factory returns a complete valid snapshot (0.269125ms)
+✔ loading a scenario replaces all dirty prior data instead of merging (0.803542ms)
+✔ required scenario snapshots carry the intended business states (0.073875ms)
+✔ Reset All Demo Data restores the canonical initial snapshot (0.057292ms)
+✔ A01 changing time invalidates old visible request, new request has final time (1.468875ms)
+✔ A02 cancelled task cannot be accepted from a stale family page (0.065041ms)
+✔ A03 accepted request is shown as accepted to elder and never completes task (0.268375ms)
+✔ A04 withdrawing preserves personal task and reminder (0.389625ms)
+✔ A05 choosing private never exposes details to family (0.221292ms)
+✔ A06 failed send creates no family request (0.214875ms)
+✔ A07 repeated sends keep a single request and never overwrite a response (0.08125ms)
+✔ A08 repeated acceptance cannot change the accepted request (0.046542ms)
+✔ A09 old request id cannot answer a new task version (0.107584ms)
+✔ A10 family proposal leaves elder task untouched until elder confirms (0.235333ms)
+✔ A11 AI failure preserves original expression (0.248291ms)
+✔ A12 back and re-entry preserve typed and cleared drafts (0.199125ms)
+✔ A13 active relationship alone does not share a saved task (0.092875ms)
+✔ A14 declining relationship still permits personal task (0.10125ms)
+✔ A15 family cannot edit, cancel, parse or save an elder task (0.109583ms)
+✔ A16 family cannot mark a task completed (0.070625ms)
+✔ A17 refresh preserves saved state and recovers interrupted sends (0.662875ms)
+✔ A18 each demo scenario replaces all prior state, including draft and settings (0.345375ms)
+✔ Additional: stale parser completion cannot overwrite a newer draft (0.081459ms)
+✔ Additional: new task after completion has a new version and request identity (0.11975ms)
+✔ Additional: unknown input fails safely; invalid manual fields cannot save (0.148667ms)
+✔ Additional: user input is escaped in confirmation, even after manual editing (0.155125ms)
+✔ initial state contains the six required shared model fields (0.568083ms)
+✔ elder can move from input to confirmed task and synchronized reminder (0.333583ms)
+✔ complete main flow keeps accepted request distinct from completed task (0.09475ms)
+✔ family cannot send a request or complete the elder task (0.122834ms)
+✔ family may view an elder-completed task without changing it (0.086166ms)
+✔ family and elder roles read the same task and relationship state (0.058333ms)
+✔ reset restores deterministic demo state (1.067917ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 74.343
