@@ -3,7 +3,7 @@
 更新日期：2026-10-07（Asia/Shanghai）。本文件只报告当前状态；此前摘要存于`validation/project-status-baseline-prompt11.md`，历史PASS不能替代当前Release验收。
 
 ```text
-CURRENT_PHASE=Prompt 15 Release 1.0.0 全量静态导出完成；下一阶段 Prompt 16
+CURRENT_PHASE=Prompt 16 研究证据分类完成；下一阶段 Prompt 17
 CURRENT_BRANCH=research
 CURRENT_COMMIT=由 git rev-parse HEAD 获取；阶段证据随该提交保存，避免自引用SHA
 INPUT_COMMIT=878b8fb
@@ -25,7 +25,7 @@ PROMPT_12_GATE_STATUS=PASS
 PROMPT_13_GATE_STATUS=PASS
 PROMPT_14_GATE_STATUS=PASS
 PROMPT_15_GATE_STATUS=PASS
-PROMPT_16_GATE_STATUS=PARTIAL
+PROMPT_16_GATE_STATUS=PASS
 PROMPT_17_GATE_STATUS=FAIL
 PROMPT_18_GATE_STATUS=PARTIAL
 PROMPT_19_GATE_STATUS=FAIL
@@ -60,3 +60,5 @@ Prompt13：43/43状态测试、7/7 Docker浏览器专项检查通过；详见`va
 Prompt14：65/65编号Web入口、两种视口布局审计及完整Tab/Enter主流程通过；静态Release尚待导出。
 
 Prompt15：65张同版Docker截图、69页原型PDF、索引和源码SHA-256清单已完成。
+
+Prompt16：研究归档诚实性Gate通过；两次设备体验的严格证据仍PARTIAL，不升级为PASS。
