@@ -33,10 +33,10 @@ function familyContent(s) {
   const returnList=button('回到消息','family-home');
   if(view==='FAMILY_HOME') {
     const visible=d&&s.relationship.status==='ACTIVE'&&!['NONE','SENDING'].includes(r.status);
-    return `<div class="person compact"><span class="person-avatar" aria-hidden="true">张</span><p>妈妈 · 张阿姨</p></div>${visible ? `<button class="agenda-entry" data-action="open-family-request"><span class="secondary-text">${{PENDING:'等你回复',NO_RESPONSE:'等你回复',ACCEPTED:'你可以陪同',DECLINED:'这次不能陪同',CHANGE_PROPOSED:'等妈妈决定',WITHDRAWN:'陪同已撤回',INVALIDATED:'安排已更新'}[r.status]}</span><strong>${esc(d.title)}</strong><span>10月7日 ${time(d.time)}</span><span>${esc(d.location)}</span><span class="entry-link">查看消息 →</span></button>` : `<div class="empty-page"><p>现在没有新消息。<br>妈妈需要陪同时，会告诉你。</p></div>${actions(button('看看家庭协作','relationship','secondary'))}`}`;
+    return `<div class="person compact"><span class="person-avatar" aria-hidden="true">张</span><p>妈妈 · 张阿姨</p></div>${visible ? `<button class="agenda-entry" data-action="open-family-request"><span class="secondary-text">${{PENDING:'等你回复',NO_RESPONSE:'等你回复',ACCEPTED:'你可以陪同',DECLINED:'这次不能陪同',CHANGE_PROPOSED:'等妈妈决定',WITHDRAWN:'陪同已撤回',INVALIDATED:'安排已更新，等妈妈再告诉你'}[r.status]}</span><strong>${esc(d.title)}</strong><span>${r.status==='INVALIDATED'?'原来：':''}10月7日 ${time(d.time)}</span><span>${esc(d.location)}</span><span class="entry-link">查看消息 →</span></button>` : `<div class="empty-page"><p>现在没有新消息。<br>妈妈需要陪同时，会告诉你。</p></div>${actions(button('看看家庭协作','relationship','secondary'))}`}`;
   }
   if(view==='FAMILY_REQUEST') {
-    if(!valid||['NONE','SENDING','WITHDRAWN','INVALIDATED'].includes(r.status))return note(s.task.status==='CANCELLED'?'这次不用再安排陪同。':r.status==='WITHDRAWN'?'妈妈自己的事情和提醒仍保留。':'请回到消息，查看当前的安排。')+actions(returnList);
+    if(!valid||['NONE','SENDING','WITHDRAWN','INVALIDATED'].includes(r.status))return note(s.task.status==='CANCELLED'?'这次不用再安排陪同。':r.status==='WITHDRAWN'?'妈妈自己的事情和提醒仍保留。':s.relationship.status!=='ACTIVE'?'家庭协作已经结束，不再处理之前的陪同安排。':'妈妈还没有发来新的安排。她再告诉你后，才能确认陪同。')+actions(returnList);
     if(!['PENDING','NO_RESPONSE'].includes(r.status))return schedule(d)+note({ACCEPTED:'你已告诉妈妈：我可以陪你。',DECLINED:'你已告诉妈妈：这次不能陪同。',CHANGE_PROPOSED:'你已建议下午2:00去，等妈妈决定。'}[r.status])+actions(returnList);
     return schedule(d)+`<p class="request-message">妈妈：希望你能陪我去。</p>`+actions(button('我可以陪你','ask-accept-request')+button('这次不能陪同','ask-decline-request','secondary')+(d.time!=='14:00'?button('建议下午2:00去','ask-propose-change','text'):'')+button('返回消息','family-home','text'));
   }
@@ -52,7 +52,7 @@ function productContent(s) {
   if(v==='RELATIONSHIP')return relationship(s);
   if(v==='PERMISSIONS')return `<dl class="permission-list"><div><dt>她能看到</dt><dd>你发给她的事情、日期、时间、地点，以及希望她陪同。</dd></div><div><dt>只属于你</dt><dd>提醒时间、刚才说的话、其他事情和位置。</dd></div><div><dt>由你决定</dt><dd>修改时间、取消事情、确认办完。</dd></div></dl>`+actions(button('知道了','return-view'));
   if(v==='RELATIONSHIP_CONFIRM')return note('小梅 · 女儿')+note('建立协作后，每件事仍由你决定要不要告诉她。')+actions(button('确认同意','establish-relationship')+button('返回','relationship','secondary'));
-  if(v==='RELATIONSHIP_END_CONFIRM')return note('之后不能再收到或回复陪同请求。自己的事情和提醒会保留。')+actions(button('确认结束协作','end-relationship','danger')+button('继续保留协作','relationship','secondary'));
+  if(v==='RELATIONSHIP_END_CONFIRM')return note(s.currentRole==='FAMILY'?'之后不能再收到或回复妈妈的陪同请求。妈妈自己的事情和提醒会保留。':'之后不能再请小梅陪同。自己的事情和提醒会保留。')+actions(button('确认结束协作','end-relationship','danger')+button('继续保留协作','relationship','secondary'));
   if(v==='RELATIONSHIP_ENDED'||v==='RELATIONSHIP_DECLINED')return actions(button('回到首页',s.currentRole==='FAMILY'?'family-home':'elder-home'));
   if(s.currentRole==='FAMILY')return familyContent(s);
   switch(v) {

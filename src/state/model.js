@@ -268,13 +268,9 @@ export function reduce(state, action) {
       };
     case 'ASK_CANCEL_TASK':
       if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED') return state;
-      return { ...state, currentView: 'TASK_CANCEL_CONFIRM' };
+      return { ...state, cancelReturnView: state.currentView, currentView: 'TASK_CANCEL_CONFIRM' };
     case 'CANCEL_TASK_BACK': {
-      const view = state.collaborationRequest.status === 'PENDING'
-        ? 'REQUEST_SENT'
-        : state.collaborationRequest.status === 'ACCEPTED'
-          ? 'ELDER_ACCEPTED'
-          : 'TASK_SAVED';
+      const view = state.cancelReturnView || 'TASK_SAVED';
       return { ...state, currentView: view };
     }
     case 'START_POST_ACCEPT_EDIT':

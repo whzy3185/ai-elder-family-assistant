@@ -296,7 +296,7 @@ export const productCopy = {
   },
   "FM-EX-03": {
     "title": "之前的安排更新了",
-    "lead": "请回到消息列表看新的时间。",
+    "lead": "之前的陪同安排不再继续。",
     "archetype": "result"
   },
   "DM-01": {

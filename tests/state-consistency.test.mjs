@@ -16,6 +16,10 @@ test('A01 changing time invalidates old visible request, new request has final t
   const changed=modify(pending());
   assert.equal(changed.collaborationRequest.status,'INVALIDATED');
   assert.match(renderReleaseApp(family(changed)),/安排已更新/);
+  assert.match(renderReleaseApp(family(changed)),/原来：10月7日/);
+  const detail=dispatch(family(changed),{type:'NAVIGATE',view:'FAMILY_REQUEST'});
+  assert.match(renderReleaseApp(detail),/妈妈还没有发来新的安排/);
+  assert.doesNotMatch(renderReleaseApp(detail),/看新的时间/);
   assert.equal(send(changed).collaborationRequest.sharedFields.time,'14:00');
 });
 test('A02 cancelled task cannot be accepted from a stale family page',()=>{
@@ -82,6 +86,15 @@ test('A12 back and re-entry preserve typed and cleared drafts',()=>{
   assert.match(renderReleaseApp(s),/自填草稿/);
   s=dispatch(s,{type:'UPDATE_RAW_INPUT',value:''},{type:'SET_ROLE',role:'ELDER'},{type:'ENTER_TASK_INPUT'});
   assert.match(renderReleaseApp(s),/<textarea id="task-input"[^>]*><\/textarea>/);
+});
+test('cancelling a cancellation returns to its originating page without changing the task',()=>{
+  for(const view of ['TASK_SAVED','REQUEST_SENT','ELDER_ACCEPTED']){
+    const start=dispatch(pending(),{type:'NAVIGATE',view});
+    const result=dispatch(start,{type:'ASK_CANCEL_TASK'},{type:'CANCEL_TASK_BACK'});
+    assert.equal(result.currentView,view);
+    assert.deepEqual(result.task,start.task);
+    assert.deepEqual(result.collaborationRequest,start.collaborationRequest);
+  }
 });
 test('A13 active relationship alone does not share a saved task',()=>{
   const s=createDemoSnapshot('MAIN_FLOW');
