@@ -50,12 +50,12 @@
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
 | RTM-010 | 首次建立家庭协作关系 | 小梅扫码发起；张阿姨查看身份、用途、范围和撤回方式后同意 | `FM-REL-01`、`EL-REL-01/02`、`REL-PENDING/ACTIVE` | `src/views.js`、`src/state/model.js` | `TC-REL-001` 建立关系 | Prompt 08 连续浏览器走查 | PASS |
-| RTM-011 | 老人可以拒绝建立关系 | 拒绝后关系不成立，小梅不能查看事务，张阿姨仍可使用个人提醒 | `EL-REL-03`、`FM-REL-03`、`REL-DECLINED` | `src/features/relationship/*` | `TC-REL-002` 拒绝关系 | 对应双端静态图（缺失） | FAIL |
+| RTM-011 | 老人可以拒绝建立关系 | 拒绝后关系不成立，小梅不能查看事务，张阿姨仍可使用个人提醒 | `EL-REL-03`、`FM-REL-03`、`REL-DECLINED` | `src/views.js`、`src/state/model.js` | `TC-REL-002` 拒绝关系 | Scenario A 浏览器截图与状态测试 | PASS |
 | RTM-012 | 说明双方分别能看什么 | 小梅只见已授权的事项、日期、时间、地点和帮助；不见提醒、原文、位置和其他事务 | `EL-REL-02`、`EL-SHARE-02`、`FM-REQ-02` | `src/views.js`、`src/state/model.js` | `TC-PERM-001` 字段白名单 | 浏览器断言家属无 8:30 私人提醒 | PASS |
-| RTM-013 | 说明双方分别能做什么 | 张阿姨拥有事务；小梅只能接受、拒绝、建议改期 | `EL-REL-02`、`FM-REQ-02/03/04/05` | `src/views.js`、`src/state/model.js` | `TC-PERM-002` 角色动作矩阵 | 接受路径已实现；拒绝与建议改期待 Prompt 09 | PARTIAL |
-| RTM-014 | 明确何时需要老人确认 | 建立关系、保存事务、共享、接受改期、撤回、取消和完成均由老人确认 | `EL-REL-02`、`EL-TASK-05`、`EL-SHARE-02`、`EL-EX-04/05`、`EL-TASK-09` | `src/state/model.js`、`src/views.js` | `TC-PERM-003` 未确认不得执行 | 主流程确认点已运行；异常确认待 Prompt 09 | PARTIAL |
+| RTM-013 | 说明双方分别能做什么 | 张阿姨拥有事务；小梅只能接受、拒绝、建议改期 | `EL-REL-02`、`FM-REQ-02/03/04/05` | `src/views.js`、`src/state/model.js` | `TC-PERM-002` 角色动作矩阵 | 三类家属回应均已浏览器验证 | PASS |
+| RTM-014 | 明确何时需要老人确认 | 建立关系、保存事务、共享、接受改期、撤回、取消和完成均由老人确认 | `EL-REL-02`、`EL-TASK-05`、`EL-SHARE-02`、`EL-EX-04/05`、`EL-TASK-09` | `src/state/model.js`、`src/views.js` | `TC-PERM-003` 未确认不得执行 | 主流程及撤回、取消、改期确认均已验证 | PASS |
 | RTM-015 | 关系授权不等于全部信息开放 | 关系只建立通道，每件事务单独授权 | `EL-REL-02`、`EL-SHARE-02` | `src/state/model.js`、`src/views.js` | `TC-CONSENT-001` 无事务授权不可见 | 关系建立后仍需独立共享确认 | PASS |
-| RTM-016 | 拒绝共享后流程仍清楚，支持“只提醒自己、不共享” | 张阿姨选择只提醒自己；事务和 08:30 提醒保留，小梅无请求 | `EL-SHARE-01`、`EL-TASK-06`、`FM-REQ-00` | `src/features/collaboration/*` | `TC-SHARE-001` 只提醒自己 | 双端结果图（缺失） | FAIL |
+| RTM-016 | 拒绝共享后流程仍清楚，支持“只提醒自己、不共享” | 张阿姨选择只提醒自己；事务和 08:30 提醒保留，小梅无请求 | `EL-SHARE-01`、`EL-TASK-06`、`FM-REQ-00` | `src/views.js`、`src/state/model.js` | `TC-SHARE-001` 只提醒自己 | Scenario B 家属空状态截图 | PASS |
 | RTM-017 | 老人可以结束关系 | 结束后阻止新共享和新访问；已有演示状态按 Prompt 03 规则处理 | `EL-REL-04/05`、`FM-REL-04` | `src/features/relationship/*` | `TC-REL-003` 解除关系 | 解除确认与结果图（缺失） | FAIL |
 
 ## 5. 一次完整事务主流程
@@ -68,12 +68,12 @@
 | RTM-021 | 展示并修改一处识别错误 | 固定把 9:00 识别为 8:00，老人单字段改回 9:00 | `EL-TASK-03B/04` | `src/state/model.js`、`src/views.js` | `TC-MAIN-004` 8:00→9:00 | 自动走查前后断言 | PASS |
 | RTM-022 | 提醒时间随事务时间同步 | 错误时 7:30，修正后 8:30；自然语言再次复述 | `EL-TASK-03B/05` | `src/state/model.js` | `TC-MAIN-005` 时间联动 | 状态测试与浏览器断言 | PASS |
 | RTM-023 | 老人确认并保存个人事务 | 未确认不创建；确认后 `TASK-CONFIRMED` | `EL-TASK-05/06` | `src/state/model.js`、`src/views.js` | `TC-MAIN-006` 保存事务 | 保存结果与 LocalStorage 证据 | PASS |
-| RTM-024 | 保存个人提醒 | 提醒属于张阿姨，不因家属拒绝、未回应或撤回请求而删除 | `EL-TASK-06`、`REMINDER-SCHEDULED` | `src/state/model.js` | `TC-REM-001` 保存提醒 | 正常保存已实现；异常保持待 Prompt 09 | PARTIAL |
-| RTM-025 | 决定是否请求家属 | 保存事务后单独选择“请小梅陪同”或“只提醒我” | `EL-SHARE-01` | `src/views.js` | `TC-MAIN-007` 两分支 | 两个入口已实现；不共享专项测试待 Prompt 09 | PARTIAL |
+| RTM-024 | 保存个人提醒 | 提醒属于张阿姨，不因家属拒绝、未回应或撤回请求而删除 | `EL-TASK-06`、`REMINDER-SCHEDULED` | `src/state/model.js` | `TC-REM-001` 保存提醒 | Scenario A/B/F/G/I 状态测试 | PASS |
+| RTM-025 | 决定是否请求家属 | 保存事务后单独选择“请小梅陪同”或“只提醒我” | `EL-SHARE-01` | `src/views.js` | `TC-MAIN-007` 两分支 | 主流程共享与 Scenario B 不共享均通过 | PASS |
 | RTM-026 | 查看本次共享内容 | 发送前逐项显示接收者和五个共享字段 | `EL-SHARE-02`、`CONSENT-REQUIRED` | `src/views.js` | `TC-MAIN-008` 复述共享字段 | 分享页与隐私字段断言 | PASS |
-| RTM-027 | 明确确认后才发送 | 只有点击“发给小梅”才创建请求；返回不发送 | `EL-SHARE-02/03`、`REQUEST-SENDING` | `src/state/model.js`、`src/views.js` | `TC-MAIN-009` 发送授权 | 确认发送已实现；发送中视觉待 Prompt 09 | PARTIAL |
+| RTM-027 | 明确确认后才发送 | 只有点击“发给小梅”才创建请求；返回不发送 | `EL-SHARE-02/03`、`REQUEST-SENDING` | `src/state/model.js`、`src/views.js` | `TC-MAIN-009` 发送授权 | 共享确认及失败重试状态已验证 | PASS |
 | RTM-028 | 家属接收并查看请求 | 小梅看到请求列表和详情，且内容与老人确认一致 | `FM-REQ-01/02`、`REQUEST-DELIVERED/VIEWED` | `src/views.js` | `TC-MAIN-010` 家属查看 | 共享快照时间和字段断言 | PASS |
-| RTM-029 | 家属回应 | 小梅可以接受、拒绝或建议改期，三者互斥 | `FM-REQ-03/04/05` | `src/state/model.js`、`src/views.js` | `TC-COLLAB-001/002/003` | 接受已实现；拒绝和建议改期待 Prompt 09 | PARTIAL |
+| RTM-029 | 家属回应 | 小梅可以接受、拒绝或建议改期，三者互斥 | `FM-REQ-03/04/05` | `src/state/model.js`、`src/views.js` | `TC-COLLAB-001/002/003` | 主流程接受及 Scenario G/H 通过 | PASS |
 | RTM-030 | 老人获知家属结果 | 张阿姨看到明确结果、时间和下一步，不把陪同接受当作事务完成 | `EL-SHARE-05/06/07` | `src/views.js` | `TC-MAIN-011` 返回老人结果 | 接受结果和未完成断言 | PASS |
 | RTM-031 | 正常完成协作闭环 | 关系建立、纠错、保存、共享、小梅接受、老人看到结果连续可操作 | 主流程全部状态 | `scripts/smoke-prompt08.mjs` | `TC-E2E-001` 完整主流程 | 23 步 PASS 和完成截图 | PASS |
 | RTM-032 | 老人确认现实事务完成 | 只有张阿姨可点“这件事办完了”；陪同接受不自动完成 | `EL-TASK-09`、`TASK-COMPLETED` | `src/state/model.js`、`src/views.js` | `TC-COMPLETE-001` 确认完成 | 接受后 CONFIRMED、老人确认后 COMPLETED | PASS |
@@ -82,34 +82,34 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-033 | 必要信息缺失 | AI 不猜测缺失时间或地点，突出缺失字段并允许补填 | `EL-EX-01`、`TASK-MISSING_REQUIRED` | `src/features/task/MissingFieldPage.tsx` | `TC-AI-001` 缺失字段 | 缺失状态图（缺失） | FAIL |
-| RTM-034 | AI 解析失败 | 保留原输入，明确说明未能整理，进入手动表单 | `EL-EX-02`、`TASK-PARSE_FAILED` | `src/features/task/ParseFailurePage.tsx` | `TC-AI-002` 解析失败恢复 | 失败与手动表单图（缺失） | FAIL |
-| RTM-035 | 提供语音以外的替代操作 | 语音不是唯一入口；随时可用手动文字或结构化字段 | `EL-TASK-01`、`EL-EX-02` | `src/features/task/*` | `TC-AI-003` 无语音完成 | 手动入口和表单图（缺失） | FAIL |
-| RTM-036 | 请求发送失败 | 不显示已通知；保留事务和授权选择；用户主动重试 | `EL-EX-03`、`REQUEST-SEND_FAILED` | `src/features/collaboration/SendFailurePage.tsx` | `TC-REQ-001` 失败重试 | 发送失败/重试图（缺失） | FAIL |
-| RTM-037 | 家属未回应 | 未回应不是拒绝；显示继续等待、撤回请求或自行安排 | `EL-EX-04`、`REQUEST-NO_RESPONSE` | `src/features/collaboration/NoResponsePage.tsx` | `TC-REQ-002` 未回应 | 未回应状态图（缺失） | FAIL |
-| RTM-038 | 家属拒绝 | 张阿姨看到“不能陪同”，个人事务和提醒继续有效 | `FM-REQ-04`、`EL-SHARE-06`、`REQUEST-DECLINED` | `src/domain/requestMachine.ts` | `TC-COLLAB-002` 拒绝 | 双端拒绝图（缺失） | FAIL |
-| RTM-039 | 家属建议改期 | 小梅只提交提案，不直接改事务 | `FM-REQ-05`、`EL-SHARE-07`、`REQUEST-CHANGE_PROPOSED` | `src/domain/requestMachine.ts` | `TC-COLLAB-003` 建议改期 | 双端建议图（缺失） | FAIL |
-| RTM-040 | 老人决定是否接受改期 | 接受才更新任务并产生新请求版本；拒绝保留 9:00 | `EL-SHARE-08/09` | `src/features/collaboration/ReviewChangePage.tsx` | `TC-COLLAB-004/005` 接受/拒绝改期 | 两类结果图（缺失） | FAIL |
-| RTM-041 | 老人撤回协作请求 | 撤回只结束陪同请求，不删除事务和 08:30 提醒 | `EL-EX-05`、`FM-EX-01`、`REQUEST-WITHDRAWN` | `src/domain/requestMachine.ts` | `TC-CANCEL-001` 撤回请求 | 双端撤回图（缺失） | FAIL |
-| RTM-042 | 老人取消整个事务 | 取消事务同时取消未终结请求和未来提醒 | `EL-EX-06`、`FM-EX-02`、`TASK-CANCELLED` | `src/domain/taskMachine.ts` | `TC-CANCEL-002` 取消事务 | 双端取消图（缺失） | FAIL |
-| RTM-043 | 已发送后修改事务 | 修改须确认；旧请求作废，新任务版本生成新请求 | `EL-TASK-08`、`EL-EX-07`、`TASK-V2` | `src/domain/versioning.ts` | `TC-VERSION-001` 已发送后修改 | 新旧版本图（缺失） | FAIL |
-| RTM-044 | 旧家属答复失效 | 小梅在旧页面答复时得到“请求已更新，不能继续处理” | `FM-EX-03`、`REQUEST-SUPERSEDED` | `src/domain/versioning.ts` | `TC-VERSION-002` 旧答复冲突 | 家属旧请求错误图（缺失） | FAIL |
-| RTM-045 | 提醒触发 | 固定时钟到 08:30 显示提醒；取消或完成后不得触发 | `EL-TASK-07`、`REMINDER-TRIGGERED/SUPPRESSED` | `src/domain/reminder.ts` | `TC-REM-002/003` 触发/抑制 | 提醒与抑制证据（缺失） | FAIL |
+| RTM-033 | 必要信息缺失 | AI 不猜测缺失时间或地点，突出缺失字段并允许补填 | `EL-EX-01`、`TASK-MISSING_REQUIRED` | `src/views.js`、`src/state/model.js` | `TC-AI-001` 缺失字段 | Scenario C 浏览器截图 | PASS |
+| RTM-034 | AI 解析失败 | 保留原输入，明确说明未能整理，进入手动表单 | `EL-EX-02`、`TASK-PARSE_FAILED` | `src/views.js`、`src/state/model.js` | `TC-AI-002` 解析失败恢复 | Scenario D 浏览器截图 | PASS |
+| RTM-035 | 提供语音以外的替代操作 | 语音不是唯一入口；随时可用手动文字或结构化字段 | `EL-TASK-01`、`EL-EX-02` | `src/views.js` | `TC-AI-003` 无语音完成 | 手动输入和失败回退均可点击 | PASS |
+| RTM-036 | 请求发送失败 | 不显示已通知；保留事务和授权选择；用户主动重试 | `EL-EX-03`、`REQUEST-SEND_FAILED` | `src/views.js`、`src/state/model.js` | `TC-REQ-001` 失败重试 | Scenario E 浏览器截图与单请求断言 | PASS |
+| RTM-037 | 家属未回应 | 未回应不是拒绝；显示继续等待、撤回请求或自行安排 | `EL-EX-04`、`REQUEST-NO_RESPONSE` | `src/views.js`、`src/state/model.js` | `TC-REQ-002` 未回应 | Scenario F 浏览器走查 | PASS |
+| RTM-038 | 家属拒绝 | 张阿姨看到“不能陪同”，个人事务和提醒继续有效 | `FM-REQ-04`、`EL-SHARE-06`、`REQUEST-DECLINED` | `src/views.js`、`src/state/model.js` | `TC-COLLAB-002` 拒绝 | Scenario G 双端截图与状态测试 | PASS |
+| RTM-039 | 家属建议改期 | 小梅只提交提案，不直接改事务 | `FM-REQ-05`、`EL-SHARE-07`、`REQUEST-CHANGE_PROPOSED` | `src/views.js`、`src/state/model.js` | `TC-COLLAB-003` 建议改期 | Scenario H 提案后仍为 09:00 | PASS |
+| RTM-040 | 老人决定是否接受改期 | 接受才更新任务并产生新请求版本；拒绝保留 9:00 | `EL-SHARE-08/09` | `src/views.js`、`src/state/model.js` | `TC-COLLAB-004/005` 接受/拒绝改期 | Scenario H1/H2 浏览器截图 | PASS |
+| RTM-041 | 老人撤回协作请求 | 撤回只结束陪同请求，不删除事务和 08:30 提醒 | `EL-EX-05`、`FM-EX-01`、`REQUEST-WITHDRAWN` | `src/views.js`、`src/state/model.js` | `TC-CANCEL-001` 撤回请求 | Scenario I 二次确认和家属不可回应 | PASS |
+| RTM-042 | 老人取消整个事务 | 取消事务同时取消未终结请求和未来提醒 | `EL-EX-06`、`FM-EX-02`、`TASK-CANCELLED` | `src/views.js`、`src/state/model.js` | `TC-CANCEL-002` 取消事务 | Scenario J 二次确认和家属不可回应 | PASS |
+| RTM-043 | 已发送后修改事务 | 修改须确认；旧请求作废，新任务版本生成新请求 | `EL-TASK-08`、`EL-EX-07`、`TASK-V2` | `src/views.js`、`src/state/model.js` | `TC-VERSION-001` 已发送后修改 | Scenario K 新旧版本状态测试 | PASS |
+| RTM-044 | 旧家属答复失效 | 小梅在旧页面答复时得到“请求已更新，不能继续处理” | `FM-EX-03`、`REQUEST-SUPERSEDED` | `src/state/model.js`、`requestHistory` | `TC-VERSION-002` 旧答复冲突 | 旧接受归档为 INVALIDATED；专项旧页攻击待 Prompt 13 | PARTIAL |
+| RTM-045 | 提醒触发 | 固定时钟到 08:30 显示提醒；取消或完成后不得触发 | `EL-TASK-07`、`REMINDER-TRIGGERED/SUPPRESSED` | `src/state/model.js` | `TC-REM-002/003` 触发/抑制 | 正常触发通过；取消守卫有状态测试 | PASS |
 | RTM-046 | 返回或取消不丢失必要内容 | 非破坏性返回保留草稿；破坏性取消明确说明后果 | 所有编辑/确认状态 | `src/domain/persistence.ts` | `TC-NAV-001` 返回保留 | 返回前后截图（缺失） | FAIL |
 
 ## 7. AI 规则和适老交互
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-047 | 说明 AI 在哪个步骤介入 | AI 只在输入后生成待确认结构，不执行创建或发送 | `EL-TASK-02/03A/03B`、`DOC-AI-RULES` | `docs/product/ai-rules.md`、`src/adapters/understanding.ts` | `TC-AI-004` AI 边界 | AI 规则已冻结；页面图缺失 | PARTIAL |
+| RTM-047 | 说明 AI 在哪个步骤介入 | AI 只在输入后生成待确认结构，不执行创建或发送 | `EL-TASK-02/03A/03B`、`DOC-AI-RULES` | `docs/product/ai-rules.md`、`src/state/model.js` | `TC-AI-004` AI 边界 | 处理页、确认页及状态测试 | PASS |
 | RTM-048 | 说明 AI 使用什么信息 | 只用当前输入和明确字段，不读历史、位置、健康或通讯录 | `EL-TASK-03A/03B`、`DOC-AI-RULES` | `docs/product/ai-rules.md` | `TC-AI-005` 输入白名单 | 输入白名单已冻结；页面图缺失 | PARTIAL |
-| RTM-049 | AI 输出与依据可理解 | 分字段复述来自当前输入；不显示虚假权威或编造依据 | `EL-TASK-03A/03B` | `docs/product/ai-rules.md`、`src/features/task/ConfirmUnderstandingPage.tsx` | `TC-AI-006` 依据复述 | 呈现契约已冻结；确认页图缺失 | PARTIAL |
-| RTM-050 | 用户可以纠正 AI | 每个必要字段独立修改，修改后重新复述最终结果 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/features/task/*` | `TC-MAIN-004/005` | 纠错规则已冻结；修改前后图缺失 | PARTIAL |
-| RTM-051 | AI 失败或结果不可信时有办法继续 | 明确失败、保留输入、手动填写；任何结果都需老人确认 | `EL-EX-01/02A/02B` | `docs/product/ai-rules.md`、`src/features/task/*` | `TC-AI-001/002/003` | 降级规则已冻结；失败恢复图缺失 | PARTIAL |
+| RTM-049 | AI 输出与依据可理解 | 分字段复述来自当前输入；不显示虚假权威或编造依据 | `EL-TASK-03A/03B` | `docs/product/ai-rules.md`、`src/views.js` | `TC-AI-006` 依据复述 | 结构化确认页已浏览器验证 | PASS |
+| RTM-050 | 用户可以纠正 AI | 每个必要字段独立修改，修改后重新复述最终结果 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/views.js`、`src/state/model.js` | `TC-MAIN-004/005` | 8:00→9:00 与提醒联动已验证 | PASS |
+| RTM-051 | AI 失败或结果不可信时有办法继续 | 明确失败、保留输入、手动填写；任何结果都需老人确认 | `EL-EX-01/02A/02B` | `docs/product/ai-rules.md`、`src/views.js`、`src/state/model.js` | `TC-AI-001/002/003` | Scenario C/D 浏览器恢复证据 | PASS |
 | RTM-052 | 历史记忆仅在必要时设计 | 本版不读取或保留 AI 历史记忆；完整历史中心排除 | `DOC-CHARTER-EXCLUDED`、无历史入口 | `docs/product/01-product-charter.md` | `TC-SCOPE-002` 无历史读取/入口 | 当前产品章程；运行证据缺失 | PARTIAL |
 | RTM-053 | 字体、对比度、按钮和步骤适老 | 默认正文约 20 px、主按钮至少 56 px、对比达 AA 基线、一屏一主操作 | 所有老人端页面 | `docs/product/accessibility-guidelines.md`、`src/styles/tokens.css` | `TC-A11Y-001/002/003` | 适老规范已冻结；视觉审计与截图缺失 | PARTIAL |
 | RTM-054 | 措辞和反馈适老 | 成人、直接、尊重；反馈包含发生了什么、当前状态和下一步 | 所有结果/错误状态 | `docs/product/content-guidelines.md` | `TC-CONTENT-001` 文案审计 | 文案词典已冻结；页面图缺失 | PARTIAL |
-| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/features/task/*` | `TC-MAIN-004` | 纠错规则已冻结；错误、编辑、修正图缺失 | PARTIAL |
+| RTM-055 | 语音识别错误后可修改 | 固定演示 9:00→8:00，提供明显“改时间”入口 | `EL-TASK-03B/04/05` | `docs/product/ai-rules.md`、`src/views.js`、`src/state/model.js` | `TC-MAIN-004` | Prompt 08 浏览器修改前后断言 | PASS |
 | RTM-056 | 支持可调适老能力 | 默认界面已适老；P1 可提供标准/大字与高对比切换 | `EL-SET-01`（P1） | `src/features/settings/*` | `TC-A11Y-004` 显示切换 | P1 设置图（缺失） | FAIL |
 
 ## 8. 页面、状态与连通性
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 当前要求已有足够仓库证据 | 27 |
-| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 26 |
-| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 37 |
+| PASS | 当前要求已有足够仓库证据 | 52 |
+| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 16 |
+| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 22 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。

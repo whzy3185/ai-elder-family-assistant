@@ -17,7 +17,9 @@ npm test
 npm start
 ```
 
-浏览器访问 `http://localhost:4173`。当前 Prompt 08 已支持从首次关系建立、固定识别错误与纠正、保存个人提醒、单次共享、家属接受、老人获知结果、提醒触发到老人确认完成的连续主流程；异常分支将在 Prompt 09 补齐。
+浏览器访问 `http://localhost:4173`。当前 Prompt 08 已支持完整主流程；Prompt 09 已补齐关系拒绝、仅个人提醒、AI 缺失/失败、发送失败重试、未回应、家属拒绝/建议改期、撤回、取消和已接受后的版本化修改。
+
+浏览器走查脚本为 `scripts/smoke-prompt08.mjs` 与 `scripts/smoke-prompt09.mjs`，验证记录见 `docs/validation/`。
 
 ## 文档索引
 
@@ -54,6 +56,7 @@ npm start
 | D-06B | [Design Audit](docs/validation/design-audit.md) | 页面完整性、业务一致性、视觉抽查与 P0 缺口 |
 | E-07 | [Web 基础架构](docs/engineering/web-foundation.md) | 原生前端选择、统一状态模型、LocalStorage 和浏览器走查 |
 | V-08 | [完整主流程验证](docs/validation/prompt08-main-flow.md) | 23 步浏览器走查、跨角色数据一致性和完成权限验证 |
+| V-09 | [异常与修改分支验证](docs/validation/prompt09-exception-flows.md) | 11 个异常场景、状态不变量、浏览器走查和截图证据 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |

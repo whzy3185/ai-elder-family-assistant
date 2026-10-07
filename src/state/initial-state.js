@@ -17,6 +17,7 @@ export function createInitialState() {
       reminderAt: null,
       version: 0,
       wasCorrected: false,
+      pendingChange: null,
     },
     collaborationRequest: {
       status: 'NONE',
@@ -24,7 +25,9 @@ export function createInitialState() {
       sharedFields: null,
       response: null,
       sentAt: null,
+      sendAttempts: 0,
     },
+    requestHistory: [],
     currentRole: 'ELDER',
     currentView: 'ELDER_HOME',
     demoClock: '2026-10-06T20:00:00+08:00',

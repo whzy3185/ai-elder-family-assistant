@@ -1,6 +1,6 @@
 # PROJECT_STATUS
 
-更新时间：2026-10-06（Asia/Shanghai）
+更新时间：2026-10-07（Asia/Shanghai）
 
 本文件是交付状态的唯一摘要入口。状态字段只使用 `PASS`、`PARTIAL`、`FAIL`：
 
@@ -11,12 +11,12 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 08 / 完整主流程完成，待提交
+CURRENT_PHASE=Prompt 09 / 全部异常和修改分支完成，待提交
 CURRENT_BRANCH=research
-CURRENT_COMMIT=b679223
+CURRENT_COMMIT=904e53f
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
-UI_VERSION=web-prototype-0.8.0
+UI_VERSION=web-prototype-0.9.0
 CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
 REPOSITORY_AUDIT_STATUS=PASS
@@ -44,7 +44,7 @@ SPEC_FREEZE=TRUE
 WEB_STATUS=PARTIAL
 DOCKER_STATUS=FAIL
 MAIN_FLOW_STATUS=PASS
-EXCEPTION_FLOW_STATUS=PARTIAL
+EXCEPTION_FLOW_STATUS=PASS
 STATIC_EXPORT_STATUS=FAIL
 DOCUMENT_STATUS=PARTIAL
 RESEARCH_EVIDENCE_STATUS=PARTIAL
@@ -59,9 +59,10 @@ PROMPT_05_GATE_STATUS=PASS
 PROMPT_06_GATE_STATUS=PASS
 PROMPT_07_GATE_STATUS=PASS
 PROMPT_08_GATE_STATUS=PASS
+PROMPT_09_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 08 的输入基线，即 Prompt 07 完成提交。Prompt 08 通过 Gate 后将创建下一提交。
+`CURRENT_COMMIT` 是 Prompt 09 的输入基线，即 Prompt 08 完成提交；Prompt 09 通过 Gate 后将创建下一提交。
 
 ## 2. 仓库真实状态
 
@@ -111,13 +112,13 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 正式页面与状态总表已覆盖老人端、关系、家属端和 Demo Controller，且每项均包含编号、角色、进入条件、状态、内容、操作、去向和测试映射。Figma 已生成 65 个对应画面，编号集合与矩阵精确一致。
 
-### MAIN_FLOW_STATUS=PARTIAL
+### MAIN_FLOW_STATUS=PASS
 
-主流程已在文字中定义，但没有可运行 Web、可点击 UI、静态画面或运行态走查证据。
+23 步主流程已经通过状态测试和本地浏览器连续走查，包含关系建立、纠错、共享、接受、提醒与老人确认完成。
 
-### EXCEPTION_FLOW_STATUS=PARTIAL
+### EXCEPTION_FLOW_STATUS=PASS
 
-异常分支已有完整页面映射和状态迁移规则，但尚无可运行 Web 与运行态验证。
+Prompt 09 的 A—K 共 11 个异常与修改场景已实际点击通过，状态模型测试和逐场景截图见 `docs/validation/prompt09-exception-flows.md`。
 
 ### DOCUMENT_STATUS=PARTIAL
 
@@ -135,7 +136,7 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 | Prompt 06 | 完成高保真设计并进行设计审计 | PASS |
 | Prompt 07 | 建立 Web 工程和基础状态模型 | PASS |
 | Prompt 08 | 实现完整主流程 | PASS |
-| Prompt 09 | 实现全部异常和修改分支 | FAIL |
+| Prompt 09 | 实现全部异常和修改分支 | PASS |
 | Prompt 10 | 完成 Demo Controller 与可复现场景 | FAIL |
 | Prompt 11 | Docker 化并完成真实启动验证 | FAIL |
 | Prompt 12 | 完整功能走查 | FAIL |
@@ -286,3 +287,21 @@ Prompt 07 已通过，可提交并进入 Prompt 08 完整主流程。
 | 提醒触发 | PASS | Demo 时钟推进至 2026-10-07 08:30 |
 
 Prompt 08 已通过，可提交并进入 Prompt 09 全部异常和修改分支。
+
+## 16. Prompt 09 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| A 拒绝关系后仍可保存个人提醒 | PASS | Scenario A 浏览器截图与状态测试 |
+| B 只提醒自己，家属端无请求 | PASS | Scenario B 家属空状态 |
+| C/D AI 缺失与失败均可恢复 | PASS | 补字段、保留原话、手动填写 |
+| E 发送失败后可重试且不重复 | PASS | 失败时 `NONE`，重试后单一 `PENDING` |
+| F/I 未回应可等待或撤回 | PASS | 撤回后二次确认、家属不可回应 |
+| G 家属拒绝不取消事务 | PASS | 事务 `CONFIRMED`、提醒保留 |
+| H 改期由老人最终确认 | PASS | 拒绝保持 09:00；接受后 14:00 |
+| J 取消事务终止提醒和请求 | PASS | `CANCELLED`、提醒为空、请求 `INVALIDATED` |
+| K 修改已接受事务产生新版本 | PASS | 旧接受 `INVALIDATED`，新请求 `PENDING` |
+| 全部场景实际点击 | PASS | Edge 浏览器自动走查 11/11；截图目录 `artifacts/qa/prompt09/` |
+| 状态模型回归 | PASS | `npm test` 16/16 |
+
+Prompt 09 已通过，可提交并进入 Prompt 10 Demo Controller 与可复现场景。
