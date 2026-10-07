@@ -1,0 +1,1711 @@
+{
+  "status": "PASS",
+  "testedAt": "2026-10-07T10:34:27.844Z",
+  "viewport": "390x844",
+  "url": "http://127.0.0.1:8080",
+  "externalResources": [],
+  "results": [
+    {
+      "id": "T01",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-accept-request",
+          "view": "FAMILY_ACCEPT_CONFIRM"
+        },
+        {
+          "action": "accept-request",
+          "view": "FAMILY_ACCEPTED"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "view-request-result",
+          "view": "ELDER_ACCEPTED"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-complete",
+          "view": "TASK_COMPLETE_CONFIRM"
+        },
+        {
+          "action": "complete-task",
+          "view": "TASK_COMPLETED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "COMPLETED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": null,
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "4f451600-51b7-46fe-8741-ab99bdd51a14"
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "ACCEPTED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": {
+            "type": "ACCEPTED",
+            "by": "family-mei",
+            "at": "2026-10-06T20:00:00+08:00"
+          },
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "TASK_COMPLETED",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      }
+    },
+    {
+      "id": "T02",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "TASK_COMPLETED"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "keep-private",
+          "view": "PRIVATE_ONLY"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "b6aadcd6-73b1-4c59-a477-02d4863a902b"
+        },
+        "collaborationRequest": {
+          "status": "NONE",
+          "taskVersion": null,
+          "sharedFields": null,
+          "response": null,
+          "sentAt": null,
+          "sendAttempts": 0
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_HOME",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL"
+      }
+    },
+    {
+      "id": "T03",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "action": "withdraw-request",
+          "view": "REQUEST_WITHDRAW_CONFIRM"
+        },
+        {
+          "action": "confirm-withdraw-request",
+          "view": "REQUEST_WITHDRAWN"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "82aa4243-e6de-4273-9bcf-94d604b84059"
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "WITHDRAWN",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      }
+    },
+    {
+      "id": "T04",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "cancel-task",
+          "view": "TASK_CANCEL_CONFIRM"
+        },
+        {
+          "action": "confirm-cancel-task",
+          "view": "TASK_CANCELLED"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CANCELLED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": null,
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "b9a32f48-9aa5-41f0-803c-6a042d392616"
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "INVALIDATED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      }
+    },
+    {
+      "id": "T05",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "route": "/review",
+          "view": "ELDER_HOME"
+        },
+        {
+          "scenario": "PENDING_FAMILY",
+          "view": "REQUEST_NO_RESPONSE"
+        },
+        {
+          "route": "/",
+          "view": "REQUEST_NO_RESPONSE"
+        },
+        {
+          "action": "continue-waiting",
+          "view": "REQUEST_SENT"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "PENDING",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "REQUEST_SENT",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "PENDING_FAMILY"
+      }
+    },
+    {
+      "id": "T06",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "REQUEST_SENT"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-decline-request",
+          "view": "FAMILY_DECLINE_CONFIRM"
+        },
+        {
+          "action": "decline-request",
+          "view": "FAMILY_DECLINED"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "view-request-result",
+          "view": "ELDER_DECLINED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "f3f9df06-cb0e-45a4-92e1-5270f570cfb2"
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "DECLINED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": {
+            "type": "DECLINED",
+            "by": "family-mei",
+            "at": "2026-10-06T20:00:00+08:00"
+          },
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "ELDER_DECLINED",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      }
+    },
+    {
+      "id": "T07",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "ELDER_DECLINED"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "route": "/review",
+          "view": "ELDER_HOME"
+        },
+        {
+          "scenario": "AI_FAILURE",
+          "view": "TASK_PARSE_FAILED"
+        },
+        {
+          "route": "/",
+          "view": "TASK_PARSE_FAILED"
+        },
+        {
+          "action": "show-manual-form",
+          "view": "TASK_MANUAL_FORM"
+        },
+        {
+          "action": "manual-fill-task",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "UNLINKED",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": null
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "MANUAL",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "status": "NONE",
+          "taskVersion": null,
+          "sharedFields": null,
+          "response": null,
+          "sentAt": null,
+          "sendAttempts": 0
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "TASK_SAVED",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "AI_FAILURE",
+        "manualDraft": {
+          "title": "办理公交卡年审",
+          "time": "09:00",
+          "location": "社区服务中心"
+        },
+        "formError": null
+      }
+    },
+    {
+      "id": "T08",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "route": "/review",
+          "view": "ELDER_HOME"
+        },
+        {
+          "scenario": "SEND_FAILURE",
+          "view": "REQUEST_SEND_FAILED"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-2",
+          "status": "PENDING",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 2
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "REQUEST_SENT",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "SEND_FAILURE",
+        "sendSequence": 1
+      }
+    },
+    {
+      "id": "T09",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "REQUEST_SENT"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-accept-request",
+          "view": "FAMILY_ACCEPT_CONFIRM"
+        },
+        {
+          "action": "accept-request",
+          "view": "FAMILY_ACCEPTED"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "view-request-result",
+          "view": "ELDER_ACCEPTED"
+        },
+        {
+          "action": "start-post-accept-edit",
+          "view": "TASK_EDIT_IMPACT"
+        },
+        {
+          "action": "continue-post-edit",
+          "view": "POST_ACCEPT_EDIT"
+        },
+        {
+          "action": "confirm-post-accept-change",
+          "view": "POST_ACCEPT_CHANGED"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "14:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T13:30:00+08:00",
+          "version": 2,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "891aab1d-4d46-4a42-a8a9-d0618eb6df56"
+        },
+        "collaborationRequest": {
+          "id": "request-2-2",
+          "status": "PENDING",
+          "taskVersion": 2,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "14:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 2
+        },
+        "requestHistory": [
+          {
+            "id": "request-1-1",
+            "status": "INVALIDATED",
+            "taskVersion": 1,
+            "sharedFields": {
+              "title": "办理公交卡年审",
+              "date": "2026-10-07",
+              "time": "09:00",
+              "location": "社区服务中心",
+              "help": "希望小梅陪同"
+            },
+            "response": {
+              "type": "ACCEPTED",
+              "by": "family-mei",
+              "at": "2026-10-06T20:00:00+08:00"
+            },
+            "sentAt": "2026-10-06T20:00:00+08:00",
+            "sendAttempts": 1,
+            "invalidatedAt": "2026-10-06T20:00:00+08:00"
+          }
+        ],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 2
+      }
+    },
+    {
+      "id": "T10",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "view": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "view": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "view": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "view": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "view": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-share",
+          "view": "SHARE_DECISION"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-propose-change",
+          "view": "FAMILY_PROPOSE_CONFIRM"
+        },
+        {
+          "action": "propose-change",
+          "view": "FAMILY_CHANGE_PROPOSED"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "view-request-result",
+          "view": "ELDER_CHANGE_PROPOSED"
+        },
+        {
+          "action": "accept-proposed-change",
+          "view": "CHANGE_ACCEPTED"
+        },
+        {
+          "action": "start-share",
+          "view": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "view": "REQUEST_SENDING"
+        },
+        {
+          "route": "/family",
+          "view": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "view": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "14:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T13:30:00+08:00",
+          "version": 2,
+          "wasCorrected": true,
+          "pendingChange": null,
+          "parseToken": "9d86103b-f337-4200-9db8-634481ed0927"
+        },
+        "collaborationRequest": {
+          "id": "request-2-2",
+          "status": "PENDING",
+          "taskVersion": 2,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "14:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 2
+        },
+        "requestHistory": [
+          {
+            "id": "request-1-1",
+            "status": "INVALIDATED",
+            "taskVersion": 1,
+            "sharedFields": {
+              "title": "办理公交卡年审",
+              "date": "2026-10-07",
+              "time": "09:00",
+              "location": "社区服务中心",
+              "help": "希望小梅陪同"
+            },
+            "response": {
+              "type": "CHANGE_PROPOSED",
+              "proposedTime": "14:00",
+              "by": "family-mei",
+              "at": "2026-10-06T20:00:00+08:00"
+            },
+            "sentAt": "2026-10-06T20:00:00+08:00",
+            "sendAttempts": 1
+          }
+        ],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 2
+      }
+    },
+    {
+      "id": "T11",
+      "status": "PASS",
+      "steps": [
+        {
+          "route": "/review",
+          "view": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-reset",
+          "view": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "view": "RESET_RESULT"
+        },
+        {
+          "route": "/",
+          "view": "ELDER_HOME"
+        },
+        {
+          "route": "/review",
+          "view": "ELDER_HOME"
+        },
+        {
+          "scenario": "MISSING_INFORMATION",
+          "view": "TASK_MISSING"
+        },
+        {
+          "route": "/",
+          "view": "TASK_MISSING"
+        },
+        {
+          "action": "show-manual-form",
+          "view": "TASK_MANUAL_FORM"
+        },
+        {
+          "action": "manual-fill-task",
+          "view": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "route": "/review",
+          "view": "TASK_SAVED"
+        },
+        {
+          "scenario": "REMINDER_TRIGGER",
+          "view": "TASK_REMINDER"
+        },
+        {
+          "route": "/",
+          "view": "TASK_REMINDER"
+        },
+        {
+          "action": "saved-task",
+          "view": "TASK_SAVED"
+        },
+        {
+          "action": "ask-complete",
+          "view": "TASK_COMPLETE_CONFIRM"
+        },
+        {
+          "action": "complete-task",
+          "view": "TASK_COMPLETED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "COMPLETED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": null,
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "ACCEPTED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": {
+            "type": "ACCEPTED",
+            "by": "family-mei",
+            "at": "2026-10-06T20:00:00+08:00"
+          },
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "TASK_COMPLETED",
+        "demoClock": "2026-10-07T08:30:00+08:00",
+        "demoScenario": "REMINDER_TRIGGER"
+      }
+    }
+  ]
+}
