@@ -150,6 +150,9 @@ test('Additional: user input is escaped in confirmation, even after manual editi
   const html=renderReleaseApp(s);
   assert.doesNotMatch(html,/<img src=x|<script>bad/);
   assert.match(html,/&lt;img/);
+  const saved=dispatch(s,{type:'CONFIRM_TASK'});
+  assert.doesNotMatch(renderReleaseApp(saved),/<img src=x|<script>bad/);
+  assert.match(renderReleaseApp(saved),/&lt;img/);
 });
 
 test('Reviewer: a 14:00 request cannot propose or save the same time again',()=>{
