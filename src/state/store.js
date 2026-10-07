@@ -19,7 +19,7 @@ export function createStore() {
     dispatch(action) {
       state = validateState(reduce(state, action));
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      listeners.forEach(listener => listener(state));
+      if (!action.silent) listeners.forEach(listener => listener(state));
       return state;
     },
     subscribe(listener) {

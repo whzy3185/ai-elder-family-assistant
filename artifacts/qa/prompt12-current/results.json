@@ -1,0 +1,1573 @@
+{
+  "testedAt": "2026-10-07T08:03:21.563Z",
+  "url": "http://127.0.0.1:8080",
+  "viewport": "390x844",
+  "status": "PASS",
+  "externalResources": [],
+  "results": [
+    {
+      "id": "T01",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "family-request",
+          "expected": "有 1 个待回复请求",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "expected": "张阿姨希望你陪同",
+          "actualView": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-accept-request",
+          "expected": "确认这次可以陪同？",
+          "actualView": "FAMILY_ACCEPT_CONFIRM"
+        },
+        {
+          "action": "accept-request",
+          "expected": "已回复可以陪同",
+          "actualView": "FAMILY_ACCEPTED"
+        },
+        {
+          "action": "elder-result",
+          "expected": "小梅答应陪你去",
+          "actualView": "ELDER_ACCEPTED"
+        },
+        {
+          "action": "trigger-reminder",
+          "expected": "该准备出发了",
+          "actualView": "TASK_REMINDER"
+        },
+        {
+          "action": "ask-complete",
+          "expected": "这件事已经办完了吗？",
+          "actualView": "TASK_COMPLETE_CONFIRM"
+        },
+        {
+          "action": "complete-task",
+          "expected": "这件事已完成",
+          "actualView": "TASK_COMPLETED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "COMPLETED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": null,
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "ACCEPTED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": {
+            "type": "ACCEPTED",
+            "by": "family-mei",
+            "at": "2026-10-06T20:00:00+08:00"
+          },
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "TASK_COMPLETED",
+        "demoClock": "2026-10-07T08:30:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      },
+      "screenshot": "T01.png"
+    },
+    {
+      "id": "T02",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "keep-private",
+          "expected": "只提醒你自己",
+          "actualView": "PRIVATE_ONLY"
+        },
+        {
+          "action": "family-request",
+          "expected": "暂时没有新请求",
+          "actualView": "FAMILY_HOME"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "status": "NONE",
+          "taskVersion": null,
+          "sharedFields": null,
+          "response": null,
+          "sentAt": null,
+          "sendAttempts": 0
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_HOME",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL"
+      },
+      "screenshot": "T02.png"
+    },
+    {
+      "id": "T03",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "withdraw-request",
+          "expected": "确定撤回陪同请求",
+          "actualView": "REQUEST_WITHDRAW_CONFIRM"
+        },
+        {
+          "action": "confirm-withdraw-request",
+          "expected": "陪同请求已撤回",
+          "actualView": "REQUEST_WITHDRAWN"
+        },
+        {
+          "action": "family-request",
+          "expected": "原请求已结束",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "expected": "陪同请求已撤回",
+          "actualView": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "WITHDRAWN",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      },
+      "screenshot": "T03.png"
+    },
+    {
+      "id": "T04",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "cancel-task",
+          "expected": "确定取消整件事",
+          "actualView": "TASK_CANCEL_CONFIRM"
+        },
+        {
+          "action": "confirm-cancel-task",
+          "expected": "这件事已取消",
+          "actualView": "TASK_CANCELLED"
+        },
+        {
+          "action": "family-request",
+          "expected": "原请求已结束",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "expected": "这件事已取消",
+          "actualView": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CANCELLED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": null,
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "INVALIDATED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      },
+      "screenshot": "T04.png"
+    },
+    {
+      "id": "T05",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "mark-no-response",
+          "expected": "小梅还没有回复",
+          "actualView": "REQUEST_NO_RESPONSE"
+        },
+        {
+          "action": "continue-waiting",
+          "expected": "已经发给小梅",
+          "actualView": "REQUEST_SENT"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "PENDING",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "REQUEST_SENT",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      },
+      "screenshot": "T05.png"
+    },
+    {
+      "id": "T06",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "family-request",
+          "expected": "有 1 个待回复请求",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "expected": "张阿姨希望你陪同",
+          "actualView": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-decline-request",
+          "expected": "确认这次不能陪同？",
+          "actualView": "FAMILY_DECLINE_CONFIRM"
+        },
+        {
+          "action": "decline-request",
+          "expected": "已回复不能陪同",
+          "actualView": "FAMILY_DECLINED"
+        },
+        {
+          "action": "elder-declined",
+          "expected": "小梅这次不能陪同",
+          "actualView": "ELDER_DECLINED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-1",
+          "status": "DECLINED",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": {
+            "type": "DECLINED",
+            "by": "family-mei",
+            "at": "2026-10-06T20:00:00+08:00"
+          },
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 1
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "ELDER_DECLINED",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      },
+      "screenshot": "T06.png"
+    },
+    {
+      "id": "T07",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "simulate-parse-failure",
+          "expected": "这次没能整理出来",
+          "actualView": "TASK_PARSE_FAILED"
+        },
+        {
+          "action": "show-manual-form",
+          "expected": "手动填写这件事",
+          "actualView": "TASK_MANUAL_FORM"
+        },
+        {
+          "action": "manual-fill-task",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "UNLINKED",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": null
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "MANUAL",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "status": "NONE",
+          "taskVersion": null,
+          "sharedFields": null,
+          "response": null,
+          "sentAt": null,
+          "sendAttempts": 0
+        },
+        "requestHistory": [],
+        "currentRole": "ELDER",
+        "currentView": "TASK_SAVED",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "manualDraft": {
+          "title": "办理公交卡年审",
+          "time": "09:00",
+          "location": "社区服务中心"
+        },
+        "formError": null
+      },
+      "screenshot": "T07.png"
+    },
+    {
+      "id": "T08",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "simulate-send-failure",
+          "expected": "这次没有发出去",
+          "actualView": "REQUEST_SEND_FAILED"
+        },
+        {
+          "action": "role-family",
+          "expected": "暂时没有新请求",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "role-elder",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "saved-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "family-request",
+          "expected": "有 1 个待回复请求",
+          "actualView": "FAMILY_HOME"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T08:30:00+08:00",
+          "version": 1,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-1-2",
+          "status": "PENDING",
+          "taskVersion": 1,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "09:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 2
+        },
+        "requestHistory": [],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_HOME",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 1
+      },
+      "screenshot": "T08.png"
+    },
+    {
+      "id": "T09",
+      "status": "PASS",
+      "steps": [
+        {
+          "action": "demo",
+          "expected": "演示控制台",
+          "actualView": "DEMO"
+        },
+        {
+          "action": "ask-reset",
+          "expected": "恢复初始演示？",
+          "actualView": "RESET_CONFIRM"
+        },
+        {
+          "action": "reset",
+          "expected": "已恢复初始演示",
+          "actualView": "RESET_RESULT"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "relationship",
+          "expected": "邀请小梅建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "show-qr",
+          "expected": "二维码已准备好",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-relationship",
+          "expected": "扫描张阿姨的二维码",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "family-scan",
+          "expected": "正在等张阿姨确认",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-relationship",
+          "expected": "小梅想和你建立协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "ask-establish-relationship",
+          "expected": "同意与小梅建立协作？",
+          "actualView": "RELATIONSHIP_CONFIRM"
+        },
+        {
+          "action": "establish-relationship",
+          "expected": "已建立家庭协作",
+          "actualView": "RELATIONSHIP"
+        },
+        {
+          "action": "elder-home",
+          "expected": "今天要记什么事？",
+          "actualView": "ELDER_HOME"
+        },
+        {
+          "action": "task-input",
+          "expected": "你想记什么事？",
+          "actualView": "TASK_INPUT"
+        },
+        {
+          "action": "submit-task",
+          "expected": "正在帮你整理",
+          "actualView": "TASK_PROCESSING"
+        },
+        {
+          "action": "edit-time",
+          "expected": "改成几点？",
+          "actualView": "TASK_EDIT_TIME"
+        },
+        {
+          "action": "set-time-nine",
+          "expected": "再看一遍",
+          "actualView": "TASK_CONFIRM"
+        },
+        {
+          "action": "confirm-task",
+          "expected": "这件事已记好",
+          "actualView": "TASK_SAVED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "family-request",
+          "expected": "有 1 个待回复请求",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "expected": "张阿姨希望你陪同",
+          "actualView": "FAMILY_REQUEST"
+        },
+        {
+          "action": "ask-accept-request",
+          "expected": "确认这次可以陪同？",
+          "actualView": "FAMILY_ACCEPT_CONFIRM"
+        },
+        {
+          "action": "accept-request",
+          "expected": "已回复可以陪同",
+          "actualView": "FAMILY_ACCEPTED"
+        },
+        {
+          "action": "elder-result",
+          "expected": "小梅答应陪你去",
+          "actualView": "ELDER_ACCEPTED"
+        },
+        {
+          "action": "start-post-accept-edit",
+          "expected": "把时间改到下午 2:00？",
+          "actualView": "POST_ACCEPT_EDIT"
+        },
+        {
+          "action": "confirm-post-accept-change",
+          "expected": "旧答复已失效；尚未重新发送",
+          "actualView": "POST_ACCEPT_CHANGED"
+        },
+        {
+          "action": "start-share",
+          "expected": "这次小梅会看到",
+          "actualView": "SHARE_REVIEW"
+        },
+        {
+          "action": "send-request",
+          "expected": "正在发给小梅",
+          "actualView": "REQUEST_SENDING"
+        },
+        {
+          "action": "family-request",
+          "expected": "有 1 个待回复请求",
+          "actualView": "FAMILY_HOME"
+        },
+        {
+          "action": "open-family-request",
+          "expected": "张阿姨希望你陪同",
+          "actualView": "FAMILY_REQUEST"
+        }
+      ],
+      "finalState": {
+        "schemaVersion": 1,
+        "relationship": {
+          "status": "ACTIVE",
+          "elder": {
+            "id": "elder-zhang",
+            "name": "张阿姨"
+          },
+          "family": {
+            "id": "family-mei",
+            "name": "小梅",
+            "relation": "女儿"
+          },
+          "consentedAt": "2026-10-06T20:00:00+08:00"
+        },
+        "task": {
+          "status": "CONFIRMED",
+          "parsingStatus": "SUCCEEDED",
+          "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+          "details": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "14:00",
+            "location": "社区服务中心",
+            "familyIntent": "希望小梅陪同"
+          },
+          "reminderAt": "2026-10-07T13:30:00+08:00",
+          "version": 2,
+          "wasCorrected": true,
+          "pendingChange": null
+        },
+        "collaborationRequest": {
+          "id": "request-2-2",
+          "status": "PENDING",
+          "taskVersion": 2,
+          "sharedFields": {
+            "title": "办理公交卡年审",
+            "date": "2026-10-07",
+            "time": "14:00",
+            "location": "社区服务中心",
+            "help": "希望小梅陪同"
+          },
+          "response": null,
+          "sentAt": "2026-10-06T20:00:00+08:00",
+          "sendAttempts": 2
+        },
+        "requestHistory": [
+          {
+            "id": "request-1-1",
+            "status": "INVALIDATED",
+            "taskVersion": 1,
+            "sharedFields": {
+              "title": "办理公交卡年审",
+              "date": "2026-10-07",
+              "time": "09:00",
+              "location": "社区服务中心",
+              "help": "希望小梅陪同"
+            },
+            "response": {
+              "type": "ACCEPTED",
+              "by": "family-mei",
+              "at": "2026-10-06T20:00:00+08:00"
+            },
+            "sentAt": "2026-10-06T20:00:00+08:00",
+            "sendAttempts": 1,
+            "invalidatedAt": "2026-10-06T20:00:00+08:00"
+          }
+        ],
+        "currentRole": "FAMILY",
+        "currentView": "FAMILY_REQUEST",
+        "demoClock": "2026-10-06T20:00:00+08:00",
+        "demoScenario": "NORMAL",
+        "sendSequence": 2
+      },
+      "screenshot": "T09.png"
+    }
+  ]
+}

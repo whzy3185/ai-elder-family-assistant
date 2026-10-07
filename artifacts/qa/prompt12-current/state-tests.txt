@@ -1,0 +1,33 @@
+
+> ai-elder-family-assistant@0.12.0 test
+> node --test tests/*.test.mjs
+
+✔ Scenario A: declining relationship still permits a private reminder (0.819667ms)
+✔ Scenario B: private-only choice creates no family request (0.075666ms)
+✔ Scenarios C and D: missing and failed parsing both recover without losing the raw input (0.079958ms)
+✔ Scenario E: send failure keeps reminder and retry creates exactly one request (0.069375ms)
+✔ Scenario F and I: no response can continue or withdraw, and withdrawn request cannot be answered (0.134ms)
+✔ Scenario G: family decline does not cancel the elder task (0.061625ms)
+✔ Scenario H: family proposal changes time only after elder accepts (0.076375ms)
+✔ Scenario J: cancelling task disables reminder and invalidates family response (0.054ms)
+✔ Scenario K: modifying invalidates acceptance; only renewed sharing creates a pending version (0.086334ms)
+✔ Demo Controller exposes every required reproducible scenario (9.972583ms)
+✔ every scenario factory returns a complete valid snapshot (0.240458ms)
+✔ loading a scenario replaces all dirty prior data instead of merging (0.676125ms)
+✔ required scenario snapshots carry the intended business states (0.053459ms)
+✔ Reset All Demo Data restores the canonical initial snapshot (0.042209ms)
+✔ initial state contains the six required shared model fields (0.5685ms)
+✔ elder can move from input to confirmed task and synchronized reminder (0.271834ms)
+✔ complete main flow keeps accepted request distinct from completed task (0.092167ms)
+✔ family cannot send a request or complete the elder task (0.048ms)
+✔ family may view an elder-completed task without changing it (0.051ms)
+✔ family and elder roles read the same task and relationship state (0.0435ms)
+✔ reset restores deterministic demo state (0.526875ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.152875

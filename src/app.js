@@ -1,18 +1,41 @@
 import { createStore } from './state/store.js';
-import { renderApp } from './views.js';
+import { renderReleaseApp } from './release-views.js';
+import { FIXED_INPUT } from './state/initial-state.js';
 
 const root = document.querySelector('#app');
 const store = createStore();
 
 function render(state = store.getState()) {
-  root.innerHTML = renderApp(state);
+  root.innerHTML = renderReleaseApp(state, window.screenCatalog || []);
+  root.querySelector('h1')?.focus({ preventScroll: true });
 }
+
+root.addEventListener('input', event => {
+  if (event.target.id === 'task-input') store.dispatch({ type: 'UPDATE_RAW_INPUT', value: event.target.value, silent: true });
+  if (event.target.dataset.field) store.dispatch({ type: 'UPDATE_MANUAL_FIELD', field: event.target.dataset.field, value: event.target.value, silent: true });
+});
 
 root.addEventListener('click', event => {
   const control = event.target.closest('[data-action]');
   if (!control) return;
   const action = control.dataset.action;
-  if (action === 'task-input') store.dispatch({ type: 'NAVIGATE', view: 'TASK_INPUT' });
+  if (action === 'task-input') store.dispatch({ type: 'ENTER_TASK_INPUT' });
+  if (action === 'use-voice-example') store.dispatch({ type: 'UPDATE_RAW_INPUT', value: FIXED_INPUT });
+  if (action === 'view-permissions') store.dispatch({ type: 'VIEW_PERMISSIONS' });
+  if (action === 'return-view') store.dispatch({ type: 'RETURN_VIEW' });
+  if (action === 'ask-establish-relationship') store.dispatch({ type: 'ASK_ESTABLISH_RELATIONSHIP' });
+  if (action === 'cancel-qr') store.dispatch({ type: 'CANCEL_RELATIONSHIP_QR' });
+  if (action === 'ask-end-relationship') store.dispatch({ type: 'ASK_END_RELATIONSHIP' });
+  if (action === 'end-relationship') store.dispatch({ type: 'END_RELATIONSHIP' });
+  const extraViews = { 'ask-accept-request':'FAMILY_ACCEPT_CONFIRM', 'ask-decline-request':'FAMILY_DECLINE_CONFIRM', 'ask-propose-change':'FAMILY_PROPOSE_CONFIRM', 'ask-reset':'RESET_CONFIRM', settings:'SETTINGS' };
+  if (extraViews[action]) store.dispatch({ type: 'NAVIGATE', view: extraViews[action] });
+  if (action === 'large-text') store.dispatch({ type: 'SET_DISPLAY_MODE', key: 'largeText', value: true });
+  if (action === 'high-contrast') store.dispatch({ type: 'SET_DISPLAY_MODE', key: 'highContrast', value: true });
+  if (action === 'standard-display') { store.dispatch({ type: 'SET_DISPLAY_MODE', key: 'largeText', value: false }); store.dispatch({ type: 'SET_DISPLAY_MODE', key: 'highContrast', value: false }); }
+  if (action === 'view-request-result') {
+    const views = { ACCEPTED:'ELDER_ACCEPTED', DECLINED:'ELDER_DECLINED', CHANGE_PROPOSED:'ELDER_CHANGE_PROPOSED', PENDING:'REQUEST_SENT', NO_RESPONSE:'REQUEST_NO_RESPONSE', WITHDRAWN:'REQUEST_WITHDRAWN' };
+    store.dispatch({ type: 'NAVIGATE', view: views[store.getState().collaborationRequest.status] || 'TASK_SAVED' });
+  }
   if (action === 'elder-home') store.dispatch({ type: 'SET_ROLE', role: 'ELDER' });
   if (action === 'role-elder') store.dispatch({ type: 'SET_ROLE', role: 'ELDER' });
   if (action === 'role-family') store.dispatch({ type: 'SET_ROLE', role: 'FAMILY' });
@@ -46,7 +69,10 @@ root.addEventListener('click', event => {
   if (action === 'fill-missing') store.dispatch({ type: 'FILL_MISSING_FIELDS' });
   if (action === 'show-manual-form') store.dispatch({ type: 'SHOW_MANUAL_FORM' });
   if (action === 'parse-failed') store.dispatch({ type: 'NAVIGATE', view: 'TASK_PARSE_FAILED' });
-  if (action === 'manual-fill-task') store.dispatch({ type: 'MANUAL_FILL_TASK' });
+  if (action === 'manual-fill-task') {
+    for (const field of root.querySelectorAll('[data-field]')) store.dispatch({ type: 'UPDATE_MANUAL_FIELD', field: field.dataset.field, value: field.value, silent: true });
+    store.dispatch({ type: 'MANUAL_FILL_TASK' });
+  }
   if (action === 'edit-time') store.dispatch({ type: 'EDIT_TASK_TIME' });
   if (action === 'back-confirm') store.dispatch({ type: 'NAVIGATE', view: 'TASK_CONFIRM' });
   if (action === 'set-time-nine') store.dispatch({ type: 'UPDATE_TASK_TIME', time: '09:00' });
@@ -54,7 +80,14 @@ root.addEventListener('click', event => {
   if (action === 'saved-task') store.dispatch({ type: 'NAVIGATE', view: 'TASK_SAVED' });
   if (action === 'start-share') store.dispatch({ type: 'START_SHARE' });
   if (action === 'keep-private') store.dispatch({ type: 'KEEP_PRIVATE' });
-  if (action === 'send-request') store.dispatch({ type: 'SEND_REQUEST' });
+  if (action === 'send-request') {
+    const version = store.getState().task.version;
+    store.dispatch({ type: 'BEGIN_SEND' });
+    const token = store.getState().collaborationRequest.sendingToken;
+    window.setTimeout(() => {
+      if (store.getState().currentView === 'REQUEST_SENDING' && store.getState().task.version === version && store.getState().collaborationRequest.sendingToken === token) store.dispatch({ type: 'SEND_REQUEST' });
+    }, 350);
+  }
   if (action === 'simulate-send-failure') store.dispatch({ type: 'SIMULATE_SEND_FAILURE' });
   if (action === 'mark-no-response') store.dispatch({ type: 'MARK_NO_RESPONSE' });
   if (action === 'continue-waiting') store.dispatch({ type: 'CONTINUE_WAITING' });
@@ -63,9 +96,9 @@ root.addEventListener('click', event => {
   if (action === 'family-request') store.dispatch({ type: 'SET_ROLE_VIEW', role: 'FAMILY', view: 'FAMILY_HOME' });
   if (action === 'family-home') store.dispatch({ type: 'SET_ROLE_VIEW', role: 'FAMILY', view: 'FAMILY_HOME' });
   if (action === 'open-family-request') store.dispatch({ type: 'SET_ROLE_VIEW', role: 'FAMILY', view: 'FAMILY_REQUEST' });
-  if (action === 'accept-request') store.dispatch({ type: 'ACCEPT_REQUEST' });
-  if (action === 'decline-request') store.dispatch({ type: 'DECLINE_REQUEST' });
-  if (action === 'propose-change') store.dispatch({ type: 'PROPOSE_CHANGE' });
+  if (action === 'accept-request') store.dispatch({ type: 'ACCEPT_REQUEST', requestId: control.dataset.requestId });
+  if (action === 'decline-request') store.dispatch({ type: 'DECLINE_REQUEST', requestId: control.dataset.requestId });
+  if (action === 'propose-change') store.dispatch({ type: 'PROPOSE_CHANGE', requestId: control.dataset.requestId });
   if (action === 'elder-result') store.dispatch({ type: 'SET_ROLE_VIEW', role: 'ELDER', view: 'ELDER_ACCEPTED' });
   if (action === 'elder-declined') store.dispatch({ type: 'SET_ROLE_VIEW', role: 'ELDER', view: 'ELDER_DECLINED' });
   if (action === 'elder-change-proposed') store.dispatch({ type: 'SET_ROLE_VIEW', role: 'ELDER', view: 'ELDER_CHANGE_PROPOSED' });
@@ -80,7 +113,12 @@ root.addEventListener('click', event => {
   if (action === 'ask-complete') store.dispatch({ type: 'ASK_COMPLETE_TASK' });
   if (action === 'reminder-view') store.dispatch({ type: 'NAVIGATE', view: 'TASK_REMINDER' });
   if (action === 'complete-task') store.dispatch({ type: 'COMPLETE_TASK' });
-  if (action === 'reset') store.dispatch({ type: 'RESET' });
+  if (action === 'reset') { store.dispatch({ type: 'RESET' }); store.dispatch({ type: 'NAVIGATE', view: 'RESET_RESULT' }); }
+  if (action === 'retry-parse') {
+    const rawInput = store.getState().task.rawInput;
+    store.dispatch({ type: 'START_TASK', rawInput });
+    window.setTimeout(() => store.dispatch({ type: 'PARSE_TASK_SUCCESS' }), 450);
+  }
 });
 
 store.subscribe(render);

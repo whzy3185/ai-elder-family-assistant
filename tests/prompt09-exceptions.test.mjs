@@ -141,7 +141,7 @@ test('Scenario J: cancelling task disables reminder and invalidates family respo
   assert.equal(state.collaborationRequest.status, 'INVALIDATED');
 });
 
-test('Scenario K: modifying an accepted task invalidates old acceptance and creates a new pending version', () => {
+test('Scenario K: modifying invalidates acceptance; only renewed sharing creates a pending version', () => {
   let state = dispatch(pendingRequest(),
     { type: 'SET_ROLE_VIEW', role: 'FAMILY', view: 'FAMILY_REQUEST' },
     { type: 'ACCEPT_REQUEST' },
@@ -151,6 +151,10 @@ test('Scenario K: modifying an accepted task invalidates old acceptance and crea
   );
   assert.equal(state.task.version, 2);
   assert.equal(state.task.details.time, '14:00');
+  assert.equal(state.collaborationRequest.status, 'INVALIDATED');
+  assert.equal(state.collaborationRequest.taskVersion, 1);
+  assert.equal(state.collaborationRequest.response, null);
+  state = dispatch(state, { type: 'START_SHARE' }, { type: 'BEGIN_SEND' }, { type: 'SEND_REQUEST' });
   assert.equal(state.collaborationRequest.status, 'PENDING');
   assert.equal(state.collaborationRequest.taskVersion, 2);
   assert.equal(state.collaborationRequest.response, null);

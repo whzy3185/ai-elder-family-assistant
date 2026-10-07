@@ -1,0 +1,16 @@
+{
+  "index.html": "9e8d05f81fbac4c97430bb139eda5e740d45d2e4cf79c6f0f9dea8796d9212b0",
+  "server.mjs": "36a503a97954a13ed4020d3fb40a6feb16e1f3afc9bc8b2c294b3b62e9fa41c2",
+  "Dockerfile": "e608eba37f3d07ff2eb625f48c8b871983976ce3e63dc773753111c2725dba95",
+  "compose.yaml": "6be0abaa8149d92a07883d904761cfc1f879648de604d66d8e26e5946e65a83d",
+  "compose.local.yaml": "cc3f7bd44d1977412dcb6dc8d43c664ac945f1501edff8fa62a7f1dc020532be",
+  "package.json": "dedd16948bbc58b8161b54b7132e433841b42ac6319f1918ddc1312b3bfb1792",
+  "package-lock.json": "c564578b341d99592e91067b8ae6faf77dc5b0c54f9171a55325999d56d68ce5",
+  "src/app.js": "b42bc8ab075065c2b3719127bc43d6964a0b46b6b8e830df5da43a90ec9cfad3",
+  "src/release-views.js": "94f0b971c9a39f163b79862caade06482f4645406392e5f4987a0a770a576ee2",
+  "src/state/initial-state.js": "d693797d2778929e7badf143eda65e965f0f3247b9807bed312bfdf1779a004d",
+  "src/state/model.js": "ed4a44d23a800d883af1c227c99f5d58bab0b2e5f02f59a2a770110efa87f0f2",
+  "src/state/store.js": "1010fa9fce4d65bf1040c24a7f08969e6def405551c22f7d2bcbc03ee11b2e3f",
+  "src/styles.css": "523236ad16e44195978a004d52dc6ab98432663c5448184fb6f9604282a15353",
+  "src/views.js": "96f230822708cbf3806dd8cce66b4eb92d6f91fd6d1d62b692c757d54f2cde38"
+}

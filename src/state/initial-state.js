@@ -67,6 +67,7 @@ function withConfirmedTask(state, time = '09:00') {
 
 function request(status, response = null) {
   return {
+    id: 'request-1-1',
     status,
     taskVersion: 1,
     sharedFields: { title: '办理公交卡年审', date: '2026-10-07', time: '09:00', location: '社区服务中心', help: '希望小梅陪同' },
