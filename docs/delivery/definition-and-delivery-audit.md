@@ -29,7 +29,7 @@
 | Docker提供最终同版前端 | [源码manifest](../../exports/source-manifest.json) | PASS；17运行配置文件未变，Docker服务11前端文件摘要一致；[结果](../../artifacts/qa/definition-correction/served-source.json) |
 | Demo Guide：URL、390×844、固定Persona、案例、状态入口、恢复、模拟边界 | [演示指南](demo-guide.md) | PASS；入口和恢复保留，无新增页面或Persona切换 |
 | 页面要求与历史边界 | 产品说明第9、18、25节 | PASS；当前完成/取消结果可查看，按实际范围不建设完整历史中心 |
-| 本地链接、提交包、图文摘要、矩阵统计 | [交付扫描](../../artifacts/qa/delivery-audit/results.json)、[材料manifest](../../exports/material-manifest.json)、[PDF核对](../../artifacts/qa/definition-correction/pdf-checks.json) | PASS；88 PASS、2 PARTIAL、0 FAIL；RTM-005/006仍为PARTIAL |
+| 本地链接、提交包、图文摘要、矩阵统计 | [交付扫描](../../artifacts/qa/delivery-audit/results.json)、[材料manifest](../../exports/material-manifest.json)、[PDF核对](../../artifacts/qa/definition-correction/pdf-checks.json) | PASS；90 PASS、0 PARTIAL、0 FAIL；两款产品本人体验已确认，按原题体验要求PASS |
 | 最终考试平台步骤独立 | [本人最后操作](platform-finalization.md) | 待完成；锁新SHA→发送实际上传说明→原始日志上传→回执核验→本人交卷 |
 
 没有重新执行全量业务回归或重导68图：运行文件和原型摘要完全未变，既有最终回归仍对应该UI。采用文档修改所需的最小检查，真实重新构建Docker并核对三路由/提供文件。不存在用资料补写竞品实际体验或真人测试的情况。本轮提交后获取新的main SHA并同步research，停止开发。

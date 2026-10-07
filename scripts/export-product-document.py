@@ -41,7 +41,7 @@ def furniture(canvas, doc):
     canvas.setFillColor(HexColor('#405c60'))
     canvas.drawString(48,813,f'安心记事 | 产品说明 | Release {version}')
     canvas.drawRightString(547,813,f'{doc.page}')
-    canvas.drawString(48,29,'2026-10-07 | 固定模拟原型 | 研究证据 PARTIAL，尚无真人验证')
+    canvas.drawString(48,29,'2026-10-07 | 固定模拟原型 | 本人竞品体验已确认，尚无真人用户验证')
     canvas.restoreState()
 
 doc=SimpleDocTemplate(str(output),pagesize=(595,842),leftMargin=48,rightMargin=48,topMargin=58,bottomMargin=54,title=f'安心记事 - Release {version} 产品说明',author='AI elder family assistant project')
@@ -50,5 +50,5 @@ reader=PdfReader(str(output))
 text='\n'.join(page.extract_text() for page in reader.pages)
 for number in range(1,27):
     assert re.search(rf'(?m)^{number}\.\s',text),number
-assert 'PARTIAL' in text and '无真人' in text
+assert '研究体验项PASS' in text and '无真人' in text
 print(f'Product PDF PASS: {len(reader.pages)} pages, all 26 sections present')

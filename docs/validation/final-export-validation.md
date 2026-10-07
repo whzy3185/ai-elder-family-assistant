@@ -14,7 +14,7 @@
 
 证据：`exports/screens/audit.json`、`exports/screens/results.json`、`exports/prototype-index.json`、`exports/source-manifest.json`、`artifacts/qa/title-escape-regression/`。
 
-旧设计资料只作为历史过程记录，最终提交入口为exports。实际体验研究严格证据仍PARTIAL；PDF未将假设或继承文字当作本次实测。
+旧设计资料只作为历史过程记录，最终提交入口为exports。实际体验两款产品本人体验已确认，按原题体验要求PASS；PDF未将假设或继承文字当作本次实测。
 
 ## 独立审查修复后的重新导出
 

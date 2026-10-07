@@ -14,7 +14,7 @@
 - `PARTIAL`：已有部分证据，但严格证据不完整；
 - `FAIL`：缺少题目要求的实际画面、操作、运行结果或交付物。
 
-本矩阵引用现有实现及真实验证。TC编号为验收项标识，并非每项都有同名自动测试；实际脚本及结果见各行。两次实际体验证据不足仍保留PARTIAL。
+本矩阵引用现有实现及真实验证。TC编号为验收项标识，并非每项都有同名自动测试；实际脚本及结果见各行。两次本人体验已确认，文字报告与来源满足原题；详情见docs/research/personal-experience-confirmation.md。
 
 ## 2. 页面与状态 ID
 
@@ -39,8 +39,8 @@
 | RTM-002 | 明确家属参与条件 | 一名成年家属适度参与且不能持续在线；小梅为同城、工作忙、不能保证陪同的家属Persona | `DOC-CHARTER-FAMILY` | `docs/product/01-product-charter.md` 第2.2、2.4–3节 | `TC-DOC-002` 核对关系、距离、响应能力 | 当前产品章程家庭条件 | PASS |
 | RTM-003 | 区分老人需求与家属诉求 | 老人关注理解、提醒、决定权；家属关注信息明确、响应负担和非监控 | `DOC-CHARTER-GOALS` | `docs/product/01-product-charter.md#6-用户目标` | `TC-DOC-003` 双角色目标无混写 | 当前产品章程第 6—7 节 | PASS |
 | RTM-004 | 围绕一个主要问题和一个事务 | 主要问题是理解确认、可控制的必要共享和明确回应；公交卡年审为固定提醒/陪同案例 | `DOC-CHARTER-SCENARIO` | `docs/product/01-product-charter.md#4-固定演示事务` | `TC-DOC-004` 问题与案例分开且固定事务一致 | 当前产品章程第4、8节 | PASS |
-| RTM-005 | 明确当前替代方式及选择依据 | 对比Apple提醒、共享列表、华为关怀和远程守护；按本轮文字材料整理，官方资料与设计推演分开 | `DOC-RESEARCH-COMPETITORS` | `docs/research/apple-study.md`、`docs/research/huawei-study.md` | `TC-RES-001` 结论可追溯检查 | 两份新报告及evidence/official-source-verification.json；原始体验依据仍不足，保留PARTIAL | PARTIAL |
-| RTM-006 | 至少实际体验两个产品或替代方案并保留证据 | 华为与Apple文字报告已更新；设备与实际版本明确未记录，不据官方资料升级实际体验 | `DOC-RESEARCH-EVIDENCE` | `docs/research/evidence-index.md` | `TC-RES-002` 证据完整性检查 | 现有文字材料；未收到对应实机截图/录屏；C-001/C-002仍C-PARTIAL | PARTIAL |
+| RTM-005 | 明确当前替代方式及选择依据 | 对比Apple提醒、共享列表、华为关怀和远程守护；按本轮文字材料整理，官方资料与设计推演分开 | `DOC-RESEARCH-COMPETITORS` | `docs/research/apple-study.md`、`docs/research/huawei-study.md` | `TC-RES-001` 结论可追溯检查 | 本人明确确认操作；两份文字报告、来源和设计影响可定位；docs/research/personal-experience-confirmation.md | PASS |
+| RTM-006 | 至少实际体验两个产品或替代方案并保留证据 | 华为与Apple文字报告已更新；设备与实际版本明确未记录，不据官方资料升级实际体验 | `DOC-RESEARCH-EVIDENCE` | `docs/research/evidence-index.md` | `TC-RES-002` 证据完整性检查 | 本人明确确认操作；两份文字报告、来源和设计影响可定位；docs/research/personal-experience-confirmation.md | PASS |
 | RTM-007 | 区分真实观察、二手资料和假设 | 使用 A/B/C/D 与候选人观察、官方事实、方案推演、待验证假设标记 | `DOC-RESEARCH-METHOD` | `docs/00-research-method.md`、`docs/research/*` | `TC-RES-003` 抽样追溯标记 | 当前研究方法和来源索引 | PASS |
 | RTM-008 | 列出必做范围、主动舍弃和理由 | P0、P1、Explicitly Excluded 已冻结；P1 不得阻塞 P0 | `DOC-CHARTER-SCOPE` | `docs/product/01-product-charter.md#9-p0本次必须交付` | `TC-DOC-005` 范围与导航一致性检查 | 当前产品章程第 9—15 节 | PASS |
 | RTM-009 | 不扩展成陪聊、硬件、智能家居、定位、医疗或应急 | 上述能力全部排除，不设计入口 | `DOC-CHARTER-EXCLUDED` | `docs/product/01-product-charter.md#11-explicitly-excluded` | `TC-SCOPE-001` 全库禁用能力扫描 | 当前 Explicitly Excluded | PASS |
@@ -165,11 +165,11 @@
 
 | 状态 | 数量 | 含义 |
 |---|---:|---|
-| PASS | 88 | 现有实现、文档或实际检查支持 |
-| PARTIAL | 2 | RTM-005/006：两次实际体验严格证据不足 |
+| PASS | 90 | 现有实现、文档或实际检查支持 |
+| PARTIAL | 0 | 无部分满足的原题要求 |
 | FAIL | 0 | 无未实现的产品/UI/状态/Docker要求 |
 | 合计 | 90 | 由交付审计脚本复核 |
 
 产品工程验收与研究证据分开。没有真人指标，不声称适老效果已通过真人验证。平台仓库确认、日志材料回执和本人最终交卷不由本矩阵推定完成。
 
-REQUIREMENT_MATRIX_STATUS=PASS；PRODUCT_ACCEPTANCE_STATUS=PASS；RESEARCH_EVIDENCE_STATUS=PARTIAL。
+REQUIREMENT_MATRIX_STATUS=PASS；PRODUCT_ACCEPTANCE_STATUS=PASS；RESEARCH_EVIDENCE_STATUS=PASS。

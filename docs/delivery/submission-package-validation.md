@@ -6,12 +6,12 @@
 | --- | --- | --- |
 | 源码、依赖与Docker启动配置 | PASS | 根目录README、Dockerfile、compose.yaml、package.json及锁文件 |
 | 产品定义、权限、AI规则、指标与验证方案 | PASS | [产品说明](../product/product-description.md) |
-| 华为、Apple研究与来源 | PARTIAL | [研究索引](../research/evidence-index.md)；严格实际体验证据缺口如实保留 |
+| 华为、Apple研究与来源 | PASS | [研究索引](../research/evidence-index.md)；本人体验已确认，未记录信息及未归档附件如实保留 |
 | 页面清单和全部独立画面 | PASS | [页面清单](page-state-matrix.md)、[原型索引](../../exports/prototype-index.md)；68张图、73页PDF |
 | 产品说明PDF与Web版本 | PASS | [导出验证](../validation/final-export-validation.md)；7页说明、17文件源码摘要一致 |
 | 主流程、异常、协作与Docker | PASS | [最终回归](../validation/final-regression.md)、[独立验收](../validation/independent-acceptance.md) |
 | 演示案例、角色、恢复与已知问题 | PASS | [演示说明](demo-guide.md)、[已知问题](../validation/known-issues.md) |
-| 需求逐项对应 | PASS/PARTIAL | [需求矩阵](requirement-traceability-matrix.md)：90项，88 PASS、2 PARTIAL、0 FAIL |
+| 需求逐项对应 | PASS | [需求矩阵](requirement-traceability-matrix.md)：90项，90 PASS、0 PARTIAL、0 FAIL |
 | 明显凭据、私密环境文件、机器路径、缓存和内部链接 | PASS | [交付扫描结果](../../artifacts/qa/delivery-audit/results.json)，issues为空 |
 | 原型编号、图像摘要与源码摘要 | PASS | 同一交付扫描逐项核对68张图、17个文件及页面编号集合 |
 
@@ -19,4 +19,4 @@
 
 平台仓库确认、当前会话原始日志上传和本人最终交卷均为独立步骤，本报告不代表这些动作已完成。
 
-文档语义校正后的最新检查见[本轮交付核对](definition-and-delivery-audit.md)：产品说明PDF重新生成、7页26节；原型68图/73页及17运行配置源码摘要未变。exports/material-manifest.json额外核对当前文档与两份PDF，交付扫描结果已更新。研究统计仍88 PASS、2 PARTIAL、0 FAIL。
+文档语义校正后的最新检查见[本轮交付核对](definition-and-delivery-audit.md)：产品说明PDF重新生成、7页26节；原型68图/73页及17运行配置源码摘要未变。exports/material-manifest.json额外核对当前文档与两份PDF，交付扫描结果已更新。研究统计仍90 PASS、0 PARTIAL、0 FAIL。

@@ -1,6 +1,6 @@
 {
   "runtimeVersion": "1.1.1",
-  "documentRevision": "2026-10-07 competitor-reports-with-evidence-boundaries",
+  "documentRevision": "2026-10-07 candidate-confirmed-personal-experience",
   "sourceFreezeSha": "54440215c9bc6a57e6917cc89106b10a33728e76",
   "pdfPages": {
     "exports/product-description.pdf": 7,
@@ -9,23 +9,24 @@
   "prototypeScreens": 68,
   "productSections": 26,
   "files": {
-    "README.md": "423574f94014411fffba19005813259d464984ed1882799b5b37ef6020308223",
-    "docs/product/product-description.md": "77299f31b6b5b3ab3fa4c4bdb1afc870e0634b334dac5dfeadd3061b08bf816b",
+    "README.md": "e345f33ca7dd1ce989b25a3f497c9cf8a2c9cebaddc3b92afddc89e0cc56ace2",
+    "docs/product/product-description.md": "cc02408d6098e8279548aa599a925404c37b154606f811bf0fdb15850b95e24c",
     "docs/product/01-product-charter.md": "bd59f611aed5b4eb03c67a7bfb86f756793ffbc9df3a168a69e6def90d4fcd83",
-    "docs/delivery/demo-guide.md": "82d8133f2366f64caec4202a40516789d95adde19bd2b2d3a9631d7e35167e2c",
-    "docs/delivery/requirement-traceability-matrix.md": "d9b1bbb8f3c36bf9d584aea85fc31f52b619dccec4e2a080075b10fec8d89a19",
-    "docs/delivery/definition-and-delivery-audit.md": "328b52195743384c534c7dc964818f0dc93ade8f171a64fc9798df6e35678e93",
+    "docs/delivery/demo-guide.md": "515024c5653161ee0d2c0bc5c5a974243c9888829b6f4503e636d0d5d5371186",
+    "docs/delivery/requirement-traceability-matrix.md": "5ba2243057dcf48f332bfb152355e8e706278134474bfc3db63eee14a481c61d",
+    "docs/delivery/definition-and-delivery-audit.md": "a77e7f5f9a40ae4bd11429518a58e09edb3b57aa01e95f2d3ac00e2f7d5573d5",
     "docs/delivery/platform-finalization.md": "842af8577b1cd616fc85ec96cf1b683240d7396fae5b3f4570ec00542031a528",
-    "exports/product-description.pdf": "70f308c1a297c27e8b1a614e08c3776029d64f013881cc17da491a71a2017da7",
+    "exports/product-description.pdf": "65709bb70aab314b763951c0b0174efbeef37e53c85ed227d3d3d2658a86b267",
     "exports/prototype-pages.pdf": "a9bac4ab8fa28b36e3773d670ee690583a4625b15f5c329f51f933977812e8ed",
     "exports/prototype-index.md": "d84ebab1e68f2de1a70980b71b408695ab3824eb06b642b899409086a5c14509",
     "exports/prototype-index.json": "7a51aa19cd197ccece751d3b4fb64e6650082e13a70d9f760efdd166d11bfef3",
     "exports/source-manifest.json": "fc79925e09e70136b13336262c4b7be99c738db285964f3e6cb8a54305084163",
-    "docs/research/huawei-study.md": "9873c3c1d0efcc68cf4a5a2d728458cc484902c67c771a745ed6cb99f76d79f0",
-    "docs/research/apple-study.md": "95cca6f827bc8c6de8cbad01f3ea0a23360952c87f5a710964224034efacfc4c",
-    "docs/research/evidence-index.md": "0fafb5061c5e929340e89825eed95c4a9b2dc8e142e2b4e8cce1e0d294c72214",
-    "docs/11-sources.md": "576cbe64a6cbdaf22ad871190ea946de854d8ca578ab087763c148aed9f84078",
+    "docs/research/huawei-study.md": "cf582554c77739a45a6a53a19be398f103008f5d253e0e51e0586cf1116adb0f",
+    "docs/research/apple-study.md": "25aff241338061025e3969ba0958dba42b8083517da85d7ee5a3db680646a2b2",
+    "docs/research/evidence-index.md": "77ca58f2ecc19f16cce150366a372c48ab1230ca8cc93a51f63ba678c6c08cd5",
+    "docs/11-sources.md": "61d69e12d14dc05ef3ed85e7e4ce3969a2307fcb1b817e02bc0a772d76c5113a",
     "evidence/official-source-verification.json": "a7f796db3687fa434218eded2d1a4c77f00374661c636cb5af2a79cc0ef92a88",
-    "docs/validation/research-report-update.md": "98967451092d6b8a3a8e5a10bed2378ca306310f8c84f0f256f9551d91a8bb3a"
+    "docs/validation/research-report-update.md": "d556f408c36fadf9167bb64d1ab54be7b33415b6e76932cdc83ff67932443853",
+    "docs/research/personal-experience-confirmation.md": "27107ebc0873a79faf533de7545ab7fa18072993fd11542cb6da736189d53d7b"
   }
 }

@@ -51,7 +51,7 @@ rtm=(root/'docs/delivery/requirement-traceability-matrix.md').read_text()
 rows=[x for x in rtm.splitlines() if x.startswith('| RTM-')]
 counts=Counter(x.split('|')[-2].strip() for x in rows)
 if len(rows)!=90:issues.append({'type':'requirementCountMismatch'})
-if counts.get('PASS')!=88 or counts.get('PARTIAL')!=2 or counts.get('FAIL',0)!=0:
+if counts.get('PASS')!=90 or counts.get('PARTIAL',0)!=0 or counts.get('FAIL',0)!=0:
     issues.append({'type':'requirementStatusMismatch'})
 result={'status':'PASS' if not issues else 'FAIL','trackedFiles':len(tracked),'localLinksChecked':links,'sourceFilesChecked':len(manifest['files']),'materialFilesChecked':len(materials['files']),'screens':len(index),'requirementStatuses':dict(counts),'issues':issues}
 out=root/'artifacts/qa/delivery-audit'

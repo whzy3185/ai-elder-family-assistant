@@ -36,4 +36,4 @@ P17 Gate=PASS；1.1.1；2026-10-07。
 
 实际200%页面缩放由专用Chrome的默认缩放偏好启用，CDP指定390×844、deviceScaleFactor=1，页面实测195 CSS px、devicePixelRatio=2；在此缩放下实际完成纠错、保存、共享、跨角色回应及完成。不是原生菜单点击或真人测试。
 
-研究严格证据仍PARTIAL；等待页等少量次要重复提示为独立报告P2改善建议，无Presentation P0。原项目最终Release和平台步骤继续独立记录。
+两款产品本人体验已确认，按原题体验要求PASS；等待页等少量次要重复提示为独立报告P2改善建议，无Presentation P0。原项目最终Release和平台步骤继续独立记录。

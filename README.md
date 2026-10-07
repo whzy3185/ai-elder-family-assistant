@@ -64,7 +64,7 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 - [独立验收](docs/validation/independent-acceptance.md)、[最终Docker回归](docs/validation/final-regression.md)、[版本记录](docs/delivery/version.md)。
 - [本轮用户定义与交付核对](docs/delivery/definition-and-delivery-audit.md)、[平台最后操作](docs/delivery/platform-finalization.md)。
 - [已知问题](docs/validation/known-issues.md)、[冻结记录](docs/delivery/release-freeze.md)、[研究证据](docs/research/evidence-index.md)。
-- 本轮文字报告：[华为](docs/research/huawei-study.md)、[Apple](docs/research/apple-study.md)；设备及实际版本未记录，严格体验证据仍PARTIAL。
+- 本轮文字报告：[华为](docs/research/huawei-study.md)、[Apple](docs/research/apple-study.md)；本人已确认两份报告操作均由本人完成，按原题体验要求PASS；设备及实际版本仍未记录。
 
 `src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料由本轮最终Docker重新截图导出；同版源码及图片校验见exports/source-manifest.json。
 
@@ -76,6 +76,6 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 
 本次围绕一次事务做提醒、整理纠错及单次家庭协作；舍弃医疗、应急、定位监控、全权托管、多家属、完整历史及真实后端/AI/通知，以控制权限和异常组合。完成/取消后仍可查看当前结果。
 
-原型走查与自动测试已执行；真人测试尚未进行，计划从上述用户切片招募。Huawei/Apple两次体验的原始设备、版本、截图证据仍 **PARTIAL**。未覆盖的人群边界见产品说明，不能把工程检查当成用户研究。
+原型走查与自动测试已执行；真人测试尚未进行，计划从上述用户切片招募。Huawei/Apple两次本人体验已确认，文字报告与来源满足原题要求（**PASS**）；设备/版本未记录，截图/录屏未归档。未覆盖的人群边界见产品说明，不能把工程检查当成用户研究。
 
 平台动作依次是：本人锁定本轮新SHA→把网页生成的实际上传说明发给已连接Agent→上传当前会话原始日志并核验回执→本人确认交卷。各步骤分别核验，不沿用修改前SHA。
