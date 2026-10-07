@@ -11,12 +11,12 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 10 / Demo Controller 与可复现场景完成，待提交
+CURRENT_PHASE=Prompt 11 / Docker 化与真实启动验证完成，待提交
 CURRENT_BRANCH=research
-CURRENT_COMMIT=8f814b2
+CURRENT_COMMIT=94d44cd
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
-UI_VERSION=web-prototype-0.10.0
+UI_VERSION=web-prototype-0.11.0
 CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
 REPOSITORY_AUDIT_STATUS=PASS
@@ -42,7 +42,7 @@ HIFI_SCREEN_STATUS=PASS
 DESIGN_AUDIT_STATUS=PASS
 SPEC_FREEZE=TRUE
 WEB_STATUS=PASS
-DOCKER_STATUS=FAIL
+DOCKER_STATUS=PASS
 MAIN_FLOW_STATUS=PASS
 EXCEPTION_FLOW_STATUS=PASS
 STATIC_EXPORT_STATUS=FAIL
@@ -61,9 +61,10 @@ PROMPT_07_GATE_STATUS=PASS
 PROMPT_08_GATE_STATUS=PASS
 PROMPT_09_GATE_STATUS=PASS
 PROMPT_10_GATE_STATUS=PASS
+PROMPT_11_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 10 的输入基线，即 Prompt 09 完成提交；Prompt 10 通过 Gate 后将创建下一提交。
+`CURRENT_COMMIT` 是 Prompt 11 的输入基线，即 Prompt 10 完成提交；Prompt 11 通过 Gate 后将创建下一提交。
 
 ## 2. 仓库真实状态
 
@@ -72,11 +73,11 @@ PROMPT_10_GATE_STATUS=PASS
 | 工作区位置 | E 盘项目目录，未使用 C 盘作为工作区 | PASS | 仓库绝对路径与当前工作目录 |
 | 本地分支 | `main`、`research` | PASS | `git branch --all --verbose --no-abbrev` |
 | `main` | `b93f0d464ee2b3acc9f094aaf70ff2832b6fbd83` | PASS | 本地与 `origin/main` 一致 |
-| `research` | `b679223` | PASS | Prompt 07 完成提交 |
-| 远端跟踪 | `origin/research` 为 `b679223` | PASS | Prompt 06—07 已成功推送 |
-| 工作区变更 | Prompt 08 完整主流程和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
+| `research` | `94d44cd` | PASS | Prompt 10 完成提交 |
+| 远端跟踪 | `origin/research` 为 `94d44cd` | PASS | Prompt 00—10 已成功推送 |
+| 工作区变更 | Prompt 11 Docker 文件、子路由修复和验证证据待提交 | PARTIAL | `git status --porcelain=v2 --branch` |
 | 仓库复用 | 未重建仓库、未删除 research 历史 | PASS | 现有提交保持连续 |
-| 代码与构建文件 | 原生 Web 工程已建立；Docker 尚未建立 | PARTIAL | `package.json`、`index.html`、`src/`、`server.mjs`、`tests/` |
+| 代码与构建文件 | 原生 Web 工程、Dockerfile、Compose、依赖锁和健康检查均已建立并实测 | PASS | `package.json`、`package-lock.json`、`Dockerfile`、`compose.yaml`、`docs/validation/docker-validation.md` |
 
 ## 3. 已读取的现有成果
 
@@ -121,6 +122,10 @@ Prompt 00 已逐份读取 README 与 `docs/` 下全部 19 份 Markdown 文档，
 
 Prompt 09 的 A—K 共 11 个异常与修改场景已实际点击通过，状态模型测试和逐场景截图见 `docs/validation/prompt09-exception-flows.md`。
 
+### DOCKER_STATUS=PASS
+
+Prompt 11 已通过真实 Docker Engine 构建、Compose 启动、健康检查、HTTP 和子路由刷新验证；Docker URL 上的 23 步主流程、13 个 Demo 场景、双角色入口和 Reset 均已实际点击通过，详见 `docs/validation/docker-validation.md`。
+
 ### DOCUMENT_STATUS=PARTIAL
 
 研究文档、正式产品章程、需求追踪矩阵、页面矩阵和业务规则定稿已存在；产品说明、Demo Guide、走查记录和最终验收报告仍缺失。
@@ -139,7 +144,7 @@ Prompt 09 的 A—K 共 11 个异常与修改场景已实际点击通过，状�
 | Prompt 08 | 实现完整主流程 | PASS |
 | Prompt 09 | 实现全部异常和修改分支 | PASS |
 | Prompt 10 | 完成 Demo Controller 与可复现场景 | PASS |
-| Prompt 11 | Docker 化并完成真实启动验证 | FAIL |
+| Prompt 11 | Docker 化并完成真实启动验证 | PASS |
 | Prompt 12 | 完整功能走查 | FAIL |
 | Prompt 13 | 专项业务一致性攻击测试 | FAIL |
 | Prompt 14 | 适老和视觉质量终检 | FAIL |
@@ -322,3 +327,18 @@ Prompt 09 已通过，可提交并进入 Prompt 10 Demo Controller 与可复现�
 | 主流程不依赖控制器 | PASS | Prompt 08 仍可 Reset 后连续 23 步完成 |
 
 Prompt 10 已通过，可提交并进入 Prompt 11 Docker 化与真实启动验证。
+
+## 18. Prompt 11 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| Dockerfile、Compose 和依赖锁齐全 | PASS | `Dockerfile`、`compose.yaml`、`package-lock.json` |
+| `docker compose up --build` 实际成功 | PASS | `docs/validation/docker-validation.md` 第 3 节 |
+| 容器健康且 8080 可访问 | PASS | 健康状态、端口与 HTTP 记录 |
+| 子路由刷新正常 | PASS | 老人和家属子路由均返回入口 HTML；缺失静态资源保持 404 |
+| Docker 版本主流程通过 | PASS | 23 步、任务 `COMPLETED`、请求 `ACCEPTED` |
+| Demo Controller 与 Reset 通过 | PASS | 13 场景、2 角色、Reset |
+| 无后端、数据库、密钥或私人账号 | PASS | 外部运行请求 0；镜像和 Compose 审计 |
+| 不依赖宿主机 Node 或未提交文件 | PASS | 容器内 Node、锁文件、无宿主机挂载 |
+
+Prompt 11 已通过，可提交并进入 Prompt 12 完整功能走查。

@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const endpoint = process.env.CDP_URL || 'http://127.0.0.1:9337';
+const appUrl = process.env.APP_URL || 'http://127.0.0.1:4173';
 const pages = await fetch(`${endpoint}/json/list`).then(response => response.json());
-const page = pages.find(item => item.type === 'page' && item.url.startsWith('http://127.0.0.1:4173'));
+const page = pages.find(item => item.type === 'page' && item.url.startsWith(appUrl));
 if (!page) throw new Error('Prototype page not found');
 const socket = new WebSocket(page.webSocketDebuggerUrl);
 let sequence = 0;
@@ -45,7 +46,7 @@ const controllerText = await bodyText();
 assert(controllerText.includes('Fixed Demo Clock') && controllerText.includes('Reset All Demo Data'), 'Controller controls missing');
 
 const controllerShot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
-const controllerOutput = path.resolve('artifacts', 'qa', 'prompt10-demo-controller.png');
+const controllerOutput = path.resolve(process.env.SCREENSHOT_OUTPUT || path.join('artifacts', 'qa', 'prompt10-demo-controller.png'));
 fs.mkdirSync(path.dirname(controllerOutput), { recursive: true });
 fs.writeFileSync(controllerOutput, Buffer.from(controllerShot.result.data, 'base64'));
 

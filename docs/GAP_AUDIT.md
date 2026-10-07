@@ -67,7 +67,7 @@
 | 家属端完整静态原型 | 规范设计源已有 12 个家属端画面，P0 挤压已修复 | PARTIAL | Prompt 15 仍需逐画面导出 PNG/PDF | Prompt 15 | HTML/CSS 设计源、Design Audit、导出目录/PDF |
 | 可操作 Web 原型与源码 | 主流程、11 个异常/修改分支和 Demo Controller 均已完成浏览器走查 | PASS | 无 P0 实现缺口 | 已完成 | 三套浏览器脚本、源码和截图 |
 | Demo Controller | 独立控制页支持双角色、13 个完整快照、固定时钟和全量重置 | PASS | 无 | 已完成 | 控制器页面、完整快照测试与浏览器走查 |
-| Docker 启动 | 无 Docker 文件 | FAIL | Dockerfile、Compose、Nginx 和启动验证 | Prompt 11、20 | `docker compose up --build` 日志 |
+| Docker 启动 | Dockerfile、Compose、依赖锁、README 和真实启动验证均已完成 | PASS | Prompt 20 仍需 Release 二次回归 | Prompt 20 | `docs/validation/docker-validation.md`、Docker 截图 |
 | 静态图与 Web 同版本 | 两者均不存在 | FAIL | 发布版本、导出脚本/流程和映射 | Prompt 15 | 版本号和页面索引 |
 
 ## 5. 质量、文档与提交
@@ -91,8 +91,8 @@
 
 1. 研究资产可直接复用，不应重做泛行业调研；
 2. 核心用户、核心事务和主要隐私原则已有稳定基础；
-3. 正式需求追踪矩阵、业务规则、页面矩阵、完整 Flow、AI 规则、适老、文案规范和 65 个高保真画面已建立；当前产品缺口转为运行实现；
-4. 最大交付缺口是可操作 Web、Docker、运行态测试、全量静态导出与正式交付文档；
+3. 正式需求追踪矩阵、业务规则、页面矩阵、完整 Flow、AI 规则、适老、文案规范、65 个高保真画面、可操作 Web 和 Docker 启动均已建立；
+4. 当前最大交付缺口是 Prompt 12—14 的完整走查、业务攻击测试和适老终检，以及全量静态导出与正式交付文档；
 5. 体验证据存在，但严格可复核程度仍为 `PARTIAL`；
-6. Prompt 00—06 已按顺序通过阶段 Gate；Figma Starter 额度已通过仓库内规范设计源方案解除阻碍；
+6. Prompt 00—11 已按顺序通过阶段 Gate；Docker Desktop 宿主机缺陷已通过 E 盘独立 Docker Engine 完成真实项目验证；
 7. 在 Prompt 22 通过前，`FINAL_ACCEPTANCE_STATUS` 必须保持 `FAIL`；在最终 SHA、材料回执和网页确认完成前，`SUBMISSION_STATUS` 必须保持 `FAIL`。

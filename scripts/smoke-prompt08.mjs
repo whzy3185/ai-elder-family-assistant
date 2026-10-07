@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const endpoint = process.env.CDP_URL || 'http://127.0.0.1:9335';
+const appUrl = process.env.APP_URL || 'http://127.0.0.1:4173';
 const pages = await fetch(`${endpoint}/json/list`).then(response => response.json());
-const page = pages.find(item => item.type === 'page' && item.url.startsWith('http://127.0.0.1:4173'));
+const page = pages.find(item => item.type === 'page' && item.url.startsWith(appUrl));
 if (!page) throw new Error('Prototype page not found');
 const socket = new WebSocket(page.webSocketDebuggerUrl);
 let sequence = 0;
@@ -61,10 +62,12 @@ await step('complete-task', '这件事已完成');
 state = await evaluate(`JSON.parse(localStorage.getItem('elder-family-assistant/state/v1'))`);
 assert(state.task.status === 'COMPLETED', 'Elder completion did not complete task');
 assert(state.currentRole === 'ELDER', 'Task completion was not performed by elder role');
+const externalResources = await evaluate(`performance.getEntriesByType('resource').map(entry => entry.name).filter(url => new URL(url).origin !== location.origin)`);
+assert(externalResources.length === 0, `Unexpected external runtime requests: ${externalResources.join(', ')}`);
 
 const screenshot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
-const output = path.resolve('artifacts', 'qa', 'prompt08-completed.png');
+const output = path.resolve(process.env.SCREENSHOT_OUTPUT || path.join('artifacts', 'qa', 'prompt08-completed.png'));
 fs.mkdirSync(path.dirname(output), { recursive: true });
 fs.writeFileSync(output, Buffer.from(screenshot.result.data, 'base64'));
 socket.close();
-console.log(JSON.stringify({ status: 'PASS', steps: 23, taskStatus: state.task.status, requestStatus: state.collaborationRequest.status, screenshot: output }));
+console.log(JSON.stringify({ status: 'PASS', steps: 23, taskStatus: state.task.status, requestStatus: state.collaborationRequest.status, externalRequests: externalResources.length, screenshot: output }));

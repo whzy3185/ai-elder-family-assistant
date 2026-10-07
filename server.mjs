@@ -7,6 +7,17 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 4173);
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.svg': 'image/svg+xml' };
 
+function sendFile(response, file, status = 200) {
+  fs.readFile(file, (error, body) => {
+    if (error) {
+      response.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');
+      return;
+    }
+    response.writeHead(status, { 'content-type': types[path.extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' });
+    response.end(body);
+  });
+}
+
 const server = http.createServer((request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
   const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
@@ -17,6 +28,10 @@ const server = http.createServer((request, response) => {
   }
   fs.readFile(file, (error, body) => {
     if (error) {
+      if (path.extname(relative) === '') {
+        sendFile(response, path.join(root, 'index.html'));
+        return;
+      }
       response.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }).end('Not found');
       return;
     }

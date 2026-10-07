@@ -21,6 +21,26 @@ npm start
 
 浏览器走查脚本为 `scripts/smoke-prompt08.mjs`、`scripts/smoke-prompt09.mjs` 与 `scripts/smoke-prompt10.mjs`，验证记录见 `docs/validation/`。
 
+## Docker 演示
+
+评审只需在项目根目录执行：
+
+```powershell
+docker compose up --build
+```
+
+容器健康后访问 `http://localhost:8080`。停止并移除演示容器：
+
+```powershell
+docker compose down
+```
+
+- 无需宿主机安装 Node；Node 仅存在于构建后的容器镜像中。
+- 不需要后端、数据库、API Key、私人账号或外部服务。
+- 所有业务数据、AI 结果、消息、失败和时间均为浏览器内固定模拟。
+- 容器以非 root 用户和只读文件系统运行，运行态只给 `/tmp` 临时空间。
+- 未命中静态文件的无扩展名子路由会回退到 `index.html`，刷新仍可进入演示；缺失静态资源保持 404。
+
 ## 文档索引
 
 | 编号 | 文档 | 作用 |
@@ -58,6 +78,7 @@ npm start
 | V-08 | [完整主流程验证](docs/validation/prompt08-main-flow.md) | 23 步浏览器走查、跨角色数据一致性和完成权限验证 |
 | V-09 | [异常与修改分支验证](docs/validation/prompt09-exception-flows.md) | 11 个异常场景、状态不变量、浏览器走查和截图证据 |
 | V-10 | [Demo Controller 验证](docs/validation/prompt10-demo-controller.md) | 13 个完整快照、双角色、固定时钟和全量重置验证 |
+| V-11 | [Docker 启动验证](docs/validation/docker-validation.md) | Compose 构建、健康检查、HTTP、子路由、23 步主流程与 Reset 验证 |
 | D-02 | [题目验收追踪矩阵](docs/delivery/requirement-traceability-matrix.md) | 90 项原题要求到规则、页面、实现、测试和证据的映射 |
 | S-00 | [统一项目状态](docs/PROJECT_STATUS.md) | 当前阶段、版本、各交付状态与后续阶段清单 |
 | G-00 | [Gap Audit](docs/GAP_AUDIT.md) | 题目要求、已有成果、缺口、负责阶段和验收证据 |

@@ -152,12 +152,12 @@
 | RTM-080 | 完整原型图按页面与状态编号整理 | 每个必要页面和关键状态可独立查看 | `DOC-STATIC-INDEX` | `artifacts/static/index.md`、`artifacts/static/*.png`、PDF | `TC-STATIC-001` 页面矩阵一一对应 | PNG/PDF（缺失） | FAIL |
 | RTM-081 | 可操作 Web 原型和可编辑源码 | 全部 P0 连续可操作，使用本地确定性状态和虚构数据 | 全部 `EL-*`、`FM-*`、`DM-*` | `src/*` | `TC-E2E-*`、`TC-UNIT-*` | 主流程、异常和 Demo Controller 均已运行验证 | PASS |
 | RTM-082 | 设计工具存在时提供源文件或访问方式 | 规范源使用仓库内 HTML/CSS；Figma 文件作为补充参考 | `DOC-DESIGN-SOURCE` | `artifacts/design/local-prototype/`、`artifacts/design/figma-source.md` | `TC-DELIVERY-001` 源文件可访问 | 可编辑设计源、生成脚本、Figma URL 和审计证据 | PASS |
-| RTM-083 | 提供 Dockerfile | 多阶段构建或等效静态镜像，无秘密和外部服务 | `DOC-DOCKER` | `Dockerfile` | `TC-DOCKER-001` 镜像构建 | Dockerfile（缺失） | FAIL |
-| RTM-084 | 提供 Docker Compose 配置 | 单命令启动前端，端口和健康检查明确 | `DOC-DOCKER` | `compose.yaml` | `TC-DOCKER-002` Compose 启动 | Compose 文件（缺失） | FAIL |
-| RTM-085 | `docker compose up --build` 后浏览器可完成演示 | 干净环境、无公网、无密钥完成主流程和异常 | `WEB-RUNNING` | Docker 运行环境 | `TC-DOCKER-003` 浏览器冒烟 | 启动日志和截图（缺失） | FAIL |
-| RTM-086 | README 写明启动与访问 | 包含命令、地址、端口、要求、结构和已知限制 | `DOC-README` | `README.md` | `TC-DOC-009` README 启动检查 | 最终 README（当前仅研究索引） | FAIL |
+| RTM-083 | 提供 Dockerfile | 多阶段构建或等效静态镜像，无秘密和外部服务 | `DOC-DOCKER` | `Dockerfile` | `TC-DOCKER-001` 镜像构建 | Dockerfile 与真实构建记录 | PASS |
+| RTM-084 | 提供 Docker Compose 配置 | 单命令启动前端，端口和健康检查明确 | `DOC-DOCKER` | `compose.yaml` | `TC-DOCKER-002` Compose 启动 | Compose 配置、健康状态和端口记录 | PASS |
+| RTM-085 | `docker compose up --build` 后浏览器可完成演示 | 干净环境、运行时无公网、无密钥完成主流程和异常 | `WEB-RUNNING` | Docker 运行环境 | `TC-DOCKER-003` 浏览器冒烟 | `docker-validation.md`、Docker 主流程与控制台截图 | PASS |
+| RTM-086 | README 写明启动与访问 | 包含命令、地址、端口、要求、结构和已知限制 | `DOC-README` | `README.md` | `TC-DOC-009` README 启动检查 | README Docker 启动、停止、约束和子路由说明 | PASS |
 | RTM-087 | Demo Guide 写明尺寸、角色、案例、关键状态和重置 | 使用固定时钟、张阿姨/小梅、场景入口和一键重置 | `DOC-DEMO-GUIDE` | `docs/delivery/demo-guide.md` | `TC-DOC-010` 演示说明完整性 | Demo Guide（缺失） | FAIL |
-| RTM-088 | 演示不依赖私人账号、模型额度或密钥 | 所有服务本地模拟，无登录、外部 API 或真实通知 | `DM-02`、`WEB-OFFLINE` | `src/adapters/mock/*`、Docker | `TC-OFFLINE-001` 断网演示 | 断网运行记录（缺失） | FAIL |
+| RTM-088 | 演示不依赖私人账号、模型额度或密钥 | 所有服务本地模拟，无登录、外部 API 或真实通知 | `DM-02`、`WEB-OFFLINE` | `src/`、Docker | `TC-OFFLINE-001` 运行时外部请求审计 | Docker 23 步主流程 `externalRequests=0` | PASS |
 | RTM-089 | 静态图、Web、文档对应同一版本 | Release 版本号写入 UI、导出索引、README 和产品说明 | `DOC-RELEASE` | `docs/RELEASE_STATUS.md`、构建元数据 | `TC-RELEASE-001` 版本一致性 | Release 索引（缺失） | FAIL |
 | RTM-090 | 页面清单无遗漏和断开跳转 | 页面矩阵、路由、静态导出和 E2E 覆盖集合完全一致 | `DOC-PAGE-MATRIX`、全路由 | `scripts/check-coverage.*` 或测试等效实现 | `TC-DELIVERY-002` 集合差异检查 | 覆盖报告（缺失） | FAIL |
 
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 当前要求已有足够仓库证据 | 62 |
+| PASS | 当前要求已有足够仓库证据 | 67 |
 | PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 13 |
-| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 15 |
+| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 10 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
