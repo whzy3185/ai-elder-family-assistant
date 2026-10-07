@@ -13,7 +13,7 @@ export function reduce(state, action) {
     case 'ENTER_TASK_INPUT':
       if (state.currentRole !== 'ELDER') return state;
       if (state.task.status === 'CONFIRMED') return { ...state, currentView: 'TASK_SAVED' };
-      return ['CANCELLED','COMPLETED'].includes(state.task.status) ? { ...state, task: createInitialState().task, collaborationRequest: createInitialState().collaborationRequest, requestHistory: [], currentView: 'TASK_INPUT' } : { ...state, currentView: 'TASK_INPUT' };
+      return ['CANCELLED','COMPLETED'].includes(state.task.status) ? { ...state, task: { ...createInitialState().task, version: state.task.version }, manualDraft: null, formError: null, collaborationRequest: createInitialState().collaborationRequest, requestHistory: [], currentView: 'TASK_INPUT' } : { ...state, currentView: 'TASK_INPUT' };
     case 'NAVIGATE':
       return { ...state, currentView: action.view };
     case 'SET_ROLE':
@@ -21,11 +21,13 @@ export function reduce(state, action) {
     case 'SET_ROLE_VIEW':
       return { ...state, currentRole: action.role, currentView: action.view };
     case 'SHOW_RELATIONSHIP_QR':
+      if (state.currentRole !== 'ELDER' || state.relationship.status === 'ACTIVE') return state;
       return { ...state, relationship: { ...state.relationship, status: 'QR_READY' }, currentView: 'RELATIONSHIP' };
     case 'FAMILY_SCAN_RELATIONSHIP':
       if (state.currentRole !== 'FAMILY' || state.relationship.status !== 'QR_READY') return state;
       return { ...state, relationship: { ...state.relationship, status: 'PENDING_ELDER' }, currentView: 'RELATIONSHIP' };
     case 'CANCEL_RELATIONSHIP_QR':
+      if (!['QR_READY','PENDING_ELDER'].includes(state.relationship.status)) return state;
       return { ...state, relationship: { ...state.relationship, status: 'UNLINKED' }, currentView: state.currentRole === 'FAMILY' ? 'FAMILY_HOME' : 'ELDER_HOME' };
     case 'ASK_ESTABLISH_RELATIONSHIP':
       return { ...state, currentView: 'RELATIONSHIP_CONFIRM' };
@@ -39,7 +41,8 @@ export function reduce(state, action) {
       if (state.relationship.status !== 'ACTIVE') return state;
       return { ...state, relationship: { ...state.relationship, status: 'ENDED', consentedAt: null }, collaborationRequest: { ...state.collaborationRequest, status: state.collaborationRequest.status === 'NONE' ? 'NONE' : 'INVALIDATED', response: null }, currentView: 'RELATIONSHIP_ENDED' };
     case 'UPDATE_RAW_INPUT':
-      return { ...state, task: { ...state.task, rawInput: action.value } };
+      if (['CONFIRMED','CANCELLED','COMPLETED'].includes(state.task.status)) return state;
+      return { ...state, task: { ...state.task, status: state.task.status === 'EMPTY' ? 'DRAFT' : state.task.status, rawInput: action.value } };
     case 'UPDATE_MANUAL_FIELD':
       return { ...state, manualDraft: { ...state.manualDraft, [action.field]: action.value } };
     case 'SET_DISPLAY_MODE':
@@ -48,13 +51,14 @@ export function reduce(state, action) {
       if (state.task.status === 'CONFIRMED') return { ...state, currentView: 'TASK_SAVED' };
       return {
         ...state,
-        task: { ...createInitialState().task, status: 'DRAFT', parsingStatus: 'PARSING', rawInput: action.rawInput },
+        task: { ...createInitialState().task, status: 'DRAFT', parsingStatus: 'PARSING', rawInput: action.rawInput, version: state.task.version, parseToken: action.parseToken },
         collaborationRequest: createInitialState().collaborationRequest,
         requestHistory: [],
         currentView: 'TASK_PROCESSING',
       };
     case 'PARSE_TASK_SUCCESS':
       if (state.task.status !== 'DRAFT' || state.currentView !== 'TASK_PROCESSING') return state;
+      if (action.parseToken && action.parseToken !== state.task.parseToken) return state;
       if (!state.task.rawInput.trim()) return reduce(state, { type: 'PARSE_TASK_MISSING' });
       if (!state.task.rawInput.includes('公交卡') || !state.task.rawInput.includes('九点')) return reduce(state, { type: 'PARSE_TASK_FAILURE' });
       return {
@@ -75,6 +79,7 @@ export function reduce(state, action) {
         currentView: 'TASK_CONFIRM',
       };
     case 'PARSE_TASK_MISSING':
+      if (!['EMPTY','DRAFT'].includes(state.task.status)) return state;
       return {
         ...state,
         task: {
@@ -100,6 +105,7 @@ export function reduce(state, action) {
         currentView: 'TASK_CONFIRM',
       };
     case 'PARSE_TASK_FAILURE':
+      if (!['EMPTY','DRAFT'].includes(state.task.status)) return state;
       return {
         ...state,
         task: { ...state.task, status: 'PARSE_FAILED', parsingStatus: 'FAILED', details: null, reminderAt: null },
@@ -196,6 +202,7 @@ export function reduce(state, action) {
       return { ...state, sendSequence: (state.sendSequence || 0) + 1, collaborationRequest: { ...state.collaborationRequest, status: 'SENDING', sendingFrom: state.collaborationRequest.status, sendingToken: `send-${state.task.version}-${(state.sendSequence || 0) + 1}` }, currentView: 'REQUEST_SENDING' };
     case 'SIMULATE_SEND_FAILURE':
       if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED' || state.relationship.status !== 'ACTIVE') return state;
+      if (['PENDING','NO_RESPONSE','ACCEPTED','DECLINED','CHANGE_PROPOSED'].includes(state.collaborationRequest.status)) return state;
       return {
         ...state,
         collaborationRequest: { ...state.collaborationRequest, status: 'NONE', sharedFields: null, response: null, sentAt: null, sendAttempts: state.collaborationRequest.sendAttempts + 1 },
@@ -208,10 +215,10 @@ export function reduce(state, action) {
       if (state.currentRole !== 'ELDER' || !['PENDING', 'NO_RESPONSE'].includes(state.collaborationRequest.status)) return state;
       return { ...state, collaborationRequest: { ...state.collaborationRequest, status: 'PENDING' }, currentView: 'REQUEST_SENT' };
     case 'ASK_WITHDRAW_REQUEST':
-      if (state.currentRole !== 'ELDER' || !['PENDING', 'NO_RESPONSE'].includes(state.collaborationRequest.status)) return state;
+      if (state.currentRole !== 'ELDER' || !['PENDING', 'NO_RESPONSE','CHANGE_PROPOSED'].includes(state.collaborationRequest.status)) return state;
       return { ...state, currentView: 'REQUEST_WITHDRAW_CONFIRM' };
     case 'WITHDRAW_REQUEST':
-      if (state.currentRole !== 'ELDER' || !['PENDING', 'NO_RESPONSE'].includes(state.collaborationRequest.status)) return state;
+      if (state.currentRole !== 'ELDER' || !['PENDING', 'NO_RESPONSE','CHANGE_PROPOSED'].includes(state.collaborationRequest.status)) return state;
       return { ...state, collaborationRequest: { ...state.collaborationRequest, status: 'WITHDRAWN', response: null }, currentView: 'REQUEST_WITHDRAWN' };
     case 'ACCEPT_REQUEST':
       if (!canRespond) return state;

@@ -50,9 +50,10 @@ root.addEventListener('click', event => {
   if (action === 'family-scan') store.dispatch({ type: 'FAMILY_SCAN_RELATIONSHIP' });
   if (action === 'submit-task') {
     const input = document.querySelector('#task-input');
-    store.dispatch({ type: 'START_TASK', rawInput: input.value.trim() });
+    const parseToken = crypto.randomUUID();
+    store.dispatch({ type: 'START_TASK', rawInput: input.value.trim(), parseToken });
     window.setTimeout(() => {
-      if (store.getState().currentView === 'TASK_PROCESSING') store.dispatch({ type: 'PARSE_TASK_SUCCESS' });
+      if (store.getState().currentView === 'TASK_PROCESSING') store.dispatch({ type: 'PARSE_TASK_SUCCESS', parseToken });
     }, 450);
   }
   if (action === 'simulate-missing') {
@@ -116,8 +117,9 @@ root.addEventListener('click', event => {
   if (action === 'reset') { store.dispatch({ type: 'RESET' }); store.dispatch({ type: 'NAVIGATE', view: 'RESET_RESULT' }); }
   if (action === 'retry-parse') {
     const rawInput = store.getState().task.rawInput;
-    store.dispatch({ type: 'START_TASK', rawInput });
-    window.setTimeout(() => store.dispatch({ type: 'PARSE_TASK_SUCCESS' }), 450);
+    const parseToken = crypto.randomUUID();
+    store.dispatch({ type: 'START_TASK', rawInput, parseToken });
+    window.setTimeout(() => store.dispatch({ type: 'PARSE_TASK_SUCCESS', parseToken }), 450);
   }
 });
 

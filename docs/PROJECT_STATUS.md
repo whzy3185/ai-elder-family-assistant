@@ -3,7 +3,7 @@
 更新日期：2026-10-07（Asia/Shanghai）。本文件只报告当前状态；此前摘要存于`validation/project-status-baseline-prompt11.md`，历史PASS不能替代当前Release验收。
 
 ```text
-CURRENT_PHASE=Prompt 12 已完成修复后 T01–T09 回归；下一阶段 Prompt 13
+CURRENT_PHASE=Prompt 13 状态攻击审计通过；下一阶段 Prompt 14
 CURRENT_BRANCH=research
 CURRENT_COMMIT=由 git rev-parse HEAD 获取；阶段证据随该提交保存，避免自引用SHA
 INPUT_COMMIT=878b8fb
@@ -22,7 +22,7 @@ RESEARCH_EVIDENCE_STATUS=PARTIAL
 FINAL_ACCEPTANCE_STATUS=FAIL
 SUBMISSION_STATUS=FAIL
 PROMPT_12_GATE_STATUS=PASS
-PROMPT_13_GATE_STATUS=FAIL
+PROMPT_13_GATE_STATUS=PASS
 PROMPT_14_GATE_STATUS=FAIL
 PROMPT_15_GATE_STATUS=FAIL
 PROMPT_16_GATE_STATUS=PARTIAL
@@ -54,3 +54,5 @@ REQUIREMENT_MATRIX_STATUS=PARTIAL：映射表存在，但旧矩阵尚未按最�
 Prompt13先执行18项状态攻击、修复后回归；Prompt14逐页适老终检；Prompt15冻结同版Web截图与PDF；Prompt16保留研究证据PARTIAL；Prompt17–18正式文档和演示指南；Prompt19独立Reviewer；Prompt20重建回归；Prompt21–24提交包、GO审计、远端main与本人操作清单。
 
 研究已有Huawei和Apple文字记录，设备/版本/截图等证据仍需核实，不编造实际体验或真人测试。最终平台材料上传、SHA确认及交卷尚未完成，也不能由OAuth成功推定。
+
+Prompt13：43/43状态测试、7/7 Docker浏览器专项检查通过；详见`validation/state-consistency-audit.md`。
