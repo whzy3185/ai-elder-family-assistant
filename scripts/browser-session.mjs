@@ -6,7 +6,7 @@ export async function connectBrowser() {
  const socket=new WebSocket(tab.webSocketDebuggerUrl),pending=new Map();let seq=0;
  socket.addEventListener('message',e=>{const r=JSON.parse(e.data);if(pending.has(r.id)){pending.get(r.id)(r);pending.delete(r.id);}});
  await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
- const call=(method,params={})=>{const id=++seq;socket.send(JSON.stringify({id,method,params}));return new Promise(resolve=>pending.set(id,resolve));};
+ const call=(method,params={})=>{const id=++seq;socket.send(JSON.stringify({id,method,params}));return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{pending.delete(id);reject(Error('Browser command timed out: '+method));},15000);pending.set(id,result=>{clearTimeout(timer);resolve(result);});});};
  const evaluate=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.error||r.result?.exceptionDetails)throw Error(JSON.stringify(r));return r.result.result.value;};
  const wait=ms=>new Promise(r=>setTimeout(r,ms));
  const navigate=async route=>{await call('Page.navigate',{url:appUrl+route});await wait(180);};
