@@ -159,7 +159,7 @@ VALIDATION_11_STATUS=PASS
 | 阶段 23 | 合并最终 `main` 并冻结 SHA | FAIL |
 | 阶段 24 | 提交前人工操作清单 | FAIL |
 
-详细缺口、负责阶段与验收证据见 [Gap Audit](GAP_AUDIT.md)。
+详细缺口、负责阶段与验收证据见 [Gap Audit](../GAP_AUDIT.md)。
 
 ## 7. 阶段 00 Gate
 

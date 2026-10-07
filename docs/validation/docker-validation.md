@@ -16,7 +16,7 @@
 | Docker Engine | 29.8.2，Linux/amd64 |
 | Docker Compose | 5.1.4 |
 | 存储驱动 | overlay2 |
-| 验证 Engine 位置 | `E:\WSL\CodexDocker` |
+| 验证 Engine 位置 | 专用WSL Engine目录（本机绝对路径已省略） |
 | 项目位置 | E 盘仓库 |
 | 浏览器 | Microsoft Edge 154（Chromium headless） |
 

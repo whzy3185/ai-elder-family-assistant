@@ -1,30 +1,30 @@
 # 产品化改造进度
 
-原业务基线：1.0.1，ca044a5；远端最新research/main已读取。此前业务修复与未提交图文作为基线归档，原最终交付阶段等待本轮完成。
+最终版本1.1.1；运行源码冻结5444021。P00–P17按顺序完成，每阶段的方案、实际实施与验证分别留证，不把方案或历史PASS当成当前实现。
 
 | 阶段 | 工作 | Gate | 证据 |
 |---|---|---|---|
-| P00 | 取证与差距审计 | PASS | presentation-gap-audit.md、65页实测 |
-| P01–P17 | 结构、文案、视觉、实现、测试、导出、独立验收 | FAIL | 尚未完成，不提前宣称通过 |
+| P00 | 当前界面取证 | PASS | [记录](../validation/presentation-gap-audit.md) |
+| P01 | 三Surface结构 | PASS | [记录](../product/surface-architecture.md) |
+| P02 | 禁止清单 | PASS | [记录](../product/presentation-purity-guidelines.md) |
+| P03 | 文案矩阵 | PASS | [记录](../product/copy-matrix.md) |
+| P04 | 真实导航 | PASS | [记录](../product/product-navigation.md) |
+| P05 | 视觉方向 | PASS | [记录](../product/visual-direction.md) |
+| P06 | 页面结构 | PASS | [记录](../product/page-archetypes.md) |
+| P07 | 产品界面重构 | PASS | [记录](../validation/product-surface-reconstruction.md) |
+| P08 | 独立评审辅助 | PASS | [记录](../validation/review-surface-validation.md) |
+| P09 | 适老审计 | PASS | [记录](../validation/senior-usability-audit.md) |
+| P10 | 可见DOM自动审计 | PASS | [记录](../validation/presentation-purity-audit.md) |
+| P11 | 仓库命名整理 | PASS | [记录](../validation/repository-naming-audit.md) |
+| P12 | 业务回归 | PASS | [记录](../validation/walkthrough.md) |
+| P13 | 全新Docker | PASS | [记录](../validation/productization-docker-validation.md) |
+| P14 | 人工视觉审查 | PASS | [记录](../validation/final-visual-review.md) |
+| P15 | 最终静态导出 | PASS | [记录](../validation/final-export-validation.md) |
+| P16 | 独立产品审查 | PASS | [记录](../validation/independent-product-review.md) |
+| P17 | 最终定义完成 | PASS | [记录](productization-definition-of-done.md) |
 
-本表只记录实际完成结果；后续每阶段通过后提交一次。研究严格体验证据仍PARTIAL，平台仓库确认/上传/交卷未完成。
+独立审查在1.1.0发现1个P1及2个P2产品问题，1.1.1修复后针对性复验全部通过。材料复核再补齐3个原有关系状态的独立编号；Reviewer从正常路径复验通过。最终68画面（63产品+5辅助）、73页原型PDF、7页产品说明。
 
-P01=PASS：三Surface结构方案已提交；实现验证留在P07/P08，不将方案当已完成界面。
-P02=PASS：机器禁止清单及用户可见内容规范已提交。
-P03=PASS：65项Copy Matrix逐页完成；仅内容方案，尚未改Web。
-P04=PASS：双方真实双项导航冻结，无测试角色Tab。
-P05=PASS：生活记事本视觉方向与字体/色彩/间距/圆角令牌冻结，未改CSS。
-P06=PASS：65编号映射至输入/确认/结果/详情及等待/失败等不同结构。
-P07=PASS：产品渲染、视觉和三Surface路由已实施；60产品画面及路由实际检查，45状态测试通过。完整辅助能力由P08继续。
-P08=PASS：13自然中文场景、5辅助状态、身份/时间/恢复通过实际点击，产品外独立工具保留原复现能力。
-P09=PASS：60页标准/24px大字/200%等效缩放检查0问题，键盘标签与焦点通过；Chrome原生缩放菜单读取超时，测试方式和限制已注明。
-P10=PASS：65状态扫描与默认两路由检查，forbidden visible tokens=0；内部编号/枚举无泄漏，产品无测试/切身份动作。
-P11=PASS：Prompt驱动文件/目录与设计命名按用途整理，路径引用同步，45状态测试通过；历史证据保留。
-P12=PASS：45状态测试、T01–T09及两组附加流程、七组浏览器专项和完整键盘主流程通过；角色独立地址正常操作，异常由Review进入。
-P13=PASS：compose down/up全新容器healthy，11业务流程和65状态purity再次通过，老人/家属/Review子路由刷新正常。
-P14=PASS：最终新Docker13类代表画面人工审查通过；场景特异性、用户语言、主要操作和布局差异可见。
-P15=PASS：转义修复后重新导出65张同版画面、69页原型PDF及7页产品说明PDF；渲染人工检查通过，源码及图片SHA-256全部一致。见final-export-validation.md。
+46项状态测试、11组业务流程、7组浏览器专项及键盘主流程均有实测；最终63产品画面三布局检查与实际浏览器200%缩放通过。缩放由Chrome默认页面偏好启用，未点击原生菜单，不冒充真人可用性测试。
 
-P16=PASS：新独立Reviewer仅从原题、README和Docker实操，65画面逐个检查、主流程与异常走查；发现1个P1及2个P2产品问题，1.1.1全部复验修复，无Presentation P0。研究材料仍PARTIAL。修复后46项状态测试、11业务流程与60实际浏览器200%缩放检查通过，图文重新导出。
-
-P16补充：材料复核补齐邀请等待、申请等待和家属结束协作确认三个独立编号，Reviewer从正常路径再次复验通过；最终68项、73页原型PDF。63产品标准/大字/实际浏览器200%检查通过。未增加业务功能。
+两次竞品体验严格证据仍PARTIAL。原项目最终Docker回归、交付整理、GO审计、main推送及本人平台动作继续分别记录，不由本轮Gate推定完成。
