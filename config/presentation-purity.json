@@ -1,0 +1,5 @@
+{
+  "productForbidden": ["Prompt","Prototype","Demo","Scenario","Fixture","Snapshot","Reset","MAIN_FLOW","AI_FAILURE","SEND_FAILURE","PENDING","INVALIDATED","taskVersion","schema","adapter","payload","requestId","test","debug","演示","模拟","预置","测试","评审","控制台","快照","加载场景","不会调用真实","本地服务","测试状态","测试数据"],
+  "reviewForbidden": ["Prompt","Prototype","MAIN_FLOW","RECOGNITION_ERROR","AI_FAILURE","SEND_FAILURE","PENDING_FAMILY","CHANGE_PROPOSED","INVALIDATED","taskVersion","schema","adapter","payload","requestId","fixture","snapshot","scenario","Reset","Fixed Demo Clock"],
+  "reviewAllowed": ["评审辅助","演示时间","快速查看","切换身份","恢复初始状态","语音、消息和提醒为预置演示状态。"]
+}
