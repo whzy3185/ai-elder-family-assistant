@@ -1,0 +1,2264 @@
+{
+  "status": "PASS",
+  "testedAt": "2026-10-07T11:22:56.675Z",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.98",
+    "revision": "@b859317bf11f6be47f9b7799ec690a0a42a1fb33",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.20"
+  },
+  "method": "Chrome default page zoom 200%, CDP physical viewport 390x844 and requested deviceScaleFactor=1",
+  "count": 63,
+  "zoomedWorkflow": true,
+  "results": [
+    {
+      "id": "EL-REL-01A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "等小梅打开邀请",
+        "buttons": [
+          {
+            "text": "取消这次邀请",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REL-01A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "等妈妈确认",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REL-04A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "结束和妈妈的协作？",
+        "buttons": [
+          {
+            "text": "确认结束协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "继续保留协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-00",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "张阿姨，记一件事吧",
+        "buttons": [
+          {
+            "text": "记一件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "字太小？调整阅读方式",
+            "width": 163,
+            "height": 70
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "想记什么事？",
+        "buttons": [
+          {
+            "text": "帮我整理",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "用语音记事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "自己填写时间和地点",
+            "width": 163,
+            "height": 70
+          },
+          {
+            "text": "返回，保留内容",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-02",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "正在帮你整理",
+        "buttons": [
+          {
+            "text": "返回，接着写",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-03A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "我这样记，对吗？",
+        "buttons": [
+          {
+            "text": "修改时间",
+            "width": 72,
+            "height": 48
+          },
+          {
+            "text": "确认记好",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "返回输入",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-03B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "我这样记，对吗？",
+        "buttons": [
+          {
+            "text": "修改时间",
+            "width": 72,
+            "height": 48
+          },
+          {
+            "text": "改时间",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "返回输入",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-04",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "改成几点？",
+        "buttons": [
+          {
+            "text": "改成上午9:00",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "不改了",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-05",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "再看一遍",
+        "buttons": [
+          {
+            "text": "修改时间",
+            "width": 72,
+            "height": 48
+          },
+          {
+            "text": "确认记好",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "返回输入",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-06",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "办理公交卡年审",
+        "buttons": [
+          {
+            "text": "请小梅陪你去",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "只提醒我自己",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "修改时间",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "这件事办完了",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "取消这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-07",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "该准备出发了",
+        "buttons": [
+          {
+            "text": "知道了，看看这件事",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-08",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "要改时间吗？",
+        "buttons": [
+          {
+            "text": "继续修改",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "先不修改",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-09A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这件事办完了吗？",
+        "buttons": [
+          {
+            "text": "已经办完了",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "还没有，返回这件事",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-09B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这件事办完了",
+        "buttons": [
+          {
+            "text": "回到首页",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-TASK-10",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这件事办完了",
+        "buttons": [
+          {
+            "text": "已经办完\n办理公交卡年审\n上午 9:00 · 社区服务中心\n查看这件事 →",
+            "width": 163,
+            "height": 250.390625
+          },
+          {
+            "text": "记一件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "字太小？调整阅读方式",
+            "width": 163,
+            "height": 70
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "还需要时间和地点",
+        "buttons": [
+          {
+            "text": "填写时间和地点",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "返回输入",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-02A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这次没整理好",
+        "buttons": [
+          {
+            "text": "自己填写时间和地点",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "再试一次",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "返回，接着写",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-02B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "把这件事写下来",
+        "buttons": [
+          {
+            "text": "填好了，再看看",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "返回原话",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "要请小梅陪你去吗？",
+        "buttons": [
+          {
+            "text": "看看要告诉小梅的内容",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "只提醒我自己",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "返回这件事",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-01B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "只提醒你自己",
+        "buttons": [
+          {
+            "text": "回到这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-02",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "发给小梅前，再看看",
+        "buttons": [
+          {
+            "text": "就把这些发给小梅",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "先不发送",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "她能看到什么？",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-03",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "正在发给小梅",
+        "buttons": [
+          {
+            "text": "先不发送，返回看看",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-04A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "已经发给小梅",
+        "buttons": [
+          {
+            "text": "看看回复",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "回到这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "撤回陪同请求",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-04B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "等小梅回复",
+        "buttons": [
+          {
+            "text": "回到这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "撤回陪同请求",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-05",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "小梅可以陪你去",
+        "buttons": [
+          {
+            "text": "回到这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "修改时间",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-06",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "小梅这次不能陪你",
+        "buttons": [
+          {
+            "text": "回到这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-07",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "小梅想下午2:00去",
+        "buttons": [
+          {
+            "text": "同意，改到下午2:00",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "仍按上午 9:00",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-08",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "已改到下午2:00",
+        "buttons": [
+          {
+            "text": "看看内容，再问小梅",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "先保留自己的安排",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SHARE-09",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "仍按原来的时间",
+        "buttons": [
+          {
+            "text": "继续等小梅",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "撤回陪同请求",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-03",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "没有发给小梅",
+        "buttons": [
+          {
+            "text": "重新发送",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "先不发送",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-04",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "小梅还没有回复",
+        "buttons": [
+          {
+            "text": "再等一等",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "撤回陪同请求",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-05A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "不需要小梅陪了吗？",
+        "buttons": [
+          {
+            "text": "确认撤回陪同",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "继续等小梅",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-05B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "陪同请求已撤回",
+        "buttons": [
+          {
+            "text": "回到这件事",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-06A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "要取消这件事吗？",
+        "buttons": [
+          {
+            "text": "确认取消这件事",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "继续保留",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-06B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这件事已取消",
+        "buttons": [
+          {
+            "text": "回到首页",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-07A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "改到下午2:00？",
+        "buttons": [
+          {
+            "text": "确认改时间",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "先不修改",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-EX-07B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "已改到下午2:00",
+        "buttons": [
+          {
+            "text": "看看内容，再问小梅",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "先保留自己的安排",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-SET-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "看得更清楚",
+        "buttons": [
+          {
+            "text": "字再大一些",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "颜色更清楚",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "恢复通常的显示",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "回到首页",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "和小梅一起记挂",
+        "buttons": [
+          {
+            "text": "邀请小梅",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "以后再说",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REL-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "和妈妈建立协作",
+        "buttons": [
+          {
+            "text": "向妈妈申请",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-02",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "小梅想与你建立协作",
+        "buttons": [
+          {
+            "text": "是小梅，同意建立",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "这次先不同意",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "她能看到什么？",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-02A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "同意和小梅协作吗？",
+        "buttons": [
+          {
+            "text": "确认同意",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "返回",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-03",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这次先不建立协作",
+        "buttons": [
+          {
+            "text": "回到首页",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REL-03",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈这次先不同意",
+        "buttons": [
+          {
+            "text": "返回",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-06",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "小梅 · 女儿",
+        "buttons": [
+          {
+            "text": "回到事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "她能看到什么？",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "结束家庭协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REL-02",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈 · 张阿姨",
+        "buttons": [
+          {
+            "text": "查看消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "结束家庭协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-07",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "她能看到什么？",
+        "buttons": [
+          {
+            "text": "知道了",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-04A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "结束和小梅的协作？",
+        "buttons": [
+          {
+            "text": "确认结束协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "继续保留协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "EL-REL-05",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "家庭协作已结束",
+        "buttons": [
+          {
+            "text": "回到首页",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "事情",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REL-04",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "家庭协作已结束",
+        "buttons": [
+          {
+            "text": "回到首页",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-00",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈的消息",
+        "buttons": [
+          {
+            "text": "看看家庭协作",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈的消息",
+        "buttons": [
+          {
+            "text": "等你回复\n办理公交卡年审\n10月7日 上午 9:00\n社区服务中心\n查看消息 →",
+            "width": 163,
+            "height": 294.390625
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-02",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈想请你陪她去",
+        "buttons": [
+          {
+            "text": "我可以陪你",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "这次不能陪同",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "建议下午2:00去",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "返回消息",
+            "width": 163,
+            "height": 48
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-03A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "确认可以陪妈妈？",
+        "buttons": [
+          {
+            "text": "确认可以陪",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "先不发送",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-03B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "已告诉妈妈你可以陪同",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-04A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "这次不能陪妈妈？",
+        "buttons": [
+          {
+            "text": "确认不能陪",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "先不发送",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-04B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "已告诉妈妈这次不能陪同",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-05A",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "建议下午2:00去？",
+        "buttons": [
+          {
+            "text": "把建议告诉妈妈",
+            "width": 163,
+            "height": 86
+          },
+          {
+            "text": "先不发送",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-REQ-05B",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "已把建议告诉妈妈",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-EX-01",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈不用你陪同了",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-EX-02",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "妈妈取消了这件事",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    },
+    {
+      "id": "FM-EX-03",
+      "status": "PASS",
+      "metrics": {
+        "innerWidth": 195,
+        "devicePixelRatio": 2,
+        "visualWidth": 195,
+        "productWidth": 195,
+        "scrollWidth": 195,
+        "clientWidth": 195,
+        "title": "之前的安排更新了",
+        "buttons": [
+          {
+            "text": "回到消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "消息",
+            "width": 163,
+            "height": 57
+          },
+          {
+            "text": "家人",
+            "width": 163,
+            "height": 57
+          }
+        ]
+      },
+      "issues": []
+    }
+  ]
+}

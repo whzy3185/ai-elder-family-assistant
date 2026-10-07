@@ -25,12 +25,12 @@ items = json.loads(subprocess.check_output([
     "import {screenDefinitions} from './src/screen-catalog.js'; console.log(JSON.stringify(screenDefinitions));"
 ], cwd=ROOT, text=True))
 audit = json.loads((SCREENS / 'audit.json').read_text())
-assert audit['status'] == 'PASS' and audit['count'] == 65
+assert audit['status'] == 'PASS' and audit['count'] == len(items)
 for item in items:
     actual=next(x['standard'] for x in audit['results'] if x['id']==item['id'])
     item['name']=actual['title']
     if item['id'].startswith('DM-'):item['role']='评审辅助'
-assert len(items) == 65 and len(list(SCREENS.glob('*.png'))) == 65
+assert len(items) == len(list(SCREENS.glob('*.png')))
 pdfmetrics.registerFont(TTFont('Chinese', os.environ['PDF_FONT'], subfontIndex=0))
 c = canvas.Canvas(str(OUT / 'prototype-pages.pdf'), pagesize=(595, 842))
 c.setTitle(f'安心记事 - Release {VERSION} 完整页面原型')
@@ -42,7 +42,7 @@ c.setFont('Chinese', 18)
 c.drawString(42, 735, '面向老年人的 AI 日常事务与家庭协作助手')
 c.setFont('Chinese', 13)
 lines = [
-    f'Release {VERSION} | 2026-10-07 | 65 个页面与关键状态',
+    f'Release {VERSION} | 2026-10-07 | {len(items)} 个页面与关键状态',
     '全部图片来自最终 Docker Web；不是旧设计稿。',
     '主要演示视口：390 x 844；图片完整保留页面滚动内容。',
     '长页面采用随图片高度变化的 PDF 页面，避免缩小或截断。',
@@ -66,7 +66,7 @@ for start in range(0, len(items), 22):
         y = 752 - row * 31
         c.drawString(42, y, item['id'])
         c.drawString(165, y, item['name'])
-        c.drawRightString(555, y, str(5 + start + row))
+        c.drawRightString(555, y, str(6 + start + row))
     c.setFont('Chinese', 10)
     c.drawString(42, 42, '索引右侧为 PDF 页码；同编号图片位于 exports/screens/。')
     c.showPage()
@@ -85,22 +85,22 @@ for number, item in enumerate(items, 1):
     c.drawString(30, page_height - 46, item['name'])
     c.drawImage(str(image), 30+(390-width)/2, 30, width=width, height=height)
     c.setFont('Chinese', 9)
-    c.drawString(30, 12, f"Release {VERSION} | {item['role']} | {number}/65 | 完整滚动页面")
+    c.drawString(30, 12, f"Release {VERSION} | {item['role']} | {number}/{len(items)} | 完整滚动页面")
     c.bookmarkPage(item['id'])
     c.addOutlineEntry(f"{item['id']} {item['name']}", item['id'], 0)
     c.showPage()
-    records.append({**item, 'image': f"screens/{item['id']}.png", 'pdfPage': number + 4,
+    records.append({**item, 'image': f"screens/{item['id']}.png", 'pdfPage': number + 5,
                     'width': width, 'height': height,
                     'imageSha256': hashlib.sha256(image.read_bytes()).hexdigest()})
 c.save()
 reader = PdfReader(str(OUT / 'prototype-pages.pdf'))
-assert len(reader.pages) == 69, len(reader.pages)
+assert len(reader.pages) == len(items)+5, len(reader.pages)
 for record in records:
     assert record['id'] in reader.pages[record['pdfPage']-1].extract_text()
 rows = [f'# Release {VERSION} 完整原型索引', '',
-        f'源码冻结：`{FREEZE_SHA}`。65/65 项来自同版 Docker Web 全长截图。', '',
+        f'源码冻结：`{FREEZE_SHA}`。{len(items)}/{len(items)} 项来自同版 Docker Web 全长截图。', '',
         'Web 入口：/review → 查看全部画面 → 对应自然中文标题。加载会替换当前模拟数据；页面编号只用于材料定位。', '',
-        '60产品图只截取手机产品；5项DM图分别截取独立辅助面板的身份、快捷情况、时间和恢复区域。', '',
+        '63产品图只截取手机产品；5项DM图分别截取独立辅助面板的身份、快捷情况、时间和恢复区域。', '',
         '| 页面编号 | 名称 | 角色 | 状态 | 图片 | PDF 页 | Web 入口 | 测试 |',
         '|---|---|---|---|---|---:|---|---|']
 for record in records:
@@ -112,4 +112,4 @@ source_files = [ROOT / x for x in ['package.json','package-lock.json','index.htm
 source_files += sorted((ROOT / 'src').rglob('*'))
 manifest = {str(f.relative_to(ROOT)):hashlib.sha256(f.read_bytes()).hexdigest() for f in source_files if f.is_file()}
 (OUT / 'source-manifest.json').write_text(json.dumps({'version':VERSION,'sourceFreezeSha':FREEZE_SHA,'files':manifest},indent=2)+'\n')
-print(json.dumps({'status':'PASS','screens':65,'pdfPages':len(reader.pages),'output':'exports/prototype-pages.pdf'}))
+print(json.dumps({'status':'PASS','screens':len(items),'pdfPages':len(reader.pages),'output':'exports/prototype-pages.pdf'}))

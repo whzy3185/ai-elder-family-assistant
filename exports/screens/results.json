@@ -1,7 +1,41 @@
 {
-  "testedAt": "2026-10-07T10:48:35.937Z",
-  "count": 60,
+  "testedAt": "2026-10-07T11:24:07.185Z",
+  "count": 63,
   "results": [
+    {
+      "id": "EL-REL-01A",
+      "text": "记\n安心记事\n等小梅打开邀请\n\n她申请后，还要你亲自同意。\n\n梅\n小梅 · 女儿\n\n每件事，都尊重她的决定\n\n请小梅打开邀请\n\n小梅申请后，还需要你亲自同意。\n\n请小梅在她的设备上打开你的邀请。\n\n取消这次邀请\n事情\n家人",
+      "actions": [
+        "cancel-qr",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REL-01A",
+      "text": "记\n安心记事\n等妈妈确认\n\n申请已经送出。\n\n张\n妈妈 · 张阿姨\n\n每件事，都尊重她的决定\n\n申请已经送出，等妈妈亲自确认。\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REL-04A",
+      "text": "记\n安心记事\n结束和妈妈的协作？\n\n妈妈的事情和提醒会保留。\n\n之后不能再收到或回复妈妈的陪同请求。妈妈自己的事情和提醒会保留。\n\n确认结束协作\n继续保留协作\n消息\n家人",
+      "actions": [
+        "end-relationship",
+        "relationship",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
     {
       "id": "EL-TASK-00",
       "text": "记\n安心记事\n张阿姨，记一件事吧\n06日\n10月 星期二\n把要办的事\n一件件记好\n一\n\n明天要办什么事？\n现在记下，到了时间提醒你。\n\n记一件事\n字太小？调整阅读方式\n事情\n家人",
@@ -550,7 +584,7 @@
     },
     {
       "id": "EL-REL-04A",
-      "text": "记\n安心记事\n结束和小梅的协作？\n\n自己的事情和提醒会保留。\n\n之后不能再收到或回复陪同请求。自己的事情和提醒会保留。\n\n确认结束协作\n继续保留协作\n事情\n家人",
+      "text": "记\n安心记事\n结束和小梅的协作？\n\n自己的事情和提醒会保留。\n\n之后不能再请小梅陪同。自己的事情和提醒会保留。\n\n确认结束协作\n继续保留协作\n事情\n家人",
       "actions": [
         "end-relationship",
         "relationship",
@@ -711,7 +745,7 @@
     },
     {
       "id": "FM-EX-03",
-      "text": "记\n安心记事\n✓\n之前的安排更新了\n\n请回到消息列表看新的时间。\n\n请回到消息，查看当前的安排。\n\n回到消息\n消息\n家人",
+      "text": "记\n安心记事\n✓\n之前的安排更新了\n\n之前的陪同安排不再继续。\n\n妈妈还没有发来新的安排。她再告诉你后，才能确认陪同。\n\n回到消息\n消息\n家人",
       "actions": [
         "family-home",
         "family-home",

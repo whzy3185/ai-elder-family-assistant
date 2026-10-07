@@ -1,5 +1,47 @@
 [
   {
+    "id": "EL-REL-01A",
+    "name": "等小梅打开邀请",
+    "role": "老人",
+    "entry": "点击邀请小梅后",
+    "operations": "取消这次邀请",
+    "next": "EL-TASK-00，或小梅申请后EL-REL-02",
+    "test": "关系建立主流程",
+    "image": "screens/EL-REL-01A.png",
+    "pdfPage": 6,
+    "width": 390,
+    "height": 844,
+    "imageSha256": "629cd306b8f6cac3512a18e284fef5f2116c1770c12edd0c9b5340693dcaabac"
+  },
+  {
+    "id": "FM-REL-01A",
+    "name": "等妈妈确认",
+    "role": "家属",
+    "entry": "向妈妈申请后",
+    "operations": "回到消息",
+    "next": "FM-REQ-00；妈妈确认后FM-REL-02",
+    "test": "关系建立主流程",
+    "image": "screens/FM-REL-01A.png",
+    "pdfPage": 7,
+    "width": 390,
+    "height": 844,
+    "imageSha256": "91377cd8be8a3f2999c65eea3a5dfb7fad906c8a48d5b0588ace8e534e941949"
+  },
+  {
+    "id": "FM-REL-04A",
+    "name": "结束和妈妈的协作？",
+    "role": "家属",
+    "entry": "家人页面点击结束家庭协作",
+    "operations": "确认结束或继续保留",
+    "next": "FM-REL-04或FM-REL-02",
+    "test": "独立审查复验",
+    "image": "screens/FM-REL-04A.png",
+    "pdfPage": 8,
+    "width": 390,
+    "height": 844,
+    "imageSha256": "af8c7177add7110c61e92d95e142cbd901444015fecbe8167aa84174eb974a9b"
+  },
+  {
     "id": "EL-TASK-00",
     "name": "张阿姨，记一件事吧",
     "role": "老人",
@@ -8,7 +50,7 @@
     "next": "`EL-TASK-01` 或 `EL-REL-01`",
     "test": "`TC-STATE-001`",
     "image": "screens/EL-TASK-00.png",
-    "pdfPage": 5,
+    "pdfPage": 9,
     "width": 390,
     "height": 844,
     "imageSha256": "b74c5507cdd5b2d7dfa2d601e8fad2d9470158125c1139889a2060cd6a397c34"
@@ -22,7 +64,7 @@
     "next": "`EL-TASK-02` 或首页",
     "test": "`TC-MAIN-001`、`TC-AI-003`",
     "image": "screens/EL-TASK-01.png",
-    "pdfPage": 6,
+    "pdfPage": 10,
     "width": 390,
     "height": 911,
     "imageSha256": "2bdc9265ba14c618621c46e4e8038a623bab4f1c6d3cdd0ac254155292b2a52b"
@@ -36,7 +78,7 @@
     "next": "`EL-TASK-03A`、`EL-TASK-03B`、`EL-EX-01` 或 `EL-EX-02A`",
     "test": "`TC-MAIN-002`",
     "image": "screens/EL-TASK-02.png",
-    "pdfPage": 7,
+    "pdfPage": 11,
     "width": 390,
     "height": 844,
     "imageSha256": "a16ab1f7a6587726dc6e2b897e7061808b47f0f1fe8705f8a39fb5bd74499e37"
@@ -50,7 +92,7 @@
     "next": "`EL-TASK-04` 或 `EL-TASK-05`",
     "test": "`TC-AI-005`",
     "image": "screens/EL-TASK-03A.png",
-    "pdfPage": 8,
+    "pdfPage": 12,
     "width": 390,
     "height": 883,
     "imageSha256": "9302206da49f7583f9d50c00f2900d760f036b751d25f2a36549bc221b5e4257"
@@ -64,7 +106,7 @@
     "next": "`EL-TASK-04` 或 `EL-TASK-05`",
     "test": "`TC-MAIN-003/004`",
     "image": "screens/EL-TASK-03B.png",
-    "pdfPage": 9,
+    "pdfPage": 13,
     "width": 390,
     "height": 883,
     "imageSha256": "782ac345fb6735dbab4f4f852efd97be1c7222150ddab58a52a01a1764dcdd9b"
@@ -78,7 +120,7 @@
     "next": "`EL-TASK-05` 或 `EL-TASK-03B`",
     "test": "`TC-MAIN-004`",
     "image": "screens/EL-TASK-04.png",
-    "pdfPage": 10,
+    "pdfPage": 14,
     "width": 390,
     "height": 844,
     "imageSha256": "4949a3f2837d93cffa53a411e957edb78ececb25c8d2c7d9091102999de58eb9"
@@ -92,7 +134,7 @@
     "next": "`EL-TASK-06` 或 `EL-TASK-03B`",
     "test": "`TC-MAIN-005/006`",
     "image": "screens/EL-TASK-05.png",
-    "pdfPage": 11,
+    "pdfPage": 15,
     "width": 390,
     "height": 883,
     "imageSha256": "0e65c25d277b682829963b74191ba839638967ac05de1651bf7c4920e8709ae7"
@@ -106,7 +148,7 @@
     "next": "`EL-SHARE-01`、`EL-TASK-08` 或 `EL-EX-06A`",
     "test": "`TC-REM-001`",
     "image": "screens/EL-TASK-06.png",
-    "pdfPage": 12,
+    "pdfPage": 16,
     "width": 390,
     "height": 1047,
     "imageSha256": "1309203cffa9b80dffa7287503dc4368c2111466dfa243717df00ff7580eaa9f"
@@ -120,7 +162,7 @@
     "next": "`EL-TASK-06`",
     "test": "`TC-REM-002`",
     "image": "screens/EL-TASK-07.png",
-    "pdfPage": 13,
+    "pdfPage": 17,
     "width": 390,
     "height": 844,
     "imageSha256": "fae179b8a240189fca1cdb0efe42e5ae9358cd540698bed205e4cfe8bade02c9"
@@ -134,7 +176,7 @@
     "next": "`EL-EX-07A` 或详情",
     "test": "`TC-VERSION-001`",
     "image": "screens/EL-TASK-08.png",
-    "pdfPage": 14,
+    "pdfPage": 18,
     "width": 390,
     "height": 844,
     "imageSha256": "a27f3cdae91f52d9206b0941771ba01bc3ebd0883c490b098b99eeaea1775ea9"
@@ -148,7 +190,7 @@
     "next": "`EL-TASK-09B` 或详情",
     "test": "`TC-COMPLETE-001`",
     "image": "screens/EL-TASK-09A.png",
-    "pdfPage": 15,
+    "pdfPage": 19,
     "width": 390,
     "height": 844,
     "imageSha256": "101ca3b19ca0c3946dc9785b14afd152f7d8821adea97015fb0e636c03c83f42"
@@ -162,7 +204,7 @@
     "next": "`EL-TASK-10`",
     "test": "`TC-COMPLETE-001`",
     "image": "screens/EL-TASK-09B.png",
-    "pdfPage": 16,
+    "pdfPage": 20,
     "width": 390,
     "height": 844,
     "imageSha256": "8e5e908c926525f493c44f8337d549cf85b7afef6de1fd368e2e40d0ff0964eb"
@@ -176,7 +218,7 @@
     "next": "`EL-TASK-01` 或终态详情",
     "test": "`TC-STATE-004`",
     "image": "screens/EL-TASK-10.png",
-    "pdfPage": 17,
+    "pdfPage": 21,
     "width": 390,
     "height": 844,
     "imageSha256": "c1af32085bfb8ad15f26228ed2674342a1405584a5f2e68b29c90765d077fa30"
@@ -190,7 +232,7 @@
     "next": "`EL-EX-02B` 或 `EL-TASK-01`",
     "test": "`TC-AI-001`",
     "image": "screens/EL-EX-01.png",
-    "pdfPage": 18,
+    "pdfPage": 22,
     "width": 390,
     "height": 844,
     "imageSha256": "e5039c4036fbdc5b1e71c9b76caca4a8182171343d58a8f886cb9b15117e6849"
@@ -204,7 +246,7 @@
     "next": "`EL-TASK-02` 或 `EL-EX-02B`",
     "test": "`TC-AI-002`",
     "image": "screens/EL-EX-02A.png",
-    "pdfPage": 19,
+    "pdfPage": 23,
     "width": 390,
     "height": 844,
     "imageSha256": "84102ac1c5fc3eb3e89907a1ac567508385862be5915bfb758ccb9d6fb233ed0"
@@ -218,7 +260,7 @@
     "next": "`EL-TASK-05` 或来源页",
     "test": "`TC-AI-003`",
     "image": "screens/EL-EX-02B.png",
-    "pdfPage": 20,
+    "pdfPage": 24,
     "width": 390,
     "height": 1005,
     "imageSha256": "b4da70177bfce5d2585800dc10ef825845c56def9e0a4b18caea1c3cd02fd546"
@@ -232,7 +274,7 @@
     "next": "`EL-SHARE-02` 或 `EL-SHARE-01B`",
     "test": "`TC-MAIN-007`、`TC-SHARE-001`",
     "image": "screens/EL-SHARE-01.png",
-    "pdfPage": 21,
+    "pdfPage": 25,
     "width": 390,
     "height": 844,
     "imageSha256": "7d8031f817eb75954c9e5651987b52ef9565a16daebb1cf1ba097bd9ce333fdd"
@@ -246,7 +288,7 @@
     "next": "`EL-TASK-06`",
     "test": "`TC-SHARE-001`",
     "image": "screens/EL-SHARE-01B.png",
-    "pdfPage": 22,
+    "pdfPage": 26,
     "width": 390,
     "height": 844,
     "imageSha256": "abc318253dbdda004798af66aca70b971337b526cbb291396d88e0a07548a142"
@@ -260,7 +302,7 @@
     "next": "`EL-SHARE-03`、详情或 `EL-REL-07`",
     "test": "`TC-MAIN-008/009`",
     "image": "screens/EL-SHARE-02.png",
-    "pdfPage": 23,
+    "pdfPage": 27,
     "width": 390,
     "height": 844,
     "imageSha256": "5ed75edc1ad14694ca913d4df99e4c916ee8a61c927610145463b89dcef96793"
@@ -274,7 +316,7 @@
     "next": "`EL-SHARE-04A` 或 `EL-EX-03`",
     "test": "`TC-STATE-002`",
     "image": "screens/EL-SHARE-03.png",
-    "pdfPage": 24,
+    "pdfPage": 28,
     "width": 390,
     "height": 844,
     "imageSha256": "fb6f554f6ae398465ba336bde051f0de46b01a5ff9668f016b3573069688c1be"
@@ -288,7 +330,7 @@
     "next": "`EL-SHARE-04B`",
     "test": "`TC-MAIN-009`",
     "image": "screens/EL-SHARE-04A.png",
-    "pdfPage": 25,
+    "pdfPage": 29,
     "width": 390,
     "height": 844,
     "imageSha256": "9e0e753a1ec8b0196734ebcde9bc568537df4177b89dfa2d3914c94e2968df38"
@@ -302,7 +344,7 @@
     "next": "本页或 `EL-EX-05A`",
     "test": "`TC-MAIN-009`",
     "image": "screens/EL-SHARE-04B.png",
-    "pdfPage": 26,
+    "pdfPage": 30,
     "width": 390,
     "height": 844,
     "imageSha256": "406ba802eac93c38a71e378ef19d1da7585ecadb43f9bea080cc01f95e863c52"
@@ -316,7 +358,7 @@
     "next": "详情或 `EL-TASK-09A`",
     "test": "`TC-MAIN-011`",
     "image": "screens/EL-SHARE-05.png",
-    "pdfPage": 27,
+    "pdfPage": 31,
     "width": 390,
     "height": 844,
     "imageSha256": "83684941823d43360706e16b076d361af5c4985389d42a80fed48d7495297779"
@@ -330,7 +372,7 @@
     "next": "详情或 `EL-EX-06A`",
     "test": "`TC-COLLAB-002`",
     "image": "screens/EL-SHARE-06.png",
-    "pdfPage": 28,
+    "pdfPage": 32,
     "width": 390,
     "height": 844,
     "imageSha256": "6e889eb470e10b33c9c2563d4d19829fee490f8adb669bbc74bea554f038ed90"
@@ -344,7 +386,7 @@
     "next": "`EL-SHARE-08`、`EL-SHARE-09` 或 `EL-EX-05A`",
     "test": "`TC-COLLAB-003`",
     "image": "screens/EL-SHARE-07.png",
-    "pdfPage": 29,
+    "pdfPage": 33,
     "width": 390,
     "height": 844,
     "imageSha256": "a6eb32e6a1a7327cfab6ce3035c64e9735adce9dc4b9fd97229b9f7fac663441"
@@ -358,7 +400,7 @@
     "next": "`EL-EX-07B` 或详情",
     "test": "`TC-COLLAB-004`",
     "image": "screens/EL-SHARE-08.png",
-    "pdfPage": 30,
+    "pdfPage": 34,
     "width": 390,
     "height": 844,
     "imageSha256": "f4e76ec586c40c52642b0123a7bf4fc247f77f3378dfd8dab7542a15bb1edcce"
@@ -372,7 +414,7 @@
     "next": "`EL-SHARE-04B` 或 `EL-EX-05A`",
     "test": "`TC-COLLAB-005`",
     "image": "screens/EL-SHARE-09.png",
-    "pdfPage": 31,
+    "pdfPage": 35,
     "width": 390,
     "height": 844,
     "imageSha256": "69241a2d505e16c276ab0cd43f6ac3143f1bc36cb00c8cfa7c681bec9293e2d0"
@@ -386,7 +428,7 @@
     "next": "`EL-SHARE-03` 或 `EL-SHARE-01B`",
     "test": "`TC-REQ-001`",
     "image": "screens/EL-EX-03.png",
-    "pdfPage": 32,
+    "pdfPage": 36,
     "width": 390,
     "height": 844,
     "imageSha256": "b693a19053f9c6c706d5882c97e67b9034eda1a4d9e1e722349367eda0c70d79"
@@ -400,7 +442,7 @@
     "next": "本页或 `EL-EX-05A`",
     "test": "`TC-REQ-002`",
     "image": "screens/EL-EX-04.png",
-    "pdfPage": 33,
+    "pdfPage": 37,
     "width": 390,
     "height": 844,
     "imageSha256": "4b12bc57b44744d3add7a6ccd3d85be6d9ff0bd9b7204af4a748a255b0eca218"
@@ -414,7 +456,7 @@
     "next": "`EL-EX-05B` 或来源页",
     "test": "`TC-CANCEL-001`",
     "image": "screens/EL-EX-05A.png",
-    "pdfPage": 34,
+    "pdfPage": 38,
     "width": 390,
     "height": 844,
     "imageSha256": "51ae39db43177de3b16a88721a83e1373c3cb9ab3ea2130d7af44bac0a8dc5cd"
@@ -428,7 +470,7 @@
     "next": "`EL-TASK-06`",
     "test": "`TC-CANCEL-001`",
     "image": "screens/EL-EX-05B.png",
-    "pdfPage": 35,
+    "pdfPage": 39,
     "width": 390,
     "height": 844,
     "imageSha256": "de9a26e47a87eb853adfe2a81b35434616998c4809d3081a535a7ffd618e9c52"
@@ -442,7 +484,7 @@
     "next": "`EL-EX-06B` 或来源页",
     "test": "`TC-CANCEL-002`",
     "image": "screens/EL-EX-06A.png",
-    "pdfPage": 36,
+    "pdfPage": 40,
     "width": 390,
     "height": 844,
     "imageSha256": "e227ca5233f708eee00c214d7ea64cfa6c6a6e9f8332f8acfc3bba0444a8b9b0"
@@ -456,7 +498,7 @@
     "next": "`EL-TASK-10`",
     "test": "`TC-CANCEL-002`",
     "image": "screens/EL-EX-06B.png",
-    "pdfPage": 37,
+    "pdfPage": 41,
     "width": 390,
     "height": 844,
     "imageSha256": "9c60c5d3b7658e815ed045dd75b41dae4840f63092bd8aefdf88000c3372a90e"
@@ -470,7 +512,7 @@
     "next": "`EL-EX-07B` 或详情",
     "test": "`TC-VERSION-001`",
     "image": "screens/EL-EX-07A.png",
-    "pdfPage": 38,
+    "pdfPage": 42,
     "width": 390,
     "height": 844,
     "imageSha256": "05f097b0e9b74a22b6b4c122e982791c7ee58049aa6cabb2ed6f375387590096"
@@ -484,7 +526,7 @@
     "next": "`EL-SHARE-02` 或 `EL-SHARE-01B`",
     "test": "`TC-VERSION-001/002`",
     "image": "screens/EL-EX-07B.png",
-    "pdfPage": 39,
+    "pdfPage": 43,
     "width": 390,
     "height": 844,
     "imageSha256": "f4e76ec586c40c52642b0123a7bf4fc247f77f3378dfd8dab7542a15bb1edcce"
@@ -498,7 +540,7 @@
     "next": "返回来源页",
     "test": "`TC-A11Y-004`",
     "image": "screens/EL-SET-01.png",
-    "pdfPage": 40,
+    "pdfPage": 44,
     "width": 390,
     "height": 844,
     "imageSha256": "7520406e44146922ef024a00e762f3f76affaad651e9ecfe616167b38ebd4320"
@@ -512,7 +554,7 @@
     "next": "`FM-REL-01` 或首页",
     "test": "`TC-REL-001`",
     "image": "screens/EL-REL-01.png",
-    "pdfPage": 41,
+    "pdfPage": 45,
     "width": 390,
     "height": 844,
     "imageSha256": "4d167048fc23c45e0f836adfd894d9acfff1aa402ad65efbf9d8f1dbb238688f"
@@ -526,7 +568,7 @@
     "next": "`EL-REL-02` 或家属空页",
     "test": "`TC-REL-001`",
     "image": "screens/FM-REL-01.png",
-    "pdfPage": 42,
+    "pdfPage": 46,
     "width": 390,
     "height": 844,
     "imageSha256": "51b351e0844ea312628d421daa400aa58b4d62728f7340d3df140f4aae668824"
@@ -540,7 +582,7 @@
     "next": "`EL-REL-02A`、`EL-REL-03` 或 `EL-REL-07`",
     "test": "`TC-REL-001/002`",
     "image": "screens/EL-REL-02.png",
-    "pdfPage": 43,
+    "pdfPage": 47,
     "width": 390,
     "height": 844,
     "imageSha256": "a7852d42164216f2bcebd623181b1b5fee68b4764a027ec16c0b5b366348cc5b"
@@ -554,7 +596,7 @@
     "next": "`EL-REL-06` 或 `EL-REL-02`",
     "test": "`TC-REL-001`",
     "image": "screens/EL-REL-02A.png",
-    "pdfPage": 44,
+    "pdfPage": 48,
     "width": 390,
     "height": 844,
     "imageSha256": "01c41225bc2636065962113ff56e4cf21ce745fa496552658213d476523012ac"
@@ -568,7 +610,7 @@
     "next": "`EL-TASK-00`",
     "test": "`TC-REL-002`",
     "image": "screens/EL-REL-03.png",
-    "pdfPage": 45,
+    "pdfPage": 49,
     "width": 390,
     "height": 844,
     "imageSha256": "5e6dc64c19188c59cd5eca875ecfd4314faa83dd0ba804800f48e5d43541afe1"
@@ -582,7 +624,7 @@
     "next": "`FM-REQ-00`",
     "test": "`TC-REL-002`",
     "image": "screens/FM-REL-03.png",
-    "pdfPage": 46,
+    "pdfPage": 50,
     "width": 390,
     "height": 844,
     "imageSha256": "8a58510d09682d3c5f740d6ee6932b7a4c1a522f826be1640e306b5e65ce45db"
@@ -596,7 +638,7 @@
     "next": "`EL-TASK-00` 或 `EL-REL-04A`",
     "test": "`TC-REL-001`",
     "image": "screens/EL-REL-06.png",
-    "pdfPage": 47,
+    "pdfPage": 51,
     "width": 390,
     "height": 844,
     "imageSha256": "d32c780007b9cda815c0b076d51b7ea1b91635c2c79125a065a15352170db43c"
@@ -610,7 +652,7 @@
     "next": "`FM-REQ-00`",
     "test": "`TC-REL-001`",
     "image": "screens/FM-REL-02.png",
-    "pdfPage": 48,
+    "pdfPage": 52,
     "width": 390,
     "height": 844,
     "imageSha256": "a18ae2fc66bce2a06ab1f7048f8fb6e03a8ae7353656ec0e9af7cc7d7efe3deb"
@@ -624,7 +666,7 @@
     "next": "返回来源页",
     "test": "`TC-PERM-001`",
     "image": "screens/EL-REL-07.png",
-    "pdfPage": 49,
+    "pdfPage": 53,
     "width": 390,
     "height": 844,
     "imageSha256": "b45d3471e0a8574c0519729dfb5897328cb6080604921e6173adb60059026ad1"
@@ -638,10 +680,10 @@
     "next": "`EL-REL-05` 或来源页",
     "test": "`TC-REL-003`",
     "image": "screens/EL-REL-04A.png",
-    "pdfPage": 50,
+    "pdfPage": 54,
     "width": 390,
     "height": 844,
-    "imageSha256": "f9df59279e5728f85f7c4a954826186d489cbf9db41d73df5e5dcd25129e1833"
+    "imageSha256": "95024180b33af73555a084ca881d02bcc15ac68f881252c32bcf37ade442fca1"
   },
   {
     "id": "EL-REL-05",
@@ -652,7 +694,7 @@
     "next": "`EL-TASK-00`",
     "test": "`TC-REL-003`",
     "image": "screens/EL-REL-05.png",
-    "pdfPage": 51,
+    "pdfPage": 55,
     "width": 390,
     "height": 844,
     "imageSha256": "1d71442f107bca15c86e26bf15f2a624e4c5269237dcd13bdc69c3324bda54c6"
@@ -666,7 +708,7 @@
     "next": "`FM-REQ-00`",
     "test": "`TC-REL-003`",
     "image": "screens/FM-REL-04.png",
-    "pdfPage": 52,
+    "pdfPage": 56,
     "width": 390,
     "height": 844,
     "imageSha256": "564870bec6aea9a43e2e8ed80ae5392443f6cb553f9675b52b6543dd6e748984"
@@ -680,7 +722,7 @@
     "next": "关系详情或本页",
     "test": "`TC-STATE-001`",
     "image": "screens/FM-REQ-00.png",
-    "pdfPage": 53,
+    "pdfPage": 57,
     "width": 390,
     "height": 844,
     "imageSha256": "e4de7de0d1063a8e9845ef0064ab8dced425df7f2dfe84c73540fcd3bb532824"
@@ -694,7 +736,7 @@
     "next": "`FM-REQ-02`",
     "test": "`TC-MAIN-010`",
     "image": "screens/FM-REQ-01.png",
-    "pdfPage": 54,
+    "pdfPage": 58,
     "width": 390,
     "height": 844,
     "imageSha256": "72aa10af7fe15ce31bac5225e0bd444fb55e82f87a35682c396995f528e82f6e"
@@ -708,7 +750,7 @@
     "next": "`FM-REQ-03A`、`04A`、`05A`",
     "test": "`TC-MAIN-010`",
     "image": "screens/FM-REQ-02.png",
-    "pdfPage": 55,
+    "pdfPage": 59,
     "width": 390,
     "height": 880,
     "imageSha256": "c8cc329cae0a29d0cdb165744c8984457bb5c77128d68f91282beba40b7b8e27"
@@ -722,7 +764,7 @@
     "next": "`FM-REQ-03B` 或详情",
     "test": "`TC-COLLAB-001`",
     "image": "screens/FM-REQ-03A.png",
-    "pdfPage": 56,
+    "pdfPage": 60,
     "width": 390,
     "height": 844,
     "imageSha256": "801c4c7a4b75b688790ec5564114fdafcd91477bf5e8f45207c4a7c581c042de"
@@ -736,7 +778,7 @@
     "next": "`FM-REQ-01`",
     "test": "`TC-COLLAB-001`",
     "image": "screens/FM-REQ-03B.png",
-    "pdfPage": 57,
+    "pdfPage": 61,
     "width": 390,
     "height": 844,
     "imageSha256": "b7fe509fee4be26ca1cfee7407ac3daa60572f56b5656073fd460e1dc3602f53"
@@ -750,7 +792,7 @@
     "next": "`FM-REQ-04B` 或详情",
     "test": "`TC-COLLAB-002`",
     "image": "screens/FM-REQ-04A.png",
-    "pdfPage": 58,
+    "pdfPage": 62,
     "width": 390,
     "height": 844,
     "imageSha256": "6943b1aaf60bb652eb6f74c8f3f88af72ce47622dbae8681148e9c83971a2446"
@@ -764,7 +806,7 @@
     "next": "`FM-REQ-01`",
     "test": "`TC-COLLAB-002`",
     "image": "screens/FM-REQ-04B.png",
-    "pdfPage": 59,
+    "pdfPage": 63,
     "width": 390,
     "height": 844,
     "imageSha256": "8c0ca98b8476f6e5a3ff1905845295a672f31cbdd7ace811ec47a14b97a8a110"
@@ -778,7 +820,7 @@
     "next": "`FM-REQ-05B` 或详情",
     "test": "`TC-COLLAB-003`",
     "image": "screens/FM-REQ-05A.png",
-    "pdfPage": 60,
+    "pdfPage": 64,
     "width": 390,
     "height": 844,
     "imageSha256": "d4b0c0e7dc43f978148547b22e5ccce38c02726c9c7e25ff3b53fa5b2290b9fd"
@@ -792,7 +834,7 @@
     "next": "`FM-REQ-01`",
     "test": "`TC-COLLAB-003`",
     "image": "screens/FM-REQ-05B.png",
-    "pdfPage": 61,
+    "pdfPage": 65,
     "width": 390,
     "height": 844,
     "imageSha256": "f460a26946fa8b3b044ccf261930e30c6e794f5bd1092638026a5b71a8f4c055"
@@ -806,7 +848,7 @@
     "next": "`FM-REQ-00`",
     "test": "`TC-CANCEL-001`",
     "image": "screens/FM-EX-01.png",
-    "pdfPage": 62,
+    "pdfPage": 66,
     "width": 390,
     "height": 844,
     "imageSha256": "352df034cffb45312cfa6003df9091658dd494a42ae355f8d8cb8b5e24b808e5"
@@ -820,7 +862,7 @@
     "next": "`FM-REQ-00`",
     "test": "`TC-CANCEL-002`",
     "image": "screens/FM-EX-02.png",
-    "pdfPage": 63,
+    "pdfPage": 67,
     "width": 390,
     "height": 844,
     "imageSha256": "2ee5b0843ecfccc3dcdbb38b25a64ac8cdb15976a8f101591dc0426b792fe550"
@@ -834,10 +876,10 @@
     "next": "`FM-REQ-00/01`",
     "test": "`TC-VERSION-002`",
     "image": "screens/FM-EX-03.png",
-    "pdfPage": 64,
+    "pdfPage": 68,
     "width": 390,
     "height": 844,
-    "imageSha256": "bfd35e4aa3133535860dfa19044c57c1a5cb92330384c55ae27daac49e3a4aef"
+    "imageSha256": "c136e687f6bc88a77e526d600c2f10acec2cda6148ac8415344dd5ea05c11333"
   },
   {
     "id": "DM-01",
@@ -848,7 +890,7 @@
     "next": "对应角色同一业务状态",
     "test": "`TC-DEMO-001`",
     "image": "screens/DM-01.png",
-    "pdfPage": 65,
+    "pdfPage": 69,
     "width": 338,
     "height": 282,
     "imageSha256": "f99b8cef590785cb66c90503605f9c3a6e356ca6b655d73671ae499e33d1a9de"
@@ -862,7 +904,7 @@
     "next": "场景起始页面",
     "test": "`TC-DEMO-002`",
     "image": "screens/DM-02.png",
-    "pdfPage": 66,
+    "pdfPage": 70,
     "width": 338,
     "height": 889,
     "imageSha256": "ab90d24aff72e5250692929baad802822b06e7b4ad379b984d32de5938a55dd0"
@@ -876,7 +918,7 @@
     "next": "相关提醒/未回应页面",
     "test": "`TC-DEMO-003`",
     "image": "screens/DM-03.png",
-    "pdfPage": 67,
+    "pdfPage": 71,
     "width": 338,
     "height": 219,
     "imageSha256": "9b03878acd8a577a989b3b6eb2d13064cce2c29d99c0caf98653d21df62bd24f"
@@ -890,7 +932,7 @@
     "next": "`DM-04B` 或原页",
     "test": "`TC-DEMO-004`",
     "image": "screens/DM-04A.png",
-    "pdfPage": 68,
+    "pdfPage": 72,
     "width": 338,
     "height": 231,
     "imageSha256": "fbb48a4167bc73e855a75b116dd5a326688ba32b6810230c207ad30327ece819"
@@ -904,7 +946,7 @@
     "next": "`EL-REL-01`",
     "test": "`TC-DEMO-004`",
     "image": "screens/DM-04B.png",
-    "pdfPage": 69,
+    "pdfPage": 73,
     "width": 338,
     "height": 136,
     "imageSha256": "4f980806ce7b6ff06595d3ce7e42719de9b6ccbaebe8bdb3a5cfea44918c204b"

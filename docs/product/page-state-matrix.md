@@ -1,30 +1,33 @@
 # 页面与状态清单
 
-版本1.1.0；60产品画面与5独立辅助画面。每项有编号、角色、入口、实际按钮、去向和同版原型位置。产品里不显示材料编号，/review按自然中文标题进入。邀请准备/申请等待合并在关系页面内，权限或取消确认仍独立。
+版本1.1.1；63产品画面与5独立辅助画面。每项有编号、角色、入口、实际按钮、去向和同版原型位置。产品里不显示材料编号，/review按自然中文标题进入。邀请等待、申请等待及双方结束协作确认分别编号；权限及取消确认独立。
 
 | 编号 | 当前画面名称 | 角色 | 进入方式 | 主要操作 | 去向 | 原型位置 |
 |---|---|---|---|---|---|---|
-| EL-TASK-00 | 张阿姨，记一件事吧 | 老人 | 已登录 预设案例；无事务 | 记一件事；字太小？调整阅读方式 | EL-TASK-01；EL-SET-01 | [PNG](../../exports/screens/EL-TASK-00.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-REL-01A | 等小梅打开邀请 | 老人 | 点击邀请小梅后 | 取消这次邀请 | EL-TASK-00 | [PNG](../../exports/screens/EL-REL-01A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| FM-REL-01A | 等妈妈确认 | 家属 | 向妈妈申请后 | 回到消息 | FM-REQ-00/01 | [PNG](../../exports/screens/FM-REL-01A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| FM-REL-04A | 结束和妈妈的协作？ | 家属 | 家人页面点击结束家庭协作 | 确认结束协作；继续保留协作 | EL-REL-05/FM-REL-04；EL-REL-01/02/06或FM-REL-01/02 | [PNG](../../exports/screens/FM-REL-04A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-TASK-00 | 张阿姨，记一件事吧 | 老人 | 已登录 预设情况；无事务 | 记一件事；字太小？调整阅读方式 | EL-TASK-01；EL-SET-01 | [PNG](../../exports/screens/EL-TASK-00.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-01 | 想记什么事？ | 老人 | 点击“记一件事” | 帮我整理；用语音记事；自己填写时间和地点；返回，保留内容 | EL-TASK-02 → EL-TASK-03B；当前输入页填入原话；EL-EX-02B；EL-TASK-00/10 | [PNG](../../exports/screens/EL-TASK-01.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-02 | 正在帮你整理 | 老人 | 提交有效输入 | 返回，接着写 | EL-TASK-01 | [PNG](../../exports/screens/EL-TASK-02.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-TASK-03A | 我这样记，对吗？ | 老人 | 正常解析 预设案例 成功 | 修改时间；确认记好；返回输入 | EL-TASK-04；EL-TASK-06；EL-TASK-01 | [PNG](../../exports/screens/EL-TASK-03A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-TASK-03B | 我这样记，对吗？ | 老人 | 主演示 预设案例 解析成功 | 修改时间；改时间；返回输入 | EL-TASK-04；EL-TASK-01 | [PNG](../../exports/screens/EL-TASK-03B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-TASK-03A | 我这样记，对吗？ | 老人 | 正常解析 预设情况 成功 | 修改时间；确认记好；返回输入 | EL-TASK-04；EL-TASK-06；EL-TASK-01 | [PNG](../../exports/screens/EL-TASK-03A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-TASK-03B | 我这样记，对吗？ | 老人 | 主演示 预设情况 解析成功 | 修改时间；改时间；返回输入 | EL-TASK-04；EL-TASK-01 | [PNG](../../exports/screens/EL-TASK-03B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-04 | 改成几点？ | 老人 | 在理解结果点击字段 | 改成上午9:00；不改了 | EL-TASK-05；EL-TASK-03B/05 | [PNG](../../exports/screens/EL-TASK-04.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-05 | 再看一遍 | 老人 | 字段已修正且齐全 | 修改时间；确认记好；返回输入 | EL-TASK-04；EL-TASK-06；EL-TASK-01 | [PNG](../../exports/screens/EL-TASK-05.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-06 | 办理公交卡年审 | 老人 | 确认保存 | 请小梅陪你去；只提醒我自己；修改时间；这件事办完了；取消这件事 | EL-SHARE-01；当前页；EL-TASK-08；EL-TASK-09A；EL-EX-06A | [PNG](../../exports/screens/EL-TASK-06.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-TASK-07 | 该准备出发了 | 老人 | Demo 时钟到 08:30；事务仍 `SAVED` | 知道了，看看这件事 | EL-TASK-06 | [PNG](../../exports/screens/EL-TASK-07.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-TASK-07 | 该准备出发了 | 老人 | 演示 时钟到 08:30；事务仍 已保存 | 知道了，看看这件事 | EL-TASK-06 | [PNG](../../exports/screens/EL-TASK-07.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-08 | 要改时间吗？ | 老人 | 已有请求且点击修改 | 继续修改；先不修改 | EL-EX-07A；EL-TASK-06 | [PNG](../../exports/screens/EL-TASK-08.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-TASK-09A | 这件事办完了吗？ | 老人 | 事务 `SAVED` | 已经办完了；还没有，返回这件事 | EL-TASK-09B；EL-TASK-06 | [PNG](../../exports/screens/EL-TASK-09A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-TASK-09A | 这件事办完了吗？ | 老人 | 事务 已保存 | 已经办完了；还没有，返回这件事 | EL-TASK-09B；EL-TASK-06 | [PNG](../../exports/screens/EL-TASK-09A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-TASK-09B | 这件事办完了 | 老人 | 老人确认完成 | 回到首页 | EL-TASK-00/10 | [PNG](../../exports/screens/EL-TASK-09B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-TASK-10 | 这件事办完了 | 老人 | 事务终结 | <span class="secondary-text">已经办完</span><strong>办理公交卡年审</strong><span>上午 9:00 · 社区服务中心</span><span class="entry-link">查看这件事 →</span>；记一件事；字太小？调整阅读方式 | EL-TASK-06；EL-TASK-01；EL-SET-01 | [PNG](../../exports/screens/EL-TASK-10.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-TASK-10 | 这件事办完了 | 老人 | 事务终结 | 已经办完 办理公交卡年审 上午 9:00 · 社区服务中心 查看这件事 →；记一件事；字太小？调整阅读方式 | EL-TASK-06；EL-TASK-01；EL-SET-01 | [PNG](../../exports/screens/EL-TASK-10.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-01 | 还需要时间和地点 | 老人 | 解析缺少必要字段 | 填写时间和地点；返回输入 | EL-EX-02B；EL-TASK-01 | [PNG](../../exports/screens/EL-EX-01.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-EX-02A | 这次没整理好 | 老人 | 失败场景 预设案例 | 自己填写时间和地点；再试一次；返回，接着写 | EL-EX-02B；EL-TASK-02；EL-TASK-01 | [PNG](../../exports/screens/EL-EX-02A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-EX-02A | 这次没整理好 | 老人 | 失败场景 预设情况 | 自己填写时间和地点；再试一次；返回，接着写 | EL-EX-02B；EL-TASK-02；EL-TASK-01 | [PNG](../../exports/screens/EL-EX-02A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-02B | 把这件事写下来 | 老人 | 选择手动填写或补字段 | 填好了，再看看；返回原话 | EL-TASK-05；EL-TASK-01 | [PNG](../../exports/screens/EL-EX-02B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-01 | 要请小梅陪你去吗？ | 老人 | 个人事务已保存 | 看看要告诉小梅的内容；只提醒我自己；返回这件事 | EL-SHARE-02；当前页；EL-TASK-06 | [PNG](../../exports/screens/EL-SHARE-01.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-01B | 只提醒你自己 | 老人 | 选择不共享 | 回到这件事 | EL-TASK-06 | [PNG](../../exports/screens/EL-SHARE-01B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-02 | 发给小梅前，再看看 | 老人 | 选择请求小梅 | 就把这些发给小梅；先不发送；她能看到什么？ | EL-SHARE-03 → EL-SHARE-04A；EL-TASK-06；EL-REL-07 | [PNG](../../exports/screens/EL-SHARE-02.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-03 | 正在发给小梅 | 老人 | 明确确认发送 | 先不发送，返回看看 | EL-SHARE-02 | [PNG](../../exports/screens/EL-SHARE-03.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-SHARE-04A | 已经发给小梅 | 老人 | 发送 adapter 成功 | 看看回复；回到这件事；撤回陪同请求 | EL-SHARE-04B；EL-TASK-06；EL-EX-05A | [PNG](../../exports/screens/EL-SHARE-04A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-SHARE-04A | 已经发给小梅 | 老人 | 确认发送并送达 | 看看回复；回到这件事；撤回陪同请求 | EL-SHARE-04B；EL-TASK-06；EL-EX-05A | [PNG](../../exports/screens/EL-SHARE-04A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-04B | 等小梅回复 | 老人 | 请求已成功送达且暂无答复 | 回到这件事；撤回陪同请求 | EL-TASK-06；EL-EX-05A | [PNG](../../exports/screens/EL-SHARE-04B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-05 | 小梅可以陪你去 | 老人 | 小梅接受有效请求 | 回到这件事；修改时间 | EL-TASK-06；EL-TASK-08 | [PNG](../../exports/screens/EL-SHARE-05.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-SHARE-06 | 小梅这次不能陪你 | 老人 | 小梅拒绝 | 回到这件事 | EL-TASK-06 | [PNG](../../exports/screens/EL-SHARE-06.png)；[索引/PDF页码](../../exports/prototype-index.md) |
@@ -35,7 +38,7 @@
 | EL-EX-04 | 小梅还没有回复 | 老人 | `PENDING` 超过演示期限 | 再等一等；撤回陪同请求 | EL-SHARE-04A；EL-EX-05A | [PNG](../../exports/screens/EL-EX-04.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-05A | 不需要小梅陪了吗？ | 老人 | 请求仍可撤回 | 确认撤回陪同；继续等小梅 | EL-EX-05B；EL-SHARE-04A | [PNG](../../exports/screens/EL-EX-05A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-05B | 陪同请求已撤回 | 老人 | 确认撤回 | 回到这件事 | EL-TASK-06 | [PNG](../../exports/screens/EL-EX-05B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| EL-EX-06A | 要取消这件事吗？ | 老人 | 事务 `SAVED` | 确认取消这件事；继续保留 | EL-EX-06B；来源事务/协作页 | [PNG](../../exports/screens/EL-EX-06A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| EL-EX-06A | 要取消这件事吗？ | 老人 | 事务 已保存 | 确认取消这件事；继续保留 | EL-EX-06B；来源事务/协作页 | [PNG](../../exports/screens/EL-EX-06A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-06B | 这件事已取消 | 老人 | 确认取消 | 回到首页 | EL-TASK-00/10 | [PNG](../../exports/screens/EL-EX-06B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-07A | 改到下午2:00？ | 老人 | 从 `EL-TASK-08` 继续 | 确认改时间；先不修改 | EL-EX-07B；EL-TASK-06 | [PNG](../../exports/screens/EL-EX-07A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | EL-EX-07B | 已改到下午2:00 | 老人 | 新版本已保存，旧请求 `INVALIDATED` | 看看内容，再问小梅；先保留自己的安排 | EL-SHARE-02；EL-TASK-06 | [PNG](../../exports/screens/EL-EX-07B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
@@ -53,7 +56,7 @@
 | EL-REL-05 | 家庭协作已结束 | 老人 | 确认结束 | 回到首页 | EL-TASK-00/10 | [PNG](../../exports/screens/EL-REL-05.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | FM-REL-04 | 家庭协作已结束 | 家属 | 任一方结束关系 | 回到首页 | FM-REQ-00/01 | [PNG](../../exports/screens/FM-REL-04.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | FM-REQ-00 | 妈妈的消息 | 家属 | 关系未建立、刚建立或没有有效请求 | 看看家庭协作 | EL-REL-01/02/06或FM-REL-01/02 | [PNG](../../exports/screens/FM-REQ-00.png)；[索引/PDF页码](../../exports/prototype-index.md) |
-| FM-REQ-01 | 妈妈的消息 | 家属 | 有 `PENDING` 请求 | <span class="secondary-text">等你回复</span><strong>办理公交卡年审</strong><span>10月7日 上午 9:00</span><span>社区服务中心</span><span class="entry-link">查看消息 →</span> | FM-REQ-02/EX-01/02/03 | [PNG](../../exports/screens/FM-REQ-01.png)；[索引/PDF页码](../../exports/prototype-index.md) |
+| FM-REQ-01 | 妈妈的消息 | 家属 | 有 `PENDING` 请求 | 等你回复 办理公交卡年审 10月7日 上午 9:00 社区服务中心 查看消息 → | FM-REQ-02/EX-01/02/03 | [PNG](../../exports/screens/FM-REQ-01.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | FM-REQ-02 | 妈妈想请你陪她去 | 家属 | 打开当前有效请求 | 我可以陪你；这次不能陪同；建议下午2:00去；返回消息 | FM-REQ-03A；FM-REQ-04A；FM-REQ-05A；FM-REQ-00/01 | [PNG](../../exports/screens/FM-REQ-02.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | FM-REQ-03A | 确认可以陪妈妈？ | 家属 | 点击接受 | 确认可以陪；先不发送 | FM-REQ-03B；FM-REQ-02/EX-01/02/03 | [PNG](../../exports/screens/FM-REQ-03A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | FM-REQ-03B | 已告诉妈妈你可以陪同 | 家属 | 确认接受 | 回到消息 | FM-REQ-00/01 | [PNG](../../exports/screens/FM-REQ-03B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
@@ -70,4 +73,4 @@
 | DM-04A | 恢复初始状态确认 | 评审辅助 | /review对应工具区域 | 确认恢复；返回 | `DM-04B` 或原页 | [PNG](../../exports/screens/DM-04A.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 | DM-04B | 恢复初始状态结果 | 评审辅助 | /review对应工具区域 | 开始演示 | `EL-REL-01` | [PNG](../../exports/screens/DM-04B.png)；[索引/PDF页码](../../exports/prototype-index.md) |
 
-所有主流程、改期、取消、失败与多角色操作均实测，证据见../validation/walkthrough.md。静态工具截图只截独立面板相应区域；60产品图不包含辅助工具。没有历史/聊天等空导航。
+所有主流程、改期、取消、失败与多角色操作均实测，证据见../validation/walkthrough.md。静态工具截图只截独立面板相应区域；63产品图不包含辅助工具。没有历史/聊天等空导航。

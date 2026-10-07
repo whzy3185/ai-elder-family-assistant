@@ -13,3 +13,9 @@
 证据：`exports/screens/audit.json`、`exports/screens/results.json`、`exports/prototype-index.json`、`exports/source-manifest.json`、`artifacts/qa/title-escape-regression/`。
 
 旧设计资料只作为历史过程记录，最终提交入口为exports。实际体验研究严格证据仍PARTIAL；PDF未将假设或继承文字当作本次实测。
+
+## 独立审查修复后的重新导出
+
+最终1.1.1源码冻结`cb1a37f`。独立审查发现的旧请求导引、取消返回和家属文案全部修复；重新取得60产品图、5辅助图及三布局审计，再生成69页原型PDF和7页产品说明PDF。导出时拒绝混入额外非页面图片；所有编号集合与摘要一致。最终PDF再次全页渲染并人工检查。
+
+最终补齐三个关系状态后的提交集：源码冻结`5444021`，68张（63产品+5辅助），原型PDF73页（封面+4页索引+68画面），产品说明PDF7页；新增邀请等待、申请等待及家属结束协作确认均单独查看。完整图片、页面矩阵、辅助入口的编号集合一致。

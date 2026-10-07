@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "testedAt": "2026-10-07T10:57:07.435Z",
+  "steps": [
+    "Review已接受情况",
+    "老人家人",
+    "结束协作确认",
+    "确认结束",
+    "家属消息验证"
+  ],
+  "finalState": {
+    "schemaVersion": 1,
+    "relationship": {
+      "status": "ENDED",
+      "elder": {
+        "id": "elder-zhang",
+        "name": "张阿姨"
+      },
+      "family": {
+        "id": "family-mei",
+        "name": "小梅",
+        "relation": "女儿"
+      },
+      "consentedAt": null
+    },
+    "task": {
+      "status": "CONFIRMED",
+      "parsingStatus": "SUCCEEDED",
+      "rawInput": "明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。",
+      "details": {
+        "title": "办理公交卡年审",
+        "date": "2026-10-07",
+        "time": "09:00",
+        "location": "社区服务中心",
+        "familyIntent": "希望小梅陪同"
+      },
+      "reminderAt": "2026-10-07T08:30:00+08:00",
+      "version": 1,
+      "wasCorrected": true,
+      "pendingChange": null
+    },
+    "collaborationRequest": {
+      "id": "request-1-1",
+      "status": "INVALIDATED",
+      "taskVersion": 1,
+      "sharedFields": {
+        "title": "办理公交卡年审",
+        "date": "2026-10-07",
+        "time": "09:00",
+        "location": "社区服务中心",
+        "help": "希望小梅陪同"
+      },
+      "response": null,
+      "sentAt": "2026-10-06T20:00:00+08:00",
+      "sendAttempts": 1
+    },
+    "requestHistory": [],
+    "currentRole": "ELDER",
+    "currentView": "RELATIONSHIP_ENDED",
+    "demoClock": "2026-10-06T20:00:00+08:00",
+    "demoScenario": "ACCEPTED"
+  },
+  "familyText": "记\n安心记事\n妈妈的消息\n\n她有需要时，会在这里告诉你。\n\n张\n\n妈妈 · 张阿姨\n\n现在没有新消息。\n妈妈需要陪同时，会告诉你。\n\n看看家庭协作\n消息\n家人",
+  "runnerNote": "首轮驱动将ENDED错写为REVOKED，纠正驱动后重跑；未修改产品"
+}
