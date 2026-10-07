@@ -2,8 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const endpoint = process.env.CDP_URL || 'http://127.0.0.1:9336';
+const appUrl = process.env.APP_URL || 'http://127.0.0.1:4173';
+const screenshotDir = process.env.SCREENSHOT_DIR || path.join('artifacts', 'qa', 'prompt09');
 const pages = await fetch(`${endpoint}/json/list`).then(response => response.json());
-const page = pages.find(item => item.type === 'page' && item.url.startsWith('http://127.0.0.1:4173'));
+const page = pages.find(item => item.type === 'page' && item.url.startsWith(appUrl));
 if (!page) throw new Error('Prototype page not found');
 const socket = new WebSocket(page.webSocketDebuggerUrl);
 let sequence = 0;
@@ -24,7 +26,7 @@ async function step(action, expected, delay = 60) { assert(await click(action), 
 async function reset() { await evaluate('localStorage.clear(); location.reload(); true'); await wait(300); }
 async function screenshot(name) {
   const shot = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
-  const output = path.resolve('artifacts', 'qa', 'prompt09', `${name}.png`);
+  const output = path.resolve(screenshotDir, `${name}.png`);
   fs.mkdirSync(path.dirname(output), { recursive: true });
   fs.writeFileSync(output, Buffer.from(shot.result.data, 'base64'));
 }
@@ -165,4 +167,4 @@ assert(current.collaborationRequest.sharedFields.time === '14:00' && current.col
 await screenshot('K-old-acceptance-invalidated-new-pending'); passed.push('K');
 
 socket.close();
-console.log(JSON.stringify({ status: 'PASS', scenarios: passed, count: passed.length, screenshots: path.resolve('artifacts', 'qa', 'prompt09') }));
+console.log(JSON.stringify({ status: 'PASS', scenarios: passed, count: passed.length, screenshots: path.resolve(screenshotDir) }));
