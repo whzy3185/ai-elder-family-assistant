@@ -42,11 +42,18 @@ if len(index)!=68 or ids!=matrix or ids!=images:issues.append({'type':'screenCov
 for item in index:
     if hashlib.sha256((root/'exports'/item['image']).read_bytes()).hexdigest()!=item['imageSha256']:
         issues.append({'type':'imageMismatch','file':item['image']})
+materials=json.loads((root/'exports/material-manifest.json').read_text())
+for name,digest in materials['files'].items():
+    p=root/name
+    if not p.exists() or hashlib.sha256(p.read_bytes()).hexdigest()!=digest:
+        issues.append({'type':'materialMismatch','file':name})
 rtm=(root/'docs/delivery/requirement-traceability-matrix.md').read_text()
 rows=[x for x in rtm.splitlines() if x.startswith('| RTM-')]
 counts=Counter(x.split('|')[-2].strip() for x in rows)
 if len(rows)!=90:issues.append({'type':'requirementCountMismatch'})
-result={'status':'PASS' if not issues else 'FAIL','trackedFiles':len(tracked),'localLinksChecked':links,'sourceFilesChecked':len(manifest['files']),'screens':len(index),'requirementStatuses':dict(counts),'issues':issues}
+if counts.get('PASS')!=88 or counts.get('PARTIAL')!=2 or counts.get('FAIL',0)!=0:
+    issues.append({'type':'requirementStatusMismatch'})
+result={'status':'PASS' if not issues else 'FAIL','trackedFiles':len(tracked),'localLinksChecked':links,'sourceFilesChecked':len(manifest['files']),'materialFilesChecked':len(materials['files']),'screens':len(index),'requirementStatuses':dict(counts),'issues':issues}
 out=root/'artifacts/qa/delivery-audit'
 out.mkdir(parents=True,exist_ok=True)
 (out/'results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')

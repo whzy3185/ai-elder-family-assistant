@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "d7f138dadc31d42469c164df14b07b8545336047032cc56700cbfc2b95b06b86",
+      "status": "PASS"
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "dad7f3b81fa0d87737b88cb98229cfc41953f7c98eb5092ab4a14ad721d8599f",
+      "status": "PASS"
+    },
+    {
+      "file": "src/product-copy.js",
+      "sha256": "6856962a90ee7ea42f5613eb55dd0277ebfce91754fd0c76ee32adf2e6f8e4f3",
+      "status": "PASS"
+    },
+    {
+      "file": "src/release-views.js",
+      "sha256": "2d0333f04cf91d0c2c6611823ff29806a87269f3566d5bb4c253ce1539125582",
+      "status": "PASS"
+    },
+    {
+      "file": "src/review-views.js",
+      "sha256": "6cf70407e14c87c1126b3fca1678ff67df7f12327a1b34935b6f4af395bfd01e",
+      "status": "PASS"
+    },
+    {
+      "file": "src/screen-catalog.js",
+      "sha256": "6296be35d2216e17d9304635816f6cbb3c8a8cdf536c762fac72eabfa275a4c5",
+      "status": "PASS"
+    },
+    {
+      "file": "src/state/initial-state.js",
+      "sha256": "d693797d2778929e7badf143eda65e965f0f3247b9807bed312bfdf1779a004d",
+      "status": "PASS"
+    },
+    {
+      "file": "src/state/model.js",
+      "sha256": "0d575294025b5a963e589571e039324d15eb7c28bb10c63b63f58f3485fcb24a",
+      "status": "PASS"
+    },
+    {
+      "file": "src/state/store.js",
+      "sha256": "7137f74a3f865600233957e10833718d2c7d2460785c783566595b5a10a5409f",
+      "status": "PASS"
+    },
+    {
+      "file": "src/styles.css",
+      "sha256": "d5c3084e195134295641b8edfe7bd787481ea652ab1e92db6e719d86fc1302e3",
+      "status": "PASS"
+    },
+    {
+      "file": "src/views.js",
+      "sha256": "1c050f2959a458e2c2c218d1d4bd94589e414670558ab9feea6c078b7b470185",
+      "status": "PASS"
+    }
+  ]
+}

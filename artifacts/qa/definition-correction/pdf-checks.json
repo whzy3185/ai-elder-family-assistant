@@ -1,0 +1,350 @@
+{
+  "status": "PASS",
+  "prototypePages": 73,
+  "prototypeSha256Unchanged": true,
+  "productPages": 7,
+  "productSections": 26,
+  "allPrototypeIdsOnCorrectPages": true,
+  "prototypeIndex": [
+    {
+      "id": "EL-REL-01A",
+      "page": 6,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REL-01A",
+      "page": 7,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REL-04A",
+      "page": 8,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-00",
+      "page": 9,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-01",
+      "page": 10,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-02",
+      "page": 11,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-03A",
+      "page": 12,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-03B",
+      "page": 13,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-04",
+      "page": 14,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-05",
+      "page": 15,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-06",
+      "page": 16,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-07",
+      "page": 17,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-08",
+      "page": 18,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-09A",
+      "page": 19,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-09B",
+      "page": 20,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-TASK-10",
+      "page": 21,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-01",
+      "page": 22,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-02A",
+      "page": 23,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-02B",
+      "page": 24,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-01",
+      "page": 25,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-01B",
+      "page": 26,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-02",
+      "page": 27,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-03",
+      "page": 28,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-04A",
+      "page": 29,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-04B",
+      "page": 30,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-05",
+      "page": 31,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-06",
+      "page": 32,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-07",
+      "page": 33,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-08",
+      "page": 34,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SHARE-09",
+      "page": 35,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-03",
+      "page": 36,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-04",
+      "page": 37,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-05A",
+      "page": 38,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-05B",
+      "page": 39,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-06A",
+      "page": 40,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-06B",
+      "page": 41,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-07A",
+      "page": 42,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-EX-07B",
+      "page": 43,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-SET-01",
+      "page": 44,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-01",
+      "page": 45,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REL-01",
+      "page": 46,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-02",
+      "page": 47,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-02A",
+      "page": 48,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-03",
+      "page": 49,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REL-03",
+      "page": 50,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-06",
+      "page": 51,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REL-02",
+      "page": 52,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-07",
+      "page": 53,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-04A",
+      "page": 54,
+      "idOnPage": true
+    },
+    {
+      "id": "EL-REL-05",
+      "page": 55,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REL-04",
+      "page": 56,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-00",
+      "page": 57,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-01",
+      "page": 58,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-02",
+      "page": 59,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-03A",
+      "page": 60,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-03B",
+      "page": 61,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-04A",
+      "page": 62,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-04B",
+      "page": 63,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-05A",
+      "page": 64,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-REQ-05B",
+      "page": 65,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-EX-01",
+      "page": 66,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-EX-02",
+      "page": 67,
+      "idOnPage": true
+    },
+    {
+      "id": "FM-EX-03",
+      "page": 68,
+      "idOnPage": true
+    },
+    {
+      "id": "DM-01",
+      "page": 69,
+      "idOnPage": true
+    },
+    {
+      "id": "DM-02",
+      "page": 70,
+      "idOnPage": true
+    },
+    {
+      "id": "DM-03",
+      "page": 71,
+      "idOnPage": true
+    },
+    {
+      "id": "DM-04A",
+      "page": 72,
+      "idOnPage": true
+    },
+    {
+      "id": "DM-04B",
+      "page": 73,
+      "idOnPage": true
+    }
+  ]
+}

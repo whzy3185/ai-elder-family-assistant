@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "route": "/",
+      "product": true,
+      "tools": false,
+      "title": "这件事办完了",
+      "navigation": [
+        "事情",
+        "家人"
+      ],
+      "status": "PASS"
+    },
+    {
+      "route": "/family",
+      "product": true,
+      "tools": false,
+      "title": "妈妈的消息",
+      "navigation": [
+        "消息",
+        "家人"
+      ],
+      "status": "PASS"
+    },
+    {
+      "route": "/review",
+      "product": true,
+      "tools": true,
+      "title": "妈妈的消息",
+      "navigation": [
+        "消息",
+        "家人"
+      ],
+      "status": "PASS"
+    }
+  ]
+}

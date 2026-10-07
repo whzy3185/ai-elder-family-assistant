@@ -1,6 +1,7 @@
 # 交付版本
 
 - BUILD_VERSION：1.1.1
+- DOCUMENT_REVISION：2026-10-07用户定义与交付语义校正版；运行代码未变。
 - FINAL_BRANCH：main（最终发布分支，远端核验后生效）
 - SOURCE_FREEZE_SHA：54440215c9bc6a57e6917cc89106b10a33728e76
 - FINAL_COMMIT_SHA：在最终main执行`git rev-parse HEAD`，以远端main一致的40位SHA为准。
@@ -11,3 +12,5 @@
 仓库 https://github.com/whzy3185/ai-elder-family-assistant 。文件不能同时保存包含自身内容的commit SHA，因此最终40位SHA由Git HEAD及仓库外交付回执记录；运行源码冻结SHA用于核对Web/图片版本，不能替代最终平台SHA。
 
 材料入口：README、exports/prototype-index.md、exports/prototype-pages.pdf、exports/product-description.pdf、docs/delivery/demo-guide.md、docs/validation/independent-product-review.md、final-regression.md、known-issues.md。平台确认、材料回执和交卷分别检查。
+
+本轮校正产生新提交，修改前SHA不作为当前平台锁定版本；[本轮检查](definition-and-delivery-audit.md)、[平台步骤](platform-finalization.md)。产品说明PDF已重新生成；68图/73页原型PDF与运行源码冻结摘要未变。最终40位SHA仍由远端main与仓库外交付回执记录。

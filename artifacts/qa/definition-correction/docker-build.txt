@@ -1,0 +1,46 @@
+time="2026-10-07T20:12:03+08:00" level=warning msg="buildx Docker CLI plugin not found: falling back to the classic builder. BuildKit-only build features (multi-arch, secrets, ssh, additional contexts, ...) will not be available"
+ Image ai-elder-family-assistant-prototype Building 
+ Image ai-elder-family-assistant-prototype Building 
+Sending build context to Docker daemon  524.3kBSending build context to Docker daemon  4.647MB
+Step 1/12 : FROM node:22.20.0-alpine3.22@sha256:dbcedd8aeab47fbc0f4dd4bffa55b7c3c729a707875968d467aaaea42d6225af
+ ---> dbcedd8aeab4
+Step 2/12 : WORKDIR /app
+ ---> Using cache
+ ---> 82840a1ebef3
+Step 3/12 : COPY package.json package-lock.json ./
+ ---> Using cache
+ ---> a071890ab1ef
+Step 4/12 : RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
+ ---> Using cache
+ ---> 2d694b66ccf6
+Step 5/12 : COPY index.html server.mjs ./
+ ---> Using cache
+ ---> 88b87fc15847
+Step 6/12 : COPY src ./src
+ ---> Using cache
+ ---> 27f4877de4ac
+Step 7/12 : ENV NODE_ENV=production     PORT=8080
+ ---> Using cache
+ ---> 84c7f14c6b63
+Step 8/12 : EXPOSE 8080
+ ---> Using cache
+ ---> 75824e194a0d
+Step 9/12 : USER node
+ ---> Using cache
+ ---> f81b43315768
+Step 10/12 : HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3   CMD wget -q -O /dev/null http://127.0.0.1:8080/ || exit 1
+ ---> Using cache
+ ---> 96680b6a2ce8
+Step 11/12 : CMD ["node", "server.mjs"]
+ ---> Using cache
+ ---> fe0eb5248594
+Step 12/12 : LABEL com.docker.compose.image.builder=classic
+ ---> Using cache
+ ---> 8d8afb65f47e
+Successfully built 8d8afb65f47e
+Successfully tagged ai-elder-family-assistant-prototype:latest
+ Image ai-elder-family-assistant-prototype Built 
+ Image ai-elder-family-assistant-prototype Built 
+ Container ai-elder-family-assistant-prototype-1 Running 
+ Container ai-elder-family-assistant-prototype-1 Waiting 
+ Container ai-elder-family-assistant-prototype-1 Healthy 

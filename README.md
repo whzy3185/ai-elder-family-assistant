@@ -1,6 +1,8 @@
 # 安心记事｜日常事务与家庭协作助手
 
-当前版本 **1.1.1**。为72岁、会基础手机操作且有自主决定能力的张阿姨，记录一次公交卡年审：核对时间、保存提醒，自主决定是否请同城女儿小梅陪同。小梅只能回应妈妈主动分享的单件事情。
+当前版本 **1.1.1**（产品定义文档校正版）。安心记事面向日常事务中需要提醒、理解确认或有限家庭协作的老年用户。本次原型聚焦其中一个切片：能自主决定、能完成基础智能手机操作，独居或日间独处，且有一名成年家属可适度参与。
+
+72岁张阿姨和同城女儿小梅是固定Persona，公交卡年审是演示案例。设计重点是先纠正系统理解、再由老人决定必要共享、最终获得明确回应；不将这个案例或当前结论外推到所有老人和所有事务。
 
 ## 启动与访问
 
@@ -60,6 +62,7 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 - [页面与状态清单](docs/product/page-state-matrix.md)、[需求追踪矩阵](docs/delivery/requirement-traceability-matrix.md)。
 - [业务走查](docs/validation/walkthrough.md)、[可见内容审计](docs/validation/presentation-purity-audit.md)、[适老审计](docs/validation/senior-usability-audit.md)。
 - [独立验收](docs/validation/independent-acceptance.md)、[最终Docker回归](docs/validation/final-regression.md)、[版本记录](docs/delivery/version.md)。
+- [本轮用户定义与交付核对](docs/delivery/definition-and-delivery-audit.md)、[平台最后操作](docs/delivery/platform-finalization.md)。
 - [已知问题](docs/validation/known-issues.md)、[冻结记录](docs/delivery/release-freeze.md)、[研究证据](docs/research/evidence-index.md)。
 
 `src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料由本轮最终Docker重新截图导出；同版源码及图片校验见exports/source-manifest.json。
@@ -70,4 +73,8 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 
 语音、整理、消息、邀请、提醒和失败使用预设状态；不会联系真实家属。数据存于当前浏览器LocalStorage，跨设备/跨标签页实时协同未实现。支持固定公交卡年审案例与09:00/14:00；事项和地点可手动修改，日期固定10月7日；不保证任意自然语言解析。
 
-不提供医疗、应急、定位、真实通知或完整历史。Huawei/Apple两次体验的原始设备、版本、截图证据仍 **PARTIAL**，没有真人访谈或真实用户指标。自行走查和预期指标不冒充真实研究。平台SHA确认、材料上传和最终交卷须分别核验。
+本次围绕一次事务做提醒、整理纠错及单次家庭协作；舍弃医疗、应急、定位监控、全权托管、多家属、完整历史及真实后端/AI/通知，以控制权限和异常组合。完成/取消后仍可查看当前结果。
+
+原型走查与自动测试已执行；真人测试尚未进行，计划从上述用户切片招募。Huawei/Apple两次体验的原始设备、版本、截图证据仍 **PARTIAL**。未覆盖的人群边界见产品说明，不能把工程检查当成用户研究。
+
+平台动作依次是：本人锁定本轮新SHA→把网页生成的实际上传说明发给已连接Agent→上传当前会话原始日志并核验回执→本人确认交卷。各步骤分别核验，不沿用修改前SHA。

@@ -35,10 +35,10 @@
 
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
-| RTM-001 | 明确实际使用条件，包括老人设备能力、常用设备和居住情况 | 72 岁张阿姨；智能手机；会语音、扫码、接电话；独居或日间独处；具备自主决策能力 | `DOC-CHARTER-USER` | `docs/product/01-product-charter.md#2-用户画像` | `TC-DOC-001` 逐字段核对画像 | 当前产品章程第 2 节 | PASS |
-| RTM-002 | 明确家属参与条件 | 小梅同城、工作忙、可查看请求但不能保证陪同 | `DOC-CHARTER-FAMILY` | `docs/product/01-product-charter.md#22-家属小梅` | `TC-DOC-002` 核对关系、距离、响应能力 | 当前产品章程第 2.2—3 节 | PASS |
+| RTM-001 | 明确实际使用条件，包括老人设备能力、常用设备和居住情况 | 目标用户切片：具备自主决策和基础智能手机能力、独居或日间独处、有一名家属适度参与；72岁张阿姨是固定演示Persona | `DOC-CHARTER-USER` | `docs/product/01-product-charter.md` 第2.1–2.3节 | `TC-DOC-001` 分开核对方向、切片、Persona与未覆盖人群 | 当前产品章程第2节；产品说明第1–3节 | PASS |
+| RTM-002 | 明确家属参与条件 | 一名成年家属适度参与且不能持续在线；小梅为同城、工作忙、不能保证陪同的家属Persona | `DOC-CHARTER-FAMILY` | `docs/product/01-product-charter.md` 第2.2、2.4–3节 | `TC-DOC-002` 核对关系、距离、响应能力 | 当前产品章程家庭条件 | PASS |
 | RTM-003 | 区分老人需求与家属诉求 | 老人关注理解、提醒、决定权；家属关注信息明确、响应负担和非监控 | `DOC-CHARTER-GOALS` | `docs/product/01-product-charter.md#6-用户目标` | `TC-DOC-003` 双角色目标无混写 | 当前产品章程第 6—7 节 | PASS |
-| RTM-004 | 围绕一个主要问题和一个事务 | 只做公交卡年审提醒与一次陪同请求 | `DOC-CHARTER-SCENARIO` | `docs/product/01-product-charter.md#4-唯一核心事务` | `TC-DOC-004` 全库固定事务一致性检查 | 当前产品章程第 4 节 | PASS |
+| RTM-004 | 围绕一个主要问题和一个事务 | 主要问题是理解确认、可控制的必要共享和明确回应；公交卡年审为固定提醒/陪同案例 | `DOC-CHARTER-SCENARIO` | `docs/product/01-product-charter.md#4-固定演示事务` | `TC-DOC-004` 问题与案例分开且固定事务一致 | 当前产品章程第4、8节 | PASS |
 | RTM-005 | 明确当前替代方式及选择依据 | 对比 Apple 提醒、共享列表、华为关怀和远程守护 | `DOC-RESEARCH-COMPETITORS` | `docs/research/apple-study.md`、`docs/research/huawei-study.md` | `TC-RES-001` 结论可追溯检查 | docs/research/evidence-index.md：继承文字及官方资料；设备/版本/原始截图尚缺 | PARTIAL |
 | RTM-006 | 至少实际体验两个产品或替代方案并保留证据 | 采用华为与 Apple；文字记录可用，截图、录屏和设备版本仍需补 | `DOC-RESEARCH-EVIDENCE` | `docs/research/evidence-index.md` | `TC-RES-002` 证据完整性检查 | docs/research/evidence-index.md：继承文字及官方资料；设备/版本/原始截图尚缺 | PARTIAL |
 | RTM-007 | 区分真实观察、二手资料和假设 | 使用 A/B/C/D 与候选人观察、官方事实、方案推演、待验证假设标记 | `DOC-RESEARCH-METHOD` | `docs/00-research-method.md`、`docs/research/*` | `TC-RES-003` 抽样追溯标记 | 当前研究方法和来源索引 | PASS |
@@ -133,10 +133,10 @@
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
 | RTM-068 | 至少一个核心功能写清目标、输入、输出、页面、状态、规则和异常 | 核心功能为“可纠错事务 + 单次家庭请求”；目标、输入输出、页面、双状态机、权限和异常均已冻结 | `DOC-CORE-FEATURE`、`EL-TASK-*`、`EL-SHARE-*`、`FM-REQ-*` | `docs/product/01-product-charter.md`、`task-state-machine.md`、`collaboration-state-machine.md`、`permissions.md`、`ai-rules.md`、`page-state-matrix.md` | `TC-DOC-007` 核心功能字段审计 | 当前六份正式产品规则文档 | PASS |
-| RTM-069 | 定义 1 个核心成功指标 | 无指导完成并获得明确协作结果的有效任务占比 | `DOC-METRICS` | docs/product/product-description.md 第20节 | 核对对象、分子分母、失败纳入及一周周期 | exports/product-description.pdf；明确尚无真人实测值 | PASS |
+| RTM-069 | 定义 1 个核心成功指标 | 本次切片中无指导正确保存、纠错、决定共享并准确解释协作状态的人数占比 | `DOC-METRICS` | docs/product/product-description.md 第20节 | 核对切片对象、分子分母、失败纳入及一周周期 | exports/product-description.pdf；明确尚无真人实测值 | PASS |
 | RTM-070 | 定义 2—3 个过程指标及对象、口径和周期 | 纠错成功率、共享范围理解正确率、完成时间中位数；对象/口径/周期明确，均未测 | `DOC-METRICS` | docs/product/product-description.md 第21节 | 核对纠错、共享理解、完成时间的对象/口径/周期 | exports/product-description.pdf 第21节，未写虚构测量值 | PASS |
 | RTM-071 | 说明如何发现误导建议和操作失败 | 记录字段误导、状态误判、失败恢复、严重事件和用户复述 | `DOC-VALIDATION` | docs/product/product-description.md 第22–23节 | 误导及操作失败记录方法核对 | 风险记录、首次行为观察、停止澄清及复测方案 | PASS |
-| RTM-072 | 给出最小验证方法和下一步依据 | 5–8组老人—家属，一周首轮，虚构事务，观察纠错、授权、回应及误判 | `DOC-VALIDATION` | docs/product/product-description.md 第23节 | `TC-VALID-002` 方法完整性 | 当前验证方法 | PASS |
+| RTM-072 | 给出最小验证方法和下一步依据 | 从本次目标用户切片招募5–8组老人—家属，一周首轮，虚构事务，观察纠错、授权、回应及误判 | `DOC-VALIDATION` | docs/product/product-description.md 第23节 | `TC-VALID-002` 方法完整性 | 当前验证方法；尚未开展真人测试 | PASS |
 | RTM-073 | 不把预期值写成实测结果 | 所有指标标记为定义或目标；没有真实测试就不报告结果 | `DOC-VALIDATION` | `docs/00-research-method.md` | `TC-VALID-003` 实测声明扫描 | 当前研究边界 | PASS |
 | RTM-074 | 自行走查完整主流程 | 按冻结数据从关系建立走到老人看到小梅接受 | `DOC-WALKTHROUGH-MAIN` | scripts/smoke-regression.mjs | T01完整流程及独立I-01至I-05 | artifacts/qa/final-regression/results.json；独立产品审查 | PASS |
 | RTM-075 | 走查修改或取消流程 | 覆盖纠错、撤回请求、取消事务和已发送后修改 | `DOC-WALKTHROUGH-CHANGE` | scripts/smoke-regression.mjs | T03、T04、T09、T10 | artifacts/qa/final-regression/results.json | PASS |
