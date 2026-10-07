@@ -11,12 +11,12 @@
 ## 1. 当前快照
 
 ```text
-CURRENT_PHASE=Prompt 09 / 全部异常和修改分支完成，待提交
+CURRENT_PHASE=Prompt 10 / Demo Controller 与可复现场景完成，待提交
 CURRENT_BRANCH=research
-CURRENT_COMMIT=904e53f
+CURRENT_COMMIT=8f814b2
 SPEC_VERSION=product-charter-1.0.0
 REQUIREMENT_MATRIX_VERSION=1.0.0
-UI_VERSION=web-prototype-0.9.0
+UI_VERSION=web-prototype-0.10.0
 CORE_SCENARIO=演示时钟2026-10-06 20:00 Asia/Shanghai；张阿姨于2026-10-07 09:00去社区服务中心办理老年公交卡年审，08:30提醒，并询问小梅能否陪同
 
 REPOSITORY_AUDIT_STATUS=PASS
@@ -41,7 +41,7 @@ DESIGN_SOURCE_STATUS=PASS
 HIFI_SCREEN_STATUS=PASS
 DESIGN_AUDIT_STATUS=PASS
 SPEC_FREEZE=TRUE
-WEB_STATUS=PARTIAL
+WEB_STATUS=PASS
 DOCKER_STATUS=FAIL
 MAIN_FLOW_STATUS=PASS
 EXCEPTION_FLOW_STATUS=PASS
@@ -60,9 +60,10 @@ PROMPT_06_GATE_STATUS=PASS
 PROMPT_07_GATE_STATUS=PASS
 PROMPT_08_GATE_STATUS=PASS
 PROMPT_09_GATE_STATUS=PASS
+PROMPT_10_GATE_STATUS=PASS
 ```
 
-`CURRENT_COMMIT` 是 Prompt 09 的输入基线，即 Prompt 08 完成提交；Prompt 09 通过 Gate 后将创建下一提交。
+`CURRENT_COMMIT` 是 Prompt 10 的输入基线，即 Prompt 09 完成提交；Prompt 10 通过 Gate 后将创建下一提交。
 
 ## 2. 仓库真实状态
 
@@ -137,7 +138,7 @@ Prompt 09 的 A—K 共 11 个异常与修改场景已实际点击通过，状�
 | Prompt 07 | 建立 Web 工程和基础状态模型 | PASS |
 | Prompt 08 | 实现完整主流程 | PASS |
 | Prompt 09 | 实现全部异常和修改分支 | PASS |
-| Prompt 10 | 完成 Demo Controller 与可复现场景 | FAIL |
+| Prompt 10 | 完成 Demo Controller 与可复现场景 | PASS |
 | Prompt 11 | Docker 化并完成真实启动验证 | FAIL |
 | Prompt 12 | 完整功能走查 | FAIL |
 | Prompt 13 | 专项业务一致性攻击测试 | FAIL |
@@ -305,3 +306,19 @@ Prompt 08 已通过，可提交并进入 Prompt 09 全部异常和修改分支�
 | 状态模型回归 | PASS | `npm test` 16/16 |
 
 Prompt 09 已通过，可提交并进入 Prompt 10 Demo Controller 与可复现场景。
+
+## 17. Prompt 10 Gate
+
+| Gate | 状态 | 证据 |
+|---|---|---|
+| 独立 Demo Controller | PASS | 底部“演示”入口和独立控制页 |
+| 明确非老人真实功能 | PASS | 页面首屏橙色警示文案 |
+| 老人/家属角色快捷入口 | PASS | 浏览器双角色走查 |
+| 13 个规定场景 | PASS | `DEMO_SCENARIOS` 与浏览器 13/13 |
+| Fixed Demo Clock | PASS | 初始 2026-10-06 20:00；提醒场景 2026-10-07 08:30 |
+| Reset All Demo Data | PASS | 恢复规范初始快照 |
+| 场景使用完整 snapshot | PASS | 脏状态加载后与规范快照深度相等 |
+| 前一场景无数据残留 | PASS | `requestHistory`、角色、时钟、对象状态逐场景检查 |
+| 主流程不依赖控制器 | PASS | Prompt 08 仍可 Reset 后连续 23 步完成 |
+
+Prompt 10 已通过，可提交并进入 Prompt 11 Docker 化与真实启动验证。

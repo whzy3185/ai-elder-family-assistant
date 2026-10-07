@@ -1,4 +1,4 @@
-import { FIXED_INPUT } from './state/initial-state.js';
+import { DEMO_SCENARIOS, FIXED_INPUT } from './state/initial-state.js';
 
 const escapeHtml = value => String(value ?? '').replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
 const roleLabel = role => role === 'FAMILY' ? '家属端 · 小梅' : '老人端 · 张阿姨';
@@ -91,10 +91,11 @@ function relationshipView(state) {
 }
 
 function demoView(state) {
-  return page('演示控制台', '所有数据均为预置', `${card('固定演示时钟', new Date(state.demoClock).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }))}<p class="hint">不会调用真实 AI、消息、定位、数据库或外部服务。</p>`, button('恢复初始状态', 'reset', 'danger'));
+  const scenarioButtons = DEMO_SCENARIOS.map(([id, label]) => `<button class="scenario-button${state.demoScenario === id ? ' selected' : ''}" type="button" data-action="load-demo-scenario" data-scenario="${id}"><strong>${label}</strong><span>${id}</span></button>`).join('');
+  return page('演示控制台', '评审快捷入口', `<div class="demo-warning"><strong>演示控制，不属于老人真实产品功能</strong><br>加载场景会使用完整快照，清除前一个场景的全部状态。</div>${card('Fixed Demo Clock', new Date(state.demoClock).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }))}<section><h2>快速切换角色</h2><div class="role-buttons">${button('打开老人端', 'role-elder', 'secondary')}${button('打开家属端', 'role-family', 'secondary')}</div></section><section><h2>加载完整场景</h2><div class="scenario-grid">${scenarioButtons}</div></section><p class="hint">所有 AI、消息、失败、时钟与提醒均为本地预置模拟，不会调用真实服务。</p>`, button('Reset All Demo Data', 'reset', 'danger'));
 }
 
 export function renderApp(state) {
   const content = state.currentView.startsWith('FAMILY') ? familyView(state) : state.currentView === 'RELATIONSHIP' ? relationshipView(state) : state.currentView === 'DEMO' ? demoView(state) : elderView(state);
-  return `<div class="app-shell"><header class="topbar"><div><span class="avatar">${state.currentRole === 'FAMILY' ? '梅' : '张'}</span><strong>${roleLabel(state.currentRole)}</strong></div><span class="version">Prototype 0.9</span></header><main>${content}</main><nav class="bottom-nav" aria-label="主要导航"><button data-action="role-elder" class="${state.currentRole === 'ELDER' ? 'active' : ''}">老人端</button><button data-action="role-family" class="${state.currentRole === 'FAMILY' ? 'active' : ''}">家属端</button><button data-action="relationship">协作</button><button data-action="demo">演示</button></nav></div>`;
+  return `<div class="app-shell"><header class="topbar"><div><span class="avatar">${state.currentRole === 'FAMILY' ? '梅' : '张'}</span><strong>${roleLabel(state.currentRole)}</strong></div><span class="version">Prototype 0.10</span></header><main>${content}</main><nav class="bottom-nav" aria-label="主要导航"><button data-action="role-elder" class="${state.currentRole === 'ELDER' ? 'active' : ''}">老人端</button><button data-action="role-family" class="${state.currentRole === 'FAMILY' ? 'active' : ''}">家属端</button><button data-action="relationship">协作</button><button data-action="demo">演示</button></nav></div>`;
 }

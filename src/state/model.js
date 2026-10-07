@@ -1,4 +1,4 @@
-import { createInitialState } from './initial-state.js';
+import { createDemoSnapshot, createInitialState } from './initial-state.js';
 
 export const STORAGE_KEY = 'elder-family-assistant/state/v1';
 
@@ -256,6 +256,8 @@ export function reduce(state, action) {
         : state;
     case 'SET_SCENARIO':
       return { ...state, demoScenario: action.scenario };
+    case 'LOAD_DEMO_SCENARIO':
+      return createDemoSnapshot(action.scenario);
     case 'RESET':
       return createInitialState();
     default:

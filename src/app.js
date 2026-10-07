@@ -18,6 +18,7 @@ root.addEventListener('click', event => {
   if (action === 'role-family') store.dispatch({ type: 'SET_ROLE', role: 'FAMILY' });
   if (action === 'relationship') store.dispatch({ type: 'NAVIGATE', view: 'RELATIONSHIP' });
   if (action === 'demo') store.dispatch({ type: 'NAVIGATE', view: 'DEMO' });
+  if (action === 'load-demo-scenario') store.dispatch({ type: 'LOAD_DEMO_SCENARIO', scenario: control.dataset.scenario });
   if (action === 'establish-relationship') store.dispatch({ type: 'ESTABLISH_RELATIONSHIP' });
   if (action === 'decline-relationship') store.dispatch({ type: 'DECLINE_RELATIONSHIP' });
   if (action === 'show-qr') store.dispatch({ type: 'SHOW_RELATIONSHIP_QR' });

@@ -65,8 +65,8 @@
 | 适老交互规范 | 390×844、字号、对比度、主按钮、交互、文案和验收表已冻结 | PASS | 实际视觉审计随后续页面产生 | Prompt 06、14 | 三份 Prompt 05 规范与视觉审计 |
 | 老人端完整静态原型 | 规范设计源已有 36 个老人端画面 | PARTIAL | Prompt 15 仍需逐画面导出 PNG/PDF | Prompt 15 | HTML/CSS 设计源、导出目录/PDF |
 | 家属端完整静态原型 | 规范设计源已有 12 个家属端画面，P0 挤压已修复 | PARTIAL | Prompt 15 仍需逐画面导出 PNG/PDF | Prompt 15 | HTML/CSS 设计源、Design Audit、导出目录/PDF |
-| 可操作 Web 原型与源码 | 主流程与 11 个异常/修改分支已完成并通过浏览器走查 | PARTIAL | Demo Controller 快捷场景入口 | Prompt 10 | 浏览器操作、源码和自动走查 |
-| Demo Controller | 仅有概念 | FAIL | 角色、状态、重置和场景入口 | Prompt 10 | 控制器页面与自动测试 |
+| 可操作 Web 原型与源码 | 主流程、11 个异常/修改分支和 Demo Controller 均已完成浏览器走查 | PASS | 无 P0 实现缺口 | 已完成 | 三套浏览器脚本、源码和截图 |
+| Demo Controller | 独立控制页支持双角色、13 个完整快照、固定时钟和全量重置 | PASS | 无 | 已完成 | 控制器页面、完整快照测试与浏览器走查 |
 | Docker 启动 | 无 Docker 文件 | FAIL | Dockerfile、Compose、Nginx 和启动验证 | Prompt 11、20 | `docker compose up --build` 日志 |
 | 静态图与 Web 同版本 | 两者均不存在 | FAIL | 发布版本、导出脚本/流程和映射 | Prompt 15 | 版本号和页面索引 |
 

@@ -117,16 +117,16 @@
 | ID | 原题要求 | 产品规则 | 页面/状态 | 实现位置 | 测试用例 | 静态证据 | 当前状态 |
 |---|---|---|---|---|---|---|---|
 | RTM-057 | 先列页面与状态清单 | 每项含编号、名称、角色、入口、操作、去向和原型位置 | `DOC-PAGE-MATRIX` | `docs/product/page-state-matrix.md` | `TC-DOC-006` 字段完整性 | 当前页面与状态总表 | PASS |
-| RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/pages/*` | `TC-PAGE-001` 页面覆盖 | 65 屏 HTML/CSS 设计源已完成；运行实现和全量导出待后续 | PARTIAL |
-| RTM-059 | 导航中不出现空按钮或未完成入口 | 只有 P0 和已完成 P1 可进入；Excluded 不显示 | 全局导航 | `src/app/routes.tsx` | `TC-NAV-002` 可点击元素遍历 | 导航截图与测试（缺失） | FAIL |
-| RTM-060 | 覆盖首次/空状态和正常有数据状态 | 关系首次、家属空列表、已建立关系和有请求均可进入 | `EL-REL-01`、`FM-REQ-00/01` | `src/features/*` | `TC-STATE-001` 首次/空/有数据 | 对应高保真画面已完成；可操作验证待后续 | PARTIAL |
-| RTM-061 | 覆盖处理中、成功、失败和重试 | AI 处理、请求发送中、保存/回应成功、解析/发送失败和重试分别可见 | `EL-TASK-02`、`EL-SHARE-03`、`EL-EX-02/03` | `src/features/*` | `TC-STATE-002` 状态覆盖 | 对应高保真画面已完成；可操作验证待后续 | PARTIAL |
-| RTM-062 | 覆盖修改、取消和返回 | 单字段修改、撤回请求、取消事务、非破坏性返回均可操作 | `EL-TASK-04/08`、`EL-EX-05/06` | `src/features/*` | `TC-STATE-003` 修改取消返回 | 对应高保真画面已完成；可操作验证待后续 | PARTIAL |
-| RTM-063 | 页面和关键操作连通 | 入口到结果、返回修改、角色切换均无断点 | 主流程和异常 Flow | `tests/e2e/navigation.spec.ts` | `TC-E2E-002` 全链接走查 | 录屏与走查记录（缺失） | FAIL |
-| RTM-064 | 示例内容和状态保持一致 | 修改时间后提醒、共享详情、家属端和结果页同步；取消后不显示成功 | 全部跨角色状态 | `src/domain/selectors.ts` | `TC-CONSIST-001` 跨页面一致性 | Design Audit 纸面与画面一致性通过；运行验证待后续 | PARTIAL |
-| RTM-065 | AI、业务数据、等待和失败可以模拟且需说明 | Demo Controller 显式标注模拟，不伪装真实服务 | `DM-01/02` | `src/features/demo/*` | `TC-DEMO-001` 模拟标识 | `review-local/DM-01.png`；交互待 Prompt 10 | PARTIAL |
+| RTM-058 | 覆盖范围内所有必要页面 | 入口、列表、详情、输入、编辑、确认、结果按实际流程覆盖 | 全部 `EL-*`、`FM-*` | `src/views.js` | `TC-PAGE-001` 页面覆盖 | 主流程、异常和 13 个快照均可操作；全量静态导出待 Prompt 15 | PASS |
+| RTM-059 | 导航中不出现空按钮或未完成入口 | 只有 P0 和已完成 P1 可进入；Excluded 不显示 | 全局导航 | `src/app.js`、`src/views.js` | `TC-NAV-002` 可点击元素遍历 | 三套浏览器脚本覆盖全部暴露导航与场景入口 | PASS |
+| RTM-060 | 覆盖首次/空状态和正常有数据状态 | 关系首次、家属空列表、已建立关系和有请求均可进入 | `EL-REL-01`、`FM-REQ-00/01` | `src/views.js`、Demo snapshots | `TC-STATE-001` 首次/空/有数据 | Initial、Scenario B、Main Flow、Pending Family | PASS |
+| RTM-061 | 覆盖处理中、成功、失败和重试 | AI 处理、请求发送中、保存/回应成功、解析/发送失败和重试分别可见 | `EL-TASK-02`、`EL-SHARE-03`、`EL-EX-02/03` | `src/views.js`、`src/state/model.js` | `TC-STATE-002` 状态覆盖 | Prompt 08—10 浏览器证据 | PASS |
+| RTM-062 | 覆盖修改、取消和返回 | 单字段修改、撤回请求、取消事务、非破坏性返回均可操作 | `EL-TASK-04/08`、`EL-EX-05/06` | `src/views.js`、`src/state/model.js` | `TC-STATE-003` 修改取消返回 | Prompt 09 Scenario H—I—J—K | PASS |
+| RTM-063 | 页面和关键操作连通 | 入口到结果、返回修改、角色切换均无断点 | 主流程和异常 Flow | `scripts/smoke-prompt08.mjs`、`smoke-prompt09.mjs` | `TC-E2E-002` 全链接走查 | 主流程 23 步、异常 11 场景均连续通过 | PASS |
+| RTM-064 | 示例内容和状态保持一致 | 修改时间后提醒、共享详情、家属端和结果页同步；取消后不显示成功 | 全部跨角色状态 | `src/state/model.js`、完整 snapshots | `TC-CONSIST-001` 跨页面一致性 | 状态测试及浏览器字段断言 | PASS |
+| RTM-065 | AI、业务数据、等待和失败可以模拟且需说明 | Demo Controller 显式标注模拟，不伪装真实服务 | `DM-01/02` | `src/views.js`、`src/state/initial-state.js` | `TC-DEMO-001` 模拟标识 | Prompt 10 控制台截图和 13/13 走查 | PASS |
 | RTM-066 | 统一布局、导航和视觉层级 | 390 × 844 移动 Web；老人端和家属端共享设计系统 | 全部页面 | `src/styles/*`、`src/components/*` | `TC-VISUAL-001` 一致性审计 | 65 屏自动布局审计 `issues=[]`；Web 实现待后续 | PARTIAL |
-| RTM-067 | 可从预置登录状态开始但不能省略核心授权 | 不实现登录注册；保留关系确认和每次共享确认 | 首屏预置身份、`EL-REL-*` | `src/app/fixtures.ts` | `TC-AUTH-001` 预置身份与授权 | 身份和授权画面已完成；运行实现待后续 | PARTIAL |
+| RTM-067 | 可从预置登录状态开始但不能省略核心授权 | 不实现登录注册；保留关系确认和每次共享确认 | 首屏预置身份、`EL-REL-*` | `src/state/initial-state.js`、`src/views.js` | `TC-AUTH-001` 预置身份与授权 | Prompt 08 关系确认和单次共享均已运行 | PASS |
 
 ## 9. 核心功能说明、指标和验证
 
@@ -138,11 +138,11 @@
 | RTM-071 | 说明如何发现误导建议和操作失败 | 记录字段误导、状态误判、失败恢复、严重事件和用户复述 | `DOC-VALIDATION` | `docs/product/17-product-spec.md#验证` | `TC-VALID-001` 风险记录模板审计 | 正式验证方案（缺失） | FAIL |
 | RTM-072 | 给出最小验证方法和下一步依据 | 约 5 组老人—家属，使用虚构任务，观察纠错、授权、回应和误判 | `DOC-VALIDATION` | `docs/03-reach-and-validation.md` | `TC-VALID-002` 方法完整性 | 当前验证方法 | PASS |
 | RTM-073 | 不把预期值写成实测结果 | 所有指标标记为定义或目标；没有真实测试就不报告结果 | `DOC-VALIDATION` | `docs/00-research-method.md` | `TC-VALID-003` 实测声明扫描 | 当前研究边界 | PASS |
-| RTM-074 | 自行走查完整主流程 | 按冻结数据从关系建立走到老人看到小梅接受 | `DOC-WALKTHROUGH-MAIN` | `docs/qa/12-functional-walkthrough.md` | `TC-E2E-001` | 运行结果和截图（缺失） | FAIL |
-| RTM-075 | 走查修改或取消流程 | 覆盖纠错、撤回请求、取消事务和已发送后修改 | `DOC-WALKTHROUGH-CHANGE` | `docs/qa/12-functional-walkthrough.md` | `TC-E2E-003` | 运行结果和截图（缺失） | FAIL |
-| RTM-076 | 走查失败或无法继续流程 | 覆盖必要信息缺失、AI 失败、发送失败和重试 | `DOC-WALKTHROUGH-FAIL` | `docs/qa/12-functional-walkthrough.md` | `TC-E2E-004` | 运行结果和截图（缺失） | FAIL |
-| RTM-077 | 多角色产品走通角色间协作 | 老人发起、家属回应、老人获知，双端状态一致 | `DOC-WALKTHROUGH-ROLE` | `docs/qa/12-functional-walkthrough.md` | `TC-E2E-005` | 双角色走查证据（缺失） | FAIL |
-| RTM-078 | 记录步骤、实际结果和已知问题 | 逐步记录预期、实际、截图、问题、严重度和处理 | `DOC-WALKTHROUGH-REPORT` | `docs/qa/12-functional-walkthrough.md` | `TC-QA-001` 报告字段检查 | 走查报告（缺失） | FAIL |
+| RTM-074 | 自行走查完整主流程 | 按冻结数据从关系建立走到老人看到小梅接受 | `DOC-WALKTHROUGH-MAIN` | `docs/validation/prompt08-main-flow.md` | `TC-E2E-001` | 23 步运行结果和截图；正式综合报告待 Prompt 12 | PARTIAL |
+| RTM-075 | 走查修改或取消流程 | 覆盖纠错、撤回请求、取消事务和已发送后修改 | `DOC-WALKTHROUGH-CHANGE` | `docs/validation/prompt09-exception-flows.md` | `TC-E2E-003` | Scenario H—I—J—K；正式综合报告待 Prompt 12 | PARTIAL |
+| RTM-076 | 走查失败或无法继续流程 | 覆盖必要信息缺失、AI 失败、发送失败和重试 | `DOC-WALKTHROUGH-FAIL` | `docs/validation/prompt09-exception-flows.md` | `TC-E2E-004` | Scenario C—D—E；正式综合报告待 Prompt 12 | PARTIAL |
+| RTM-077 | 多角色产品走通角色间协作 | 老人发起、家属回应、老人获知，双端状态一致 | `DOC-WALKTHROUGH-ROLE` | `docs/validation/prompt08-main-flow.md`、Prompt 09 记录 | `TC-E2E-005` | 接受、拒绝、建议、撤回和取消均双端通过 | PARTIAL |
+| RTM-078 | 记录步骤、实际结果和已知问题 | 逐步记录预期、实际、截图、问题、严重度和处理 | `DOC-WALKTHROUGH-REPORT` | `docs/validation/*` | `TC-QA-001` 报告字段检查 | 分阶段记录已存在；正式综合报告待 Prompt 12 | PARTIAL |
 
 ## 10. 交付物与 Docker
 
@@ -150,7 +150,7 @@
 |---|---|---|---|---|---|---|---|
 | RTM-079 | 产品说明覆盖用户、依据、范围、流程、AI、指标和验证 | 最终合并为一份与 Release 一致的正式说明 | `DOC-PRODUCT-SPEC` | `docs/product/17-product-spec.md` | `TC-DOC-008` 章节覆盖 | 正式产品说明（缺失） | FAIL |
 | RTM-080 | 完整原型图按页面与状态编号整理 | 每个必要页面和关键状态可独立查看 | `DOC-STATIC-INDEX` | `artifacts/static/index.md`、`artifacts/static/*.png`、PDF | `TC-STATIC-001` 页面矩阵一一对应 | PNG/PDF（缺失） | FAIL |
-| RTM-081 | 可操作 Web 原型和可编辑源码 | 全部 P0 连续可操作，使用本地确定性状态和虚构数据 | 全部 `EL-*`、`FM-*`、`DM-*` | `src/*` | `TC-E2E-*`、`TC-UNIT-*` | 基础源码和首页到保存走查已完成；完整 P0 待 Prompt 08—10 | PARTIAL |
+| RTM-081 | 可操作 Web 原型和可编辑源码 | 全部 P0 连续可操作，使用本地确定性状态和虚构数据 | 全部 `EL-*`、`FM-*`、`DM-*` | `src/*` | `TC-E2E-*`、`TC-UNIT-*` | 主流程、异常和 Demo Controller 均已运行验证 | PASS |
 | RTM-082 | 设计工具存在时提供源文件或访问方式 | 规范源使用仓库内 HTML/CSS；Figma 文件作为补充参考 | `DOC-DESIGN-SOURCE` | `artifacts/design/local-prototype/`、`artifacts/design/figma-source.md` | `TC-DELIVERY-001` 源文件可访问 | 可编辑设计源、生成脚本、Figma URL 和审计证据 | PASS |
 | RTM-083 | 提供 Dockerfile | 多阶段构建或等效静态镜像，无秘密和外部服务 | `DOC-DOCKER` | `Dockerfile` | `TC-DOCKER-001` 镜像构建 | Dockerfile（缺失） | FAIL |
 | RTM-084 | 提供 Docker Compose 配置 | 单命令启动前端，端口和健康检查明确 | `DOC-DOCKER` | `compose.yaml` | `TC-DOCKER-002` Compose 启动 | Compose 文件（缺失） | FAIL |
@@ -165,9 +165,9 @@
 
 | 状态 | 含义 | 当前数量 |
 |---|---|---:|
-| PASS | 当前要求已有足够仓库证据 | 52 |
-| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 16 |
-| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 22 |
+| PASS | 当前要求已有足够仓库证据 | 62 |
+| PARTIAL | 已有规则或视觉证据，但运行/导出证据仍不完整 | 13 |
+| FAIL | 实际操作、实现、运行测试或交付证据尚不存在 | 15 |
 | 合计 | 全部追踪项 | 90 |
 
 数量必须通过脚本或人工复核与矩阵行一致；后续每个 Prompt 只在产生实际证据后更新状态。
