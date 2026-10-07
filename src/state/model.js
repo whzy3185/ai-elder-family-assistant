@@ -237,7 +237,7 @@ export function reduce(state, action) {
         currentView: 'FAMILY_DECLINED',
       };
     case 'PROPOSE_CHANGE':
-      if (!canRespond) return state;
+      if (!canRespond || state.task.details?.time === '14:00') return state;
       return {
         ...state,
         collaborationRequest: { ...state.collaborationRequest, status: 'CHANGE_PROPOSED', response: { type: 'CHANGE_PROPOSED', proposedTime: '14:00', by: 'family-mei', at: state.demoClock } },
@@ -245,6 +245,7 @@ export function reduce(state, action) {
       };
     case 'ACCEPT_PROPOSED_CHANGE':
       if (state.currentRole !== 'ELDER' || state.collaborationRequest.status !== 'CHANGE_PROPOSED') return state;
+      if (state.task.details.time === state.collaborationRequest.response?.proposedTime) return reduce(state, {type:'REJECT_PROPOSED_CHANGE'});
       return {
         ...state,
         task: { ...state.task, details: { ...state.task.details, time: '14:00' }, reminderAt: '2026-10-07T13:30:00+08:00', version: state.task.version + 1 },
@@ -277,10 +278,10 @@ export function reduce(state, action) {
       return { ...state, currentView: view };
     }
     case 'START_POST_ACCEPT_EDIT':
-      if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED') return state;
+      if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED' || state.task.details.time === '14:00') return state;
       return { ...state, task: { ...state.task, pendingChange: { time: '14:00' } }, currentView: 'TASK_EDIT_IMPACT' };
     case 'CONFIRM_POST_ACCEPT_CHANGE': {
-      if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED' || state.task.pendingChange?.time !== '14:00') return state;
+      if (state.currentRole !== 'ELDER' || state.task.status !== 'CONFIRMED' || state.task.pendingChange?.time !== '14:00' || state.task.details.time === '14:00') return state;
       const nextVersion = state.task.version + 1;
       const oldRequest = { ...state.collaborationRequest, status: 'INVALIDATED', invalidatedAt: state.demoClock };
       return {

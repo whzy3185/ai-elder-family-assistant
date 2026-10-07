@@ -151,3 +151,26 @@ test('Additional: user input is escaped in confirmation, even after manual editi
   assert.doesNotMatch(html,/<img src=x|<script>bad/);
   assert.match(html,/&lt;img/);
 });
+
+test('Reviewer: a 14:00 request cannot propose or save the same time again',()=>{
+  const current=send(modify(pending()));
+  const familyState=dispatch(family(current),{type:'NAVIGATE',view:'FAMILY_REQUEST'});
+  assert.doesNotMatch(renderReleaseApp(familyState),/data-action="ask-propose-change"/);
+  const proposed=dispatch(familyState,{type:'PROPOSE_CHANGE'});
+  assert.deepEqual(proposed.collaborationRequest,current.collaborationRequest);
+  const edited=dispatch(elder(current),{type:'START_POST_ACCEPT_EDIT'},{type:'CONFIRM_POST_ACCEPT_CHANGE'});
+  assert.equal(edited.task.version,current.task.version);
+  assert.deepEqual(edited.collaborationRequest,current.collaborationRequest);
+});
+
+test('Reviewer: a persisted same-time suggestion retains 14:00 and current reminder',()=>{
+  const current=send(modify(pending()));
+  const legacy={...elder(current),currentView:'ELDER_CHANGE_PROPOSED',collaborationRequest:{...current.collaborationRequest,status:'CHANGE_PROPOSED',response:{type:'CHANGE_PROPOSED',proposedTime:'14:00'}}};
+  assert.match(renderReleaseApp(legacy),/不改，仍是下午 2:00/);
+  assert.doesNotMatch(renderReleaseApp(legacy),/不改，仍是上午 9:00|data-action="accept-proposed-change"/);
+  const kept=dispatch(legacy,{type:'ACCEPT_PROPOSED_CHANGE'});
+  assert.equal(kept.task.version,current.task.version);
+  assert.equal(kept.task.reminderAt,current.task.reminderAt);
+  assert.equal(kept.collaborationRequest.status,'PENDING');
+  assert.match(renderReleaseApp(kept),/保留下午 2:00/);
+});
