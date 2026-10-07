@@ -1,0 +1,5 @@
+# 独立验收入口
+
+当前结果：产品P0为0；独立发现的1个P1及2个P2已在1.1.1复验修复。研究严格证据PARTIAL，不能称原题无条件全部PASS。
+
+[完整独立评审与复验](independent-product-review.md)记录83张实操图及原65画面枚举；新增3画面通过正常路径独立复验。[最终Docker回归](final-regression.md)覆盖冻结版新容器。

@@ -59,6 +59,7 @@ docker --context colima-elder-demo compose -f compose.yaml -f compose.local.yaml
 - [全部页面索引](exports/prototype-index.md)，原型PDF：`exports/prototype-pages.pdf`，独立PNG：`exports/screens/`。
 - [页面与状态清单](docs/product/page-state-matrix.md)、[需求追踪矩阵](docs/delivery/requirement-traceability-matrix.md)。
 - [业务走查](docs/validation/walkthrough.md)、[可见内容审计](docs/validation/presentation-purity-audit.md)、[适老审计](docs/validation/senior-usability-audit.md)。
+- [独立验收](docs/validation/independent-acceptance.md)、[最终Docker回归](docs/validation/final-regression.md)、[版本记录](docs/delivery/version.md)。
 - [已知问题](docs/validation/known-issues.md)、[冻结记录](docs/delivery/release-freeze.md)、[研究证据](docs/research/evidence-index.md)。
 
 `src/`为可编辑HTML渲染、CSS和本地状态模型；`Dockerfile`、`compose.yaml`、`server.mjs`提供静态前端，无后端或数据库。`scripts/`与`tests/`包含验证工具，`artifacts/`是历史设计和QA证据。当前静态材料由本轮最终Docker重新截图导出；同版源码及图片校验见exports/source-manifest.json。

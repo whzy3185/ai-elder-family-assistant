@@ -1,7 +1,8 @@
 # 证据入口
 
-- 研究来源与等级：`docs/research/evidence-index.md`。Huawei/Apple继承文字记录存在，但截图、设备与精确版本不足，PARTIAL。
-- 实际Docker和浏览器测试：`artifacts/qa/`、`docs/validation/`。
-- 最终Web截图与运行源码清单：`exports/screens/`、`exports/source-manifest.json`。
+- [独立审查](../docs/validation/independent-product-review.md)及[交互截图](../artifacts/qa/independent-product-review/)。
+- [最终新Docker回归](../docs/validation/final-regression.md)及[实际结果](../artifacts/qa/final-regression/results.json)。
+- [适老与真实浏览器缩放](../docs/validation/senior-usability-audit.md)。
+- [研究证据索引](../docs/research/evidence-index.md)：继承文字及官方来源，严格体验附件仍PARTIAL。
 
-不包含私人账号、Cookie、token或原始对话日志。未生成或补造研究截图、用户访谈、评价、留存和增长数据。
+这里只提供现有证据定位，不复制或编造研究附件。Git历史保留基线和修复过程，最终静态原型入口为exports。

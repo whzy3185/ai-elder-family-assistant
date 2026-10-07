@@ -1,18 +1,14 @@
-# Release 1.0.0 冻结与静态导出
+# Release 1.1.1 冻结与导出
 
-日期：2026-10-07（Asia/Shanghai）。源码冻结commit：`e3144cc75796f0b3179f4daa55f3f9ace9474f9e`。这是UI/运行源码基线；后续文档、截图和验证提交不改变此运行源码。最终仓库SHA在验证阶段23另行报告，不能把源码基线当成最终提交SHA。
+日期2026-10-07；运行源码冻结commit：`54440215c9bc6a57e6917cc89106b10a33728e76`。后续只提交材料及验证记录，没有继续开发。最终仓库SHA包含这些材料提交，通过`git rev-parse HEAD`获取；不得将源码冻结SHA当成平台最终SHA。
 
-Docker已真实重建，容器healthy，镜像89b05b3b6dfb；URL `http://127.0.0.1:8080`。本阶段从该容器Web通过编号入口导出65张全长截图，页面覆盖集合与Page Matrix精确一致。
+最终Docker新容器`1ba38798cfd5` healthy，URL http://127.0.0.1:8080。默认老人产品、/family家属产品、/review独立辅助；版本及材料编号只在交付层。
 
-- `exports/screens/`：65张独立编号图片；`audit.json`为同版65页/两种视口的实际检查结果。
-- `exports/prototype-index.md`、`.json`：编号、名称、角色、状态、图片、PDF页码、Web入口和测试映射。
-- `exports/prototype-pages.pdf`：69页，1封面+3索引+65独立画面；书签按编号可定位。长页按图片高度保留全长，不截掉操作。
-- `exports/source-manifest.json`：前端、服务器、包与Docker配置逐文件SHA-256。同版性通过该清单核对，不依赖自引用的最终commit。
+- exports/screens/：68张独立图，63产品宽390、5工具宽338，长页面完整保留。
+- exports/prototype-pages.pdf：73页，封面+4索引+68画面；每项书签、图片摘要、索引页码一致。
+- exports/product-description.pdf：7页26节，与当前Markdown同版。
+- exports/source-manifest.json：17个运行/配置源码文件逐项SHA-256；prototype-index.json记录68图摘要。
 
-PDF已嵌入中文字形。首版使用系统CID字体导致渲染器缺少中文语言包，修复后Poppler渲染无报错；封面、索引、首页和长控制台原尺寸渲染检查通过，页面ID逐页提取校验65/65通过。
+全部截图来自最终Docker。最终PDF已重新全页渲染检查，无缺字、截断或重叠；三个关系等待/家属确认状态独立补齐。实际服务的11个前端文件摘要与manifest一致。最终新容器46状态测试、11业务流程、7专项及键盘主流程PASS，三路由刷新PASS。
 
-DM-01为各页底部演示工具；DM-02/03共用控制台布局，分别定位场景和时钟。每个编号仍有独立导出图片，不用旧设计稿替代。编号快照只供演示控制层使用，主流程仍可从Reset连续操作。
-
-维护：冻结后若修改UI、规则或文案，须更新版本、受影响截图、PDF、文档并重新验证。本阶段还不代表独立验收或最终交卷已完成。
-
-VALIDATION_15_STATUS=PASS
+源码冻结后若再次修改运行代码，必须重做验证和受影响图文。本记录不推定平台仓库已确认、日志已上传或本人已交卷。研究严格证据仍PARTIAL。

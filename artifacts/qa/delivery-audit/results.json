@@ -1,13 +1,12 @@
 {
   "status": "PASS",
-  "trackedFiles": 1119,
-  "localLinksChecked": 251,
+  "trackedFiles": 1142,
+  "localLinksChecked": 274,
   "sourceFilesChecked": 17,
   "screens": 68,
   "requirementStatuses": {
-    "PASS": 67,
-    "PARTIAL": 13,
-    "FAIL": 10
+    "PASS": 88,
+    "PARTIAL": 2
   },
   "issues": []
 }
