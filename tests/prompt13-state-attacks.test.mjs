@@ -15,7 +15,7 @@ const save = s => dispatch(s,{type:'START_TASK',rawInput:FIXED_INPUT},{type:'PAR
 test('A01 changing time invalidates old visible request, new request has final time',()=>{
   const changed=modify(pending());
   assert.equal(changed.collaborationRequest.status,'INVALIDATED');
-  assert.match(renderReleaseApp(family(changed)),/已结束/);
+  assert.match(renderReleaseApp(family(changed)),/安排已更新/);
   assert.equal(send(changed).collaborationRequest.sharedFields.time,'14:00');
 });
 test('A02 cancelled task cannot be accepted from a stale family page',()=>{
@@ -27,7 +27,7 @@ test('A02 cancelled task cannot be accepted from a stale family page',()=>{
 test('A03 accepted request is shown as accepted to elder and never completes task',()=>{
   const accepted=dispatch(family(pending()),{type:'ACCEPT_REQUEST',requestId:'request-1-1'});
   const detail=dispatch(elder(accepted),{type:'NAVIGATE',view:'TASK_SAVED'});
-  assert.match(renderReleaseApp(detail),/小梅答应陪同/);
+  assert.match(renderReleaseApp(detail),/小梅可以陪你去/);
   assert.equal(detail.task.status,'CONFIRMED');
 });
 test('A04 withdrawing preserves personal task and reminder',()=>{
@@ -74,14 +74,14 @@ test('A10 family proposal leaves elder task untouched until elder confirms',()=>
 test('A11 AI failure preserves original expression',()=>{
   const s=dispatch(createInitialState(),{type:'START_TASK',rawInput:FIXED_INPUT},{type:'PARSE_TASK_FAILURE'});
   assert.equal(s.task.rawInput,FIXED_INPUT);
-  assert.match(renderReleaseApp(s),/你的原话/);
+  assert.match(renderReleaseApp(s),/你刚才说/);
 });
 test('A12 back and re-entry preserve typed and cleared drafts',()=>{
   let s=dispatch(createInitialState(),{type:'ENTER_TASK_INPUT'},{type:'UPDATE_RAW_INPUT',value:'自填草稿'},{type:'SET_ROLE',role:'ELDER'},{type:'ENTER_TASK_INPUT'});
   assert.equal(s.task.rawInput,'自填草稿');
   assert.match(renderReleaseApp(s),/自填草稿/);
   s=dispatch(s,{type:'UPDATE_RAW_INPUT',value:''},{type:'SET_ROLE',role:'ELDER'},{type:'ENTER_TASK_INPUT'});
-  assert.match(renderReleaseApp(s),/<textarea id="task-input"><\/textarea>/);
+  assert.match(renderReleaseApp(s),/<textarea id="task-input"[^>]*><\/textarea>/);
 });
 test('A13 active relationship alone does not share a saved task',()=>{
   const s=createDemoSnapshot('MAIN_FLOW');
@@ -137,7 +137,7 @@ test('Additional: new task after completion has a new version and request identi
 test('Additional: unknown input fails safely; invalid manual fields cannot save',()=>{
   const empty=dispatch(createInitialState(),{type:'START_TASK',rawInput:''},{type:'PARSE_TASK_SUCCESS'});
   assert.equal(empty.task.details.title,null);
-  assert.match(renderReleaseApp(empty),/输入为空/);
+  assert.match(renderReleaseApp(empty),/还没有写下要办的事/);
   assert.doesNotMatch(renderReleaseApp(empty),/已经听清/);
   const failed=dispatch(createInitialState(),{type:'START_TASK',rawInput:'别的事情'},{type:'PARSE_TASK_SUCCESS'});
   assert.equal(failed.task.status,'PARSE_FAILED');
@@ -166,11 +166,11 @@ test('Reviewer: a 14:00 request cannot propose or save the same time again',()=>
 test('Reviewer: a persisted same-time suggestion retains 14:00 and current reminder',()=>{
   const current=send(modify(pending()));
   const legacy={...elder(current),currentView:'ELDER_CHANGE_PROPOSED',collaborationRequest:{...current.collaborationRequest,status:'CHANGE_PROPOSED',response:{type:'CHANGE_PROPOSED',proposedTime:'14:00'}}};
-  assert.match(renderReleaseApp(legacy),/不改，仍是下午 2:00/);
-  assert.doesNotMatch(renderReleaseApp(legacy),/不改，仍是上午 9:00|data-action="accept-proposed-change"/);
+  assert.match(renderReleaseApp(legacy),/仍按下午 2:00/);
+  assert.doesNotMatch(renderReleaseApp(legacy),/仍按上午 9:00|data-action="accept-proposed-change"/);
   const kept=dispatch(legacy,{type:'ACCEPT_PROPOSED_CHANGE'});
   assert.equal(kept.task.version,current.task.version);
   assert.equal(kept.task.reminderAt,current.task.reminderAt);
   assert.equal(kept.collaborationRequest.status,'PENDING');
-  assert.match(renderReleaseApp(kept),/保留下午 2:00/);
+  assert.match(renderReleaseApp(kept),/下午 2:00/);
 });

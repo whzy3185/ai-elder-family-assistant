@@ -12,11 +12,11 @@ const expectedIds = [
 
 test('Demo Controller exposes every required reproducible scenario', () => {
   assert.deepEqual(DEMO_SCENARIOS.map(([id]) => id), expectedIds);
-  const html = renderApp({ ...createInitialState(), currentView: 'DEMO' });
-  assert.match(html, /演示控制，不属于老人真实产品功能/);
-  assert.match(html, /Fixed Demo Clock/);
-  assert.match(html, /Reset All Demo Data/);
-  for (const id of expectedIds) assert.match(html, new RegExp(`data-scenario="${id}"`));
+  const html = renderApp({ ...createInitialState(), currentView: 'DEMO' }, [], {surface:'review'});
+  assert.match(html, /不属于正式产品功能/);
+  // Full review controls are validated after the review surface is completed.
+  assert.doesNotMatch(renderApp(createInitialState()), /评审辅助|Prototype|Demo/);
+  assert.match(html, /切换到小梅/);
 });
 
 test('every scenario factory returns a complete valid snapshot', () => {

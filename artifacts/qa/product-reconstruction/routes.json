@@ -1,0 +1,36 @@
+[
+  {
+    "route": "/",
+    "text": "记\n安心记事\n张阿姨，记一件事吧\n06日\n10月 星期二\n把要办的事\n一件件记好\n一\n\n明天要办什么事？\n现在记下，到了时间提醒你。\n\n记一件事\n字太小？调整阅读方式\n事情\n家人",
+    "role": "ELDER",
+    "reviewCount": 0,
+    "productActions": [
+      "task-input",
+      "settings",
+      "elder-home",
+      "relationship"
+    ]
+  },
+  {
+    "route": "/family",
+    "text": "记\n安心记事\n妈妈的消息\n\n她有需要时，会在这里告诉你。\n\n张\n\n妈妈 · 张阿姨\n\n现在没有新消息。\n妈妈需要陪同时，会告诉你。\n\n看看家庭协作\n消息\n家人",
+    "role": "FAMILY",
+    "reviewCount": 0,
+    "productActions": [
+      "relationship",
+      "family-home",
+      "relationship"
+    ]
+  },
+  {
+    "route": "/review",
+    "text": "记\n安心记事\n妈妈的消息\n\n她有需要时，会在这里告诉你。\n\n张\n\n妈妈 · 张阿姨\n\n现在没有新消息。\n妈妈需要陪同时，会告诉你。\n\n看看家庭协作\n消息\n家人\n评审辅助\n\n用于快速查看不同演示情况，不属于正式产品功能。\n\n当前身份：小梅\n切换到张阿姨\n切换到小梅\n查看全部画面",
+    "role": "FAMILY",
+    "reviewCount": 1,
+    "productActions": [
+      "relationship",
+      "family-home",
+      "relationship"
+    ]
+  }
+]

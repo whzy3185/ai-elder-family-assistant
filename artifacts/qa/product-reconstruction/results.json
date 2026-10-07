@@ -1,0 +1,724 @@
+{
+  "testedAt": "2026-10-07T10:18:06.372Z",
+  "count": 60,
+  "results": [
+    {
+      "id": "EL-TASK-00",
+      "text": "记\n安心记事\n张阿姨，记一件事吧\n06日\n10月 星期二\n把要办的事\n一件件记好\n一\n\n明天要办什么事？\n现在记下，到了时间提醒你。\n\n记一件事\n字太小？调整阅读方式\n事情\n家人",
+      "actions": [
+        "task-input",
+        "settings",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-01",
+      "text": "记\n安心记事\n想记什么事？\n\n写下时间、地点和要做的事。\n\n要办的事\n\n可以写下来，也可以用语音。\n\n帮我整理\n用语音记事\n自己填写时间和地点\n返回，保留内容\n事情\n家人",
+      "actions": [
+        "submit-task",
+        "use-voice-example",
+        "show-manual-form",
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-02",
+      "text": "记\n安心记事\n正在帮你整理\n\n你写下的内容还在，请稍等。\n\n你刚才说\n\n明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。\n\n返回，接着写\n事情\n家人",
+      "actions": [
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-03A",
+      "text": "记\n安心记事\n我这样记，对吗？\n\n请看看时间和地点。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n修改时间\n\n上午 8:30 提醒你\n\n看看刚才说的话\n\n按你刚才说的话整理。\n\n确认记好\n返回输入\n事情\n家人",
+      "actions": [
+        "edit-time",
+        "confirm-task",
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-03B",
+      "text": "记\n安心记事\n我这样记，对吗？\n\n请看看时间和地点。\n\n10月7日 · 星期三\n\n上午 8:00\n\n办理公交卡年审\n\n社区服务中心\n\n修改时间\n\n上午 7:30 提醒你\n\n看看刚才说的话\n\n按你刚才说的话整理。\n\n改时间\n返回输入\n事情\n家人",
+      "actions": [
+        "edit-time",
+        "edit-time",
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-04",
+      "text": "记\n安心记事\n改成几点？\n\n提醒时间会跟着调整。\n\n原来记的是 上午 8:00\n\n改为\n上午 9:00\n\n上午8:30提醒你\n\n改成上午9:00\n不改了\n事情\n家人",
+      "actions": [
+        "set-time-nine",
+        "back-confirm",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-05",
+      "text": "记\n安心记事\n再看一遍\n\n确认后就记好。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n修改时间\n\n上午 8:30 提醒你\n\n看看刚才说的话\n\n按你刚才说的话整理。\n\n确认记好\n返回输入\n事情\n家人",
+      "actions": [
+        "edit-time",
+        "confirm-task",
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-06",
+      "text": "记\n安心记事\n办理公交卡年审\n\n明天的事情已经记好。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n提醒你\n上午 8:30\n小梅\n还没有告诉小梅\n请小梅陪你去\n只提醒我自己\n修改时间\n这件事办完了\n取消这件事\n事情\n家人",
+      "actions": [
+        "ask-share",
+        "keep-private",
+        "start-post-accept-edit",
+        "ask-complete",
+        "cancel-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-07",
+      "text": "记\n安心记事\n该准备出发了\n\n要办的事，别忘了。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n小梅可以陪你去。\n\n知道了，看看这件事\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-08",
+      "text": "记\n安心记事\n要改时间吗？\n\n时间改过后，需要再问一次小梅。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n继续修改\n先不修改\n事情\n家人",
+      "actions": [
+        "continue-post-edit",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-09A",
+      "text": "记\n安心记事\n这件事办完了吗？\n\n办完后就不再提醒你。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n已经办完了\n还没有，返回这件事\n事情\n家人",
+      "actions": [
+        "complete-task",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-09B",
+      "text": "记\n安心记事\n✓\n这件事办完了\n\n今天少了一件挂心的事。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n回到首页\n事情\n家人",
+      "actions": [
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-TASK-10",
+      "text": "记\n安心记事\n这件事办完了\n06日\n10月 星期二\n把要办的事\n一件件记好\n已经办完\n办理公交卡年审\n上午 9:00 · 社区服务中心\n查看这件事 →\n记一件事\n字太小？调整阅读方式\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "task-input",
+        "settings",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-01",
+      "text": "记\n安心记事\n还需要时间和地点\n\n补上这两项，就可以继续。\n\n明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。\n\n填写时间和地点\n返回输入\n事情\n家人",
+      "actions": [
+        "show-manual-form",
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-02A",
+      "text": "记\n安心记事\n这次没整理好\n\n你写下的内容还在。\n\n你刚才说\n\n明天上午九点去社区服务中心办理公交卡年审，提前半小时提醒我，再问问小梅能不能陪我去。\n\n自己填写时间和地点\n再试一次\n返回，接着写\n事情\n家人",
+      "actions": [
+        "show-manual-form",
+        "retry-parse",
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-02B",
+      "text": "记\n安心记事\n把这件事写下来\n\n填好后再看一遍。\n\n看看刚才说的话\n要办什么事\n\n日期：10月7日 · 星期三\n\n几点去\n上午 9:00\n下午 2:00\n去哪里\n\n提前30分钟提醒你。\n\n填好了，再看看\n返回原话\n事情\n家人",
+      "actions": [
+        "manual-fill-task",
+        "task-input",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-01",
+      "text": "记\n安心记事\n要请小梅陪你去吗？\n\n你的提醒已经设好了。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n看看要告诉小梅的内容\n只提醒我自己\n返回这件事\n事情\n家人",
+      "actions": [
+        "start-share",
+        "keep-private",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-01B",
+      "text": "记\n安心记事\n✓\n只提醒你自己\n\n没有告诉小梅这件事。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n上午 8:30 提醒你\n\n回到这件事\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-02",
+      "text": "记\n安心记事\n发给小梅前，再看看\n\n她只会看到下面这件事。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n想请小梅陪你去\n\n就把这些发给小梅\n先不发送\n她能看到什么？\n事情\n家人",
+      "actions": [
+        "send-request",
+        "saved-task",
+        "view-permissions",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-03",
+      "text": "记\n安心记事\n正在发给小梅\n\n请稍等。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n先不发送，返回看看\n事情\n家人",
+      "actions": [
+        "start-share",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-04A",
+      "text": "记\n安心记事\n✓\n已经发给小梅\n\n等她有空回复你。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n看看回复\n回到这件事\n撤回陪同请求\n事情\n家人",
+      "actions": [
+        "wait-request",
+        "saved-task",
+        "withdraw-request",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-04B",
+      "text": "记\n安心记事\n等小梅回复\n\n你可以继续等，也可以撤回陪同请求。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n上午 8:30 照常提醒你\n\n回到这件事\n撤回陪同请求\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "withdraw-request",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-05",
+      "text": "记\n安心记事\n✓\n小梅可以陪你去\n\n小梅：我可以陪你。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n上午 8:30 仍会提醒你\n\n回到这件事\n修改时间\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "start-post-accept-edit",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-06",
+      "text": "记\n安心记事\n✓\n小梅这次不能陪你\n\n你的事情和提醒都还在。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n上午 8:30 仍会提醒你\n\n回到这件事\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-07",
+      "text": "记\n安心记事\n小梅想下午2:00去\n\n要不要改时间，由你决定。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n同意，改到下午2:00\n仍按上午 9:00\n事情\n家人",
+      "actions": [
+        "accept-proposed-change",
+        "reject-proposed-change",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-08",
+      "text": "记\n安心记事\n✓\n已改到下午2:00\n\n需要陪同的话，再问一次小梅。\n\n10月7日 · 星期三\n\n下午 2:00\n\n办理公交卡年审\n\n社区服务中心\n\n下午 1:30 提醒你\n\n看看内容，再问小梅\n先保留自己的安排\n事情\n家人",
+      "actions": [
+        "start-share",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SHARE-09",
+      "text": "记\n安心记事\n✓\n仍按原来的时间\n\n还在等小梅答复。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n继续等小梅\n撤回陪同请求\n事情\n家人",
+      "actions": [
+        "continue-waiting",
+        "withdraw-request",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-03",
+      "text": "记\n安心记事\n没有发给小梅\n\n你的事情和提醒都还在。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n重新发送\n先不发送\n事情\n家人",
+      "actions": [
+        "send-request",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-04",
+      "text": "记\n安心记事\n小梅还没有回复\n\n上午 8:30照常提醒你。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n上午 8:30 照常提醒你\n\n再等一等\n撤回陪同请求\n事情\n家人",
+      "actions": [
+        "continue-waiting",
+        "withdraw-request",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-05A",
+      "text": "记\n安心记事\n不需要小梅陪了吗？\n\n你的事情和提醒会保留。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n确认撤回陪同\n继续等小梅\n事情\n家人",
+      "actions": [
+        "confirm-withdraw-request",
+        "continue-waiting",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-05B",
+      "text": "记\n安心记事\n✓\n陪同请求已撤回\n\n你自己的事情和提醒还在。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n上午 8:30 提醒你\n\n回到这件事\n事情\n家人",
+      "actions": [
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-06A",
+      "text": "记\n安心记事\n要取消这件事吗？\n\n提醒会停止，也不再请小梅陪同。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n确认取消这件事\n继续保留\n事情\n家人",
+      "actions": [
+        "confirm-cancel-task",
+        "cancel-task-back",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-06B",
+      "text": "记\n安心记事\n—\n这件事已取消\n\n不会再提醒你。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n回到首页\n事情\n家人",
+      "actions": [
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-07A",
+      "text": "记\n安心记事\n改到下午2:00？\n\n小梅之前的答复不能代表新的时间。\n\n原来是 上午 9:00\n\n下午 2:00\n\n下午1:30提醒你\n\n确认改时间\n先不修改\n事情\n家人",
+      "actions": [
+        "confirm-post-accept-change",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-EX-07B",
+      "text": "记\n安心记事\n✓\n已改到下午2:00\n\n需要陪同的话，再问一次小梅。\n\n10月7日 · 星期三\n\n下午 2:00\n\n办理公交卡年审\n\n社区服务中心\n\n下午 1:30 提醒你\n\n看看内容，再问小梅\n先保留自己的安排\n事情\n家人",
+      "actions": [
+        "start-share",
+        "saved-task",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-SET-01",
+      "text": "记\n安心记事\n看得更清楚\n\n选择你舒服的阅读方式。\n\n明天 上午9:00\n\n去社区服务中心，办理公交卡年审。\n\n现在使用通常的字，通常的对比。\n\n字再大一些\n颜色更清楚\n恢复通常的显示\n回到首页\n事情\n家人",
+      "actions": [
+        "large-text",
+        "high-contrast",
+        "standard-display",
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-01",
+      "text": "记\n安心记事\n和小梅一起记挂\n\n你有需要时，再请她帮忙。\n\n梅\n小梅 · 女儿\n\n每件事，都尊重她的决定\n\n小梅可以收到你发来的陪同请求。你仍自己决定每件事，不会自动分享。\n\n邀请小梅\n以后再说\n事情\n家人",
+      "actions": [
+        "show-qr",
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REL-01",
+      "text": "记\n安心记事\n和妈妈建立协作\n\n妈妈确认后，你们就可以一起安排事情。\n\n张\n妈妈 · 张阿姨\n\n每件事，都尊重她的决定\n\n妈妈已邀请你。确认是妈妈后，向她申请建立协作。\n\n向妈妈申请\n回到消息\n消息\n家人",
+      "actions": [
+        "family-scan",
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-02",
+      "text": "记\n安心记事\n小梅想与你建立协作\n\n先看看是不是你的女儿小梅。\n\n梅\n小梅 · 女儿\n\n每件事，都尊重她的决定\n\n请确认这是你的女儿小梅。建立协作后，每件事仍要你同意才会告诉她。\n\n是小梅，同意建立\n这次先不同意\n她能看到什么？\n事情\n家人",
+      "actions": [
+        "ask-establish-relationship",
+        "decline-relationship",
+        "view-permissions",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-02A",
+      "text": "记\n安心记事\n同意和小梅协作吗？\n\n每件事仍由你决定要不要告诉她。\n\n小梅 · 女儿\n\n建立协作后，每件事仍由你决定要不要告诉她。\n\n确认同意\n返回\n事情\n家人",
+      "actions": [
+        "establish-relationship",
+        "relationship",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-03",
+      "text": "记\n安心记事\n—\n这次先不建立协作\n\n你仍可以记事和设置提醒。\n\n回到首页\n事情\n家人",
+      "actions": [
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REL-03",
+      "text": "记\n安心记事\n✓\n妈妈这次先不同意\n\n还没有建立家庭协作。\n\n张\n妈妈 · 张阿姨\n\n每件事，都尊重她的决定\n\n还没有建立家庭协作。\n\n返回\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-06",
+      "text": "记\n安心记事\n小梅 · 女儿\n\n需要时，可以请她帮忙。\n\n梅\n小梅 · 女儿\n\n已经建立家庭协作\n\n你需要陪同时，可以把那件事发给小梅。她看不到你的其他事情。\n\n回到事情\n她能看到什么？\n结束家庭协作\n事情\n家人",
+      "actions": [
+        "elder-home",
+        "view-permissions",
+        "ask-end-relationship",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REL-02",
+      "text": "记\n安心记事\n妈妈 · 张阿姨\n\n收到她的请求时，再决定如何帮忙。\n\n张\n妈妈 · 张阿姨\n\n已经建立家庭协作\n\n妈妈主动发来一件事时，你可以答复是否陪同，或建议另一个时间。\n\n查看消息\n结束家庭协作\n消息\n家人",
+      "actions": [
+        "family-home",
+        "ask-end-relationship",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-07",
+      "text": "记\n安心记事\n她能看到什么？\n\n只有你主动告诉她的那件事。\n\n她能看到\n你发给她的事情、日期、时间、地点，以及希望她陪同。\n只属于你\n提醒时间、刚才说的话、其他事情和位置。\n由你决定\n修改时间、取消事情、确认办完。\n知道了\n事情\n家人",
+      "actions": [
+        "return-view",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-04A",
+      "text": "记\n安心记事\n结束和小梅的协作？\n\n自己的事情和提醒会保留。\n\n之后不能再收到或回复陪同请求。自己的事情和提醒会保留。\n\n确认结束协作\n继续保留协作\n事情\n家人",
+      "actions": [
+        "end-relationship",
+        "relationship",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "EL-REL-05",
+      "text": "记\n安心记事\n✓\n家庭协作已结束\n\n自己的事情和提醒还在。\n\n回到首页\n事情\n家人",
+      "actions": [
+        "elder-home",
+        "elder-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REL-04",
+      "text": "记\n安心记事\n✓\n家庭协作已结束\n\n之前的陪同安排不再继续。\n\n回到首页\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-00",
+      "text": "记\n安心记事\n妈妈的消息\n\n她有需要时，会在这里告诉你。\n\n张\n\n妈妈 · 张阿姨\n\n现在没有新消息。\n妈妈需要陪同时，会告诉你。\n\n看看家庭协作\n消息\n家人",
+      "actions": [
+        "relationship",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-01",
+      "text": "记\n安心记事\n妈妈的消息\n\n有一件事等你回复。\n\n张\n\n妈妈 · 张阿姨\n\n等你回复\n办理公交卡年审\n10月7日 上午 9:00\n社区服务中心\n查看消息 →\n消息\n家人",
+      "actions": [
+        "open-family-request",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-02",
+      "text": "记\n安心记事\n妈妈想请你陪她去\n\n看看时间是否合适。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n妈妈：希望你能陪我去。\n\n我可以陪你\n这次不能陪同\n建议下午2:00去\n返回消息\n消息\n家人",
+      "actions": [
+        "ask-accept-request",
+        "ask-decline-request",
+        "ask-propose-change",
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-03A",
+      "text": "记\n安心记事\n确认可以陪妈妈？\n\n她会收到你的答复。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n确认可以陪\n先不发送\n消息\n家人",
+      "actions": [
+        "accept-request",
+        "open-family-request",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-03B",
+      "text": "记\n安心记事\n✓\n已告诉妈妈你可以陪同\n\n按约好的时间一起去。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-04A",
+      "text": "记\n安心记事\n这次不能陪妈妈？\n\n告诉她，好让她另作安排。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n确认不能陪\n先不发送\n消息\n家人",
+      "actions": [
+        "decline-request",
+        "open-family-request",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-04B",
+      "text": "记\n安心记事\n—\n已告诉妈妈这次不能陪同\n\n她的办事提醒仍会保留。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-05A",
+      "text": "记\n安心记事\n建议下午2:00去？\n\n妈妈同意后才会改时间。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n建议改到下午2:00，由妈妈决定是否修改。\n\n把建议告诉妈妈\n先不发送\n消息\n家人",
+      "actions": [
+        "propose-change",
+        "open-family-request",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-REQ-05B",
+      "text": "记\n安心记事\n✓\n已把建议告诉妈妈\n\n等她决定要不要改时间。\n\n10月7日 · 星期三\n\n上午 9:00\n\n办理公交卡年审\n\n社区服务中心\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-EX-01",
+      "text": "记\n安心记事\n✓\n妈妈不用你陪同了\n\n这次陪同请求已撤回。\n\n妈妈自己的事情和提醒仍保留。\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-EX-02",
+      "text": "记\n安心记事\n✓\n妈妈取消了这件事\n\n这次不用再安排陪同。\n\n这次不用再安排陪同。\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    },
+    {
+      "id": "FM-EX-03",
+      "text": "记\n安心记事\n✓\n之前的安排更新了\n\n请回到消息列表看新的时间。\n\n请回到消息，查看当前的安排。\n\n回到消息\n消息\n家人",
+      "actions": [
+        "family-home",
+        "family-home",
+        "relationship"
+      ],
+      "width": 390,
+      "errors": 0
+    }
+  ]
+}

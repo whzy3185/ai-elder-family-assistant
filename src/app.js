@@ -5,9 +5,15 @@ import { screenDefinitions, screenSnapshot } from './screen-catalog.js';
 
 const root = document.querySelector('#app');
 const store = createStore();
+const surface = location.pathname.startsWith('/review') ? 'review' : location.pathname.startsWith('/family') ? 'family' : 'elder';
+if (surface !== 'review') {
+  const role = surface === 'family' ? 'FAMILY' : 'ELDER';
+  if (store.getState().currentRole !== role || ['DEMO','RESET_CONFIRM','RESET_RESULT'].includes(store.getState().currentView)) store.dispatch({type:'SET_ROLE',role});
+}
+
 
 function render(state = store.getState()) {
-  root.innerHTML = renderReleaseApp(state, screenDefinitions);
+  root.innerHTML = renderReleaseApp(state, screenDefinitions, {surface});
   root.querySelector('h1')?.focus({ preventScroll: true });
 }
 
